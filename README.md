@@ -61,6 +61,9 @@ pip install pandas pydantic
 python code/analyze_daly_data.py
 python code/generate_diseases_json.py
 
+# Sync data to website folder (after any changes to clinical-skill-mix/)
+cp -r clinical-skill-mix/* docs/clinical-skill-mix/
+
 # Serve the website locally
 cd docs && python -m http.server 8000
 # Visit http://localhost:8000
@@ -80,10 +83,11 @@ Clinical-World-Model/
 ├── docs/                          # 🌐 GitHub Pages website
 │   ├── index.html                 # Main website entry point
 │   ├── _config.yml                # GitHub Pages configuration
+│   ├── clinical-skill-mix/        # 📊 Dimension data (copy for website)
 │   └── assets/                    # Website assets
 │       ├── css/styles.css         # Modern responsive design
 │       └── js/                    # Interactive functionality
-├── clinical-skill-mix/            # 📊 Standardized dimension data
+├── clinical-skill-mix/            # 📊 Source dimension data
 │   ├── task-skills.json           # Clinical competencies
 │   ├── personas.json              # Healthcare provider roles
 │   ├── diseases.json              # WHO DALY-prioritized conditions
