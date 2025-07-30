@@ -1,0 +1,436 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Clinical Skill-Mix Dimensions | Clinical World Model</title>
+    <meta name="description" content="Interactive visualization of Clinical Skill-Mix dimensions for healthcare AI evaluation">
+    <link rel="stylesheet" href="assets/css/styles.css">
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700&display=swap" rel="stylesheet">
+    <link href="https://cdn.jsdelivr.net/npm/lucide@0.263.1/dist/umd/lucide.js" rel="stylesheet">
+</head>
+<body>
+    <!-- Navigation -->
+    <nav class="navbar">
+        <div class="nav-container">
+            <div class="nav-brand">
+                <h1>Clinical World Model</h1>
+                <span class="nav-subtitle">Skill-Mix Dimensions</span>
+            </div>
+            <div class="nav-links">
+                <a href="#overview" class="nav-link active">Overview</a>
+                <a href="#dimensions" class="nav-link">Dimensions</a>
+                <a href="#explorer" class="nav-link">Explorer</a>
+                <a href="#about" class="nav-link">About</a>
+            </div>
+        </div>
+    </nav>
+
+    <!-- Hero Section -->
+    <section id="overview" class="hero">
+        <div class="hero-container">
+            <div class="hero-content">
+                <h1 class="hero-title">Clinical Skill-Mix Dimensions</h1>
+                <p class="hero-subtitle">
+                    Evidence-based framework for evaluating healthcare AI systems across 5 clinical dimensions
+                </p>
+                <div class="hero-stats">
+                    <div class="stat-item">
+                        <span class="stat-number">5</span>
+                        <span class="stat-label">Dimensions</span>
+                    </div>
+                    <div class="stat-item">
+                        <span class="stat-number">168</span>
+                        <span class="stat-label">Total Items</span>
+                    </div>
+                    <div class="stat-item">
+                        <span class="stat-number">98</span>
+                        <span class="stat-label">Disease Conditions</span>
+                    </div>
+                </div>
+                <div class="hero-actions">
+                    <button class="btn btn-primary" onclick="scrollToSection('dimensions')">
+                        Explore Dimensions
+                    </button>
+                    <button class="btn btn-secondary" onclick="scrollToSection('explorer')">
+                        Interactive Explorer
+                    </button>
+                </div>
+            </div>
+            <div class="hero-visual">
+                <div class="dimension-cube">
+                    <div class="cube-face front">Skills</div>
+                    <div class="cube-face back">Locations</div>
+                    <div class="cube-face right">Personas</div>
+                    <div class="cube-face left">Timeline</div>
+                    <div class="cube-face top">Diseases</div>
+                    <div class="cube-face bottom">Framework</div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Dimensions Overview -->
+    <section id="dimensions" class="dimensions-section">
+        <div class="section-container">
+            <div class="section-header">
+                <h2 class="section-title">Five Clinical Dimensions</h2>
+                <p class="section-subtitle">
+                    Each dimension represents a critical aspect of clinical practice, providing comprehensive coverage for AI evaluation
+                </p>
+            </div>
+            
+            <div class="dimensions-grid">
+                <!-- Task Skills -->
+                <div class="dimension-card" data-dimension="task-skills">
+                    <div class="dimension-header">
+                        <div class="dimension-icon">
+                            <i data-lucide="stethoscope"></i>
+                        </div>
+                        <h3 class="dimension-title">Task Skills</h3>
+                        <span class="dimension-count">20 Skills</span>
+                    </div>
+                    <p class="dimension-description">
+                        Clinical competencies based on CanMEDS and ACGME frameworks covering data gathering, reasoning, intervention, and communication.
+                    </p>
+                    <div class="dimension-metrics">
+                        <div class="metric">
+                            <span class="metric-label">Domains</span>
+                            <span class="metric-value">4</span>
+                        </div>
+                        <div class="metric">
+                            <span class="metric-label">Evidence Base</span>
+                            <span class="metric-value">CanMEDS</span>
+                        </div>
+                    </div>
+                    <button class="btn btn-outline" onclick="loadDimension('task-skills')">
+                        View Details
+                    </button>
+                </div>
+
+                <!-- Personas -->
+                <div class="dimension-card" data-dimension="personas">
+                    <div class="dimension-header">
+                        <div class="dimension-icon">
+                            <i data-lucide="users"></i>
+                        </div>
+                        <h3 class="dimension-title">Personas</h3>
+                        <span class="dimension-count">5 Roles</span>
+                    </div>
+                    <p class="dimension-description">
+                        Healthcare provider roles from attending physicians to allied health professionals with distinct characteristics and responsibilities.
+                    </p>
+                    <div class="dimension-metrics">
+                        <div class="metric">
+                            <span class="metric-label">Characteristics</span>
+                            <span class="metric-value">20</span>
+                        </div>
+                        <div class="metric">
+                            <span class="metric-label">Evidence Base</span>
+                            <span class="metric-value">ISCO-08</span>
+                        </div>
+                    </div>
+                    <button class="btn btn-outline" onclick="loadDimension('personas')">
+                        View Details
+                    </button>
+                </div>
+
+                <!-- Diseases -->
+                <div class="dimension-card" data-dimension="diseases">
+                    <div class="dimension-header">
+                        <div class="dimension-icon">
+                            <i data-lucide="activity"></i>
+                        </div>
+                        <h3 class="dimension-title">Diseases</h3>
+                        <span class="dimension-count">98 Conditions</span>
+                    </div>
+                    <p class="dimension-description">
+                        Evidence-based disease prioritization using WHO DALY data, organized by ICD-11 classification with global burden metrics.
+                    </p>
+                    <div class="dimension-metrics">
+                        <div class="metric">
+                            <span class="metric-label">Chapters</span>
+                            <span class="metric-value">14</span>
+                        </div>
+                        <div class="metric">
+                            <span class="metric-label">Evidence Base</span>
+                            <span class="metric-value">WHO DALY</span>
+                        </div>
+                    </div>
+                    <button class="btn btn-outline" onclick="loadDimension('diseases')">
+                        View Details
+                    </button>
+                </div>
+
+                <!-- Timeline -->
+                <div class="dimension-card" data-dimension="timeline">
+                    <div class="dimension-header">
+                        <div class="dimension-icon">
+                            <i data-lucide="git-branch"></i>
+                        </div>
+                        <h3 class="dimension-title">Timeline</h3>
+                        <span class="dimension-count">12 States</span>
+                    </div>
+                    <p class="dimension-description">
+                        Disease progression states from healthy to terminal outcomes, with 26 possible transitions based on clinical pathophysiology.
+                    </p>
+                    <div class="dimension-metrics">
+                        <div class="metric">
+                            <span class="metric-label">Transitions</span>
+                            <span class="metric-value">26</span>
+                        </div>
+                        <div class="metric">
+                            <span class="metric-label">Evidence Base</span>
+                            <span class="metric-value">Clinical Pathways</span>
+                        </div>
+                    </div>
+                    <button class="btn btn-outline" onclick="loadDimension('timeline')">
+                        View Details
+                    </button>
+                </div>
+
+                <!-- Location Resources -->
+                <div class="dimension-card" data-dimension="location-resources">
+                    <div class="dimension-header">
+                        <div class="dimension-icon">
+                            <i data-lucide="map-pin"></i>
+                        </div>
+                        <h3 class="dimension-title">Location-Resources</h3>
+                        <span class="dimension-count">24 Combinations</span>
+                    </div>
+                    <p class="dimension-description">
+                        Healthcare delivery locations from pre-hospital to workplace settings, each with limited or rich resource availability.
+                    </p>
+                    <div class="dimension-metrics">
+                        <div class="metric">
+                            <span class="metric-label">Locations</span>
+                            <span class="metric-value">12</span>
+                        </div>
+                        <div class="metric">
+                            <span class="metric-label">Evidence Base</span>
+                            <span class="metric-value">Care Delivery</span>
+                        </div>
+                    </div>
+                    <button class="btn btn-outline" onclick="loadDimension('location-resources')">
+                        View Details
+                    </button>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Interactive Explorer -->
+    <section id="explorer" class="explorer-section">
+        <div class="section-container">
+            <div class="section-header">
+                <h2 class="section-title">Interactive Dimension Explorer</h2>
+                <p class="section-subtitle">
+                    Explore individual dimensions, view hierarchical structures, and analyze relationships
+                </p>
+            </div>
+
+            <div class="explorer-container">
+                <!-- Dimension Selector -->
+                <div class="explorer-sidebar">
+                    <div class="dimension-selector">
+                        <h3>Select Dimension</h3>
+                        <div class="selector-buttons">
+                            <button class="selector-btn active" data-dimension="task-skills">
+                                <i data-lucide="stethoscope"></i>
+                                <span>Task Skills</span>
+                            </button>
+                            <button class="selector-btn" data-dimension="personas">
+                                <i data-lucide="users"></i>
+                                <span>Personas</span>
+                            </button>
+                            <button class="selector-btn" data-dimension="diseases">
+                                <i data-lucide="activity"></i>
+                                <span>Diseases</span>
+                            </button>
+                            <button class="selector-btn" data-dimension="timeline">
+                                <i data-lucide="git-branch"></i>
+                                <span>Timeline</span>
+                            </button>
+                            <button class="selector-btn" data-dimension="location-resources">
+                                <i data-lucide="map-pin"></i>
+                                <span>Locations</span>
+                            </button>
+                        </div>
+                    </div>
+
+                    <div class="explorer-controls">
+                        <h3>View Options</h3>
+                        <div class="control-group">
+                            <label class="control-label">
+                                <input type="radio" name="view-mode" value="hierarchy" checked>
+                                <span>Hierarchical View</span>
+                            </label>
+                            <label class="control-label">
+                                <input type="radio" name="view-mode" value="list">
+                                <span>List View</span>
+                            </label>
+                            <label class="control-label">
+                                <input type="radio" name="view-mode" value="network">
+                                <span>Network View</span>
+                            </label>
+                        </div>
+                        
+                        <div class="control-group">
+                            <label class="control-label">
+                                <input type="checkbox" id="show-metadata" checked>
+                                <span>Show Metadata</span>
+                            </label>
+                            <label class="control-label">
+                                <input type="checkbox" id="show-references">
+                                <span>Show References</span>
+                            </label>
+                        </div>
+                    </div>
+                </div>
+
+                <!-- Main Visualization Area -->
+                <div class="explorer-main">
+                    <div class="explorer-header">
+                        <h3 id="current-dimension-title">Task Skills</h3>
+                        <div class="explorer-actions">
+                            <button class="btn btn-sm" onclick="exportDimension()">
+                                <i data-lucide="download"></i>
+                                Export
+                            </button>
+                            <button class="btn btn-sm" onclick="fullscreenVisualization()">
+                                <i data-lucide="maximize"></i>
+                                Fullscreen
+                            </button>
+                        </div>
+                    </div>
+                    
+                    <div class="visualization-container">
+                        <div id="dimension-visualization" class="visualization-content">
+                            <!-- Dynamic content will be loaded here -->
+                            <div class="loading-state">
+                                <div class="loading-spinner"></div>
+                                <p>Loading dimension data...</p>
+                            </div>
+                        </div>
+                    </div>
+                    
+                    <div class="dimension-info">
+                        <div class="info-tabs">
+                            <button class="info-tab active" data-tab="overview">Overview</button>
+                            <button class="info-tab" data-tab="statistics">Statistics</button>
+                            <button class="info-tab" data-tab="reference">Reference</button>
+                        </div>
+                        <div class="info-content">
+                            <div id="info-overview" class="info-panel active">
+                                <p>Select a dimension to view detailed information and hierarchical structure.</p>
+                            </div>
+                            <div id="info-statistics" class="info-panel">
+                                <p>Statistical analysis and metrics will appear here.</p>
+                            </div>
+                            <div id="info-reference" class="info-panel">
+                                <p>Evidence base and citation information will be displayed here.</p>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- About Section -->
+    <section id="about" class="about-section">
+        <div class="section-container">
+            <div class="about-content">
+                <div class="about-text">
+                    <h2>About the Clinical World Model</h2>
+                    <p>
+                        The Clinical Skill-Mix framework provides a comprehensive, evidence-based approach to evaluating 
+                        healthcare AI systems across five critical dimensions of clinical practice.
+                    </p>
+                    <div class="about-features">
+                        <div class="feature">
+                            <i data-lucide="shield-check"></i>
+                            <div>
+                                <h4>Evidence-Based</h4>
+                                <p>All dimensions grounded in established clinical frameworks and real-world data</p>
+                            </div>
+                        </div>
+                        <div class="feature">
+                            <i data-lucide="layers"></i>
+                            <div>
+                                <h4>Hierarchical Structure</h4>
+                                <p>Multi-level organization supporting different depths of analysis</p>
+                            </div>
+                        </div>
+                        <div class="feature">
+                            <i data-lucide="zap"></i>
+                            <div>
+                                <h4>Interoperable</h4>
+                                <p>Standardized format enables cross-dimensional analysis and comparison</p>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+                <div class="about-links">
+                    <h3>Resources</h3>
+                    <div class="resource-links">
+                        <a href="https://github.com/your-username/clinical-world-model" class="resource-link">
+                            <i data-lucide="github"></i>
+                            <span>GitHub Repository</span>
+                        </a>
+                        <a href="README_diseasesDALY.md" class="resource-link">
+                            <i data-lucide="file-text"></i>
+                            <span>DALY Analysis Documentation</span>
+                        </a>
+                        <a href="clinical-skill-mix/" class="resource-link">
+                            <i data-lucide="database"></i>
+                            <span>Raw Data Files</span>
+                        </a>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Footer -->
+    <footer class="footer">
+        <div class="footer-container">
+            <div class="footer-content">
+                <div class="footer-section">
+                    <h4>Clinical World Model</h4>
+                    <p>Evidence-based framework for healthcare AI evaluation</p>
+                </div>
+                <div class="footer-section">
+                    <h4>Dimensions</h4>
+                    <ul>
+                        <li><a href="#" onclick="loadDimension('task-skills')">Task Skills</a></li>
+                        <li><a href="#" onclick="loadDimension('personas')">Personas</a></li>
+                        <li><a href="#" onclick="loadDimension('diseases')">Diseases</a></li>
+                        <li><a href="#" onclick="loadDimension('timeline')">Timeline</a></li>
+                        <li><a href="#" onclick="loadDimension('location-resources')">Location-Resources</a></li>
+                    </ul>
+                </div>
+                <div class="footer-section">
+                    <h4>Resources</h4>
+                    <ul>
+                        <li><a href="https://github.com/your-username/clinical-world-model">GitHub</a></li>
+                        <li><a href="README_diseasesDALY.md">Documentation</a></li>
+                        <li><a href="clinical-skill-mix/">Data</a></li>
+                    </ul>
+                </div>
+            </div>
+            <div class="footer-bottom">
+                <p>&copy; 2025 Clinical World Model. Licensed under MIT License.</p>
+            </div>
+        </div>
+    </footer>
+
+    <!-- Scripts -->
+    <script src="https://cdn.jsdelivr.net/npm/lucide@0.263.1/dist/umd/lucide.js"></script>
+    <script src="assets/js/main.js"></script>
+    <script src="assets/js/dimension-loader.js"></script>
+    <script src="assets/js/visualization.js"></script>
+</body>
+</html>
