@@ -1,0 +1,3109 @@
+{
+  "dimension": "diseases",
+  "description": "Disease categories based on WHO ICD-11 classification and Global Burden of Disease metrics",
+  "reference": {
+    "classification": "WHO ICD-11 (International Classification of Diseases, 11th Revision)",
+    "burden_metric": "DALY (Disability-Adjusted Life Years) from GBD 2019",
+    "data_source": "WHO Global Health Estimates 2021 (Top 25 economies)",
+    "last_updated": "2025-01-30",
+    "sources": [
+      "WHO ICD-11 for Mortality and Morbidity Statistics",
+      "WHO Global Health Estimates 2021",
+      "Analysis based on actual DALY data"
+    ]
+  },
+  "hierarchy": {
+    "structure": "ICD-11 chapter-based with GBD cause categories",
+    "levels": [
+      "chapter",
+      "condition",
+      "subcondition"
+    ],
+    "max_depth": 1
+  },
+  "items": [
+    {
+      "id": "infectious-communicable",
+      "path_components": [
+        "infectious-communicable"
+      ],
+      "depth": 0,
+      "parent_id": null,
+      "children_ids": [
+        "infectious-communicable/tuberculosis",
+        "infectious-communicable/lower-respiratory-infections",
+        "infectious-communicable/diarrhoeal-diseases",
+        "infectious-communicable/hiv/aids",
+        "infectious-communicable/upper-respiratory-infections",
+        "infectious-communicable/meningitis",
+        "infectious-communicable/encephalitis",
+        "infectious-communicable/dengue",
+        "infectious-communicable/whooping-cough",
+        "infectious-communicable/acute-hepatitis-a"
+      ],
+      "name": "Infectious Communicable",
+      "description": "Certain infectious or parasitic diseases",
+      "level_info": {
+        "0": {
+          "name": "Infectious Communicable",
+          "level_name": "Chapter",
+          "icd11_chapters": [
+            "01"
+          ]
+        }
+      },
+      "metadata": {
+        "icd11_chapters": [
+          "01"
+        ],
+        "chapter_type": "disease_category"
+      }
+    },
+    {
+      "id": "infectious-communicable/tuberculosis",
+      "path_components": [
+        "infectious-communicable",
+        "tuberculosis"
+      ],
+      "depth": 1,
+      "parent_id": "infectious-communicable",
+      "children_ids": [],
+      "name": "Tuberculosis",
+      "description": null,
+      "level_info": {
+        "0": {
+          "name": "Infectious Communicable",
+          "level_name": "Chapter"
+        },
+        "1": {
+          "name": "Tuberculosis",
+          "level_name": "Condition"
+        }
+      },
+      "metadata": {
+        "daly_rank": "high",
+        "global_rank": 9,
+        "daly_total": 32428378.3,
+        "daly_per_100k": 673.9037742741958,
+        "who_code": 30,
+        "deaths_total": 596003.4,
+        "disease_type": "Communicable, maternal, perinatal and nutritional conditions"
+      }
+    },
+    {
+      "id": "infectious-communicable/lower-respiratory-infections",
+      "path_components": [
+        "infectious-communicable",
+        "lower-respiratory-infections"
+      ],
+      "depth": 1,
+      "parent_id": "infectious-communicable",
+      "children_ids": [],
+      "name": "Lower respiratory infections",
+      "description": null,
+      "level_info": {
+        "0": {
+          "name": "Infectious Communicable",
+          "level_name": "Chapter"
+        },
+        "1": {
+          "name": "Lower respiratory infections",
+          "level_name": "Condition"
+        }
+      },
+      "metadata": {
+        "daly_rank": "high",
+        "global_rank": 10,
+        "daly_total": 31451377.7,
+        "daly_per_100k": 653.600434226872,
+        "who_code": 390,
+        "deaths_total": 1194793.6,
+        "disease_type": "Communicable, maternal, perinatal and nutritional conditions"
+      }
+    },
+    {
+      "id": "infectious-communicable/diarrhoeal-diseases",
+      "path_components": [
+        "infectious-communicable",
+        "diarrhoeal-diseases"
+      ],
+      "depth": 1,
+      "parent_id": "infectious-communicable",
+      "children_ids": [],
+      "name": "Diarrhoeal diseases",
+      "description": null,
+      "level_info": {
+        "0": {
+          "name": "Infectious Communicable",
+          "level_name": "Chapter"
+        },
+        "1": {
+          "name": "Diarrhoeal diseases",
+          "level_name": "Condition"
+        }
+      },
+      "metadata": {
+        "daly_rank": "high",
+        "global_rank": 11,
+        "daly_total": 30321877.1,
+        "daly_per_100k": 630.1279463231224,
+        "who_code": 110,
+        "deaths_total": 789423.1,
+        "disease_type": "Communicable, maternal, perinatal and nutritional conditions"
+      }
+    },
+    {
+      "id": "infectious-communicable/hiv/aids",
+      "path_components": [
+        "infectious-communicable",
+        "hiv/aids"
+      ],
+      "depth": 1,
+      "parent_id": "infectious-communicable",
+      "children_ids": [],
+      "name": "HIV/AIDS",
+      "description": null,
+      "level_info": {
+        "0": {
+          "name": "Infectious Communicable",
+          "level_name": "Chapter"
+        },
+        "1": {
+          "name": "HIV/AIDS",
+          "level_name": "Condition"
+        }
+      },
+      "metadata": {
+        "daly_rank": "moderate",
+        "global_rank": 38,
+        "daly_total": 9083760.8,
+        "daly_per_100k": 188.77233486954816,
+        "who_code": 100,
+        "deaths_total": 170442.8,
+        "disease_type": "Communicable, maternal, perinatal and nutritional conditions"
+      }
+    },
+    {
+      "id": "infectious-communicable/upper-respiratory-infections",
+      "path_components": [
+        "infectious-communicable",
+        "upper-respiratory-infections"
+      ],
+      "depth": 1,
+      "parent_id": "infectious-communicable",
+      "children_ids": [],
+      "name": "Upper respiratory infections",
+      "description": null,
+      "level_info": {
+        "0": {
+          "name": "Infectious Communicable",
+          "level_name": "Chapter"
+        },
+        "1": {
+          "name": "Upper respiratory infections",
+          "level_name": "Condition"
+        }
+      },
+      "metadata": {
+        "daly_rank": "low",
+        "global_rank": 60,
+        "daly_total": 3752126.1,
+        "daly_per_100k": 77.97404843839257,
+        "who_code": 400,
+        "deaths_total": 4793.1,
+        "disease_type": "Communicable, maternal, perinatal and nutritional conditions"
+      }
+    },
+    {
+      "id": "infectious-communicable/meningitis",
+      "path_components": [
+        "infectious-communicable",
+        "meningitis"
+      ],
+      "depth": 1,
+      "parent_id": "infectious-communicable",
+      "children_ids": [],
+      "name": "Meningitis",
+      "description": null,
+      "level_info": {
+        "0": {
+          "name": "Infectious Communicable",
+          "level_name": "Chapter"
+        },
+        "1": {
+          "name": "Meningitis",
+          "level_name": "Condition"
+        }
+      },
+      "metadata": {
+        "daly_rank": "low",
+        "global_rank": 67,
+        "daly_total": 2932842.4,
+        "daly_per_100k": 60.94827019800094,
+        "who_code": 170,
+        "deaths_total": 49227.4,
+        "disease_type": "Communicable, maternal, perinatal and nutritional conditions"
+      }
+    },
+    {
+      "id": "infectious-communicable/encephalitis",
+      "path_components": [
+        "infectious-communicable",
+        "encephalitis"
+      ],
+      "depth": 1,
+      "parent_id": "infectious-communicable",
+      "children_ids": [],
+      "name": "Encephalitis",
+      "description": null,
+      "level_info": {
+        "0": {
+          "name": "Infectious Communicable",
+          "level_name": "Chapter"
+        },
+        "1": {
+          "name": "Encephalitis",
+          "level_name": "Condition"
+        }
+      },
+      "metadata": {
+        "daly_rank": "low",
+        "global_rank": 72,
+        "daly_total": 2704674.0,
+        "daly_per_100k": 56.20663481594102,
+        "who_code": 180,
+        "deaths_total": 55186.7,
+        "disease_type": "Communicable, maternal, perinatal and nutritional conditions"
+      }
+    },
+    {
+      "id": "infectious-communicable/dengue",
+      "path_components": [
+        "infectious-communicable",
+        "dengue"
+      ],
+      "depth": 1,
+      "parent_id": "infectious-communicable",
+      "children_ids": [],
+      "name": "Dengue",
+      "description": null,
+      "level_info": {
+        "0": {
+          "name": "Infectious Communicable",
+          "level_name": "Chapter"
+        },
+        "1": {
+          "name": "Dengue",
+          "level_name": "Condition"
+        }
+      },
+      "metadata": {
+        "daly_rank": "low",
+        "global_rank": 84,
+        "daly_total": 1539994.1,
+        "daly_per_100k": 32.003075415892546,
+        "who_code": 300,
+        "deaths_total": 25721.3,
+        "disease_type": "Communicable, maternal, perinatal and nutritional conditions"
+      }
+    },
+    {
+      "id": "infectious-communicable/whooping-cough",
+      "path_components": [
+        "infectious-communicable",
+        "whooping-cough"
+      ],
+      "depth": 1,
+      "parent_id": "infectious-communicable",
+      "children_ids": [],
+      "name": "Whooping cough",
+      "description": null,
+      "level_info": {
+        "0": {
+          "name": "Infectious Communicable",
+          "level_name": "Chapter"
+        },
+        "1": {
+          "name": "Whooping cough",
+          "level_name": "Condition"
+        }
+      },
+      "metadata": {
+        "daly_rank": "low",
+        "global_rank": 89,
+        "daly_total": 1183092.2,
+        "daly_per_100k": 24.58619088251976,
+        "who_code": 130,
+        "deaths_total": 13180.6,
+        "disease_type": "Communicable, maternal, perinatal and nutritional conditions"
+      }
+    },
+    {
+      "id": "infectious-communicable/acute-hepatitis-a",
+      "path_components": [
+        "infectious-communicable",
+        "acute-hepatitis-a"
+      ],
+      "depth": 1,
+      "parent_id": "infectious-communicable",
+      "children_ids": [],
+      "name": "Acute hepatitis A",
+      "description": null,
+      "level_info": {
+        "0": {
+          "name": "Infectious Communicable",
+          "level_name": "Chapter"
+        },
+        "1": {
+          "name": "Acute hepatitis A",
+          "level_name": "Condition"
+        }
+      },
+      "metadata": {
+        "daly_rank": "low",
+        "global_rank": 91,
+        "daly_total": 1123759.2,
+        "daly_per_100k": 23.353174162747166,
+        "who_code": 186,
+        "deaths_total": 19370.6,
+        "disease_type": "Communicable, maternal, perinatal and nutritional conditions"
+      }
+    },
+    {
+      "id": "maternal-neonatal",
+      "path_components": [
+        "maternal-neonatal"
+      ],
+      "depth": 0,
+      "parent_id": null,
+      "children_ids": [
+        "maternal-neonatal/neonatal-conditions",
+        "maternal-neonatal/congenital-anomalies",
+        "maternal-neonatal/maternal-conditions"
+      ],
+      "name": "Maternal Neonatal",
+      "description": "Pregnancy, childbirth and neonatal conditions",
+      "level_info": {
+        "0": {
+          "name": "Maternal Neonatal",
+          "level_name": "Chapter",
+          "icd11_chapters": [
+            "18"
+          ]
+        }
+      },
+      "metadata": {
+        "icd11_chapters": [
+          "18"
+        ],
+        "chapter_type": "disease_category"
+      }
+    },
+    {
+      "id": "maternal-neonatal/neonatal-conditions",
+      "path_components": [
+        "maternal-neonatal",
+        "neonatal-conditions"
+      ],
+      "depth": 1,
+      "parent_id": "maternal-neonatal",
+      "children_ids": [],
+      "name": "Neonatal conditions",
+      "description": null,
+      "level_info": {
+        "0": {
+          "name": "Maternal Neonatal",
+          "level_name": "Chapter"
+        },
+        "1": {
+          "name": "Neonatal conditions",
+          "level_name": "Condition"
+        }
+      },
+      "metadata": {
+        "daly_rank": "high",
+        "global_rank": 3,
+        "daly_total": 65485281.1,
+        "daly_per_100k": 1360.8691031181372,
+        "who_code": 490,
+        "deaths_total": 604949.3,
+        "disease_type": "Communicable, maternal, perinatal and nutritional conditions"
+      }
+    },
+    {
+      "id": "maternal-neonatal/congenital-anomalies",
+      "path_components": [
+        "maternal-neonatal",
+        "congenital-anomalies"
+      ],
+      "depth": 1,
+      "parent_id": "maternal-neonatal",
+      "children_ids": [],
+      "name": "Congenital anomalies",
+      "description": null,
+      "level_info": {
+        "0": {
+          "name": "Maternal Neonatal",
+          "level_name": "Chapter"
+        },
+        "1": {
+          "name": "Congenital anomalies",
+          "level_name": "Condition"
+        }
+      },
+      "metadata": {
+        "daly_rank": "high",
+        "global_rank": 20,
+        "daly_total": 20158568.4,
+        "daly_per_100k": 418.92120546541594,
+        "who_code": 1400,
+        "deaths_total": 203114.0,
+        "disease_type": "Noncommunicable diseases"
+      }
+    },
+    {
+      "id": "maternal-neonatal/maternal-conditions",
+      "path_components": [
+        "maternal-neonatal",
+        "maternal-conditions"
+      ],
+      "depth": 1,
+      "parent_id": "maternal-neonatal",
+      "children_ids": [],
+      "name": "Maternal conditions",
+      "description": null,
+      "level_info": {
+        "0": {
+          "name": "Maternal Neonatal",
+          "level_name": "Chapter"
+        },
+        "1": {
+          "name": "Maternal conditions",
+          "level_name": "Condition"
+        }
+      },
+      "metadata": {
+        "daly_rank": "low",
+        "global_rank": 69,
+        "daly_total": 2863160.8000000003,
+        "daly_per_100k": 59.50019614375617,
+        "who_code": 420,
+        "deaths_total": 40150.6,
+        "disease_type": "Communicable, maternal, perinatal and nutritional conditions"
+      }
+    },
+    {
+      "id": "nutritional",
+      "path_components": [
+        "nutritional"
+      ],
+      "depth": 0,
+      "parent_id": null,
+      "children_ids": [
+        "nutritional/iron-deficiency-anaemia",
+        "nutritional/protein-energy-malnutrition",
+        "nutritional/iodine-deficiency",
+        "nutritional/vitamin-a-deficiency"
+      ],
+      "name": "Nutritional",
+      "description": "Nutritional and metabolic disorders",
+      "level_info": {
+        "0": {
+          "name": "Nutritional",
+          "level_name": "Chapter",
+          "icd11_chapters": [
+            "05"
+          ]
+        }
+      },
+      "metadata": {
+        "icd11_chapters": [
+          "05"
+        ],
+        "chapter_type": "disease_category"
+      }
+    },
+    {
+      "id": "nutritional/iron-deficiency-anaemia",
+      "path_components": [
+        "nutritional",
+        "iron-deficiency-anaemia"
+      ],
+      "depth": 1,
+      "parent_id": "nutritional",
+      "children_ids": [],
+      "name": "Iron-deficiency anaemia",
+      "description": null,
+      "level_info": {
+        "0": {
+          "name": "Nutritional",
+          "level_name": "Chapter"
+        },
+        "1": {
+          "name": "Iron-deficiency anaemia",
+          "level_name": "Condition"
+        }
+      },
+      "metadata": {
+        "daly_rank": "high",
+        "global_rank": 26,
+        "daly_total": 15570607.5,
+        "daly_per_100k": 323.5774254549171,
+        "who_code": 580,
+        "deaths_total": 14985.0,
+        "disease_type": "Communicable, maternal, perinatal and nutritional conditions"
+      }
+    },
+    {
+      "id": "nutritional/protein-energy-malnutrition",
+      "path_components": [
+        "nutritional",
+        "protein-energy-malnutrition"
+      ],
+      "depth": 1,
+      "parent_id": "nutritional",
+      "children_ids": [],
+      "name": "Protein-energy malnutrition",
+      "description": null,
+      "level_info": {
+        "0": {
+          "name": "Nutritional",
+          "level_name": "Chapter"
+        },
+        "1": {
+          "name": "Protein-energy malnutrition",
+          "level_name": "Condition"
+        }
+      },
+      "metadata": {
+        "daly_rank": "low",
+        "global_rank": 56,
+        "daly_total": 4716293.8,
+        "daly_per_100k": 98.01070417406564,
+        "who_code": 550,
+        "deaths_total": 73592.7,
+        "disease_type": "Communicable, maternal, perinatal and nutritional conditions"
+      }
+    },
+    {
+      "id": "nutritional/iodine-deficiency",
+      "path_components": [
+        "nutritional",
+        "iodine-deficiency"
+      ],
+      "depth": 1,
+      "parent_id": "nutritional",
+      "children_ids": [],
+      "name": "Iodine deficiency",
+      "description": null,
+      "level_info": {
+        "0": {
+          "name": "Nutritional",
+          "level_name": "Chapter"
+        },
+        "1": {
+          "name": "Iodine deficiency",
+          "level_name": "Condition"
+        }
+      },
+      "metadata": {
+        "daly_rank": "low",
+        "global_rank": 85,
+        "daly_total": 1477384.3,
+        "daly_per_100k": 30.701962540736762,
+        "who_code": 560,
+        "deaths_total": 23.5,
+        "disease_type": "Communicable, maternal, perinatal and nutritional conditions"
+      }
+    },
+    {
+      "id": "nutritional/vitamin-a-deficiency",
+      "path_components": [
+        "nutritional",
+        "vitamin-a-deficiency"
+      ],
+      "depth": 1,
+      "parent_id": "nutritional",
+      "children_ids": [],
+      "name": "Vitamin A deficiency",
+      "description": null,
+      "level_info": {
+        "0": {
+          "name": "Nutritional",
+          "level_name": "Chapter"
+        },
+        "1": {
+          "name": "Vitamin A deficiency",
+          "level_name": "Condition"
+        }
+      },
+      "metadata": {
+        "daly_rank": "low",
+        "global_rank": 111,
+        "daly_total": 415113.1,
+        "daly_per_100k": 8.626588793700536,
+        "who_code": 570,
+        "deaths_total": 1.9000000000000001,
+        "disease_type": "Communicable, maternal, perinatal and nutritional conditions"
+      }
+    },
+    {
+      "id": "neoplasms",
+      "path_components": [
+        "neoplasms"
+      ],
+      "depth": 0,
+      "parent_id": null,
+      "children_ids": [
+        "neoplasms/trachea,-bronchus,-lung-cancers",
+        "neoplasms/colon-and-rectum-cancers",
+        "neoplasms/stomach-cancer",
+        "neoplasms/breast-cancer",
+        "neoplasms/liver-cancer",
+        "neoplasms/oesophagus-cancer",
+        "neoplasms/mouth-and-oropharynx-cancers",
+        "neoplasms/pancreas-cancer",
+        "neoplasms/leukaemia",
+        "neoplasms/lymphomas,-multiple-myeloma"
+      ],
+      "name": "Neoplasms",
+      "description": "Neoplasms (cancers)",
+      "level_info": {
+        "0": {
+          "name": "Neoplasms",
+          "level_name": "Chapter",
+          "icd11_chapters": [
+            "02"
+          ]
+        }
+      },
+      "metadata": {
+        "icd11_chapters": [
+          "02"
+        ],
+        "chapter_type": "disease_category"
+      }
+    },
+    {
+      "id": "neoplasms/trachea,-bronchus,-lung-cancers",
+      "path_components": [
+        "neoplasms",
+        "trachea,-bronchus,-lung-cancers"
+      ],
+      "depth": 1,
+      "parent_id": "neoplasms",
+      "children_ids": [],
+      "name": "Trachea, bronchus, lung cancers",
+      "description": null,
+      "level_info": {
+        "0": {
+          "name": "Neoplasms",
+          "level_name": "Chapter"
+        },
+        "1": {
+          "name": "Trachea, bronchus, lung cancers",
+          "level_name": "Condition"
+        }
+      },
+      "metadata": {
+        "daly_rank": "high",
+        "global_rank": 7,
+        "daly_total": 34157496.9,
+        "daly_per_100k": 709.8371021738433,
+        "who_code": 680,
+        "deaths_total": 1499726.4,
+        "disease_type": "Noncommunicable diseases"
+      }
+    },
+    {
+      "id": "neoplasms/colon-and-rectum-cancers",
+      "path_components": [
+        "neoplasms",
+        "colon-and-rectum-cancers"
+      ],
+      "depth": 1,
+      "parent_id": "neoplasms",
+      "children_ids": [],
+      "name": "Colon and rectum cancers",
+      "description": null,
+      "level_info": {
+        "0": {
+          "name": "Neoplasms",
+          "level_name": "Chapter"
+        },
+        "1": {
+          "name": "Colon and rectum cancers",
+          "level_name": "Condition"
+        }
+      },
+      "metadata": {
+        "daly_rank": "high",
+        "global_rank": 24,
+        "daly_total": 16686297.3,
+        "daly_per_100k": 346.7629070162699,
+        "who_code": 650,
+        "deaths_total": 721762.1,
+        "disease_type": "Noncommunicable diseases"
+      }
+    },
+    {
+      "id": "neoplasms/stomach-cancer",
+      "path_components": [
+        "neoplasms",
+        "stomach-cancer"
+      ],
+      "depth": 1,
+      "parent_id": "neoplasms",
+      "children_ids": [],
+      "name": "Stomach cancer",
+      "description": null,
+      "level_info": {
+        "0": {
+          "name": "Neoplasms",
+          "level_name": "Chapter"
+        },
+        "1": {
+          "name": "Stomach cancer",
+          "level_name": "Condition"
+        }
+      },
+      "metadata": {
+        "daly_rank": "high",
+        "global_rank": 25,
+        "daly_total": 16290565.0,
+        "daly_per_100k": 338.5390763915911,
+        "who_code": 640,
+        "deaths_total": 681823.0,
+        "disease_type": "Noncommunicable diseases"
+      }
+    },
+    {
+      "id": "neoplasms/breast-cancer",
+      "path_components": [
+        "neoplasms",
+        "breast-cancer"
+      ],
+      "depth": 1,
+      "parent_id": "neoplasms",
+      "children_ids": [],
+      "name": "Breast cancer",
+      "description": null,
+      "level_info": {
+        "0": {
+          "name": "Neoplasms",
+          "level_name": "Chapter"
+        },
+        "1": {
+          "name": "Breast cancer",
+          "level_name": "Condition"
+        }
+      },
+      "metadata": {
+        "daly_rank": "moderate",
+        "global_rank": 35,
+        "daly_total": 12682648.5,
+        "daly_per_100k": 263.5618905415004,
+        "who_code": 700,
+        "deaths_total": 429408.6,
+        "disease_type": "Noncommunicable diseases"
+      }
+    },
+    {
+      "id": "neoplasms/liver-cancer",
+      "path_components": [
+        "neoplasms",
+        "liver-cancer"
+      ],
+      "depth": 1,
+      "parent_id": "neoplasms",
+      "children_ids": [],
+      "name": "Liver cancer",
+      "description": null,
+      "level_info": {
+        "0": {
+          "name": "Neoplasms",
+          "level_name": "Chapter"
+        },
+        "1": {
+          "name": "Liver cancer",
+          "level_name": "Condition"
+        }
+      },
+      "metadata": {
+        "daly_rank": "moderate",
+        "global_rank": 37,
+        "daly_total": 10690501.8,
+        "daly_per_100k": 222.1624974661494,
+        "who_code": 660,
+        "deaths_total": 410280.9,
+        "disease_type": "Noncommunicable diseases"
+      }
+    },
+    {
+      "id": "neoplasms/oesophagus-cancer",
+      "path_components": [
+        "neoplasms",
+        "oesophagus-cancer"
+      ],
+      "depth": 1,
+      "parent_id": "neoplasms",
+      "children_ids": [],
+      "name": "Oesophagus cancer",
+      "description": null,
+      "level_info": {
+        "0": {
+          "name": "Neoplasms",
+          "level_name": "Chapter"
+        },
+        "1": {
+          "name": "Oesophagus cancer",
+          "level_name": "Condition"
+        }
+      },
+      "metadata": {
+        "daly_rank": "moderate",
+        "global_rank": 39,
+        "daly_total": 8857315.4,
+        "daly_per_100k": 184.06650566294147,
+        "who_code": 630,
+        "deaths_total": 374334.7,
+        "disease_type": "Noncommunicable diseases"
+      }
+    },
+    {
+      "id": "neoplasms/mouth-and-oropharynx-cancers",
+      "path_components": [
+        "neoplasms",
+        "mouth-and-oropharynx-cancers"
+      ],
+      "depth": 1,
+      "parent_id": "neoplasms",
+      "children_ids": [],
+      "name": "Mouth and oropharynx cancers",
+      "description": null,
+      "level_info": {
+        "0": {
+          "name": "Neoplasms",
+          "level_name": "Chapter"
+        },
+        "1": {
+          "name": "Mouth and oropharynx cancers",
+          "level_name": "Condition"
+        }
+      },
+      "metadata": {
+        "daly_rank": "moderate",
+        "global_rank": 40,
+        "daly_total": 8295234.2,
+        "daly_per_100k": 172.3857290720082,
+        "who_code": 620,
+        "deaths_total": 283875.7,
+        "disease_type": "Noncommunicable diseases"
+      }
+    },
+    {
+      "id": "neoplasms/pancreas-cancer",
+      "path_components": [
+        "neoplasms",
+        "pancreas-cancer"
+      ],
+      "depth": 1,
+      "parent_id": "neoplasms",
+      "children_ids": [],
+      "name": "Pancreas cancer",
+      "description": null,
+      "level_info": {
+        "0": {
+          "name": "Neoplasms",
+          "level_name": "Chapter"
+        },
+        "1": {
+          "name": "Pancreas cancer",
+          "level_name": "Condition"
+        }
+      },
+      "metadata": {
+        "daly_rank": "moderate",
+        "global_rank": 41,
+        "daly_total": 8123873.3,
+        "daly_per_100k": 168.82462724308868,
+        "who_code": 670,
+        "deaths_total": 366988.1,
+        "disease_type": "Noncommunicable diseases"
+      }
+    },
+    {
+      "id": "neoplasms/leukaemia",
+      "path_components": [
+        "neoplasms",
+        "leukaemia"
+      ],
+      "depth": 1,
+      "parent_id": "neoplasms",
+      "children_ids": [],
+      "name": "Leukaemia",
+      "description": null,
+      "level_info": {
+        "0": {
+          "name": "Neoplasms",
+          "level_name": "Chapter"
+        },
+        "1": {
+          "name": "Leukaemia",
+          "level_name": "Condition"
+        }
+      },
+      "metadata": {
+        "daly_rank": "moderate",
+        "global_rank": 42,
+        "daly_total": 7120432.7,
+        "daly_per_100k": 147.97182969200168,
+        "who_code": 770,
+        "deaths_total": 222080.2,
+        "disease_type": "Noncommunicable diseases"
+      }
+    },
+    {
+      "id": "neoplasms/lymphomas,-multiple-myeloma",
+      "path_components": [
+        "neoplasms",
+        "lymphomas,-multiple-myeloma"
+      ],
+      "depth": 1,
+      "parent_id": "neoplasms",
+      "children_ids": [],
+      "name": "Lymphomas, multiple myeloma",
+      "description": null,
+      "level_info": {
+        "0": {
+          "name": "Neoplasms",
+          "level_name": "Chapter"
+        },
+        "1": {
+          "name": "Lymphomas, multiple myeloma",
+          "level_name": "Condition"
+        }
+      },
+      "metadata": {
+        "daly_rank": "moderate",
+        "global_rank": 44,
+        "daly_total": 6969120.6,
+        "daly_per_100k": 144.82736793877996,
+        "who_code": 760,
+        "deaths_total": 275069.5,
+        "disease_type": "Noncommunicable diseases"
+      }
+    },
+    {
+      "id": "cardiovascular",
+      "path_components": [
+        "cardiovascular"
+      ],
+      "depth": 0,
+      "parent_id": null,
+      "children_ids": [
+        "cardiovascular/ischaemic-heart-disease",
+        "cardiovascular/stroke",
+        "cardiovascular/hypertensive-heart-disease",
+        "cardiovascular/rheumatic-heart-disease",
+        "cardiovascular/cardiomyopathy,-myocarditis,-endocarditis"
+      ],
+      "name": "Cardiovascular",
+      "description": "Diseases of the circulatory system",
+      "level_info": {
+        "0": {
+          "name": "Cardiovascular",
+          "level_name": "Chapter",
+          "icd11_chapters": [
+            "11"
+          ]
+        }
+      },
+      "metadata": {
+        "icd11_chapters": [
+          "11"
+        ],
+        "chapter_type": "disease_category"
+      }
+    },
+    {
+      "id": "cardiovascular/ischaemic-heart-disease",
+      "path_components": [
+        "cardiovascular",
+        "ischaemic-heart-disease"
+      ],
+      "depth": 1,
+      "parent_id": "cardiovascular",
+      "children_ids": [],
+      "name": "Ischaemic heart disease",
+      "description": null,
+      "level_info": {
+        "0": {
+          "name": "Cardiovascular",
+          "level_name": "Chapter"
+        },
+        "1": {
+          "name": "Ischaemic heart disease",
+          "level_name": "Condition"
+        }
+      },
+      "metadata": {
+        "daly_rank": "high",
+        "global_rank": 1,
+        "daly_total": 120521615.1,
+        "daly_per_100k": 2504.5955288338273,
+        "who_code": 1130,
+        "deaths_total": 6030804.1,
+        "disease_type": "Noncommunicable diseases"
+      }
+    },
+    {
+      "id": "cardiovascular/stroke",
+      "path_components": [
+        "cardiovascular",
+        "stroke"
+      ],
+      "depth": 1,
+      "parent_id": "cardiovascular",
+      "children_ids": [],
+      "name": "Stroke",
+      "description": null,
+      "level_info": {
+        "0": {
+          "name": "Cardiovascular",
+          "level_name": "Chapter"
+        },
+        "1": {
+          "name": "Stroke",
+          "level_name": "Condition"
+        }
+      },
+      "metadata": {
+        "daly_rank": "high",
+        "global_rank": 2,
+        "daly_total": 94851668.0,
+        "daly_per_100k": 1971.1407234139417,
+        "who_code": 1140,
+        "deaths_total": 4341028.0,
+        "disease_type": "Noncommunicable diseases"
+      }
+    },
+    {
+      "id": "cardiovascular/hypertensive-heart-disease",
+      "path_components": [
+        "cardiovascular",
+        "hypertensive-heart-disease"
+      ],
+      "depth": 1,
+      "parent_id": "cardiovascular",
+      "children_ids": [],
+      "name": "Hypertensive heart disease",
+      "description": null,
+      "level_info": {
+        "0": {
+          "name": "Cardiovascular",
+          "level_name": "Chapter"
+        },
+        "1": {
+          "name": "Hypertensive heart disease",
+          "level_name": "Condition"
+        }
+      },
+      "metadata": {
+        "daly_rank": "moderate",
+        "global_rank": 32,
+        "daly_total": 13274917.3,
+        "daly_per_100k": 275.8700046264052,
+        "who_code": 1120,
+        "deaths_total": 732805.3,
+        "disease_type": "Noncommunicable diseases"
+      }
+    },
+    {
+      "id": "cardiovascular/rheumatic-heart-disease",
+      "path_components": [
+        "cardiovascular",
+        "rheumatic-heart-disease"
+      ],
+      "depth": 1,
+      "parent_id": "cardiovascular",
+      "children_ids": [],
+      "name": "Rheumatic heart disease",
+      "description": null,
+      "level_info": {
+        "0": {
+          "name": "Cardiovascular",
+          "level_name": "Chapter"
+        },
+        "1": {
+          "name": "Rheumatic heart disease",
+          "level_name": "Condition"
+        }
+      },
+      "metadata": {
+        "daly_rank": "moderate",
+        "global_rank": 46,
+        "daly_total": 6946529.8,
+        "daly_per_100k": 144.35790180504262,
+        "who_code": 1110,
+        "deaths_total": 219138.3,
+        "disease_type": "Noncommunicable diseases"
+      }
+    },
+    {
+      "id": "cardiovascular/cardiomyopathy,-myocarditis,-endocarditis",
+      "path_components": [
+        "cardiovascular",
+        "cardiomyopathy,-myocarditis,-endocarditis"
+      ],
+      "depth": 1,
+      "parent_id": "cardiovascular",
+      "children_ids": [],
+      "name": "Cardiomyopathy, myocarditis, endocarditis",
+      "description": null,
+      "level_info": {
+        "0": {
+          "name": "Cardiovascular",
+          "level_name": "Chapter"
+        },
+        "1": {
+          "name": "Cardiomyopathy, myocarditis, endocarditis",
+          "level_name": "Condition"
+        }
+      },
+      "metadata": {
+        "daly_rank": "moderate",
+        "global_rank": 50,
+        "daly_total": 5923231.3,
+        "daly_per_100k": 123.09243132793513,
+        "who_code": 1150,
+        "deaths_total": 214695.7,
+        "disease_type": "Noncommunicable diseases"
+      }
+    },
+    {
+      "id": "respiratory",
+      "path_components": [
+        "respiratory"
+      ],
+      "depth": 0,
+      "parent_id": null,
+      "children_ids": [
+        "respiratory/chronic-obstructive-pulmonary-disease",
+        "respiratory/asthma"
+      ],
+      "name": "Respiratory",
+      "description": "Diseases of the respiratory system",
+      "level_info": {
+        "0": {
+          "name": "Respiratory",
+          "level_name": "Chapter",
+          "icd11_chapters": [
+            "12"
+          ]
+        }
+      },
+      "metadata": {
+        "icd11_chapters": [
+          "12"
+        ],
+        "chapter_type": "disease_category"
+      }
+    },
+    {
+      "id": "respiratory/chronic-obstructive-pulmonary-disease",
+      "path_components": [
+        "respiratory",
+        "chronic-obstructive-pulmonary-disease"
+      ],
+      "depth": 1,
+      "parent_id": "respiratory",
+      "children_ids": [],
+      "name": "Chronic obstructive pulmonary disease",
+      "description": null,
+      "level_info": {
+        "0": {
+          "name": "Respiratory",
+          "level_name": "Chapter"
+        },
+        "1": {
+          "name": "Chronic obstructive pulmonary disease",
+          "level_name": "Condition"
+        }
+      },
+      "metadata": {
+        "daly_rank": "high",
+        "global_rank": 4,
+        "daly_total": 57489649.0,
+        "daly_per_100k": 1194.7094943936418,
+        "who_code": 1180,
+        "deaths_total": 2597479.2,
+        "disease_type": "Noncommunicable diseases"
+      }
+    },
+    {
+      "id": "respiratory/asthma",
+      "path_components": [
+        "respiratory",
+        "asthma"
+      ],
+      "depth": 1,
+      "parent_id": "respiratory",
+      "children_ids": [],
+      "name": "Asthma",
+      "description": null,
+      "level_info": {
+        "0": {
+          "name": "Respiratory",
+          "level_name": "Chapter"
+        },
+        "1": {
+          "name": "Asthma",
+          "level_name": "Condition"
+        }
+      },
+      "metadata": {
+        "daly_rank": "moderate",
+        "global_rank": 34,
+        "daly_total": 12734166.6,
+        "daly_per_100k": 264.63250350007183,
+        "who_code": 1190,
+        "deaths_total": 277263.5,
+        "disease_type": "Noncommunicable diseases"
+      }
+    },
+    {
+      "id": "neurological",
+      "path_components": [
+        "neurological"
+      ],
+      "depth": 0,
+      "parent_id": null,
+      "children_ids": [
+        "neurological/alzheimer-disease-and-other-dementias",
+        "neurological/migraine",
+        "neurological/epilepsy",
+        "neurological/parkinson-disease",
+        "neurological/non-migraine-headache",
+        "neurological/multiple-sclerosis"
+      ],
+      "name": "Neurological",
+      "description": "Diseases of the nervous system",
+      "level_info": {
+        "0": {
+          "name": "Neurological",
+          "level_name": "Chapter",
+          "icd11_chapters": [
+            "08"
+          ]
+        }
+      },
+      "metadata": {
+        "icd11_chapters": [
+          "08"
+        ],
+        "chapter_type": "disease_category"
+      }
+    },
+    {
+      "id": "neurological/alzheimer-disease-and-other-dementias",
+      "path_components": [
+        "neurological",
+        "alzheimer-disease-and-other-dementias"
+      ],
+      "depth": 1,
+      "parent_id": "neurological",
+      "children_ids": [],
+      "name": "Alzheimer disease and other dementias",
+      "description": null,
+      "level_info": {
+        "0": {
+          "name": "Neurological",
+          "level_name": "Chapter"
+        },
+        "1": {
+          "name": "Alzheimer disease and other dementias",
+          "level_name": "Condition"
+        }
+      },
+      "metadata": {
+        "daly_rank": "high",
+        "global_rank": 18,
+        "daly_total": 22529237.4,
+        "daly_per_100k": 468.1867830368615,
+        "who_code": 950,
+        "deaths_total": 1332890.0,
+        "disease_type": "Noncommunicable diseases"
+      }
+    },
+    {
+      "id": "neurological/migraine",
+      "path_components": [
+        "neurological",
+        "migraine"
+      ],
+      "depth": 1,
+      "parent_id": "neurological",
+      "children_ids": [],
+      "name": "Migraine",
+      "description": null,
+      "level_info": {
+        "0": {
+          "name": "Neurological",
+          "level_name": "Chapter"
+        },
+        "1": {
+          "name": "Migraine",
+          "level_name": "Condition"
+        }
+      },
+      "metadata": {
+        "daly_rank": "high",
+        "global_rank": 22,
+        "daly_total": 17634798.9,
+        "daly_per_100k": 366.4740008684442,
+        "who_code": 990,
+        "deaths_total": 14.9,
+        "disease_type": "Noncommunicable diseases"
+      }
+    },
+    {
+      "id": "neurological/epilepsy",
+      "path_components": [
+        "neurological",
+        "epilepsy"
+      ],
+      "depth": 1,
+      "parent_id": "neurological",
+      "children_ids": [],
+      "name": "Epilepsy",
+      "description": null,
+      "level_info": {
+        "0": {
+          "name": "Neurological",
+          "level_name": "Chapter"
+        },
+        "1": {
+          "name": "Epilepsy",
+          "level_name": "Condition"
+        }
+      },
+      "metadata": {
+        "daly_rank": "moderate",
+        "global_rank": 45,
+        "daly_total": 6947241.8,
+        "daly_per_100k": 144.37269808880507,
+        "who_code": 970,
+        "deaths_total": 67804.9,
+        "disease_type": "Noncommunicable diseases"
+      }
+    },
+    {
+      "id": "neurological/parkinson-disease",
+      "path_components": [
+        "neurological",
+        "parkinson-disease"
+      ],
+      "depth": 1,
+      "parent_id": "neurological",
+      "children_ids": [],
+      "name": "Parkinson disease",
+      "description": null,
+      "level_info": {
+        "0": {
+          "name": "Neurological",
+          "level_name": "Chapter"
+        },
+        "1": {
+          "name": "Parkinson disease",
+          "level_name": "Condition"
+        }
+      },
+      "metadata": {
+        "daly_rank": "low",
+        "global_rank": 58,
+        "daly_total": 4469507.2,
+        "daly_per_100k": 92.8821584403958,
+        "who_code": 960,
+        "deaths_total": 256099.8,
+        "disease_type": "Noncommunicable diseases"
+      }
+    },
+    {
+      "id": "neurological/non-migraine-headache",
+      "path_components": [
+        "neurological",
+        "non-migraine-headache"
+      ],
+      "depth": 1,
+      "parent_id": "neurological",
+      "children_ids": [],
+      "name": "Non-migraine headache",
+      "description": null,
+      "level_info": {
+        "0": {
+          "name": "Neurological",
+          "level_name": "Chapter"
+        },
+        "1": {
+          "name": "Non-migraine headache",
+          "level_name": "Condition"
+        }
+      },
+      "metadata": {
+        "daly_rank": "low",
+        "global_rank": 66,
+        "daly_total": 2953757.4,
+        "daly_per_100k": 61.382911033523236,
+        "who_code": 1000,
+        "deaths_total": 0.0,
+        "disease_type": "Noncommunicable diseases"
+      }
+    },
+    {
+      "id": "neurological/multiple-sclerosis",
+      "path_components": [
+        "neurological",
+        "multiple-sclerosis"
+      ],
+      "depth": 1,
+      "parent_id": "neurological",
+      "children_ids": [],
+      "name": "Multiple sclerosis",
+      "description": null,
+      "level_info": {
+        "0": {
+          "name": "Neurological",
+          "level_name": "Chapter"
+        },
+        "1": {
+          "name": "Multiple sclerosis",
+          "level_name": "Condition"
+        }
+      },
+      "metadata": {
+        "daly_rank": "low",
+        "global_rank": 97,
+        "daly_total": 901573.3,
+        "daly_per_100k": 18.735862892497522,
+        "who_code": 980,
+        "deaths_total": 18971.8,
+        "disease_type": "Noncommunicable diseases"
+      }
+    },
+    {
+      "id": "mental",
+      "path_components": [
+        "mental"
+      ],
+      "depth": 0,
+      "parent_id": null,
+      "children_ids": [
+        "mental/depressive-disorders",
+        "mental/anxiety-disorders",
+        "mental/drug-use-disorders",
+        "mental/alcohol-use-disorders",
+        "mental/schizophrenia",
+        "mental/bipolar-disorder",
+        "mental/childhood-behavioural-disorders",
+        "mental/autism-and-asperger-syndrome",
+        "mental/eating-disorders"
+      ],
+      "name": "Mental",
+      "description": "Mental, behavioural or neurodevelopmental disorders",
+      "level_info": {
+        "0": {
+          "name": "Mental",
+          "level_name": "Chapter",
+          "icd11_chapters": [
+            "06"
+          ]
+        }
+      },
+      "metadata": {
+        "icd11_chapters": [
+          "06"
+        ],
+        "chapter_type": "disease_category"
+      }
+    },
+    {
+      "id": "mental/depressive-disorders",
+      "path_components": [
+        "mental",
+        "depressive-disorders"
+      ],
+      "depth": 1,
+      "parent_id": "mental",
+      "children_ids": [],
+      "name": "Depressive disorders",
+      "description": null,
+      "level_info": {
+        "0": {
+          "name": "Mental",
+          "level_name": "Chapter"
+        },
+        "1": {
+          "name": "Depressive disorders",
+          "level_name": "Condition"
+        }
+      },
+      "metadata": {
+        "daly_rank": "high",
+        "global_rank": 12,
+        "daly_total": 29149729.9,
+        "daly_per_100k": 605.7692067408556,
+        "who_code": 830,
+        "deaths_total": 0.0,
+        "disease_type": "Noncommunicable diseases"
+      }
+    },
+    {
+      "id": "mental/anxiety-disorders",
+      "path_components": [
+        "mental",
+        "anxiety-disorders"
+      ],
+      "depth": 1,
+      "parent_id": "mental",
+      "children_ids": [],
+      "name": "Anxiety disorders",
+      "description": null,
+      "level_info": {
+        "0": {
+          "name": "Mental",
+          "level_name": "Chapter"
+        },
+        "1": {
+          "name": "Anxiety disorders",
+          "level_name": "Condition"
+        }
+      },
+      "metadata": {
+        "daly_rank": "high",
+        "global_rank": 21,
+        "daly_total": 18197148.0,
+        "daly_per_100k": 378.16034476895607,
+        "who_code": 880,
+        "deaths_total": 109.7,
+        "disease_type": "Noncommunicable diseases"
+      }
+    },
+    {
+      "id": "mental/drug-use-disorders",
+      "path_components": [
+        "mental",
+        "drug-use-disorders"
+      ],
+      "depth": 1,
+      "parent_id": "mental",
+      "children_ids": [],
+      "name": "Drug use disorders",
+      "description": null,
+      "level_info": {
+        "0": {
+          "name": "Mental",
+          "level_name": "Chapter"
+        },
+        "1": {
+          "name": "Drug use disorders",
+          "level_name": "Condition"
+        }
+      },
+      "metadata": {
+        "daly_rank": "high",
+        "global_rank": 28,
+        "daly_total": 15407275.0,
+        "daly_per_100k": 320.1831641941978,
+        "who_code": 870,
+        "deaths_total": 144763.9,
+        "disease_type": "Noncommunicable diseases"
+      }
+    },
+    {
+      "id": "mental/alcohol-use-disorders",
+      "path_components": [
+        "mental",
+        "alcohol-use-disorders"
+      ],
+      "depth": 1,
+      "parent_id": "mental",
+      "children_ids": [],
+      "name": "Alcohol use disorders",
+      "description": null,
+      "level_info": {
+        "0": {
+          "name": "Mental",
+          "level_name": "Chapter"
+        },
+        "1": {
+          "name": "Alcohol use disorders",
+          "level_name": "Condition"
+        }
+      },
+      "metadata": {
+        "daly_rank": "moderate",
+        "global_rank": 31,
+        "daly_total": 13727527.5,
+        "daly_per_100k": 285.2758318075627,
+        "who_code": 860,
+        "deaths_total": 118654.3,
+        "disease_type": "Noncommunicable diseases"
+      }
+    },
+    {
+      "id": "mental/schizophrenia",
+      "path_components": [
+        "mental",
+        "schizophrenia"
+      ],
+      "depth": 1,
+      "parent_id": "mental",
+      "children_ids": [],
+      "name": "Schizophrenia",
+      "description": null,
+      "level_info": {
+        "0": {
+          "name": "Mental",
+          "level_name": "Chapter"
+        },
+        "1": {
+          "name": "Schizophrenia",
+          "level_name": "Condition"
+        }
+      },
+      "metadata": {
+        "daly_rank": "moderate",
+        "global_rank": 36,
+        "daly_total": 10699674.5,
+        "daly_per_100k": 222.35311807298638,
+        "who_code": 850,
+        "deaths_total": 4890.7,
+        "disease_type": "Noncommunicable diseases"
+      }
+    },
+    {
+      "id": "mental/bipolar-disorder",
+      "path_components": [
+        "mental",
+        "bipolar-disorder"
+      ],
+      "depth": 1,
+      "parent_id": "mental",
+      "children_ids": [],
+      "name": "Bipolar disorder",
+      "description": null,
+      "level_info": {
+        "0": {
+          "name": "Mental",
+          "level_name": "Chapter"
+        },
+        "1": {
+          "name": "Bipolar disorder",
+          "level_name": "Condition"
+        }
+      },
+      "metadata": {
+        "daly_rank": "low",
+        "global_rank": 54,
+        "daly_total": 5066211.1,
+        "daly_per_100k": 105.28243965748435,
+        "who_code": 840,
+        "deaths_total": 829.7,
+        "disease_type": "Noncommunicable diseases"
+      }
+    },
+    {
+      "id": "mental/childhood-behavioural-disorders",
+      "path_components": [
+        "mental",
+        "childhood-behavioural-disorders"
+      ],
+      "depth": 1,
+      "parent_id": "mental",
+      "children_ids": [],
+      "name": "Childhood behavioural disorders",
+      "description": null,
+      "level_info": {
+        "0": {
+          "name": "Mental",
+          "level_name": "Chapter"
+        },
+        "1": {
+          "name": "Childhood behavioural disorders",
+          "level_name": "Condition"
+        }
+      },
+      "metadata": {
+        "daly_rank": "low",
+        "global_rank": 65,
+        "daly_total": 3242835.3,
+        "daly_per_100k": 67.3903248507371,
+        "who_code": 910,
+        "deaths_total": 0.0,
+        "disease_type": "Noncommunicable diseases"
+      }
+    },
+    {
+      "id": "mental/autism-and-asperger-syndrome",
+      "path_components": [
+        "mental",
+        "autism-and-asperger-syndrome"
+      ],
+      "depth": 1,
+      "parent_id": "mental",
+      "children_ids": [],
+      "name": "Autism and Asperger syndrome",
+      "description": null,
+      "level_info": {
+        "0": {
+          "name": "Mental",
+          "level_name": "Chapter"
+        },
+        "1": {
+          "name": "Autism and Asperger syndrome",
+          "level_name": "Condition"
+        }
+      },
+      "metadata": {
+        "daly_rank": "low",
+        "global_rank": 70,
+        "daly_total": 2733831.1,
+        "daly_per_100k": 56.812557182921985,
+        "who_code": 900,
+        "deaths_total": 0.0,
+        "disease_type": "Noncommunicable diseases"
+      }
+    },
+    {
+      "id": "mental/eating-disorders",
+      "path_components": [
+        "mental",
+        "eating-disorders"
+      ],
+      "depth": 1,
+      "parent_id": "mental",
+      "children_ids": [],
+      "name": "Eating disorders",
+      "description": null,
+      "level_info": {
+        "0": {
+          "name": "Mental",
+          "level_name": "Chapter"
+        },
+        "1": {
+          "name": "Eating disorders",
+          "level_name": "Condition"
+        }
+      },
+      "metadata": {
+        "daly_rank": "low",
+        "global_rank": 79,
+        "daly_total": 1939916.3,
+        "daly_per_100k": 40.313977598627964,
+        "who_code": 890,
+        "deaths_total": 74.2,
+        "disease_type": "Noncommunicable diseases"
+      }
+    },
+    {
+      "id": "musculoskeletal",
+      "path_components": [
+        "musculoskeletal"
+      ],
+      "depth": 0,
+      "parent_id": null,
+      "children_ids": [
+        "musculoskeletal/back-and-neck-pain",
+        "musculoskeletal/osteoarthritis",
+        "musculoskeletal/rheumatoid-arthritis",
+        "musculoskeletal/gout"
+      ],
+      "name": "Musculoskeletal",
+      "description": "Diseases of the musculoskeletal system or connective tissue",
+      "level_info": {
+        "0": {
+          "name": "Musculoskeletal",
+          "level_name": "Chapter",
+          "icd11_chapters": [
+            "15"
+          ]
+        }
+      },
+      "metadata": {
+        "icd11_chapters": [
+          "15"
+        ],
+        "chapter_type": "disease_category"
+      }
+    },
+    {
+      "id": "musculoskeletal/back-and-neck-pain",
+      "path_components": [
+        "musculoskeletal",
+        "back-and-neck-pain"
+      ],
+      "depth": 1,
+      "parent_id": "musculoskeletal",
+      "children_ids": [],
+      "name": "Back and neck pain",
+      "description": null,
+      "level_info": {
+        "0": {
+          "name": "Musculoskeletal",
+          "level_name": "Chapter"
+        },
+        "1": {
+          "name": "Back and neck pain",
+          "level_name": "Condition"
+        }
+      },
+      "metadata": {
+        "daly_rank": "high",
+        "global_rank": 8,
+        "daly_total": 32666309.0,
+        "daly_per_100k": 678.8482829160511,
+        "who_code": 1380,
+        "deaths_total": 4964.2,
+        "disease_type": "Noncommunicable diseases"
+      }
+    },
+    {
+      "id": "musculoskeletal/osteoarthritis",
+      "path_components": [
+        "musculoskeletal",
+        "osteoarthritis"
+      ],
+      "depth": 1,
+      "parent_id": "musculoskeletal",
+      "children_ids": [],
+      "name": "Osteoarthritis",
+      "description": null,
+      "level_info": {
+        "0": {
+          "name": "Musculoskeletal",
+          "level_name": "Chapter"
+        },
+        "1": {
+          "name": "Osteoarthritis",
+          "level_name": "Condition"
+        }
+      },
+      "metadata": {
+        "daly_rank": "high",
+        "global_rank": 30,
+        "daly_total": 14572660.1,
+        "daly_per_100k": 302.8387837268131,
+        "who_code": 1360,
+        "deaths_total": 3554.2000000000003,
+        "disease_type": "Noncommunicable diseases"
+      }
+    },
+    {
+      "id": "musculoskeletal/rheumatoid-arthritis",
+      "path_components": [
+        "musculoskeletal",
+        "rheumatoid-arthritis"
+      ],
+      "depth": 1,
+      "parent_id": "musculoskeletal",
+      "children_ids": [],
+      "name": "Rheumatoid arthritis",
+      "description": null,
+      "level_info": {
+        "0": {
+          "name": "Musculoskeletal",
+          "level_name": "Chapter"
+        },
+        "1": {
+          "name": "Rheumatoid arthritis",
+          "level_name": "Condition"
+        }
+      },
+      "metadata": {
+        "daly_rank": "low",
+        "global_rank": 74,
+        "daly_total": 2446642.1,
+        "daly_per_100k": 50.84439715840321,
+        "who_code": 1350,
+        "deaths_total": 35352.8,
+        "disease_type": "Noncommunicable diseases"
+      }
+    },
+    {
+      "id": "musculoskeletal/gout",
+      "path_components": [
+        "musculoskeletal",
+        "gout"
+      ],
+      "depth": 1,
+      "parent_id": "musculoskeletal",
+      "children_ids": [],
+      "name": "Gout",
+      "description": null,
+      "level_info": {
+        "0": {
+          "name": "Musculoskeletal",
+          "level_name": "Chapter"
+        },
+        "1": {
+          "name": "Gout",
+          "level_name": "Condition"
+        }
+      },
+      "metadata": {
+        "daly_rank": "low",
+        "global_rank": 88,
+        "daly_total": 1322116.2,
+        "daly_per_100k": 27.475289974924756,
+        "who_code": 1370,
+        "deaths_total": 450.0,
+        "disease_type": "Noncommunicable diseases"
+      }
+    },
+    {
+      "id": "digestive",
+      "path_components": [
+        "digestive"
+      ],
+      "depth": 0,
+      "parent_id": null,
+      "children_ids": [
+        "digestive/cirrhosis-of-the-liver",
+        "digestive/gallbladder-and-biliary-diseases",
+        "digestive/peptic-ulcer-disease",
+        "digestive/paralytic-ileus-and-intestinal-obstruction",
+        "digestive/pancreatitis",
+        "digestive/gastritis-and-duodenitis",
+        "digestive/inflammatory-bowel-disease",
+        "digestive/appendicitis"
+      ],
+      "name": "Digestive",
+      "description": "Diseases of the digestive system",
+      "level_info": {
+        "0": {
+          "name": "Digestive",
+          "level_name": "Chapter",
+          "icd11_chapters": [
+            "13"
+          ]
+        }
+      },
+      "metadata": {
+        "icd11_chapters": [
+          "13"
+        ],
+        "chapter_type": "disease_category"
+      }
+    },
+    {
+      "id": "digestive/cirrhosis-of-the-liver",
+      "path_components": [
+        "digestive",
+        "cirrhosis-of-the-liver"
+      ],
+      "depth": 1,
+      "parent_id": "digestive",
+      "children_ids": [],
+      "name": "Cirrhosis of the liver",
+      "description": null,
+      "level_info": {
+        "0": {
+          "name": "Digestive",
+          "level_name": "Chapter"
+        },
+        "1": {
+          "name": "Cirrhosis of the liver",
+          "level_name": "Condition"
+        }
+      },
+      "metadata": {
+        "daly_rank": "high",
+        "global_rank": 16,
+        "daly_total": 24289923.1,
+        "daly_per_100k": 504.7761162302703,
+        "who_code": 1230,
+        "deaths_total": 756698.1,
+        "disease_type": "Noncommunicable diseases"
+      }
+    },
+    {
+      "id": "digestive/gallbladder-and-biliary-diseases",
+      "path_components": [
+        "digestive",
+        "gallbladder-and-biliary-diseases"
+      ],
+      "depth": 1,
+      "parent_id": "digestive",
+      "children_ids": [],
+      "name": "Gallbladder and biliary diseases",
+      "description": null,
+      "level_info": {
+        "0": {
+          "name": "Digestive",
+          "level_name": "Chapter"
+        },
+        "1": {
+          "name": "Gallbladder and biliary diseases",
+          "level_name": "Condition"
+        }
+      },
+      "metadata": {
+        "daly_rank": "low",
+        "global_rank": 57,
+        "daly_total": 4591690.0,
+        "daly_per_100k": 95.42127554670478,
+        "who_code": 1246,
+        "deaths_total": 78374.3,
+        "disease_type": "Noncommunicable diseases"
+      }
+    },
+    {
+      "id": "digestive/peptic-ulcer-disease",
+      "path_components": [
+        "digestive",
+        "peptic-ulcer-disease"
+      ],
+      "depth": 1,
+      "parent_id": "digestive",
+      "children_ids": [],
+      "name": "Peptic ulcer disease",
+      "description": null,
+      "level_info": {
+        "0": {
+          "name": "Digestive",
+          "level_name": "Chapter"
+        },
+        "1": {
+          "name": "Peptic ulcer disease",
+          "level_name": "Condition"
+        }
+      },
+      "metadata": {
+        "daly_rank": "low",
+        "global_rank": 62,
+        "daly_total": 3638920.6,
+        "daly_per_100k": 75.62149127340486,
+        "who_code": 1220,
+        "deaths_total": 145804.2,
+        "disease_type": "Noncommunicable diseases"
+      }
+    },
+    {
+      "id": "digestive/paralytic-ileus-and-intestinal-obstruction",
+      "path_components": [
+        "digestive",
+        "paralytic-ileus-and-intestinal-obstruction"
+      ],
+      "depth": 1,
+      "parent_id": "digestive",
+      "children_ids": [],
+      "name": "Paralytic ileus and intestinal obstruction",
+      "description": null,
+      "level_info": {
+        "0": {
+          "name": "Digestive",
+          "level_name": "Chapter"
+        },
+        "1": {
+          "name": "Paralytic ileus and intestinal obstruction",
+          "level_name": "Condition"
+        }
+      },
+      "metadata": {
+        "daly_rank": "low",
+        "global_rank": 64,
+        "daly_total": 3360576.5,
+        "daly_per_100k": 69.83713974642903,
+        "who_code": 1242,
+        "deaths_total": 130206.6,
+        "disease_type": "Noncommunicable diseases"
+      }
+    },
+    {
+      "id": "digestive/pancreatitis",
+      "path_components": [
+        "digestive",
+        "pancreatitis"
+      ],
+      "depth": 1,
+      "parent_id": "digestive",
+      "children_ids": [],
+      "name": "Pancreatitis",
+      "description": null,
+      "level_info": {
+        "0": {
+          "name": "Digestive",
+          "level_name": "Chapter"
+        },
+        "1": {
+          "name": "Pancreatitis",
+          "level_name": "Condition"
+        }
+      },
+      "metadata": {
+        "daly_rank": "low",
+        "global_rank": 76,
+        "daly_total": 2199663.4,
+        "daly_per_100k": 45.711859337499156,
+        "who_code": 1248,
+        "deaths_total": 70582.0,
+        "disease_type": "Noncommunicable diseases"
+      }
+    },
+    {
+      "id": "digestive/gastritis-and-duodenitis",
+      "path_components": [
+        "digestive",
+        "gastritis-and-duodenitis"
+      ],
+      "depth": 1,
+      "parent_id": "digestive",
+      "children_ids": [],
+      "name": "Gastritis and duodenitis",
+      "description": null,
+      "level_info": {
+        "0": {
+          "name": "Digestive",
+          "level_name": "Chapter"
+        },
+        "1": {
+          "name": "Gastritis and duodenitis",
+          "level_name": "Condition"
+        }
+      },
+      "metadata": {
+        "daly_rank": "low",
+        "global_rank": 81,
+        "daly_total": 1817699.1,
+        "daly_per_100k": 37.77414561568775,
+        "who_code": 1241,
+        "deaths_total": 24870.0,
+        "disease_type": "Noncommunicable diseases"
+      }
+    },
+    {
+      "id": "digestive/inflammatory-bowel-disease",
+      "path_components": [
+        "digestive",
+        "inflammatory-bowel-disease"
+      ],
+      "depth": 1,
+      "parent_id": "digestive",
+      "children_ids": [],
+      "name": "Inflammatory bowel disease",
+      "description": null,
+      "level_info": {
+        "0": {
+          "name": "Digestive",
+          "level_name": "Chapter"
+        },
+        "1": {
+          "name": "Inflammatory bowel disease",
+          "level_name": "Condition"
+        }
+      },
+      "metadata": {
+        "daly_rank": "low",
+        "global_rank": 93,
+        "daly_total": 1010206.1,
+        "daly_per_100k": 20.99339341877653,
+        "who_code": 1244,
+        "deaths_total": 17593.1,
+        "disease_type": "Noncommunicable diseases"
+      }
+    },
+    {
+      "id": "digestive/appendicitis",
+      "path_components": [
+        "digestive",
+        "appendicitis"
+      ],
+      "depth": 1,
+      "parent_id": "digestive",
+      "children_ids": [],
+      "name": "Appendicitis",
+      "description": null,
+      "level_info": {
+        "0": {
+          "name": "Digestive",
+          "level_name": "Chapter"
+        },
+        "1": {
+          "name": "Appendicitis",
+          "level_name": "Condition"
+        }
+      },
+      "metadata": {
+        "daly_rank": "low",
+        "global_rank": 101,
+        "daly_total": 721621.3,
+        "daly_per_100k": 14.996226859320059,
+        "who_code": 1240,
+        "deaths_total": 17742.6,
+        "disease_type": "Noncommunicable diseases"
+      }
+    },
+    {
+      "id": "genitourinary",
+      "path_components": [
+        "genitourinary"
+      ],
+      "depth": 0,
+      "parent_id": null,
+      "children_ids": [
+        "genitourinary/kidney-diseases",
+        "genitourinary/gynecological-diseases",
+        "genitourinary/infertility",
+        "genitourinary/benign-prostatic-hyperplasia",
+        "genitourinary/urolithiasis"
+      ],
+      "name": "Genitourinary",
+      "description": "Diseases of the genitourinary system",
+      "level_info": {
+        "0": {
+          "name": "Genitourinary",
+          "level_name": "Chapter",
+          "icd11_chapters": [
+            "16"
+          ]
+        }
+      },
+      "metadata": {
+        "icd11_chapters": [
+          "16"
+        ],
+        "chapter_type": "disease_category"
+      }
+    },
+    {
+      "id": "genitourinary/kidney-diseases",
+      "path_components": [
+        "genitourinary",
+        "kidney-diseases"
+      ],
+      "depth": 1,
+      "parent_id": "genitourinary",
+      "children_ids": [],
+      "name": "Kidney diseases",
+      "description": null,
+      "level_info": {
+        "0": {
+          "name": "Genitourinary",
+          "level_name": "Chapter"
+        },
+        "1": {
+          "name": "Kidney diseases",
+          "level_name": "Condition"
+        }
+      },
+      "metadata": {
+        "daly_rank": "high",
+        "global_rank": 15,
+        "daly_total": 24334253.5,
+        "daly_per_100k": 505.69735945738176,
+        "who_code": 1270,
+        "deaths_total": 839910.9,
+        "disease_type": "Noncommunicable diseases"
+      }
+    },
+    {
+      "id": "genitourinary/gynecological-diseases",
+      "path_components": [
+        "genitourinary",
+        "gynecological-diseases"
+      ],
+      "depth": 1,
+      "parent_id": "genitourinary",
+      "children_ids": [],
+      "name": "Gynecological diseases",
+      "description": null,
+      "level_info": {
+        "0": {
+          "name": "Genitourinary",
+          "level_name": "Chapter"
+        },
+        "1": {
+          "name": "Gynecological diseases",
+          "level_name": "Condition"
+        }
+      },
+      "metadata": {
+        "daly_rank": "high",
+        "global_rank": 23,
+        "daly_total": 16891277.0,
+        "daly_per_100k": 351.0226511268655,
+        "who_code": 1320,
+        "deaths_total": 5075.3,
+        "disease_type": "Noncommunicable diseases"
+      }
+    },
+    {
+      "id": "genitourinary/infertility",
+      "path_components": [
+        "genitourinary",
+        "infertility"
+      ],
+      "depth": 1,
+      "parent_id": "genitourinary",
+      "children_ids": [],
+      "name": "Infertility",
+      "description": null,
+      "level_info": {
+        "0": {
+          "name": "Genitourinary",
+          "level_name": "Chapter"
+        },
+        "1": {
+          "name": "Infertility",
+          "level_name": "Condition"
+        }
+      },
+      "metadata": {
+        "daly_rank": "low",
+        "global_rank": 59,
+        "daly_total": 4214908.2,
+        "daly_per_100k": 87.59126089876831,
+        "who_code": 1310,
+        "deaths_total": 0.0,
+        "disease_type": "Noncommunicable diseases"
+      }
+    },
+    {
+      "id": "genitourinary/benign-prostatic-hyperplasia",
+      "path_components": [
+        "genitourinary",
+        "benign-prostatic-hyperplasia"
+      ],
+      "depth": 1,
+      "parent_id": "genitourinary",
+      "children_ids": [],
+      "name": "Benign prostatic hyperplasia",
+      "description": null,
+      "level_info": {
+        "0": {
+          "name": "Genitourinary",
+          "level_name": "Chapter"
+        },
+        "1": {
+          "name": "Benign prostatic hyperplasia",
+          "level_name": "Condition"
+        }
+      },
+      "metadata": {
+        "daly_rank": "low",
+        "global_rank": 86,
+        "daly_total": 1409390.3,
+        "daly_per_100k": 29.288959004016586,
+        "who_code": 1280,
+        "deaths_total": 4268.5,
+        "disease_type": "Noncommunicable diseases"
+      }
+    },
+    {
+      "id": "genitourinary/urolithiasis",
+      "path_components": [
+        "genitourinary",
+        "urolithiasis"
+      ],
+      "depth": 1,
+      "parent_id": "genitourinary",
+      "children_ids": [],
+      "name": "Urolithiasis",
+      "description": null,
+      "level_info": {
+        "0": {
+          "name": "Genitourinary",
+          "level_name": "Chapter"
+        },
+        "1": {
+          "name": "Urolithiasis",
+          "level_name": "Condition"
+        }
+      },
+      "metadata": {
+        "daly_rank": "low",
+        "global_rank": 112,
+        "daly_total": 376994.1,
+        "daly_per_100k": 7.834426517378564,
+        "who_code": 1290,
+        "deaths_total": 7036.3,
+        "disease_type": "Noncommunicable diseases"
+      }
+    },
+    {
+      "id": "endocrine-metabolic",
+      "path_components": [
+        "endocrine-metabolic"
+      ],
+      "depth": 0,
+      "parent_id": null,
+      "children_ids": [
+        "endocrine-metabolic/diabetes-mellitus",
+        "endocrine-metabolic/thalassaemias",
+        "endocrine-metabolic/sickle-cell-disorders-and-trait"
+      ],
+      "name": "Endocrine Metabolic",
+      "description": "Endocrine, nutritional or metabolic diseases",
+      "level_info": {
+        "0": {
+          "name": "Endocrine Metabolic",
+          "level_name": "Chapter",
+          "icd11_chapters": [
+            "05"
+          ]
+        }
+      },
+      "metadata": {
+        "icd11_chapters": [
+          "05"
+        ],
+        "chapter_type": "disease_category"
+      }
+    },
+    {
+      "id": "endocrine-metabolic/diabetes-mellitus",
+      "path_components": [
+        "endocrine-metabolic",
+        "diabetes-mellitus"
+      ],
+      "depth": 1,
+      "parent_id": "endocrine-metabolic",
+      "children_ids": [],
+      "name": "Diabetes mellitus",
+      "description": null,
+      "level_info": {
+        "0": {
+          "name": "Endocrine Metabolic",
+          "level_name": "Chapter"
+        },
+        "1": {
+          "name": "Diabetes mellitus",
+          "level_name": "Condition"
+        }
+      },
+      "metadata": {
+        "daly_rank": "high",
+        "global_rank": 5,
+        "daly_total": 46089313.7,
+        "daly_per_100k": 957.7957358458902,
+        "who_code": 800,
+        "deaths_total": 921451.9,
+        "disease_type": "Noncommunicable diseases"
+      }
+    },
+    {
+      "id": "endocrine-metabolic/thalassaemias",
+      "path_components": [
+        "endocrine-metabolic",
+        "thalassaemias"
+      ],
+      "depth": 1,
+      "parent_id": "endocrine-metabolic",
+      "children_ids": [],
+      "name": "Thalassaemias",
+      "description": null,
+      "level_info": {
+        "0": {
+          "name": "Endocrine Metabolic",
+          "level_name": "Chapter"
+        },
+        "1": {
+          "name": "Thalassaemias",
+          "level_name": "Condition"
+        }
+      },
+      "metadata": {
+        "daly_rank": "low",
+        "global_rank": 75,
+        "daly_total": 2269228.6,
+        "daly_per_100k": 47.157514448724356,
+        "who_code": 811,
+        "deaths_total": 3493.1,
+        "disease_type": "Noncommunicable diseases"
+      }
+    },
+    {
+      "id": "endocrine-metabolic/sickle-cell-disorders-and-trait",
+      "path_components": [
+        "endocrine-metabolic",
+        "sickle-cell-disorders-and-trait"
+      ],
+      "depth": 1,
+      "parent_id": "endocrine-metabolic",
+      "children_ids": [],
+      "name": "Sickle cell disorders and trait",
+      "description": null,
+      "level_info": {
+        "0": {
+          "name": "Endocrine Metabolic",
+          "level_name": "Chapter"
+        },
+        "1": {
+          "name": "Sickle cell disorders and trait",
+          "level_name": "Condition"
+        }
+      },
+      "metadata": {
+        "daly_rank": "low",
+        "global_rank": 83,
+        "daly_total": 1629269.8,
+        "daly_per_100k": 33.85834028989862,
+        "who_code": 812,
+        "deaths_total": 4490.3,
+        "disease_type": "Noncommunicable diseases"
+      }
+    },
+    {
+      "id": "sense-organs",
+      "path_components": [
+        "sense-organs"
+      ],
+      "depth": 0,
+      "parent_id": null,
+      "children_ids": [
+        "sense-organs/other-hearing-loss",
+        "sense-organs/uncorrected-refractive-errors",
+        "sense-organs/cataracts",
+        "sense-organs/other-vision-loss",
+        "sense-organs/macular-degeneration",
+        "sense-organs/glaucoma"
+      ],
+      "name": "Sense Organs",
+      "description": "Diseases of the visual system and ear",
+      "level_info": {
+        "0": {
+          "name": "Sense Organs",
+          "level_name": "Chapter",
+          "icd11_chapters": [
+            "09"
+          ]
+        }
+      },
+      "metadata": {
+        "icd11_chapters": [
+          "09"
+        ],
+        "chapter_type": "disease_category"
+      }
+    },
+    {
+      "id": "sense-organs/other-hearing-loss",
+      "path_components": [
+        "sense-organs",
+        "other-hearing-loss"
+      ],
+      "depth": 1,
+      "parent_id": "sense-organs",
+      "children_ids": [],
+      "name": "Other hearing loss",
+      "description": null,
+      "level_info": {
+        "0": {
+          "name": "Sense Organs",
+          "level_name": "Chapter"
+        },
+        "1": {
+          "name": "Other hearing loss",
+          "level_name": "Condition"
+        }
+      },
+      "metadata": {
+        "daly_rank": "high",
+        "global_rank": 14,
+        "daly_total": 28129951.2,
+        "daly_per_100k": 584.5768822744042,
+        "who_code": 1080,
+        "deaths_total": 21.1,
+        "disease_type": "Noncommunicable diseases"
+      }
+    },
+    {
+      "id": "sense-organs/uncorrected-refractive-errors",
+      "path_components": [
+        "sense-organs",
+        "uncorrected-refractive-errors"
+      ],
+      "depth": 1,
+      "parent_id": "sense-organs",
+      "children_ids": [],
+      "name": "Uncorrected refractive errors",
+      "description": null,
+      "level_info": {
+        "0": {
+          "name": "Sense Organs",
+          "level_name": "Chapter"
+        },
+        "1": {
+          "name": "Uncorrected refractive errors",
+          "level_name": "Condition"
+        }
+      },
+      "metadata": {
+        "daly_rank": "high",
+        "global_rank": 19,
+        "daly_total": 21874961.5,
+        "daly_per_100k": 454.5900809647556,
+        "who_code": 1050,
+        "deaths_total": 1.2000000000000002,
+        "disease_type": "Noncommunicable diseases"
+      }
+    },
+    {
+      "id": "sense-organs/cataracts",
+      "path_components": [
+        "sense-organs",
+        "cataracts"
+      ],
+      "depth": 1,
+      "parent_id": "sense-organs",
+      "children_ids": [],
+      "name": "Cataracts",
+      "description": null,
+      "level_info": {
+        "0": {
+          "name": "Sense Organs",
+          "level_name": "Chapter"
+        },
+        "1": {
+          "name": "Cataracts",
+          "level_name": "Condition"
+        }
+      },
+      "metadata": {
+        "daly_rank": "low",
+        "global_rank": 51,
+        "daly_total": 5877567.3,
+        "daly_per_100k": 122.14347416258538,
+        "who_code": 1040,
+        "deaths_total": 11.2,
+        "disease_type": "Noncommunicable diseases"
+      }
+    },
+    {
+      "id": "sense-organs/other-vision-loss",
+      "path_components": [
+        "sense-organs",
+        "other-vision-loss"
+      ],
+      "depth": 1,
+      "parent_id": "sense-organs",
+      "children_ids": [],
+      "name": "Other vision loss",
+      "description": null,
+      "level_info": {
+        "0": {
+          "name": "Sense Organs",
+          "level_name": "Chapter"
+        },
+        "1": {
+          "name": "Other vision loss",
+          "level_name": "Condition"
+        }
+      },
+      "metadata": {
+        "daly_rank": "low",
+        "global_rank": 52,
+        "daly_total": 5473132.3,
+        "daly_per_100k": 113.73879014085666,
+        "who_code": 1070,
+        "deaths_total": 0.0,
+        "disease_type": "Noncommunicable diseases"
+      }
+    },
+    {
+      "id": "sense-organs/macular-degeneration",
+      "path_components": [
+        "sense-organs",
+        "macular-degeneration"
+      ],
+      "depth": 1,
+      "parent_id": "sense-organs",
+      "children_ids": [],
+      "name": "Macular degeneration",
+      "description": null,
+      "level_info": {
+        "0": {
+          "name": "Sense Organs",
+          "level_name": "Chapter"
+        },
+        "1": {
+          "name": "Macular degeneration",
+          "level_name": "Condition"
+        }
+      },
+      "metadata": {
+        "daly_rank": "low",
+        "global_rank": 90,
+        "daly_total": 1152584.0,
+        "daly_per_100k": 23.952190904595735,
+        "who_code": 1060,
+        "deaths_total": 0.0,
+        "disease_type": "Noncommunicable diseases"
+      }
+    },
+    {
+      "id": "sense-organs/glaucoma",
+      "path_components": [
+        "sense-organs",
+        "glaucoma"
+      ],
+      "depth": 1,
+      "parent_id": "sense-organs",
+      "children_ids": [],
+      "name": "Glaucoma",
+      "description": null,
+      "level_info": {
+        "0": {
+          "name": "Sense Organs",
+          "level_name": "Chapter"
+        },
+        "1": {
+          "name": "Glaucoma",
+          "level_name": "Condition"
+        }
+      },
+      "metadata": {
+        "daly_rank": "low",
+        "global_rank": 96,
+        "daly_total": 942718.1,
+        "daly_per_100k": 19.590905218550468,
+        "who_code": 1030,
+        "deaths_total": 39.7,
+        "disease_type": "Noncommunicable diseases"
+      }
+    },
+    {
+      "id": "injuries",
+      "path_components": [
+        "injuries"
+      ],
+      "depth": 0,
+      "parent_id": null,
+      "children_ids": [
+        "injuries/road-injury",
+        "injuries/falls",
+        "injuries/self-harm",
+        "injuries/interpersonal-violence",
+        "injuries/drowning",
+        "injuries/exposure-to-mechanical-forces",
+        "injuries/fire,-heat-and-hot-substances",
+        "injuries/poisonings",
+        "injuries/collective-violence-and-legal-intervention"
+      ],
+      "name": "Injuries",
+      "description": "Injury, poisoning or other consequences of external causes",
+      "level_info": {
+        "0": {
+          "name": "Injuries",
+          "level_name": "Chapter",
+          "icd11_chapters": [
+            "22"
+          ]
+        }
+      },
+      "metadata": {
+        "icd11_chapters": [
+          "22"
+        ],
+        "chapter_type": "disease_category"
+      }
+    },
+    {
+      "id": "injuries/road-injury",
+      "path_components": [
+        "injuries",
+        "road-injury"
+      ],
+      "depth": 1,
+      "parent_id": "injuries",
+      "children_ids": [],
+      "name": "Road injury",
+      "description": null,
+      "level_info": {
+        "0": {
+          "name": "Injuries",
+          "level_name": "Chapter"
+        },
+        "1": {
+          "name": "Road injury",
+          "level_name": "Condition"
+        }
+      },
+      "metadata": {
+        "daly_rank": "high",
+        "global_rank": 6,
+        "daly_total": 43215335.8,
+        "daly_per_100k": 898.070746329821,
+        "who_code": 1530,
+        "deaths_total": 692365.2,
+        "disease_type": "Injuries"
+      }
+    },
+    {
+      "id": "injuries/falls",
+      "path_components": [
+        "injuries",
+        "falls"
+      ],
+      "depth": 1,
+      "parent_id": "injuries",
+      "children_ids": [],
+      "name": "Falls",
+      "description": null,
+      "level_info": {
+        "0": {
+          "name": "Injuries",
+          "level_name": "Chapter"
+        },
+        "1": {
+          "name": "Falls",
+          "level_name": "Condition"
+        }
+      },
+      "metadata": {
+        "daly_rank": "high",
+        "global_rank": 13,
+        "daly_total": 28950542.7,
+        "daly_per_100k": 601.6298382955606,
+        "who_code": 1550,
+        "deaths_total": 547516.7,
+        "disease_type": "Injuries"
+      }
+    },
+    {
+      "id": "injuries/self-harm",
+      "path_components": [
+        "injuries",
+        "self-harm"
+      ],
+      "depth": 1,
+      "parent_id": "injuries",
+      "children_ids": [],
+      "name": "Self-harm",
+      "description": null,
+      "level_info": {
+        "0": {
+          "name": "Injuries",
+          "level_name": "Chapter"
+        },
+        "1": {
+          "name": "Self-harm",
+          "level_name": "Condition"
+        }
+      },
+      "metadata": {
+        "daly_rank": "high",
+        "global_rank": 17,
+        "daly_total": 22536145.7,
+        "daly_per_100k": 468.3303464738225,
+        "who_code": 1610,
+        "deaths_total": 506816.7,
+        "disease_type": "Injuries"
+      }
+    },
+    {
+      "id": "injuries/interpersonal-violence",
+      "path_components": [
+        "injuries",
+        "interpersonal-violence"
+      ],
+      "depth": 1,
+      "parent_id": "injuries",
+      "children_ids": [],
+      "name": "Interpersonal violence",
+      "description": null,
+      "level_info": {
+        "0": {
+          "name": "Injuries",
+          "level_name": "Chapter"
+        },
+        "1": {
+          "name": "Interpersonal violence",
+          "level_name": "Condition"
+        }
+      },
+      "metadata": {
+        "daly_rank": "high",
+        "global_rank": 29,
+        "daly_total": 14799948.0,
+        "daly_per_100k": 307.56212117649545,
+        "who_code": 1620,
+        "deaths_total": 221351.0,
+        "disease_type": "Injuries"
+      }
+    },
+    {
+      "id": "injuries/drowning",
+      "path_components": [
+        "injuries",
+        "drowning"
+      ],
+      "depth": 1,
+      "parent_id": "injuries",
+      "children_ids": [],
+      "name": "Drowning",
+      "description": null,
+      "level_info": {
+        "0": {
+          "name": "Injuries",
+          "level_name": "Chapter"
+        },
+        "1": {
+          "name": "Drowning",
+          "level_name": "Condition"
+        }
+      },
+      "metadata": {
+        "daly_rank": "moderate",
+        "global_rank": 43,
+        "daly_total": 7074671.3,
+        "daly_per_100k": 147.0208484282833,
+        "who_code": 1570,
+        "deaths_total": 142554.0,
+        "disease_type": "Injuries"
+      }
+    },
+    {
+      "id": "injuries/exposure-to-mechanical-forces",
+      "path_components": [
+        "injuries",
+        "exposure-to-mechanical-forces"
+      ],
+      "depth": 1,
+      "parent_id": "injuries",
+      "children_ids": [],
+      "name": "Exposure to mechanical forces",
+      "description": null,
+      "level_info": {
+        "0": {
+          "name": "Injuries",
+          "level_name": "Chapter"
+        },
+        "1": {
+          "name": "Exposure to mechanical forces",
+          "level_name": "Condition"
+        }
+      },
+      "metadata": {
+        "daly_rank": "moderate",
+        "global_rank": 47,
+        "daly_total": 6473754.5,
+        "daly_per_100k": 134.53301768329746,
+        "who_code": 1575,
+        "deaths_total": 64105.1,
+        "disease_type": "Injuries"
+      }
+    },
+    {
+      "id": "injuries/fire,-heat-and-hot-substances",
+      "path_components": [
+        "injuries",
+        "fire,-heat-and-hot-substances"
+      ],
+      "depth": 1,
+      "parent_id": "injuries",
+      "children_ids": [],
+      "name": "Fire, heat and hot substances",
+      "description": null,
+      "level_info": {
+        "0": {
+          "name": "Injuries",
+          "level_name": "Chapter"
+        },
+        "1": {
+          "name": "Fire, heat and hot substances",
+          "level_name": "Condition"
+        }
+      },
+      "metadata": {
+        "daly_rank": "low",
+        "global_rank": 61,
+        "daly_total": 3659941.0,
+        "daly_per_100k": 76.05832245767512,
+        "who_code": 1560,
+        "deaths_total": 53714.9,
+        "disease_type": "Injuries"
+      }
+    },
+    {
+      "id": "injuries/poisonings",
+      "path_components": [
+        "injuries",
+        "poisonings"
+      ],
+      "depth": 1,
+      "parent_id": "injuries",
+      "children_ids": [],
+      "name": "Poisonings",
+      "description": null,
+      "level_info": {
+        "0": {
+          "name": "Injuries",
+          "level_name": "Chapter"
+        },
+        "1": {
+          "name": "Poisonings",
+          "level_name": "Condition"
+        }
+      },
+      "metadata": {
+        "daly_rank": "low",
+        "global_rank": 80,
+        "daly_total": 1936750.4,
+        "daly_per_100k": 40.24818608912856,
+        "who_code": 1540,
+        "deaths_total": 41594.4,
+        "disease_type": "Injuries"
+      }
+    },
+    {
+      "id": "injuries/collective-violence-and-legal-intervention",
+      "path_components": [
+        "injuries",
+        "collective-violence-and-legal-intervention"
+      ],
+      "depth": 1,
+      "parent_id": "injuries",
+      "children_ids": [],
+      "name": "Collective violence and legal intervention",
+      "description": null,
+      "level_info": {
+        "0": {
+          "name": "Injuries",
+          "level_name": "Chapter"
+        },
+        "1": {
+          "name": "Collective violence and legal intervention",
+          "level_name": "Condition"
+        }
+      },
+      "metadata": {
+        "daly_rank": "low",
+        "global_rank": 105,
+        "daly_total": 590774.0,
+        "daly_per_100k": 12.277050201522528,
+        "who_code": 1630,
+        "deaths_total": 5825.2,
+        "disease_type": "Injuries"
+      }
+    }
+  ],
+  "dimension_metadata": {
+    "burden_metrics": {
+      "daly_rankings": {
+        "high": "High global burden diseases",
+        "moderate": "Moderate global burden diseases",
+        "low": "Lower global burden but clinically important"
+      },
+      "data_notes": [
+        "Based on 2019 data (pre-COVID)",
+        "Data from top 25 economies, representative of global burden",
+        "Total of 131 disease conditions analyzed",
+        "Rankings may vary by region and population"
+      ]
+    },
+    "total_conditions": 84,
+    "total_chapters": 14
+  }
+}

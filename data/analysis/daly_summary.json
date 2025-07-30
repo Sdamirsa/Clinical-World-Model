@@ -1,0 +1,221 @@
+{
+  "top_10_diseases": [
+    {
+      "rank": 1,
+      "title": "Ischaemic heart disease",
+      "daly_total": 120521615.1,
+      "type": "Noncommunicable diseases"
+    },
+    {
+      "rank": 2,
+      "title": "Stroke",
+      "daly_total": 94851668.0,
+      "type": "Noncommunicable diseases"
+    },
+    {
+      "rank": 3,
+      "title": "Neonatal conditions",
+      "daly_total": 65485281.1,
+      "type": "Communicable, maternal, perinatal and nutritional conditions"
+    },
+    {
+      "rank": 4,
+      "title": "Chronic obstructive pulmonary disease",
+      "daly_total": 57489649.0,
+      "type": "Noncommunicable diseases"
+    },
+    {
+      "rank": 5,
+      "title": "Diabetes mellitus",
+      "daly_total": 46089313.7,
+      "type": "Noncommunicable diseases"
+    },
+    {
+      "rank": 6,
+      "title": "Road injury",
+      "daly_total": 43215335.8,
+      "type": "Injuries"
+    },
+    {
+      "rank": 7,
+      "title": "Trachea, bronchus, lung cancers",
+      "daly_total": 34157496.9,
+      "type": "Noncommunicable diseases"
+    },
+    {
+      "rank": 8,
+      "title": "Back and neck pain",
+      "daly_total": 32666309.0,
+      "type": "Noncommunicable diseases"
+    },
+    {
+      "rank": 9,
+      "title": "Tuberculosis",
+      "daly_total": 32428378.3,
+      "type": "Communicable, maternal, perinatal and nutritional conditions"
+    },
+    {
+      "rank": 10,
+      "title": "Lower respiratory infections",
+      "daly_total": 31451377.7,
+      "type": "Communicable, maternal, perinatal and nutritional conditions"
+    }
+  ],
+  "top_30_diseases": [
+    {
+      "rank": 1,
+      "title": "Ischaemic heart disease",
+      "code": 1130
+    },
+    {
+      "rank": 2,
+      "title": "Stroke",
+      "code": 1140
+    },
+    {
+      "rank": 3,
+      "title": "Neonatal conditions",
+      "code": 490
+    },
+    {
+      "rank": 4,
+      "title": "Chronic obstructive pulmonary disease",
+      "code": 1180
+    },
+    {
+      "rank": 5,
+      "title": "Diabetes mellitus",
+      "code": 800
+    },
+    {
+      "rank": 6,
+      "title": "Road injury",
+      "code": 1530
+    },
+    {
+      "rank": 7,
+      "title": "Trachea, bronchus, lung cancers",
+      "code": 680
+    },
+    {
+      "rank": 8,
+      "title": "Back and neck pain",
+      "code": 1380
+    },
+    {
+      "rank": 9,
+      "title": "Tuberculosis",
+      "code": 30
+    },
+    {
+      "rank": 10,
+      "title": "Lower respiratory infections",
+      "code": 390
+    },
+    {
+      "rank": 11,
+      "title": "Diarrhoeal diseases",
+      "code": 110
+    },
+    {
+      "rank": 12,
+      "title": "Depressive disorders",
+      "code": 830
+    },
+    {
+      "rank": 13,
+      "title": "Falls",
+      "code": 1550
+    },
+    {
+      "rank": 14,
+      "title": "Other hearing loss",
+      "code": 1080
+    },
+    {
+      "rank": 15,
+      "title": "Kidney diseases",
+      "code": 1270
+    },
+    {
+      "rank": 16,
+      "title": "Cirrhosis of the liver",
+      "code": 1230
+    },
+    {
+      "rank": 17,
+      "title": "Self-harm",
+      "code": 1610
+    },
+    {
+      "rank": 18,
+      "title": "Alzheimer disease and other dementias",
+      "code": 950
+    },
+    {
+      "rank": 19,
+      "title": "Uncorrected refractive errors",
+      "code": 1050
+    },
+    {
+      "rank": 20,
+      "title": "Congenital anomalies",
+      "code": 1400
+    },
+    {
+      "rank": 21,
+      "title": "Anxiety disorders",
+      "code": 880
+    },
+    {
+      "rank": 22,
+      "title": "Migraine",
+      "code": 990
+    },
+    {
+      "rank": 23,
+      "title": "Gynecological diseases",
+      "code": 1320
+    },
+    {
+      "rank": 24,
+      "title": "Colon and rectum cancers",
+      "code": 650
+    },
+    {
+      "rank": 25,
+      "title": "Stomach cancer",
+      "code": 640
+    },
+    {
+      "rank": 26,
+      "title": "Iron-deficiency anaemia",
+      "code": 580
+    },
+    {
+      "rank": 27,
+      "title": "Oral conditions",
+      "code": 1470
+    },
+    {
+      "rank": 28,
+      "title": "Drug use disorders",
+      "code": 870
+    },
+    {
+      "rank": 29,
+      "title": "Interpersonal violence",
+      "code": 1620
+    },
+    {
+      "rank": 30,
+      "title": "Osteoarthritis",
+      "code": 1360
+    }
+  ],
+  "disease_categories": {
+    "Communicable, maternal, perinatal and nutritional conditions": 45,
+    "Injuries": 10,
+    "Noncommunicable diseases": 76
+  }
+}

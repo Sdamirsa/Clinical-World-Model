@@ -1,0 +1,661 @@
+{
+  "dimension": "personas",
+  "description": "Healthcare provider roles and user types based on clinical workforce taxonomy",
+  "reference": {
+    "classification": "Healthcare workforce role taxonomy and competency frameworks",
+    "burden_metric": "Role responsibility levels and scope of practice",
+    "data_source": "Professional healthcare role definitions and licensing requirements",
+    "last_updated": "2025-01-30",
+    "sources": [
+      "ISCO-08 International Standard Classification of Occupations",
+      "Healthcare workforce planning frameworks",
+      "Professional scope of practice guidelines",
+      "Medical education training levels"
+    ]
+  },
+  "hierarchy": {
+    "structure": "Professional roles with specific role characteristics",
+    "levels": ["role", "characteristic", "subcharacteristic"],
+    "max_depth": 1
+  },
+  "items": [
+    {
+      "id": "attending-physician",
+      "path_components": ["attending-physician"],
+      "depth": 0,
+      "parent_id": null,
+      "children_ids": [
+        "attending-physician/final-decision-authority",
+        "attending-physician/teaching-responsibilities",
+        "attending-physician/comprehensive-patient-management",
+        "attending-physician/medicolegal-responsibility"
+      ],
+      "name": "Attending Physician",
+      "description": "Independent practicing physician with full clinical privileges",
+      "level_info": {
+        "0": {
+          "name": "Attending Physician",
+          "level_name": "Role"
+        }
+      },
+      "metadata": {
+        "role_type": "physician",
+        "training_level": "post_residency",
+        "supervision_required": false,
+        "decision_authority": "full",
+        "scope_of_practice": "unrestricted"
+      }
+    },
+    {
+      "id": "attending-physician/final-decision-authority",
+      "path_components": ["attending-physician", "final-decision-authority"],
+      "depth": 1,
+      "parent_id": "attending-physician",
+      "children_ids": [],
+      "name": "Final Decision Authority",
+      "description": "Has ultimate responsibility for patient care decisions",
+      "level_info": {
+        "0": {
+          "name": "Attending Physician",
+          "level_name": "Role"
+        },
+        "1": {
+          "name": "Final Decision Authority",
+          "level_name": "Characteristic"
+        }
+      },
+      "metadata": {
+        "characteristic_type": "authority",
+        "importance": "critical",
+        "legal_implications": true
+      }
+    },
+    {
+      "id": "attending-physician/teaching-responsibilities",
+      "path_components": ["attending-physician", "teaching-responsibilities"],
+      "depth": 1,
+      "parent_id": "attending-physician",
+      "children_ids": [],
+      "name": "Teaching Responsibilities",
+      "description": "Responsible for educating trainees and medical students",
+      "level_info": {
+        "0": {
+          "name": "Attending Physician",
+          "level_name": "Role"
+        },
+        "1": {
+          "name": "Teaching Responsibilities",
+          "level_name": "Characteristic"
+        }
+      },
+      "metadata": {
+        "characteristic_type": "educational",
+        "importance": "high",
+        "target_audience": ["residents", "medical-students", "fellows"]
+      }
+    },
+    {
+      "id": "attending-physician/comprehensive-patient-management",
+      "path_components": ["attending-physician", "comprehensive-patient-management"],
+      "depth": 1,
+      "parent_id": "attending-physician",
+      "children_ids": [],
+      "name": "Comprehensive Patient Management",
+      "description": "Manages all aspects of patient care from diagnosis to treatment",
+      "level_info": {
+        "0": {
+          "name": "Attending Physician",
+          "level_name": "Role"
+        },
+        "1": {
+          "name": "Comprehensive Patient Management",
+          "level_name": "Characteristic"
+        }
+      },
+      "metadata": {
+        "characteristic_type": "clinical",
+        "importance": "critical",
+        "scope": "full_patient_care"
+      }
+    },
+    {
+      "id": "attending-physician/medicolegal-responsibility",
+      "path_components": ["attending-physician", "medicolegal-responsibility"],
+      "depth": 1,
+      "parent_id": "attending-physician",
+      "children_ids": [],
+      "name": "Medicolegal Responsibility",
+      "description": "Bears full legal responsibility for patient care outcomes",
+      "level_info": {
+        "0": {
+          "name": "Attending Physician",
+          "level_name": "Role"
+        },
+        "1": {
+          "name": "Medicolegal Responsibility",
+          "level_name": "Characteristic"
+        }
+      },
+      "metadata": {
+        "characteristic_type": "legal",
+        "importance": "critical",
+        "liability_level": "full"
+      }
+    },
+    {
+      "id": "resident-physician",
+      "path_components": ["resident-physician"],
+      "depth": 0,
+      "parent_id": null,
+      "children_ids": [
+        "resident-physician/supervised-practice",
+        "resident-physician/learning-focus",
+        "resident-physician/graduated-responsibility",
+        "resident-physician/shift-based-coverage"
+      ],
+      "name": "Resident Physician",
+      "description": "Physician in training under supervision with graduated responsibility",
+      "level_info": {
+        "0": {
+          "name": "Resident Physician",
+          "level_name": "Role"
+        }
+      },
+      "metadata": {
+        "role_type": "physician",
+        "training_level": "residency",
+        "supervision_required": true,
+        "decision_authority": "limited",
+        "scope_of_practice": "supervised"
+      }
+    },
+    {
+      "id": "resident-physician/supervised-practice",
+      "path_components": ["resident-physician", "supervised-practice"],
+      "depth": 1,
+      "parent_id": "resident-physician",
+      "children_ids": [],
+      "name": "Supervised Practice",
+      "description": "Practices under attending physician supervision",
+      "level_info": {
+        "0": {
+          "name": "Resident Physician",
+          "level_name": "Role"
+        },
+        "1": {
+          "name": "Supervised Practice",
+          "level_name": "Characteristic"
+        }
+      },
+      "metadata": {
+        "characteristic_type": "supervision",
+        "importance": "critical",
+        "supervisor_role": "attending-physician"
+      }
+    },
+    {
+      "id": "resident-physician/learning-focus",
+      "path_components": ["resident-physician", "learning-focus"],
+      "depth": 1,
+      "parent_id": "resident-physician",
+      "children_ids": [],
+      "name": "Learning Focus",
+      "description": "Primary focus on learning and skill development",
+      "level_info": {
+        "0": {
+          "name": "Resident Physician",
+          "level_name": "Role"
+        },
+        "1": {
+          "name": "Learning Focus",
+          "level_name": "Characteristic"
+        }
+      },
+      "metadata": {
+        "characteristic_type": "educational",
+        "importance": "high",
+        "learning_methods": ["clinical-experience", "didactic-education", "mentorship"]
+      }
+    },
+    {
+      "id": "resident-physician/graduated-responsibility",
+      "path_components": ["resident-physician", "graduated-responsibility"],
+      "depth": 1,
+      "parent_id": "resident-physician",
+      "children_ids": [],
+      "name": "Graduated Responsibility",
+      "description": "Progressively increasing autonomy and responsibility over training",
+      "level_info": {
+        "0": {
+          "name": "Resident Physician",
+          "level_name": "Role"
+        },
+        "1": {
+          "name": "Graduated Responsibility",
+          "level_name": "Characteristic"
+        }
+      },
+      "metadata": {
+        "characteristic_type": "progression",
+        "importance": "high",
+        "progression_stages": ["junior", "senior", "chief-resident"]
+      }
+    },
+    {
+      "id": "resident-physician/shift-based-coverage",
+      "path_components": ["resident-physician", "shift-based-coverage"],
+      "depth": 1,
+      "parent_id": "resident-physician",
+      "children_ids": [],
+      "name": "Shift Based Coverage",
+      "description": "Provides patient care coverage in scheduled shifts",
+      "level_info": {
+        "0": {
+          "name": "Resident Physician",
+          "level_name": "Role"
+        },
+        "1": {
+          "name": "Shift Based Coverage",
+          "level_name": "Characteristic"
+        }
+      },
+      "metadata": {
+        "characteristic_type": "operational",
+        "importance": "moderate",
+        "coverage_pattern": "shift_based"
+      }
+    },
+    {
+      "id": "nurse",
+      "path_components": ["nurse"],
+      "depth": 0,
+      "parent_id": null,
+      "children_ids": [
+        "nurse/continuous-patient-monitoring",
+        "nurse/medication-administration",
+        "nurse/patient-advocacy",
+        "nurse/care-coordination"
+      ],
+      "name": "Nurse",
+      "description": "Licensed nursing professional providing direct patient care",
+      "level_info": {
+        "0": {
+          "name": "Nurse",
+          "level_name": "Role"
+        }
+      },
+      "metadata": {
+        "role_type": "nursing",
+        "training_level": "professional",
+        "supervision_required": false,
+        "decision_authority": "nursing_scope",
+        "scope_of_practice": "nursing_care"
+      }
+    },
+    {
+      "id": "nurse/continuous-patient-monitoring",
+      "path_components": ["nurse", "continuous-patient-monitoring"],
+      "depth": 1,
+      "parent_id": "nurse",
+      "children_ids": [],
+      "name": "Continuous Patient Monitoring",
+      "description": "Provides ongoing assessment and monitoring of patient status",
+      "level_info": {
+        "0": {
+          "name": "Nurse",
+          "level_name": "Role"
+        },
+        "1": {
+          "name": "Continuous Patient Monitoring",
+          "level_name": "Characteristic"
+        }
+      },
+      "metadata": {
+        "characteristic_type": "clinical",
+        "importance": "critical",
+        "monitoring_aspects": ["vital-signs", "symptoms", "response-to-treatment"]
+      }
+    },
+    {
+      "id": "nurse/medication-administration",
+      "path_components": ["nurse", "medication-administration"],
+      "depth": 1,
+      "parent_id": "nurse",
+      "children_ids": [],
+      "name": "Medication Administration",
+      "description": "Safely administers medications and monitors for effects",
+      "level_info": {
+        "0": {
+          "name": "Nurse",
+          "level_name": "Role"
+        },
+        "1": {
+          "name": "Medication Administration",
+          "level_name": "Characteristic"
+        }
+      },
+      "metadata": {
+        "characteristic_type": "clinical",
+        "importance": "critical",
+        "safety_protocols": ["five-rights", "double-check", "adverse-event-monitoring"]
+      }
+    },
+    {
+      "id": "nurse/patient-advocacy",
+      "path_components": ["nurse", "patient-advocacy"],
+      "depth": 1,
+      "parent_id": "nurse",
+      "children_ids": [],
+      "name": "Patient Advocacy",
+      "description": "Advocates for patient needs, rights, and preferences",
+      "level_info": {
+        "0": {
+          "name": "Nurse",
+          "level_name": "Role"
+        },
+        "1": {
+          "name": "Patient Advocacy",
+          "level_name": "Characteristic"
+        }
+      },
+      "metadata": {
+        "characteristic_type": "advocacy",
+        "importance": "high",
+        "advocacy_areas": ["patient-rights", "care-quality", "comfort-needs"]
+      }
+    },
+    {
+      "id": "nurse/care-coordination",
+      "path_components": ["nurse", "care-coordination"],
+      "depth": 1,
+      "parent_id": "nurse",
+      "children_ids": [],
+      "name": "Care Coordination",
+      "description": "Coordinates care activities among healthcare team members",
+      "level_info": {
+        "0": {
+          "name": "Nurse",
+          "level_name": "Role"
+        },
+        "1": {
+          "name": "Care Coordination",
+          "level_name": "Characteristic"
+        }
+      },
+      "metadata": {
+        "characteristic_type": "coordination",
+        "importance": "high",
+        "coordination_scope": ["team-communication", "care-transitions", "discharge-planning"]
+      }
+    },
+    {
+      "id": "specialist-consultant",
+      "path_components": ["specialist-consultant"],
+      "depth": 0,
+      "parent_id": null,
+      "children_ids": [
+        "specialist-consultant/domain-expertise",
+        "specialist-consultant/consultative-role",
+        "specialist-consultant/focused-assessment",
+        "specialist-consultant/specialized-procedures"
+      ],
+      "name": "Specialist Consultant",
+      "description": "Medical specialist providing expert consultation and specialized care",
+      "level_info": {
+        "0": {
+          "name": "Specialist Consultant",
+          "level_name": "Role"
+        }
+      },
+      "metadata": {
+        "role_type": "physician",
+        "training_level": "fellowship",
+        "supervision_required": false,
+        "decision_authority": "specialty_domain",
+        "scope_of_practice": "specialized"
+      }
+    },
+    {
+      "id": "specialist-consultant/domain-expertise",
+      "path_components": ["specialist-consultant", "domain-expertise"],
+      "depth": 1,
+      "parent_id": "specialist-consultant",
+      "children_ids": [],
+      "name": "Domain Expertise",
+      "description": "Deep expertise in specific medical specialty or subspecialty",
+      "level_info": {
+        "0": {
+          "name": "Specialist Consultant",
+          "level_name": "Role"
+        },
+        "1": {
+          "name": "Domain Expertise",
+          "level_name": "Characteristic"
+        }
+      },
+      "metadata": {
+        "characteristic_type": "expertise",
+        "importance": "critical",
+        "expertise_depth": "specialty_level"
+      }
+    },
+    {
+      "id": "specialist-consultant/consultative-role",
+      "path_components": ["specialist-consultant", "consultative-role"],
+      "depth": 1,
+      "parent_id": "specialist-consultant",
+      "children_ids": [],
+      "name": "Consultative Role",
+      "description": "Provides expert opinions and recommendations to referring providers",
+      "level_info": {
+        "0": {
+          "name": "Specialist Consultant",
+          "level_name": "Role"
+        },
+        "1": {
+          "name": "Consultative Role",
+          "level_name": "Characteristic"
+        }
+      },
+      "metadata": {
+        "characteristic_type": "consultation",
+        "importance": "high",
+        "consultation_types": ["diagnostic", "therapeutic", "prognostic"]
+      }
+    },
+    {
+      "id": "specialist-consultant/focused-assessment",
+      "path_components": ["specialist-consultant", "focused-assessment"],
+      "depth": 1,
+      "parent_id": "specialist-consultant",
+      "children_ids": [],
+      "name": "Focused Assessment",
+      "description": "Performs specialized assessments within area of expertise",
+      "level_info": {
+        "0": {
+          "name": "Specialist Consultant",
+          "level_name": "Role"
+        },
+        "1": {
+          "name": "Focused Assessment",
+          "level_name": "Characteristic"
+        }
+      },
+      "metadata": {
+        "characteristic_type": "assessment",
+        "importance": "high",
+        "assessment_focus": "specialty_specific"
+      }
+    },
+    {
+      "id": "specialist-consultant/specialized-procedures",
+      "path_components": ["specialist-consultant", "specialized-procedures"],
+      "depth": 1,
+      "parent_id": "specialist-consultant",
+      "children_ids": [],
+      "name": "Specialized Procedures",
+      "description": "Performs advanced procedures requiring specialty training",
+      "level_info": {
+        "0": {
+          "name": "Specialist Consultant",
+          "level_name": "Role"
+        },
+        "1": {
+          "name": "Specialized Procedures",
+          "level_name": "Characteristic"
+        }
+      },
+      "metadata": {
+        "characteristic_type": "procedural",
+        "importance": "high",
+        "procedure_complexity": "advanced"
+      }
+    },
+    {
+      "id": "allied-health",
+      "path_components": ["allied-health"],
+      "depth": 0,
+      "parent_id": null,
+      "children_ids": [
+        "allied-health/specialized-therapy",
+        "allied-health/functional-assessment",
+        "allied-health/patient-rehabilitation",
+        "allied-health/interdisciplinary-collaboration"
+      ],
+      "name": "Allied Health Professional",
+      "description": "Healthcare professional with specialized training in therapeutic interventions",
+      "level_info": {
+        "0": {
+          "name": "Allied Health Professional",
+          "level_name": "Role"
+        }
+      },
+      "metadata": {
+        "role_type": "allied_health",
+        "training_level": "professional",
+        "supervision_required": false,
+        "decision_authority": "therapy_domain",
+        "scope_of_practice": "therapeutic"
+      }
+    },
+    {
+      "id": "allied-health/specialized-therapy",
+      "path_components": ["allied-health", "specialized-therapy"],
+      "depth": 1,
+      "parent_id": "allied-health",
+      "children_ids": [],
+      "name": "Specialized Therapy",
+      "description": "Provides specialized therapeutic interventions",
+      "level_info": {
+        "0": {
+          "name": "Allied Health Professional",
+          "level_name": "Role"
+        },
+        "1": {
+          "name": "Specialized Therapy",
+          "level_name": "Characteristic"
+        }
+      },
+      "metadata": {
+        "characteristic_type": "therapeutic",
+        "importance": "critical",
+        "therapy_types": ["physical", "occupational", "speech", "respiratory"]
+      }
+    },
+    {
+      "id": "allied-health/functional-assessment",
+      "path_components": ["allied-health", "functional-assessment"],
+      "depth": 1,
+      "parent_id": "allied-health",
+      "children_ids": [],
+      "name": "Functional Assessment",
+      "description": "Evaluates patient functional capacity and limitations",
+      "level_info": {
+        "0": {
+          "name": "Allied Health Professional",
+          "level_name": "Role"
+        },
+        "1": {
+          "name": "Functional Assessment",
+          "level_name": "Characteristic"
+        }
+      },
+      "metadata": {
+        "characteristic_type": "assessment",
+        "importance": "high",
+        "assessment_domains": ["mobility", "cognition", "communication", "activities-of-daily-living"]
+      }
+    },
+    {
+      "id": "allied-health/patient-rehabilitation",
+      "path_components": ["allied-health", "patient-rehabilitation"],
+      "depth": 1,
+      "parent_id": "allied-health",
+      "children_ids": [],
+      "name": "Patient Rehabilitation",
+      "description": "Facilitates patient recovery and functional improvement",
+      "level_info": {
+        "0": {
+          "name": "Allied Health Professional",
+          "level_name": "Role"
+        },
+        "1": {
+          "name": "Patient Rehabilitation",
+          "level_name": "Characteristic"
+        }
+      },
+      "metadata": {
+        "characteristic_type": "rehabilitation",
+        "importance": "high",
+        "rehabilitation_focus": ["functional-recovery", "quality-of-life", "independence"]
+      }
+    },
+    {
+      "id": "allied-health/interdisciplinary-collaboration",
+      "path_components": ["allied-health", "interdisciplinary-collaboration"],
+      "depth": 1,
+      "parent_id": "allied-health",
+      "children_ids": [],
+      "name": "Interdisciplinary Collaboration",
+      "description": "Works collaboratively with medical team and other disciplines",
+      "level_info": {
+        "0": {
+          "name": "Allied Health Professional",
+          "level_name": "Role"
+        },
+        "1": {
+          "name": "Interdisciplinary Collaboration",
+          "level_name": "Characteristic"
+        }
+      },
+      "metadata": {
+        "characteristic_type": "collaboration",
+        "importance": "high",
+        "collaboration_partners": ["physicians", "nurses", "other-therapists", "social-workers"]
+      }
+    }
+  ],
+  "dimension_metadata": {
+    "role_categories": {
+      "physician": "Medical doctors with prescriptive authority",
+      "nursing": "Licensed nursing professionals",
+      "allied_health": "Specialized therapeutic professionals"
+    },
+    "training_levels": {
+      "residency": "Physicians in specialty training",
+      "post_residency": "Board-certified physicians",
+      "fellowship": "Subspecialty trained physicians",
+      "professional": "Licensed healthcare professionals"
+    },
+    "authority_levels": {
+      "full": "Complete clinical decision-making authority",
+      "limited": "Supervised decision-making within scope",
+      "specialty_domain": "Full authority within specialty area",
+      "nursing_scope": "Authority within nursing practice scope",
+      "therapy_domain": "Authority within therapeutic scope"
+    },
+    "total_roles": 5,
+    "total_characteristics": 20,
+    "interprofessional_ready": true
+  }
+}
