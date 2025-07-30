@@ -62,7 +62,7 @@ python code/analyze_daly_data.py
 python code/generate_diseases_json.py
 
 # Serve the website locally
-cd website && python -m http.server 8000
+cd docs && python -m http.server 8000
 # Visit http://localhost:8000
 ```
 
@@ -77,22 +77,22 @@ cd website && python -m http.server 8000
 
 ```
 Clinical-World-Model/
-├── website/                       # GitHub Pages website
+├── docs/                          # 🌐 GitHub Pages website
 │   ├── index.html                 # Main website entry point
+│   ├── _config.yml                # GitHub Pages configuration
 │   └── assets/                    # Website assets
 │       ├── css/styles.css         # Modern responsive design
 │       └── js/                    # Interactive functionality
-├── clinical-skill-mix/            # Standardized dimension data
+├── clinical-skill-mix/            # 📊 Standardized dimension data
 │   ├── task-skills.json           # Clinical competencies
 │   ├── personas.json              # Healthcare provider roles
 │   ├── diseases.json              # WHO DALY-prioritized conditions
 │   ├── timelines.json             # Disease progression states
 │   ├── location-resources.json    # Care settings & resources
 │   └── skill_mix_dimensions_model.py # Pydantic data models
-├── code/                          # Data processing scripts
-├── data/                          # Raw WHO DALY data
-├── README_diseasesDALY.md         # DALY analysis documentation
-└── _config.yml                    # GitHub Pages configuration
+├── code/                          # 🔧 Data processing scripts
+├── data/                          # 📈 Raw WHO DALY data
+└── README_diseasesDALY.md         # DALY analysis documentation
 ```
 
 ## 💡 Use Cases
