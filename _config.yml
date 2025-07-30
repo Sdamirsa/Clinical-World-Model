@@ -4,6 +4,9 @@ description: "Interactive visualization of Clinical Skill-Mix dimensions for hea
 url: "https://your-username.github.io"
 baseurl: "/Clinical-World-Model"
 
+# Publish from website folder
+source: website
+
 # Build settings
 markdown: kramdown
 plugins:
@@ -12,11 +15,3 @@ plugins:
 # Exclude from processing
 exclude:
   - README.md
-  - data/
-  - code/
-  - clinical-skill-mix/*.py
-
-# Include assets
-include:
-  - assets/
-  - clinical-skill-mix/*.json

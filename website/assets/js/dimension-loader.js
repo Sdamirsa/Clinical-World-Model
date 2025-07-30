@@ -27,7 +27,7 @@ async function loadDimension(dimensionName) {
         }
         
         // Fetch dimension data
-        const response = await fetch(`clinical-skill-mix/${dimensionName}.json`);
+        const response = await fetch(`../clinical-skill-mix/${dimensionName}.json`);
         
         if (!response.ok) {
             throw new Error(`Failed to load ${dimensionName}: ${response.status}`);
