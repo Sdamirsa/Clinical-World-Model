@@ -1,6 +1,6 @@
 # Clinical World Model
 
-[![GitHub Pages](https://img.shields.io/badge/GitHub%20Pages-Live%20Demo-blue)](https://your-username.github.io/Clinical-World-Model)
+[![GitHub Pages](https://img.shields.io/badge/GitHub%20Pages-Live%20Demo-blue)](https://sdamirsa.github.io/Clinical-World-Model)
 [![License: MIT](https://img.shields.io/badge/License-MIT-yellow.svg)](https://opensource.org/licenses/MIT)
 
 A comprehensive, evidence-based framework for modeling clinical environments and defining clinical skill-mix to facilitate the design, evaluation, and deployment of intelligent systems for clinical use.
