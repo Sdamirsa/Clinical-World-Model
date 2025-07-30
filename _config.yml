@@ -1,0 +1,22 @@
+# GitHub Pages Configuration
+title: "Clinical Skill-Mix Dimensions"
+description: "Interactive visualization of Clinical Skill-Mix dimensions for healthcare AI evaluation"
+url: "https://your-username.github.io"
+baseurl: "/Clinical-World-Model"
+
+# Build settings
+markdown: kramdown
+plugins:
+  - jekyll-feed
+
+# Exclude from processing
+exclude:
+  - README.md
+  - data/
+  - code/
+  - clinical-skill-mix/*.py
+
+# Include assets
+include:
+  - assets/
+  - clinical-skill-mix/*.json
