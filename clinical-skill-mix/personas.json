@@ -1,494 +1,2813 @@
 {
   "dimension": "personas",
-  "description": "Healthcare provider roles with medical specialties and subspecialties based on ABMS and professional standards",
+  "description": "Healthcare provider roles based on WHO health worker classification with ISCO codes",
   "reference": {
-    "classification": "ABMS Medical Specialties and Healthcare Professional Standards",
-    "burden_metric": "Professional scope and training requirements",
-    "data_source": "American Board of Medical Specialties (ABMS) and Professional Healthcare Organizations",
+    "classification": "WHO Health Worker Classification and ISCO-08 Standards",
+    "burden_metric": "Professional scope, training requirements, and regulatory status",
+    "data_source": "World Health Organization Health Worker Classification and International Standard Classification of Occupations",
     "last_updated": "2025-01-30",
     "sources": [
-      "ABMS Member Board Specialties and Subspecialties",
-      "American Nurses Association (ANA) Scope and Standards",
-      "Allied Health Professional Organizations",
-      "Healthcare Workforce Classifications"
+      "WHO Health Worker Classification Framework",
+      "International Standard Classification of Occupations (ISCO-08)",
+      "Medical specialty classification systems",
+      "Professional health worker regulatory standards"
     ]
   },
   "hierarchy": {
-    "structure": "Healthcare roles with specialties and subspecialties",
-    "levels": ["role", "specialty", "subspecialty"],
-    "max_depth": 2
+    "structure": "Healthcare occupations with medical specializations",
+    "levels": [
+      "occupation",
+      "specialty"
+    ],
+    "max_depth": 1
   },
   "items": [
     {
-      "id": "physician",
-      "path_components": ["physician"],
+      "id": "ambulance-workers",
+      "path_components": [
+        "ambulance-workers"
+      ],
+      "depth": 0,
+      "parent_id": null,
+      "children_ids": [],
+      "name": "Ambulance workers",
+      "description": "Ambulance workers provide emergency health care to patients who are injured, sick, infirm or otherwise physically or mentally impaired prior to and during transport to medical, rehabilitation and other health care facilities. They monitor changes in health status of patients during transport and perform procedures according to protocol for emergency medical treatment. They may patrol and provide information on first aid at large-scale public gatherings and other events where health emergencies are more likely to occur.",
+      "level_info": {
+        "0": {
+          "name": "Ambulance Workers",
+          "level_name": "Role"
+        }
+      },
+      "metadata": {
+        "isco_code": "3258",
+        "who_classification": true,
+        "occupation_type": "health_worker",
+        "occupation_examples": [
+          "Ambulance officer",
+          "Ambulance paramedic",
+          "Emergency medical technician",
+          "Emergency paramedic"
+        ],
+        "training_notes": "Occupations included in this category normally require formal training in emergency medical treatment, patient transport, ambulance principles and practice, or a related field. Ambulance drivers who do not provide health care are excluded from here (classified under 'Plant and machine operators').",
+        "scope": "health_services"
+      }
+    },
+    {
+      "id": "armed-forces-occupations",
+      "path_components": [
+        "armed-forces-occupations"
+      ],
+      "depth": 0,
+      "parent_id": null,
+      "children_ids": [],
+      "name": "Armed forces occupations",
+      "description": "This group covers members of the armed forces (not classified elsewhere) engaged in actions with primary intent to enhance health including, for instance, commissioned medical and nursing officers and combat medical technicians.",
+      "level_info": {
+        "0": {
+          "name": "Armed Forces Occupations",
+          "level_name": "Role"
+        }
+      },
+      "metadata": {
+        "isco_code": "",
+        "who_classification": true,
+        "occupation_type": "health_worker",
+        "occupation_examples": [
+          "Commissioned armed forces medical doctor",
+          "Combat medical technician",
+          "Navy corps nurse",
+          "Veteran hospital nursing aide"
+        ],
+        "training_notes": "Many jobs performed by members of the armed forces are similar, in terms of the nature of the work performed, to civilian occupations. For purposes of international comparability, where data pertaining to members of the armed forces are reported and classified by occupation, they should be included under 'Armed forces occupations'. Where it is not possible to produce information about the nature of work performed by members of the armed forces, they may be included with similar civilian jobs. In adapting this classification for national purposes, countries may wish to consider what approach best suits their circumstances and user needs.",
+        "scope": "health_services"
+      }
+    },
+    {
+      "id": "audiologists-and-speech-therapists",
+      "path_components": [
+        "audiologists-and-speech-therapists"
+      ],
+      "depth": 0,
+      "parent_id": null,
+      "children_ids": [],
+      "name": "Audiologists and speech therapists",
+      "description": "Audiologists and speech therapists evaluate, manage and treat physical disorders affecting human hearing, speech communication and swallowing. They prescribe corrective devices or rehabilitative therapies for hearing loss, speech disorders, and related sensory and neural problems. They plan hearing screening programs and provide counselling on hearing safety and communication performance.",
+      "level_info": {
+        "0": {
+          "name": "Audiologists And Speech Therapists",
+          "level_name": "Role"
+        }
+      },
+      "metadata": {
+        "isco_code": "2266",
+        "who_classification": true,
+        "occupation_type": "health_worker",
+        "occupation_examples": [
+          "Audiologist",
+          "Speech therapist",
+          "Speech pathologist",
+          "Language therapist"
+        ],
+        "training_notes": "This category includes occupations for which competent performance usually requires formal training at a higher educational institution in audiology, speech pathology, clinical language sciences or a related field.",
+        "scope": "health_services"
+      }
+    },
+    {
+      "id": "biomedical-engineers",
+      "path_components": [
+        "biomedical-engineers"
+      ],
+      "depth": 0,
+      "parent_id": null,
+      "children_ids": [],
+      "name": "Biomedical engineers",
+      "description": "The group includes those who conduct research and advise on or develop engineering procedures and solutions concerning biomedical engineering.",
+      "level_info": {
+        "0": {
+          "name": "Biomedical Engineers",
+          "level_name": "Role"
+        }
+      },
+      "metadata": {
+        "isco_code": "2149",
+        "who_classification": true,
+        "occupation_type": "health_worker",
+        "occupation_examples": [
+          "Biomedical engineer"
+        ],
+        "scope": "health_services"
+      }
+    },
+    {
+      "id": "clerical-support-workers",
+      "path_components": [
+        "clerical-support-workers"
+      ],
+      "depth": 0,
+      "parent_id": null,
+      "children_ids": [],
+      "name": "Clerical support workers",
+      "description": "This group covers clerical support workers (excluding specialized health information technicians and medical secretaries) working in health systems including, for instance, general clerks, keyboard clerks, client services clerks, material recording clerks and others who record, organize, store, compute and retrieve information, and perform clerical and secretarial duties in connection with money-handling operations, requests for information and appointments.",
+      "level_info": {
+        "0": {
+          "name": "Clerical Support Workers",
+          "level_name": "Role"
+        }
+      },
+      "metadata": {
+        "isco_code": "",
+        "who_classification": true,
+        "occupation_type": "health_worker",
+        "occupation_examples": [
+          "General office clerk",
+          "General secretary",
+          "General receptionist",
+          "Accounts clerk",
+          "Data entry clerk",
+          "Health insurance clerk",
+          "Hospital admissions clerk",
+          "Human resource assistant",
+          "Medical appointments schedule clerk",
+          "Medical commodities stock controller"
+        ],
+        "training_notes": "Many occupations in this category require relatively advanced literacy and numeracy skills, good interpersonal communication skills and a high level of manual dexterity. The knowledge and skills required are usually obtained as the result of secondary education and, in some case, specialized post-secondary vocational education and/or prolonged on-the-job training.",
+        "scope": "health_services"
+      }
+    },
+    {
+      "id": "clinical-psychologists",
+      "path_components": [
+        "clinical-psychologists"
+      ],
+      "depth": 0,
+      "parent_id": null,
+      "children_ids": [],
+      "name": "Clinical psychologists",
+      "description": "Psychologists research into and study mental processes and behaviour of human beings as individuals or in groups, and apply this knowledge to promote personal, social, educational or occupational adjustment and development.",
+      "level_info": {
+        "0": {
+          "name": "Clinical Psychologists",
+          "level_name": "Role"
+        }
+      },
+      "metadata": {
+        "isco_code": "2634",
+        "who_classification": true,
+        "occupation_type": "health_worker",
+        "occupation_examples": [
+          "Clinical psychologist",
+          "Educational psychologist",
+          "Psychotherapist"
+        ],
+        "scope": "health_services"
+      }
+    },
+    {
+      "id": "community-health-workers",
+      "path_components": [
+        "community-health-workers"
+      ],
+      "depth": 0,
+      "parent_id": null,
+      "children_ids": [],
+      "name": "Community health workers",
+      "description": "Community health workers provide health education, referral and follow up, case management, and basic preventive health care and home visiting services to specific communities. They provide support and assistance to individuals and families in navigating the health and social services system.",
+      "level_info": {
+        "0": {
+          "name": "Community Health Workers",
+          "level_name": "Role"
+        }
+      },
+      "metadata": {
+        "isco_code": "3253",
+        "who_classification": true,
+        "occupation_type": "health_worker",
+        "occupation_examples": [
+          "Community health worker",
+          "Community health aide",
+          "Community health promoter",
+          "Village health worker",
+          "Kaders (community volunteer)"
+        ],
+        "training_notes": "Occupations included in this category normally require formal or informal training and supervision recognized by the health and social services authorities. Providers of routine personal care services and traditional medicine practitioners are not included here.",
+        "scope": "health_services"
+      }
+    },
+    {
+      "id": "dental-assistants-and-therapists",
+      "path_components": [
+        "dental-assistants-and-therapists"
+      ],
+      "depth": 0,
+      "parent_id": null,
+      "children_ids": [],
+      "name": "Dental assistants and therapists",
+      "description": "Dental assistants and therapists provide basic dental care services for the prevention and treatment of diseases and disorders of the teeth and mouth, as per care plans and procedures established by a dentist or other oral health professional. They examine patients' mouths, teeth and related structures to assess oral health status; provide advice on dental hygiene; perform basic or routine clinical dental procedures; and assisting dentists during complex dental procedures.",
+      "level_info": {
+        "0": {
+          "name": "Dental Assistants And Therapists",
+          "level_name": "Role"
+        }
+      },
+      "metadata": {
+        "isco_code": "3251",
+        "who_classification": true,
+        "occupation_type": "health_worker",
+        "occupation_examples": [
+          "Dental assistant",
+          "Dental hygienist",
+          "Dental therapist"
+        ],
+        "training_notes": "This category includes occupations for which competent performance usually requires formal training in dental hygiene, dental-assisting or a related field.",
+        "scope": "oral_health",
+        "prescriptive_authority": "limited",
+        "independent_practice": true
+      }
+    },
+    {
+      "id": "dentists",
+      "path_components": [
+        "dentists"
+      ],
+      "depth": 0,
+      "parent_id": null,
+      "children_ids": [],
+      "name": "Dentists",
+      "description": "Dentists (including dental surgeons and related) diagnose, treat and prevent diseases, injuries and abnormalities of the teeth, mouth, jaws and associated tissues by applying the principles and procedures of modern dentistry. They use a broad range of specialized diagnostic, surgical and other techniques to promote and restore oral health.",
+      "level_info": {
+        "0": {
+          "name": "Dentists",
+          "level_name": "Role"
+        }
+      },
+      "metadata": {
+        "isco_code": "2261",
+        "who_classification": true,
+        "occupation_type": "health_worker",
+        "occupation_examples": [
+          "Dentist",
+          "Dental practitioner",
+          "Dental surgeon",
+          "Endodontist",
+          "Oral and maxillofacial surgeon",
+          "Oral pathologist",
+          "Orthodontist",
+          "Paedodontist",
+          "Periodontist",
+          "Prosthodontist"
+        ],
+        "training_notes": "Occupations included in this category normally require completion of university-level training in theoretical and practical dentistry or a related field. Although in some countries ÔstomatologyÕ and 'dental, oral and maxillofacial surgery' may be considered as medical specializations, occupations in these fields should always be classified here.",
+        "scope": "health_services"
+      }
+    },
+    {
+      "id": "dieticians-and-nutritionists",
+      "path_components": [
+        "dieticians-and-nutritionists"
+      ],
+      "depth": 0,
+      "parent_id": null,
+      "children_ids": [],
+      "name": "Dieticians and nutritionists",
+      "description": "Dieticians and nutritionists assess, plan and implement programs to enhance the impact of food and nutrition on human health. They may conduct research, assessments and education to improve nutritional levels among individuals and communities.",
+      "level_info": {
+        "0": {
+          "name": "Dieticians And Nutritionists",
+          "level_name": "Role"
+        }
+      },
+      "metadata": {
+        "isco_code": "2265",
+        "who_classification": true,
+        "occupation_type": "health_worker",
+        "occupation_examples": [
+          "Dietician",
+          "Clinical dietician",
+          "Food service dietician",
+          "Nutritionist",
+          "Public health nutritionist",
+          "Sports nutritionist"
+        ],
+        "training_notes": "This category includes occupations for which competent performance usually requires formal training at a higher educational institution in food and nutritional science, nutrition education, dietetics, or a related field.",
+        "scope": "health_services"
+      }
+    },
+    {
+      "id": "dispensing-opticians",
+      "path_components": [
+        "dispensing-opticians"
+      ],
+      "depth": 0,
+      "parent_id": null,
+      "children_ids": [],
+      "name": "Dispensing opticians",
+      "description": "Dispensing opticians design, fit and dispense optical lenses based on a prescription from an ophthalmologist or optometrist for the correction of reduced visual acuity. They service corrective eyeglasses, contact lenses, low-vision aids and other optical devices.",
+      "level_info": {
+        "0": {
+          "name": "Dispensing Opticians",
+          "level_name": "Role"
+        }
+      },
+      "metadata": {
+        "isco_code": "3254",
+        "who_classification": true,
+        "occupation_type": "health_worker",
+        "occupation_examples": [
+          "Dispensing optician",
+          "Contact lens optician"
+        ],
+        "training_notes": "This category includes occupations for which competent performance usually requires formal training in opticianry.",
+        "scope": "health_services"
+      }
+    },
+    {
+      "id": "elementary-occupations",
+      "path_components": [
+        "elementary-occupations"
+      ],
+      "depth": 0,
+      "parent_id": null,
+      "children_ids": [],
+      "name": "Elementary occupations",
+      "description": "This group covers elementary occupations in health systems including, for instance, cleaners, food preparation assistants, refuse workers and others who perform simple and routine tasks which may require the use of hand-held tools and considerable physical effort.",
+      "level_info": {
+        "0": {
+          "name": "Elementary Occupations",
+          "level_name": "Role"
+        }
+      },
+      "metadata": {
+        "isco_code": "",
+        "who_classification": true,
+        "occupation_type": "health_worker",
+        "occupation_examples": [
+          "Hospital garden labourer",
+          "Kitchen helper",
+          "Lavatory attendant",
+          "Medical commodities stock handler",
+          "Refuse collector",
+          "Window washer"
+        ],
+        "training_notes": "Most occupations in this category require knowledge and skills generally obtained through primary education and/or a short period of on-the-job training.",
+        "scope": "health_services"
+      }
+    },
+    {
+      "id": "environmental-and-occupational-health-and-hygiene-professionals",
+      "path_components": [
+        "environmental-and-occupational-health-and-hygiene-professionals"
+      ],
+      "depth": 0,
+      "parent_id": null,
+      "children_ids": [],
+      "name": "Environmental and occupational health and hygiene professionals",
+      "description": "Environmental and occupational health and hygiene professionals assess, plan and implement programs to recognize, monitor and control environmental factors that can potentially affect human health, to ensure safe and healthy working conditions, and to prevent disease or injury caused by chemical, physical, radiological and biological agents or ergonomic factors.",
+      "level_info": {
+        "0": {
+          "name": "Environmental And Occupational Health And Hygiene Professionals",
+          "level_name": "Role"
+        }
+      },
+      "metadata": {
+        "isco_code": "2263",
+        "who_classification": true,
+        "occupation_type": "health_worker",
+        "occupation_examples": [
+          "Environmental health officer",
+          "Occupational health and safety adviser",
+          "Occupational hygienist",
+          "Radiation protection adviser"
+        ],
+        "training_notes": "This category includes occupations for which competent performance usually requires formal training at a higher educational institution in environmental or occupational health and safety, or a related field. Professionals who assess, plan and implement programmes to monitor or control the impact of human activities on the environment are excluded from here (classified under 'Life science professionals').",
+        "scope": "health_services"
+      }
+    },
+    {
+      "id": "environmental-and-occupational-health-inspectors-and-associates",
+      "path_components": [
+        "environmental-and-occupational-health-inspectors-and-associates"
+      ],
+      "depth": 0,
+      "parent_id": null,
+      "children_ids": [],
+      "name": "Environmental and occupational health inspectors and associates",
+      "description": "Environmental and occupational health inspectors and associates investigate the implementation of rules and regulations relating to environmental factors that can potentially affect human health, health and safety in the workplace, and safety of processes for the production of goods and services. They may implement and evaluate programs to restore or improve safety and sanitary conditions under the supervision of a health professional.",
+      "level_info": {
+        "0": {
+          "name": "Environmental And Occupational Health Inspectors And Associates",
+          "level_name": "Role"
+        }
+      },
+      "metadata": {
+        "isco_code": "3257",
+        "who_classification": true,
+        "occupation_type": "health_worker",
+        "occupation_examples": [
+          "Health inspector",
+          "Food sanitation and safety inspector",
+          "Occupational health and safety inspector",
+          "Sanitarian",
+          "Sanitary inspector"
+        ],
+        "training_notes": "This category includes occupations for which competent performance usually requires formal training in sanitary sciences, occupational and institutional safety and sanitation, or a related field.",
+        "scope": "health_services"
+      }
+    },
+    {
+      "id": "generalist-medical-practitioners",
+      "path_components": [
+        "generalist-medical-practitioners"
+      ],
+      "depth": 0,
+      "parent_id": null,
+      "children_ids": [],
+      "name": "Generalist medical practitioners",
+      "description": "Generalist medical doctors (including family and primary care doctors) diagnose, treat and prevent illness, disease, injury, and other physical and mental impairments and maintain general health in humans through application of the principles and procedures of modern medicine. They plan, supervise and evaluate the implementation of care and treatment plans by other health care providers. They do not limit their practice to certain disease categories or methods of treatment, and may assume responsibility for the provision of continuing and comprehensive medical care to individuals, families and communities.",
+      "level_info": {
+        "0": {
+          "name": "Generalist Medical Practitioners",
+          "level_name": "Role"
+        }
+      },
+      "metadata": {
+        "isco_code": "2211",
+        "who_classification": true,
+        "occupation_type": "health_worker",
+        "occupation_examples": [
+          "Medical doctor (general)",
+          "Medical officer (general)",
+          "Physician (general)",
+          "General practitioner",
+          "Family medical practitioner",
+          "Primary health care physician",
+          "District medical doctor",
+          "Resident medical officer specializing in general practice",
+          "Township medical officer",
+          "Station medical officer"
+        ],
+        "training_notes": "Occupations included in this category require completion of a university-level degree in basic medical education plus postgraduate clinical training or equivalent. Medical interns who have completed their university education in basic medical education and are undertaking postgraduate clinical training are included here. Although in some countries âgeneral practiceâ and 'family medicine' may be considered as medical specializations, these occupations should always be classified here.",
+        "scope": "medical_practice",
+        "prescriptive_authority": true,
+        "independent_practice": true
+      }
+    },
+    {
+      "id": "health-associate-professionals-not-elsewhere-classified",
+      "path_components": [
+        "health-associate-professionals-not-elsewhere-classified"
+      ],
+      "depth": 0,
+      "parent_id": null,
+      "children_ids": [],
+      "name": "Health associate professionals not elsewhere classified",
+      "description": "This group covers health associate professionals not classified elsewhere including, for instance, chiropractors, osteopaths, respiratory and anaesthesia technicians, HIV counsellors and others performing technical tasks and providing support for diagnostic, preventive, curative, promotional and rehabilitative health services.",
+      "level_info": {
+        "0": {
+          "name": "Health Associate Professionals Not Elsewhere Classified",
+          "level_name": "Role"
+        }
+      },
+      "metadata": {
+        "isco_code": "3259",
+        "who_classification": true,
+        "occupation_type": "health_worker",
+        "occupation_examples": [
+          "Chiropractor",
+          "Osteopath",
+          "Respiratory technologist",
+          "Anaesthesia technician",
+          "HIV counsellor",
+          "Family planning counsellor"
+        ],
+        "training_notes": "This category includes occupations for which competent performance usually requires formal training in health service provision. Although in some jurisdictions chiropractic and osteopathic are considered to have the attributes of medical specialties, practitioners in these disciplines should always be classified here.",
+        "scope": "health_services"
+      }
+    },
+    {
+      "id": "health-care-assistants",
+      "path_components": [
+        "health-care-assistants"
+      ],
+      "depth": 0,
+      "parent_id": null,
+      "children_ids": [],
+      "name": "Health care assistants",
+      "description": "Health care assistants provide routine personal care, support and assistance with activities of daily living to patients and residents in a variety of health care settings such as hospitals, clinics and residential nursing care facilities. They assist patients with personal, physical mobility and therapeutic care needs as per established care plans and practices, and generally under the direct supervision of medical, nursing or other health professionals or associate professionals.",
+      "level_info": {
+        "0": {
+          "name": "Health Care Assistants",
+          "level_name": "Role"
+        }
+      },
+      "metadata": {
+        "isco_code": "5321",
+        "who_classification": true,
+        "occupation_type": "health_worker",
+        "occupation_examples": [
+          "Nursing aide (hospital or clinic)",
+          "Patient care assistant",
+          "Birth assistant (hospital or clinic)",
+          "Psychiatric aide"
+        ],
+        "training_notes": "Occupations included in this category generally do not require extensive health care knowledge or training. Classified here are workers providing services in health care settings such as hospitals, health care facilities, rehabilitation centres, residential nursing care facilities, and other establishments with permanent medical or nursing supervision.",
+        "scope": "technical_support",
+        "prescriptive_authority": false,
+        "supervision_required": true
+      }
+    },
+    {
+      "id": "health-management-personnel-not-elsewhere-classified",
+      "path_components": [
+        "health-management-personnel-not-elsewhere-classified"
+      ],
+      "depth": 0,
+      "parent_id": null,
+      "children_ids": [],
+      "name": "Health management personnel not elsewhere classified",
+      "description": "This group covers managers and administrators not classified elsewhere (except health service mangers) working in health systems including, for instance, government health department heads, human resource managers, supply chain managers, regional health policy and planning directors, and others whose main tasks and duties include guiding and directing the activities of organizations, departments and other workers.",
+      "level_info": {
+        "0": {
+          "name": "Health Management Personnel Not Elsewhere Classified",
+          "level_name": "Role"
+        }
+      },
+      "metadata": {
+        "isco_code": "",
+        "who_classification": true,
+        "occupation_type": "health_worker",
+        "occupation_examples": [
+          "Government health department head",
+          "Human resource manager",
+          "Medical commodities procurement manager",
+          "Regional health planning director",
+          "Aged care service manager",
+          "Social welfare manager",
+          "Information and communications technology service manager"
+        ],
+        "scope": "health_services"
+      }
+    },
+    {
+      "id": "health-professionals-not-elsewhere-classified",
+      "path_components": [
+        "health-professionals-not-elsewhere-classified"
+      ],
+      "depth": 0,
+      "parent_id": null,
+      "children_ids": [],
+      "name": "Health professionals not elsewhere classified",
+      "description": "This group covers health professionals not classified elsewhere such as podiatrists, occupational therapists, recreational therapists and other professionals providing diagnostic, preventive, curative and rehabilitative health services.",
+      "level_info": {
+        "0": {
+          "name": "Health Professionals Not Elsewhere Classified",
+          "level_name": "Role"
+        }
+      },
+      "metadata": {
+        "isco_code": "2269",
+        "who_classification": true,
+        "occupation_type": "health_worker",
+        "occupation_examples": [
+          "Podiatrist",
+          "Occupational therapist",
+          "Recreational therapist",
+          "Arts therapist",
+          "Dance and movement therapist"
+        ],
+        "scope": "health_services"
+      }
+    },
+    {
+      "id": "health-service-managers",
+      "path_components": [
+        "health-service-managers"
+      ],
+      "depth": 0,
+      "parent_id": null,
+      "children_ids": [],
+      "name": "Health service managers",
+      "description": "Health service managers plan, direct, coordinate and evaluate the provision of clinical and community health care services in hospitals, clinics, public health agencies and similar organizations. They provide overall direction, policy standards and operational criteria for the units they manage, including supervising and evaluating the recruitment, training and work activities of personnel. They monitor the use of health services and resources. They liaise with other health and welfare service providers, boards and funding bodies to coordinate the provision of services.",
+      "level_info": {
+        "0": {
+          "name": "Health Service Managers",
+          "level_name": "Role"
+        }
+      },
+      "metadata": {
+        "isco_code": "1342",
+        "who_classification": true,
+        "occupation_type": "health_worker",
+        "occupation_examples": [
+          "Health facility administrator",
+          "Medical administrator",
+          "Clinical director",
+          "Director of nursing",
+          "Hospital matron",
+          "Community health care coordinator",
+          "Chief public health officer"
+        ],
+        "training_notes": "The main tasks and duties for jobs in this occupational category include guiding and directing the activities of organizations, departments and other workers, and other tasks which require complex problem solving and decision making based on knowledge and skills normally obtained as the result of some combination of higher education, extensive work experience and prolonged on-the-job training.",
+        "scope": "health_administration",
+        "management_role": true
+      }
+    },
+    {
+      "id": "home-based-personal-care-workers",
+      "path_components": [
+        "home-based-personal-care-workers"
+      ],
+      "depth": 0,
+      "parent_id": null,
+      "children_ids": [],
+      "name": "Home-based personal care workers",
+      "description": "Home-based personal care workers provide routine personal care, support and assistance with activities of daily living to persons who are in need of such care due to effects of ageing, illness, injury, or other physical or mental condition in private homes and other independent residential settings. They assist clients with personal, physical mobility and therapeutic care needs, usually as per care plans established by a health professional.",
+      "level_info": {
+        "0": {
+          "name": "Home Based Personal Care Workers",
+          "level_name": "Role"
+        }
+      },
+      "metadata": {
+        "isco_code": "5322",
+        "who_classification": true,
+        "occupation_type": "health_worker",
+        "occupation_examples": [
+          "Nursing aide (home)",
+          "Home care aide",
+          "Home birth assistant",
+          "Personal care provider"
+        ],
+        "training_notes": "Occupations included in this category generally do not require extensive health care knowledge or training. Classified here are workers providing services in primary residential settings including assisted-living facilities, continuing care retirement communities, and other types of residential facilities with minimal or no on-site medical or nursing supervision. Home birth assistants, who provide emotional support and general care and advice to women and families during pregnancy and labour, but not delivery care to reduce health risks, are included here. Care workers who provide care and supervision for children in residential homes and care centres are excluded from here.",
+        "scope": "health_services"
+      }
+    },
+    {
+      "id": "life-science-professionals",
+      "path_components": [
+        "life-science-professionals"
+      ],
+      "depth": 0,
+      "parent_id": null,
+      "children_ids": [],
+      "name": "Life science professionals",
+      "description": "Life science professionals (including bacteriologists, pharmacologists and related) study living organisms and their interactions with each other and the environment, and apply this knowledge to solve human health and environmental problems. They gather, examine and analyse human, animal, insect, plant, soil, water and air specimens and samples in laboratories and in the field using specialised equipment, instruments, technologies and techniques. They work in diverse fields such as bacteriology, biochemistry, genetics, immunology, pharmacology, toxicology and virology.",
+      "level_info": {
+        "0": {
+          "name": "Life Science Professionals",
+          "level_name": "Role"
+        }
+      },
+      "metadata": {
+        "isco_code": "2131, 2133",
+        "who_classification": true,
+        "occupation_type": "health_worker",
+        "occupation_examples": [
+          "Air pollution analyst",
+          "Bacteriologist",
+          "Biotechnologist",
+          "Cell geneticist",
+          "Ecologist",
+          "Environmental protection adviser",
+          "Microbiologist",
+          "Molecular biologist",
+          "Molecular geneticist",
+          "Pharmacologist"
+        ],
+        "training_notes": "The tasks and duties for occupations in this category include collecting, analyzing and evaluating experimental and field data to identify and develop new products, processes and techniques for pharmaceutical and environmental use. The knowledge and skills required are usually obtained as the result of study at a higher educational institution in life science or related field for a period of 3Ð6 years leading to the award of a first degree or higher qualification.",
+        "scope": "health_services"
+      }
+    },
+    {
+      "id": "life-science-technicians",
+      "path_components": [
+        "life-science-technicians"
+      ],
+      "depth": 0,
+      "parent_id": null,
+      "children_ids": [],
+      "name": "Life science technicians",
+      "description": "Life science technicians (excluding medical) provide technical support for research, analysis and testing of living organisms, and development and application of products and processes resulting from research to solve human health and environmental problems. They collect and prepare specimens and samples generally under the guidance of a life science professional, calibrate and operate laboratory instruments and equipment, perform routine field and laboratory tests, and monitor experiments to ensure adherence to quality control procedures and health and safety guidelines. They work in areas such as biology, biochemistry, biotechnology, environmental protection and pharmacology.",
+      "level_info": {
+        "0": {
+          "name": "Life Science Technicians",
+          "level_name": "Role"
+        }
+      },
+      "metadata": {
+        "isco_code": "3141",
+        "who_classification": true,
+        "occupation_type": "health_worker",
+        "occupation_examples": [
+          "Bacteriology technician",
+          "Biochemistry technician",
+          "Pharmacology technician",
+          "Serology technician",
+          "Tissue culture technician"
+        ],
+        "training_notes": "Occupations included in this category usually require knowledge and skills as obtained through formal training in life science or related field.",
+        "scope": "technical_support",
+        "prescriptive_authority": false,
+        "supervision_required": true
+      }
+    },
+    {
+      "id": "medical-and-dental-prosthetic-technicians",
+      "path_components": [
+        "medical-and-dental-prosthetic-technicians"
+      ],
+      "depth": 0,
+      "parent_id": null,
+      "children_ids": [],
+      "name": "Medical and dental prosthetic technicians",
+      "description": "Medical and dental prosthetic technicians design, fit, service and repair medical and dental devices and appliances following prescriptions or instructions established by a health professional. They may service a wide range of support instruments to correct physical medical or dental problems such as neck braces, orthopaedic splints, artificial limbs, hearing aides, arch supports, dentures, and dental crowns and bridges.",
+      "level_info": {
+        "0": {
+          "name": "Medical And Dental Prosthetic Technicians",
+          "level_name": "Role"
+        }
+      },
+      "metadata": {
+        "isco_code": "3214",
+        "who_classification": true,
+        "occupation_type": "health_worker",
+        "occupation_examples": [
+          "Medical appliance technician",
+          "Orthotist",
+          "Orthotic technician",
+          "Prosthetist",
+          "Prosthetic technician",
+          "Denturist",
+          "Dental technician"
+        ],
+        "training_notes": "Occupations included in this category normally require some medical, dental and anatomical knowledge obtained through formal training. Technicians who construct and repair precision medical and surgical instruments are excluded from here (classified under 'Trades workers').",
+        "scope": "oral_health",
+        "prescriptive_authority": "limited",
+        "independent_practice": true
+      }
+    },
+    {
+      "id": "medical-and-pathology-laboratory-technicians",
+      "path_components": [
+        "medical-and-pathology-laboratory-technicians"
+      ],
+      "depth": 0,
+      "parent_id": null,
+      "children_ids": [],
+      "name": "Medical and pathology laboratory technicians",
+      "description": "Medical and pathology laboratory technicians perform clinical tests on specimens of bodily fluids and tissues in order to get information about the health of a patient or cause of death. They test and operate equipment such as spectrophotometers, calorimeters and flame photometers for analysis of biological material including blood, urine and spinal fluid.",
+      "level_info": {
+        "0": {
+          "name": "Medical And Pathology Laboratory Technicians",
+          "level_name": "Role"
+        }
+      },
+      "metadata": {
+        "isco_code": "3212",
+        "who_classification": true,
+        "occupation_type": "health_worker",
+        "occupation_examples": [
+          "Medical laboratory technician",
+          "Medical laboratory assistant",
+          "Blood bank technician",
+          "Cytology technician",
+          "Pathology technician"
+        ],
+        "training_notes": "This category includes occupations for which competent performance usually requires formal training in biomedical science, medical technology or a related field. Technicians who conduct laboratory tests on living organisms should be classified under 'Life science technicians'. Forensic science technicians, who perform clinical tests to aid in the investigation of crimes, should be classified under 'Physical and engineering science technicians'.",
+        "scope": "technical_support",
+        "prescriptive_authority": false,
+        "supervision_required": true
+      }
+    },
+    {
+      "id": "medical-assistants",
+      "path_components": [
+        "medical-assistants"
+      ],
+      "depth": 0,
+      "parent_id": null,
+      "children_ids": [],
+      "name": "Medical assistants",
+      "description": "Medical assistants perform basic clinical and administrative tasks to support patient care under the direct supervision of a medical practitioner or other health professional. They perform routine tasks and procedures such as measuring patients' vital signs, administering medications and injections, recording information in medical records-keeping systems, preparing and handling medical instruments and supplies, and collecting and preparing specimens of bodily fluids and tissues for laboratory testing.",
+      "level_info": {
+        "0": {
+          "name": "Medical Assistants",
+          "level_name": "Role"
+        }
+      },
+      "metadata": {
+        "isco_code": "3256",
+        "who_classification": true,
+        "occupation_type": "health_worker",
+        "occupation_examples": [
+          "Medical assistant",
+          "Clinical assistant",
+          "Ophthalmic assistant",
+          "Health assistant"
+        ],
+        "training_notes": "This category includes occupations for which competent performance normally requires formal training in health services provision. Clinical care providers with advanced training and skills to provide independent medical diagnostic and treatment services should be classified under 'Paramedical practitioners'-2240.",
+        "scope": "technical_support",
+        "prescriptive_authority": false,
+        "supervision_required": true
+      }
+    },
+    {
+      "id": "medical-imaging-and-therapeutic-equipment-technicians",
+      "path_components": [
+        "medical-imaging-and-therapeutic-equipment-technicians"
+      ],
+      "depth": 0,
+      "parent_id": null,
+      "children_ids": [],
+      "name": "Medical imaging and therapeutic equipment technicians",
+      "description": "Medical imaging and therapeutic equipment technicians test and operate radiographic, ultrasound and other medical imaging equipment to produce images of body structures for the diagnosis and treatment of injury, disease and other impairments. They may administer radiation treatments and monitor patients' conditions under the supervision of a radiologist or other health professional.",
+      "level_info": {
+        "0": {
+          "name": "Medical Imaging And Therapeutic Equipment Technicians",
+          "level_name": "Role"
+        }
+      },
+      "metadata": {
+        "isco_code": "3211",
+        "who_classification": true,
+        "occupation_type": "health_worker",
+        "occupation_examples": [
+          "Diagnostic medical radiographer",
+          "Medical radiation therapist",
+          "Magnetic resonance imaging technologist",
+          "Nuclear medicine technologist",
+          "Mammographer",
+          "Sonographer"
+        ],
+        "training_notes": "This category includes occupations for which competent performance usually requires formal training in medical technology, radiology, sonography, nuclear medical technology or a related field.",
+        "scope": "technical_support",
+        "prescriptive_authority": false,
+        "supervision_required": true
+      }
+    },
+    {
+      "id": "medical-records-and-health-information-technicians",
+      "path_components": [
+        "medical-records-and-health-information-technicians"
+      ],
+      "depth": 0,
+      "parent_id": null,
+      "children_ids": [],
+      "name": "Medical records and health information technicians",
+      "description": "Medical records and health information technicians develop, implement and assess health records processing, storage and retrieval systems in medical facilities and other health care settings to meet the legal, professional, ethical and administrative records-keeping requirements of health services delivery.",
+      "level_info": {
+        "0": {
+          "name": "Medical Records And Health Information Technicians",
+          "level_name": "Role"
+        }
+      },
+      "metadata": {
+        "isco_code": "3252",
+        "who_classification": true,
+        "occupation_type": "health_worker",
+        "occupation_examples": [
+          "Medical records technician",
+          "Health information clerk",
+          "Medical records analyst",
+          "Medical records unit supervisor",
+          "Clinical coder",
+          "Disease registry technician"
+        ],
+        "training_notes": "Occupations included in this category require knowledge of medical terminology, legal aspects of health information, health data standards, and computer- or paper-based data management as obtained through formal education and/or prolonged on-the-job training. General secretarial or clerical workers are excluded from here.",
+        "scope": "technical_support",
+        "prescriptive_authority": false,
+        "supervision_required": true
+      }
+    },
+    {
+      "id": "medical-secretaries",
+      "path_components": [
+        "medical-secretaries"
+      ],
+      "depth": 0,
+      "parent_id": null,
+      "children_ids": [],
+      "name": "Medical secretaries",
+      "description": "Medical secretaries, using specialized knowledge of medical terminology and health care delivery procedures, perform a variety of communication, documentation, administrative and internal coordination functions, to support health workers in medical facilities and other health care-related organizations. They schedule medical appointments, record and review medical charts and correspondence, interview patients to complete case histories, prepare health insurance claims and acquisition orders, and supervise the work of other office support workers.",
+      "level_info": {
+        "0": {
+          "name": "Medical Secretaries",
+          "level_name": "Role"
+        }
+      },
+      "metadata": {
+        "isco_code": "3344",
+        "who_classification": true,
+        "occupation_type": "health_worker",
+        "occupation_examples": [
+          "Medical secretary",
+          "Medical office administrative assistant",
+          "Hospital ward secretary",
+          "Patient care secretary",
+          "Medical insurance billing secretary",
+          "Medical laboratory secretary",
+          "Medical stenographer",
+          "Medical transcriptionist",
+          "Pathology secretary",
+          "Dental secretary"
+        ],
+        "training_notes": "Occupations included in this category require basic knowledge of medical terminology and health care delivery procedures as obtained through formal education and/or prolonged on-the-job training. General secretaries, receptionists and clerical workers are excluded from here.",
+        "scope": "health_services"
+      }
+    },
+    {
+      "id": "midwifery-associate-professionals",
+      "path_components": [
+        "midwifery-associate-professionals"
+      ],
+      "depth": 0,
+      "parent_id": null,
+      "children_ids": [],
+      "name": "Midwifery associate professionals",
+      "description": "Midwifery associate professionals provide basic health care and advice before, during and after pregnancy and childbirth. They provide advice to women, families and communities on birth and emergency plans, breastfeeding, infant care, family planning and related topics; monitor health status during pregnancy and childbirth; and implement care, treatment and referral plans usually established by medical, midwifery and other health professionals.",
+      "level_info": {
+        "0": {
+          "name": "Midwifery Associate Professionals",
+          "level_name": "Role"
+        }
+      },
+      "metadata": {
+        "isco_code": "3222",
+        "who_classification": true,
+        "occupation_type": "health_worker",
+        "occupation_examples": [
+          "Assistant midwife",
+          "Auxiliary midwife",
+          "Traditional midwife"
+        ],
+        "training_notes": "This category includes occupations for which competent performance requires knowledge and skills in routine and emergency midwifery care acquired through formal or informal training. The criteria for inclusion of individuals in this category should be made on the basis of the nature of the work performed in relation to this definition, and not the qualifications held by individuals or that predominate in the country. Traditional and lay midwives, who provide basic pregnancy and birthing care and advice based primarily on experience and knowledge acquired informally through the traditions and practices of the communities where they originated, are included here. Birth assistants, who provide emotional support and general care and advice to women and families during pregnancy and labour, are excluded from here (classified under 'Personal care workers in health services').",
+        "scope": "health_services"
+      }
+    },
+    {
+      "id": "midwifery-professionals",
+      "path_components": [
+        "midwifery-professionals"
+      ],
+      "depth": 0,
+      "parent_id": null,
+      "children_ids": [],
+      "name": "Midwifery professionals",
+      "description": "Midwifery professionals plan, manage, provide and evaluate midwifery care services before, during and after pregnancy and childbirth. They provide delivery care for reducing health risks to women and newborn children according to the practice and standards of modern midwifery, working autonomously or in teams with other health care providers. They may conduct research on midwifery practices and procedures, and implement midwifery education activities in clinical and community settings.",
+      "level_info": {
+        "0": {
+          "name": "Midwifery Professionals",
+          "level_name": "Role"
+        }
+      },
+      "metadata": {
+        "isco_code": "2222",
+        "who_classification": true,
+        "occupation_type": "health_worker",
+        "occupation_examples": [
+          "Professional midwife",
+          "Public health midwife"
+        ],
+        "training_notes": "This category includes occupations for which competent performance usually requires formal training at a higher educational institution in midwifery. The distinctions between nursing and midwifery professionals and associate professionals should be made on the basis of the nature of the work performed in relation to this definition. The qualifications held by individuals or that predominate in the country are not the main factor in making this distinction, as training arrangements for nurses and midwives vary widely between countries and have varied over time within countries.",
+        "scope": "health_services"
+      }
+    },
+    {
+      "id": "non-health-professionals-not-elsewhere-classified",
+      "path_components": [
+        "non-health-professionals-not-elsewhere-classified"
+      ],
+      "depth": 0,
+      "parent_id": null,
+      "children_ids": [],
+      "name": "Non-health professionals not elsewhere classified",
+      "description": "This group covers professionals not classified elsewhere (except health, life science and social work) working in health systems including, for instance, physical, mathematical and engineering science professionals, teaching professionals, business and administration professionals, information and communications technology professionals, legal professionals and social science professionals.",
+      "level_info": {
+        "0": {
+          "name": "Non Health Professionals Not Elsewhere Classified",
+          "level_name": "Role"
+        }
+      },
+      "metadata": {
+        "isco_code": "",
+        "who_classification": true,
+        "occupation_type": "health_worker",
+        "occupation_examples": [
+          "Accountant",
+          "Biomedical engineer",
+          "Clinical psychologist",
+          "Environmental engineer",
+          "Health economist",
+          "Health policy analyst",
+          "Health policy lawyer",
+          "Health statistician",
+          "Health vocational education teacher",
+          "Medical and pharmaceutical products sales representative"
+        ],
+        "training_notes": "The tasks and duties of occupations in this category include conducting analysis and research and advising on applications of the physical, mathematical, engineering and social sciences to the medical and health fields; teaching the theory and practice of health science and services at higher education levels; and providing various technological, business and legal services in health systems.",
+        "scope": "health_services"
+      }
+    },
+    {
+      "id": "non-health-technicians-and-associate-professionals-not-elsewhere-classified",
+      "path_components": [
+        "non-health-technicians-and-associate-professionals-not-elsewhere-classified"
+      ],
+      "depth": 0,
+      "parent_id": null,
+      "children_ids": [],
+      "name": "Non-health technicians and associate professionals not elsewhere classified",
+      "description": "This group covers technicians and associate professionals not classified elsewhere (except health, life science and medical secretarial) working in health systems including, for instance, physical and engineering science technicians, information and communications technicians, business and administration associate professionals, and social and religious associate professionals.",
+      "level_info": {
+        "0": {
+          "name": "Non Health Technicians And Associate Professionals Not Elsewhere Classified",
+          "level_name": "Role"
+        }
+      },
+      "metadata": {
+        "isco_code": "",
+        "who_classification": true,
+        "occupation_type": "health_worker",
+        "occupation_examples": [
+          "Bookkeeper",
+          "Computer network technician",
+          "Data entry supervisor",
+          "Disability services officer",
+          "Faith healer",
+          "Fitness instructor",
+          "Forensic science technician",
+          "Health insurance claims officer",
+          "Health facility licensing officer",
+          "Medical supplies procurement officer"
+        ],
+        "training_notes": "The tasks and duties of occupations in this category include technical and related tasks connected with scientific research and operational methods and their applications to the medical and health fields; technical and practical services and support functions in finance, regulation and administration of health and social services; and technical tasks connected with the practical application of knowledge relating to sport, culture and religion to improve health and well-being.",
+        "scope": "technical_support",
+        "prescriptive_authority": false,
+        "supervision_required": true
+      }
+    },
+    {
+      "id": "nursing-associate-professionals",
+      "path_components": [
+        "nursing-associate-professionals"
+      ],
+      "depth": 0,
+      "parent_id": null,
+      "children_ids": [],
+      "name": "Nursing associate professionals",
+      "description": "Nursing associate professionals provide basic nursing and personal care for people in need of such care due to effects of ageing, illness, injury, or other physical or mental impairment. They provide health advice to patients and families; monitor patients' conditions; and implement care, treatment and referral plans usually established by medical, nursing and other health professionals.",
+      "level_info": {
+        "0": {
+          "name": "Nursing Associate Professionals",
+          "level_name": "Role"
+        }
+      },
+      "metadata": {
+        "isco_code": "3221",
+        "who_classification": true,
+        "occupation_type": "health_worker",
+        "occupation_examples": [
+          "Assistant nurse",
+          "Enrolled nurse",
+          "Practical nurse"
+        ],
+        "training_notes": "This category includes occupations for which competent performance usually requires knowledge and skills obtained as the result of study in nursing; in some cases, extensive on-the-job training may substitute for the formal education formal. The criteria for inclusion of individuals in this category should be made on the basis of the nature of the work performed in relation to this definition, and not the qualifications held by individuals or that predominate in the country.",
+        "scope": "nursing_care",
+        "prescriptive_authority": false,
+        "independent_practice": "varies"
+      }
+    },
+    {
+      "id": "nursing-professionals",
+      "path_components": [
+        "nursing-professionals"
+      ],
+      "depth": 0,
+      "parent_id": null,
+      "children_ids": [],
+      "name": "Nursing professionals",
+      "description": "Nursing professionals provide treatment, support and care services for people who are in need of nursing care due to the effects of ageing, injury, illness or other physical or mental impairment, or potential risks to health, according to the practice and standards of modern nursing. They assume responsibility for the planning and management of the care of patients, including the supervision of other health care workers, working autonomously or in teams with medical doctors and others in the practical application of preventive and curative measures in clinical and community settings.",
+      "level_info": {
+        "0": {
+          "name": "Nursing Professionals",
+          "level_name": "Role"
+        }
+      },
+      "metadata": {
+        "isco_code": "2221",
+        "who_classification": true,
+        "occupation_type": "health_worker",
+        "occupation_examples": [
+          "Professional nurse",
+          "Specialist nurse",
+          "Nurse practitioner",
+          "Clinical nurse",
+          "District nurse",
+          "Operating theatre nurse",
+          "Public health nurse",
+          "Nurse anaesthetist",
+          "Nurse educator",
+          "Township health Nurse"
+        ],
+        "training_notes": "This category includes occupations for which competent performance usually requires formal training at a higher educational institution in nursing. The distinction between nursing and midwifery professionals and associate professionals should be made on the basis of the nature of the work performed in relation to this definition. The qualifications held by individuals or that predominate in the country are not the main factor in making this distinction, as training arrangements for nurses and midwives vary widely between countries and have varied over time within countries.",
+        "scope": "nursing_care",
+        "prescriptive_authority": false,
+        "independent_practice": "varies"
+      }
+    },
+    {
+      "id": "optometrists-and-opthalmic-opticians",
+      "path_components": [
+        "optometrists-and-opthalmic-opticians"
+      ],
+      "depth": 0,
+      "parent_id": null,
+      "children_ids": [],
+      "name": "Optometrists and opthalmic opticians",
+      "description": "Optometrists and ophthalmic opticians provide diagnosis, management and treatment services for disorders of the eyes and visual system. They counsel and advise on eye care and safety, and prescribe optical aids or other therapies for visual disturbance.",
+      "level_info": {
+        "0": {
+          "name": "Optometrists And Opthalmic Opticians",
+          "level_name": "Role"
+        }
+      },
+      "metadata": {
+        "isco_code": "2267",
+        "who_classification": true,
+        "occupation_type": "health_worker",
+        "occupation_examples": [
+          "Optometrist",
+          "Ophthalmic optician",
+          "Orthoptist"
+        ],
+        "training_notes": "This category includes occupations for which competent performance usually requires formal training at a higher educational institution in optometry, orthoptics or a related field.",
+        "scope": "health_services"
+      }
+    },
+    {
+      "id": "other-health-service-providers-not-elsewhere-classified",
+      "path_components": [
+        "other-health-service-providers-not-elsewhere-classified"
+      ],
+      "depth": 0,
+      "parent_id": null,
+      "children_ids": [],
+      "name": "Other health service providers not elsewhere classified",
+      "description": "This group covers other categories not classifiable as participating in the formal or informal health labour market but providing health services including, for instance, medical interns and trainees who are providing clinical services as part of their basic medical education.",
+      "level_info": {
+        "0": {
+          "name": "Other Health Service Providers Not Elsewhere Classified",
+          "level_name": "Role"
+        }
+      },
+      "metadata": {
+        "isco_code": "",
+        "who_classification": true,
+        "occupation_type": "health_worker",
+        "occupation_examples": [
+          "Medical student intern",
+          "Hospital volunteer"
+        ],
+        "scope": "health_services"
+      }
+    },
+    {
+      "id": "paramedical-practitioners",
+      "path_components": [
+        "paramedical-practitioners"
+      ],
+      "depth": 0,
+      "parent_id": null,
+      "children_ids": [],
+      "name": "Paramedical practitioners",
+      "description": "Paramedical practitioners (including clinical officers and related) provide advisory, diagnostic, curative and preventive medical services more limited in scope and complexity than those carried out by medical doctors. They work autonomously or with limited supervision of medical doctors, and perform clinical, therapeutic and surgical procedures for treating and preventing diseases, injuries, and other physical or mental impairments common to specific communities.",
+      "level_info": {
+        "0": {
+          "name": "Paramedical Practitioners",
+          "level_name": "Role"
+        }
+      },
+      "metadata": {
+        "isco_code": "2240",
+        "who_classification": true,
+        "occupation_type": "health_worker",
+        "occupation_examples": [
+          "Clinical officer",
+          "Primary care paramedic",
+          "Advanced care paramedic",
+          "Surgical technician",
+          "Feldsher"
+        ],
+        "training_notes": "Occupations included in this category normally require completion of tertiary-level training in theoretical and practical medical services. Workers providing services limited to emergency treatment and ambulance practice are classified under 'Ambulance workers'-3258.",
+        "scope": "medical_practice",
+        "prescriptive_authority": true,
+        "independent_practice": true
+      }
+    },
+    {
+      "id": "personal-care-workers-in-health-services-not-elsewhere-classified",
+      "path_components": [
+        "personal-care-workers-in-health-services-not-elsewhere-classified"
+      ],
+      "depth": 0,
+      "parent_id": null,
+      "children_ids": [],
+      "name": "Personal care workers in health services not elsewhere classified",
+      "description": "This group covers personal care workers in health services not classified elsewhere including, for instance, dental aides, hospital orderlies, medical imaging assistants, pharmacy aides and other providers of routine health and personal care support services.",
+      "level_info": {
+        "0": {
+          "name": "Personal Care Workers In Health Services Not Elsewhere Classified",
+          "level_name": "Role"
+        }
+      },
+      "metadata": {
+        "isco_code": "5329",
+        "who_classification": true,
+        "occupation_type": "health_worker",
+        "occupation_examples": [
+          "Dental aide",
+          "First-aid attendant",
+          "Hospital orderly",
+          "Medical imaging assistant",
+          "Pharmacy aide",
+          "Phlebotomist",
+          "Sterilization aide"
+        ],
+        "scope": "health_services"
+      }
+    },
+    {
+      "id": "pharmaceutical-technicians-and-assistants",
+      "path_components": [
+        "pharmaceutical-technicians-and-assistants"
+      ],
+      "depth": 0,
+      "parent_id": null,
+      "children_ids": [],
+      "name": "Pharmaceutical technicians and assistants",
+      "description": "Pharmaceutical technicians and assistants perform a variety of tasks associated with dispensing medicinal products under the guidance of a pharmacist or other health professional. They inventory, prepare and store medications and other pharmaceutical compounds and supplies, and may dispense medicines and drugs to clients and instruct on their use as prescribed by health professionals.",
+      "level_info": {
+        "0": {
+          "name": "Pharmaceutical Technicians And Assistants",
+          "level_name": "Role"
+        }
+      },
+      "metadata": {
+        "isco_code": "3213",
+        "who_classification": true,
+        "occupation_type": "health_worker",
+        "occupation_examples": [
+          "Pharmaceutical technician",
+          "Pharmaceutical assistant",
+          "Dispensing technician"
+        ],
+        "training_notes": "Occupations included in this category normally require knowledge and skills in pharmaceutical services as obtained through formal training. Pharmacology technicians and related associate professionals who work with living organisms are excluded from here (classified under 'Life science technicians').",
+        "scope": "technical_support",
+        "prescriptive_authority": false,
+        "supervision_required": true
+      }
+    },
+    {
+      "id": "pharmacists",
+      "path_components": [
+        "pharmacists"
+      ],
+      "depth": 0,
+      "parent_id": null,
+      "children_ids": [],
+      "name": "Pharmacists",
+      "description": "Pharmacists store, preserve, compound and dispense medicinal products. They counsel on the proper use and adverse effects of drugs and medicines following prescriptions issued by medical doctors and other health professionals. They contribute to researching, testing, preparing, prescribing and monitoring medicinal therapies for optimizing human health.",
+      "level_info": {
+        "0": {
+          "name": "Pharmacists",
+          "level_name": "Role"
+        }
+      },
+      "metadata": {
+        "isco_code": "2262",
+        "who_classification": true,
+        "occupation_type": "health_worker",
+        "occupation_examples": [
+          "Hospital pharmacist",
+          "Industrial pharmacist",
+          "Retail pharmacist",
+          "Dispensing chemist"
+        ],
+        "training_notes": "Occupations included in this category normally require completion of university-level training in theoretical and practical pharmacy, pharmaceutical chemistry or a related field. Pharmacologists and related professionals who study living organisms are excluded from here (classified under 'Life science professionals').",
+        "scope": "health_services"
+      }
+    },
+    {
+      "id": "physiotherapists",
+      "path_components": [
+        "physiotherapists"
+      ],
+      "depth": 0,
+      "parent_id": null,
+      "children_ids": [],
+      "name": "Physiotherapists",
+      "description": "Physiotherapists assess, plan and implement rehabilitative programs that improve or restore human motor functions, maximize movement ability, relieve pain syndromes, and treat or prevent physical challenges associated with injuries, diseases and other impairments. They apply a broad range of physical therapies and techniques such as movement, ultrasound, heating, laser and other techniques. They may develop and implement programmes for screening and prevention of common physical ailments and disorders.",
+      "level_info": {
+        "0": {
+          "name": "Physiotherapists",
+          "level_name": "Role"
+        }
+      },
+      "metadata": {
+        "isco_code": "2264",
+        "who_classification": true,
+        "occupation_type": "health_worker",
+        "occupation_examples": [
+          "Physiotherapist",
+          "Geriatric physical therapist",
+          "Orthopaedic physical therapist",
+          "Paediatric physical therapist"
+        ],
+        "training_notes": "This category includes occupations for which competent performance usually requires formal training at a higher educational institution in physiotherapy or a related field.",
+        "scope": "health_services"
+      }
+    },
+    {
+      "id": "physiotherapy-technicians-and-assistants",
+      "path_components": [
+        "physiotherapy-technicians-and-assistants"
+      ],
+      "depth": 0,
+      "parent_id": null,
+      "children_ids": [],
+      "name": "Physiotherapy technicians and assistants",
+      "description": "Physiotherapy technicians and assistants provide physical therapeutic treatments to patients in circumstances where functional movement is threatened by injury, disease or impairment. They fit patients for physical supportive devices and administer and monitor manual treatments, electrical modality treatments, ultrasound and other physical therapies. Therapies are usually provided as per rehabilitative plans established by a physiotherapist or other health professional.",
+      "level_info": {
+        "0": {
+          "name": "Physiotherapy Technicians And Assistants",
+          "level_name": "Role"
+        }
+      },
+      "metadata": {
+        "isco_code": "3255",
+        "who_classification": true,
+        "occupation_type": "health_worker",
+        "occupation_examples": [
+          "Physiotherapy technician",
+          "Physical rehabilitation technician",
+          "Acupressure therapist",
+          "Electrotherapist",
+          "Hydrotherapist",
+          "Massage therapist",
+          "Shiatsu therapist"
+        ],
+        "training_notes": "This category includes occupations for which competent performance usually requires formal training in physical rehabilitation therapy or a related field. Fitness instructors, who teach body movements used in fitness routines and recreational activities, are excluded from here (classified under 'Social, cultural and related associate professionals').",
+        "scope": "technical_support",
+        "prescriptive_authority": false,
+        "supervision_required": true
+      }
+    },
+    {
+      "id": "plant-and-machine-operators-and-assemblers",
+      "path_components": [
+        "plant-and-machine-operators-and-assemblers"
+      ],
+      "depth": 0,
+      "parent_id": null,
+      "children_ids": [],
+      "name": "Plant and machine operators and assemblers",
+      "description": "This group covers plant and machine operators and assemblers working in health systems including, for instance, assemblers, drivers and others who operate and monitor machinery and equipment, drive motor vehicles and mobile machinery, or assemble products from component parts according to specifications.",
+      "level_info": {
+        "0": {
+          "name": "Plant And Machine Operators And Assemblers",
+          "level_name": "Role"
+        }
+      },
+      "metadata": {
+        "isco_code": "",
+        "who_classification": true,
+        "occupation_type": "health_worker",
+        "occupation_examples": [
+          "Ambulance driver",
+          "Eyeglass frame assembler",
+          "Laundry machine operator",
+          "Pharmaceutical products machine operator"
+        ],
+        "training_notes": "The tasks and duties of occupations in this category generally call for experience with and an understanding of industrial machinery and equipment as well as an ability to cope with machine-paced operations and to adapt to technological innovations. A high level of manual dexterity is often required.",
+        "scope": "health_services"
+      }
+    },
+    {
+      "id": "service-and-sales-workers",
+      "path_components": [
+        "service-and-sales-workers"
+      ],
+      "depth": 0,
+      "parent_id": null,
+      "children_ids": [],
+      "name": "Service and sales workers",
+      "description": "This group covers service and sales workers (except personal care workers) working in health systems who provide personal and protective services, or demonstrate and sell goods in wholesale or retail shops and similar establishments.",
+      "level_info": {
+        "0": {
+          "name": "Service And Sales Workers",
+          "level_name": "Role"
+        }
+      },
+      "metadata": {
+        "isco_code": "",
+        "who_classification": true,
+        "occupation_type": "health_worker",
+        "occupation_examples": [
+          "Building caretaker",
+          "Facility cafeteria cook",
+          "Hospital security guard",
+          "Medical products sales demonstrator",
+          "Undertaker",
+          "Pharmaceuticals retail shop cashier"
+        ],
+        "training_notes": "Many occupations in this category require relatively advanced literacy and numeracy skills, good interpersonal communication skills and a high level of manual dexterity. In some case, specialized post-secondary vocational education and/or prolonged on-the-job training may be required.",
+        "scope": "health_services"
+      }
+    },
+    {
+      "id": "social-work-and-counselling-professionals",
+      "path_components": [
+        "social-work-and-counselling-professionals"
+      ],
+      "depth": 0,
+      "parent_id": null,
+      "children_ids": [],
+      "name": "Social work and counselling professionals",
+      "description": "Social work and counselling professionals provide counselling, therapy and mediation services to individuals, families, groups and communities in response to social and personal difficulties. They assist clients to develop skills and access resources and support services needed to respond to issues arising from health problems, life transitions, addictions, and other personal, family and social problems. They liaise with other social service agencies, educational institutions and health care providers to advocate for client and community needs.",
+      "level_info": {
+        "0": {
+          "name": "Social Work And Counselling Professionals",
+          "level_name": "Role"
+        }
+      },
+      "metadata": {
+        "isco_code": "2635",
+        "who_classification": true,
+        "occupation_type": "health_worker",
+        "occupation_examples": [
+          "Addictions counsellor",
+          "Bereavement counsellor",
+          "Clinical social worker",
+          "District social welfare officer",
+          "Sexual assault counsellor",
+          "WomenÕs welfare organizer"
+        ],
+        "training_notes": "The tasks and duties for occupations in this category include planning and providing counselling, skills development, crisis intervention and mediation services in individual, family or group settings to assist clients function within the limitations of their environment, improve their relationships, and solve personal and family problems. The knowledge and skills required are usually obtained as the result of study at a higher educational institution in social work and counselling for a period of 3Ð6 years leading to the award of a first degree or higher qualification.",
+        "scope": "health_services"
+      }
+    },
+    {
+      "id": "social-work-associate-professionals",
+      "path_components": [
+        "social-work-associate-professionals"
+      ],
+      "depth": 0,
+      "parent_id": null,
+      "children_ids": [],
+      "name": "Social work associate professionals",
+      "description": "Social work associate professionals administer and implement social assistance programmes and community services and assist clients to deal with personal and social problems.",
+      "level_info": {
+        "0": {
+          "name": "Social Work Associate Professionals",
+          "level_name": "Role"
+        }
+      },
+      "metadata": {
+        "isco_code": "3412",
+        "who_classification": true,
+        "occupation_type": "health_worker",
+        "occupation_examples": [
+          "Community development worker",
+          "Community services worker",
+          "Disability services worker",
+          "Family services worker",
+          "Mental health support worker"
+        ],
+        "scope": "health_services"
+      }
+    },
+    {
+      "id": "specialist-medical-practitioners",
+      "path_components": [
+        "specialist-medical-practitioners"
+      ],
       "depth": 0,
       "parent_id": null,
       "children_ids": [
-        "physician/allergy-and-immunology",
-        "physician/anesthesiology",
-        "physician/colon-and-rectal-surgery",
-        "physician/dermatology",
-        "physician/emergency-medicine",
-        "physician/family-medicine",
-        "physician/internal-medicine",
-        "physician/medical-genetics-and-genomics",
-        "physician/neurological-surgery",
-        "physician/nuclear-medicine",
-        "physician/obstetrics-and-gynecology",
-        "physician/ophthalmology",
-        "physician/orthopaedic-surgery",
-        "physician/otolaryngology-head-and-neck-surgery",
-        "physician/pathology",
-        "physician/pediatrics",
-        "physician/physical-medicine-and-rehabilitation",
-        "physician/plastic-surgery",
-        "physician/preventive-medicine",
-        "physician/psychiatry-and-neurology",
-        "physician/radiology",
-        "physician/surgery",
-        "physician/thoracic-surgery",
-        "physician/urology"
+        "specialist-medical-practitioners/accident-and-emergency-medicine",
+        "specialist-medical-practitioners/anaesthesiology",
+        "specialist-medical-practitioners/cardiology",
+        "specialist-medical-practitioners/child-psychiatrist",
+        "specialist-medical-practitioners/dermatovenerology",
+        "specialist-medical-practitioners/forensic-medicine",
+        "specialist-medical-practitioners/gastroenterology",
+        "specialist-medical-practitioners/general-surgery",
+        "specialist-medical-practitioners/gerontopsychiatrist",
+        "specialist-medical-practitioners/gynaecologist",
+        "specialist-medical-practitioners/haematology",
+        "specialist-medical-practitioners/immunology",
+        "specialist-medical-practitioners/infectious-disease",
+        "specialist-medical-practitioners/intensive-care",
+        "specialist-medical-practitioners/internal-medicine",
+        "specialist-medical-practitioners/neonatologist",
+        "specialist-medical-practitioners/neurological-surgery",
+        "specialist-medical-practitioners/neurology",
+        "specialist-medical-practitioners/neuropsychiatrist",
+        "specialist-medical-practitioners/obstetrician",
+        "specialist-medical-practitioners/occupational-medicine",
+        "specialist-medical-practitioners/oncology",
+        "specialist-medical-practitioners/ophthalmology",
+        "specialist-medical-practitioners/orthopaedics",
+        "specialist-medical-practitioners/otolaryngology",
+        "specialist-medical-practitioners/paediatric-surgery",
+        "specialist-medical-practitioners/paediatrician",
+        "specialist-medical-practitioners/plastic-surgery",
+        "specialist-medical-practitioners/psychiatrist",
+        "specialist-medical-practitioners/radiology",
+        "specialist-medical-practitioners/rehabilitative-medicine",
+        "specialist-medical-practitioners/respiratory-medicine",
+        "specialist-medical-practitioners/thoracic-surgery",
+        "specialist-medical-practitioners/urology",
+        "specialist-medical-practitioners/vascular-surgery"
       ],
-      "name": "Physician",
-      "description": "Licensed medical doctor with prescriptive authority and full clinical privileges",
+      "name": "Specialist medical practitioners",
+      "description": "Specialist medical doctors diagnose, treat and prevent illness, disease, injury and other physical and mental impairments using specialized testing, diagnostic, medical, surgical, physical and psychiatric techniques, through application of the principles and procedures of modern medicine. They plan, supervise and evaluate the implementation of care and treatment plans by other health care providers. They specialize in certain disease categories, types of patient or methods of treatment, and may conduct medical education and research activities in their chosen areas of specialization.",
       "level_info": {
-        "0": {"name": "Physician", "level_name": "Role"}
+        "0": {
+          "name": "Specialist Medical Practitioners",
+          "level_name": "Role"
+        }
       },
       "metadata": {
-        "role_type": "physician",
-        "training_required": "medical_school_and_residency",
+        "isco_code": "2212",
+        "who_classification": true,
+        "occupation_type": "health_worker",
+        "occupation_examples": [
+          "Specialist physician (internal medicine)",
+          "Surgeon",
+          "Anaesthetist",
+          "Cardiologist",
+          "Emergency medicine specialist",
+          "Ophthalmologist",
+          "Gynaecologist",
+          "Obstetrician",
+          "Paediatrician",
+          "Pathologist"
+        ],
+        "training_notes": "Occupations included in this category require completion of a university-level degree in basic medical education plus postgraduate clinical training in a medical specialization (except general practice) or equivalent. Resident medical officers training as specialist practitioners (except general practice) are included here. Although in some countries 'stomatology' may be considered as a medical specialization, stomatologists should be included under 'Dentists'-2261. Medical research professionals who participate in biomedical research using living organisms and do not undertake clinical practice should be excluded from here (classified under 'Life science professionals').",
+        "scope": "medical_practice",
         "prescriptive_authority": true,
-        "independent_practice": true,
-        "typical_settings": ["hospital", "clinic", "private_practice"]
+        "independent_practice": true
       }
     },
     {
-      "id": "physician/internal-medicine",
-      "path_components": ["physician", "internal-medicine"],
-      "depth": 1,
-      "parent_id": "physician",
-      "children_ids": [
-        "physician/internal-medicine/adolescent-medicine",
-        "physician/internal-medicine/adult-congenital-heart-disease",
-        "physician/internal-medicine/advanced-heart-failure-and-transplant-cardiology",
-        "physician/internal-medicine/cardiovascular-disease",
-        "physician/internal-medicine/clinical-cardiac-electrophysiology",
-        "physician/internal-medicine/critical-care-medicine",
-        "physician/internal-medicine/endocrinology-diabetes-and-metabolism",
-        "physician/internal-medicine/gastroenterology",
-        "physician/internal-medicine/geriatric-medicine",
-        "physician/internal-medicine/hematology",
-        "physician/internal-medicine/hospice-and-palliative-medicine",
-        "physician/internal-medicine/infectious-disease",
-        "physician/internal-medicine/interventional-cardiology",
-        "physician/internal-medicine/medical-oncology",
-        "physician/internal-medicine/nephrology",
-        "physician/internal-medicine/neurocritical-care",
-        "physician/internal-medicine/pulmonary-disease",
-        "physician/internal-medicine/rheumatology",
-        "physician/internal-medicine/sleep-medicine",
-        "physician/internal-medicine/sports-medicine",
-        "physician/internal-medicine/transplant-hepatology"
+      "id": "specialist-medical-practitioners/accident-and-emergency-medicine",
+      "path_components": [
+        "specialist-medical-practitioners",
+        "accident-and-emergency-medicine"
       ],
-      "name": "Internal Medicine",
-      "description": "Board-certified physician specializing in Internal Medicine",
-      "level_info": {
-        "0": {"name": "Physician", "level_name": "Role"},
-        "1": {"name": "Internal Medicine", "level_name": "Specialty"}
-      },
-      "metadata": {
-        "board_certification": "ABMS",
-        "residency_years": 3,
-        "specialty_type": "primary"
-      }
-    },
-    {
-      "id": "physician/internal-medicine/cardiovascular-disease",
-      "path_components": ["physician", "internal-medicine", "cardiovascular-disease"],
-      "depth": 2,
-      "parent_id": "physician/internal-medicine",
+      "depth": 1,
+      "parent_id": "specialist-medical-practitioners",
       "children_ids": [],
-      "name": "Cardiovascular Disease",
-      "description": "Fellowship-trained physician in Cardiovascular Disease",
+      "name": "Accident And Emergency Medicine",
+      "description": "Medical specialist in accident and emergency medicine",
       "level_info": {
-        "0": {"name": "Physician", "level_name": "Role"},
-        "1": {"name": "Internal Medicine", "level_name": "Specialty"},
-        "2": {"name": "Cardiovascular Disease", "level_name": "Subspecialty"}
+        "0": {
+          "name": "Specialist Medical Practitioners",
+          "level_name": "Role"
+        },
+        "1": {
+          "name": "Accident And Emergency Medicine",
+          "level_name": "Specialty"
+        }
       },
       "metadata": {
-        "fellowship_required": true,
-        "additional_training_years": 3
+        "specialty_group": "Surgical group of specialties",
+        "medical_specialty": true,
+        "who_classification": true,
+        "requires_specialization": true,
+        "postgraduate_training": true,
+        "board_certification": "varies_by_jurisdiction",
+        "specialty_type": "internal_medicine"
       }
     },
     {
-      "id": "physician/internal-medicine/gastroenterology",
-      "path_components": ["physician", "internal-medicine", "gastroenterology"],
-      "depth": 2,
-      "parent_id": "physician/internal-medicine",
+      "id": "specialist-medical-practitioners/anaesthesiology",
+      "path_components": [
+        "specialist-medical-practitioners",
+        "anaesthesiology"
+      ],
+      "depth": 1,
+      "parent_id": "specialist-medical-practitioners",
+      "children_ids": [],
+      "name": "Anaesthesiology",
+      "description": "Medical specialist in anaesthesiology",
+      "level_info": {
+        "0": {
+          "name": "Specialist Medical Practitioners",
+          "level_name": "Role"
+        },
+        "1": {
+          "name": "Anaesthesiology",
+          "level_name": "Specialty"
+        }
+      },
+      "metadata": {
+        "specialty_group": "Surgical group of specialties",
+        "medical_specialty": true,
+        "who_classification": true,
+        "requires_specialization": true,
+        "postgraduate_training": true,
+        "board_certification": "varies_by_jurisdiction",
+        "specialty_type": "medical"
+      }
+    },
+    {
+      "id": "specialist-medical-practitioners/cardiology",
+      "path_components": [
+        "specialist-medical-practitioners",
+        "cardiology"
+      ],
+      "depth": 1,
+      "parent_id": "specialist-medical-practitioners",
+      "children_ids": [],
+      "name": "Cardiology",
+      "description": "Medical specialist in cardiology",
+      "level_info": {
+        "0": {
+          "name": "Specialist Medical Practitioners",
+          "level_name": "Role"
+        },
+        "1": {
+          "name": "Cardiology",
+          "level_name": "Specialty"
+        }
+      },
+      "metadata": {
+        "specialty_group": "Medical group of specialties",
+        "medical_specialty": true,
+        "who_classification": true,
+        "requires_specialization": true,
+        "postgraduate_training": true,
+        "board_certification": "varies_by_jurisdiction",
+        "specialty_type": "medical"
+      }
+    },
+    {
+      "id": "specialist-medical-practitioners/child-psychiatrist",
+      "path_components": [
+        "specialist-medical-practitioners",
+        "child-psychiatrist"
+      ],
+      "depth": 1,
+      "parent_id": "specialist-medical-practitioners",
+      "children_ids": [],
+      "name": "Child Psychiatrist",
+      "description": "Medical specialist in child psychiatrist",
+      "level_info": {
+        "0": {
+          "name": "Specialist Medical Practitioners",
+          "level_name": "Role"
+        },
+        "1": {
+          "name": "Child Psychiatrist",
+          "level_name": "Specialty"
+        }
+      },
+      "metadata": {
+        "specialty_group": "Psychiatric specialties",
+        "medical_specialty": true,
+        "who_classification": true,
+        "requires_specialization": true,
+        "postgraduate_training": true,
+        "board_certification": "varies_by_jurisdiction",
+        "specialty_type": "medical"
+      }
+    },
+    {
+      "id": "specialist-medical-practitioners/dermatovenerology",
+      "path_components": [
+        "specialist-medical-practitioners",
+        "dermatovenerology"
+      ],
+      "depth": 1,
+      "parent_id": "specialist-medical-practitioners",
+      "children_ids": [],
+      "name": "Dermatovenerology",
+      "description": "Medical specialist in dermatovenerology",
+      "level_info": {
+        "0": {
+          "name": "Specialist Medical Practitioners",
+          "level_name": "Role"
+        },
+        "1": {
+          "name": "Dermatovenerology",
+          "level_name": "Specialty"
+        }
+      },
+      "metadata": {
+        "specialty_group": "Medical group of specialties",
+        "medical_specialty": true,
+        "who_classification": true,
+        "requires_specialization": true,
+        "postgraduate_training": true,
+        "board_certification": "varies_by_jurisdiction",
+        "specialty_type": "medical"
+      }
+    },
+    {
+      "id": "specialist-medical-practitioners/forensic-medicine",
+      "path_components": [
+        "specialist-medical-practitioners",
+        "forensic-medicine"
+      ],
+      "depth": 1,
+      "parent_id": "specialist-medical-practitioners",
+      "children_ids": [],
+      "name": "Forensic Medicine",
+      "description": "Medical specialist in forensic medicine",
+      "level_info": {
+        "0": {
+          "name": "Specialist Medical Practitioners",
+          "level_name": "Role"
+        },
+        "1": {
+          "name": "Forensic Medicine",
+          "level_name": "Specialty"
+        }
+      },
+      "metadata": {
+        "specialty_group": "Medical group of specialties",
+        "medical_specialty": true,
+        "who_classification": true,
+        "requires_specialization": true,
+        "postgraduate_training": true,
+        "board_certification": "varies_by_jurisdiction",
+        "specialty_type": "internal_medicine"
+      }
+    },
+    {
+      "id": "specialist-medical-practitioners/gastroenterology",
+      "path_components": [
+        "specialist-medical-practitioners",
+        "gastroenterology"
+      ],
+      "depth": 1,
+      "parent_id": "specialist-medical-practitioners",
       "children_ids": [],
       "name": "Gastroenterology",
-      "description": "Fellowship-trained physician in Gastroenterology",
+      "description": "Medical specialist in gastroenterology",
       "level_info": {
-        "0": {"name": "Physician", "level_name": "Role"},
-        "1": {"name": "Internal Medicine", "level_name": "Specialty"},
-        "2": {"name": "Gastroenterology", "level_name": "Subspecialty"}
+        "0": {
+          "name": "Specialist Medical Practitioners",
+          "level_name": "Role"
+        },
+        "1": {
+          "name": "Gastroenterology",
+          "level_name": "Specialty"
+        }
       },
       "metadata": {
-        "fellowship_required": true,
-        "additional_training_years": 3
+        "specialty_group": "Medical group of specialties",
+        "medical_specialty": true,
+        "who_classification": true,
+        "requires_specialization": true,
+        "postgraduate_training": true,
+        "board_certification": "varies_by_jurisdiction",
+        "specialty_type": "medical"
       }
     },
     {
-      "id": "physician/pediatrics",
-      "path_components": ["physician", "pediatrics"],
+      "id": "specialist-medical-practitioners/general-surgery",
+      "path_components": [
+        "specialist-medical-practitioners",
+        "general-surgery"
+      ],
       "depth": 1,
-      "parent_id": "physician",
-      "children_ids": [
-        "physician/pediatrics/adolescent-medicine",
-        "physician/pediatrics/child-abuse-pediatrics",
-        "physician/pediatrics/developmental-behavioral-pediatrics",
-        "physician/pediatrics/neonatal-perinatal-medicine",
-        "physician/pediatrics/pediatric-cardiology",
-        "physician/pediatrics/pediatric-critical-care-medicine",
-        "physician/pediatrics/pediatric-emergency-medicine",
-        "physician/pediatrics/pediatric-endocrinology",
-        "physician/pediatrics/pediatric-gastroenterology",
-        "physician/pediatrics/pediatric-hematology-oncology",
-        "physician/pediatrics/pediatric-infectious-diseases",
-        "physician/pediatrics/pediatric-nephrology",
-        "physician/pediatrics/pediatric-pulmonology"
-      ],
-      "name": "Pediatrics",
-      "description": "Board-certified physician specializing in Pediatrics",
-      "level_info": {
-        "0": {"name": "Physician", "level_name": "Role"},
-        "1": {"name": "Pediatrics", "level_name": "Specialty"}
-      },
-      "metadata": {
-        "board_certification": "ABMS",
-        "residency_years": 3,
-        "specialty_type": "primary"
-      }
-    },
-    {
-      "id": "physician/surgery",
-      "path_components": ["physician", "surgery"],
-      "depth": 1,
-      "parent_id": "physician",
-      "children_ids": [
-        "physician/surgery/complex-general-surgical-oncology",
-        "physician/surgery/hand-surgery",
-        "physician/surgery/pediatric-surgery",
-        "physician/surgery/surgical-critical-care",
-        "physician/surgery/vascular-surgery"
-      ],
-      "name": "Surgery",
-      "description": "Board-certified physician specializing in Surgery",
-      "level_info": {
-        "0": {"name": "Physician", "level_name": "Role"},
-        "1": {"name": "Surgery", "level_name": "Specialty"}
-      },
-      "metadata": {
-        "board_certification": "ABMS",
-        "residency_years": 5,
-        "specialty_type": "surgical"
-      }
-    },
-    {
-      "id": "physician/emergency-medicine",
-      "path_components": ["physician", "emergency-medicine"],
-      "depth": 1,
-      "parent_id": "physician",
-      "children_ids": [
-        "physician/emergency-medicine/critical-care-medicine",
-        "physician/emergency-medicine/emergency-medical-services",
-        "physician/emergency-medicine/medical-toxicology",
-        "physician/emergency-medicine/pediatric-emergency-medicine",
-        "physician/emergency-medicine/sports-medicine"
-      ],
-      "name": "Emergency Medicine",
-      "description": "Board-certified physician specializing in Emergency Medicine",
-      "level_info": {
-        "0": {"name": "Physician", "level_name": "Role"},
-        "1": {"name": "Emergency Medicine", "level_name": "Specialty"}
-      },
-      "metadata": {
-        "board_certification": "ABMS",
-        "residency_years": 3,
-        "specialty_type": "acute_care"
-      }
-    },
-    {
-      "id": "nurse",
-      "path_components": ["nurse"],
-      "depth": 0,
-      "parent_id": null,
-      "children_ids": [
-        "nurse/registered-nurse",
-        "nurse/advanced-practice-nurse"
-      ],
-      "name": "Nurse",
-      "description": "Licensed nursing professional providing direct patient care and care coordination",
-      "level_info": {
-        "0": {"name": "Nurse", "level_name": "Role"}
-      },
-      "metadata": {
-        "role_type": "nursing",
-        "training_required": "nursing_degree_and_licensure",
-        "prescriptive_authority": false,
-        "independent_practice": false,
-        "typical_settings": ["hospital", "clinic", "home_health", "school", "community"]
-      }
-    },
-    {
-      "id": "nurse/registered-nurse",
-      "path_components": ["nurse", "registered-nurse"],
-      "depth": 1,
-      "parent_id": "nurse",
-      "children_ids": [
-        "nurse/registered-nurse/critical-care-nursing",
-        "nurse/registered-nurse/emergency-nursing",
-        "nurse/registered-nurse/medical-surgical-nursing",
-        "nurse/registered-nurse/pediatric-nursing",
-        "nurse/registered-nurse/perioperative-nursing",
-        "nurse/registered-nurse/oncology-nursing",
-        "nurse/registered-nurse/cardiac-nursing"
-      ],
-      "name": "Registered Nurse",
-      "description": "Registered Nurse with specialized training and certification",
-      "level_info": {
-        "0": {"name": "Nurse", "level_name": "Role"},
-        "1": {"name": "Registered Nurse", "level_name": "Category"}
-      },
-      "metadata": {
-        "advanced_practice": false,
-        "prescriptive_authority": false
-      }
-    },
-    {
-      "id": "nurse/registered-nurse/critical-care-nursing",
-      "path_components": ["nurse", "registered-nurse", "critical-care-nursing"],
-      "depth": 2,
-      "parent_id": "nurse/registered-nurse",
+      "parent_id": "specialist-medical-practitioners",
       "children_ids": [],
-      "name": "Critical Care Nursing",
-      "description": "Nurse specializing in Critical Care Nursing",
+      "name": "General Surgery",
+      "description": "Medical specialist in general surgery",
       "level_info": {
-        "0": {"name": "Nurse", "level_name": "Role"},
-        "1": {"name": "Registered Nurse", "level_name": "Category"},
-        "2": {"name": "Critical Care Nursing", "level_name": "Specialty"}
+        "0": {
+          "name": "Specialist Medical Practitioners",
+          "level_name": "Role"
+        },
+        "1": {
+          "name": "General Surgery",
+          "level_name": "Specialty"
+        }
       },
       "metadata": {
-        "certification_required": true,
-        "specialty_focus": "Critical Care Nursing",
-        "care_settings": ["ICU", "CCU", "SICU", "MICU"]
+        "specialty_group": "Surgical group of specialties",
+        "medical_specialty": true,
+        "who_classification": true,
+        "requires_specialization": true,
+        "postgraduate_training": true,
+        "board_certification": "varies_by_jurisdiction",
+        "specialty_type": "surgical",
+        "procedural_focus": true
       }
     },
     {
-      "id": "nurse/advanced-practice-nurse",
-      "path_components": ["nurse", "advanced-practice-nurse"],
+      "id": "specialist-medical-practitioners/gerontopsychiatrist",
+      "path_components": [
+        "specialist-medical-practitioners",
+        "gerontopsychiatrist"
+      ],
       "depth": 1,
-      "parent_id": "nurse",
-      "children_ids": [
-        "nurse/advanced-practice-nurse/nurse-practitioner",
-        "nurse/advanced-practice-nurse/clinical-nurse-specialist",
-        "nurse/advanced-practice-nurse/certified-nurse-midwife",
-        "nurse/advanced-practice-nurse/certified-registered-nurse-anesthetist"
-      ],
-      "name": "Advanced Practice Nurse",
-      "description": "Advanced Practice Nurse with graduate-level training and expanded scope",
-      "level_info": {
-        "0": {"name": "Nurse", "level_name": "Role"},
-        "1": {"name": "Advanced Practice Nurse", "level_name": "Category"}
-      },
-      "metadata": {
-        "advanced_practice": true,
-        "prescriptive_authority": true,
-        "graduate_degree_required": true
-      }
-    },
-    {
-      "id": "nurse/advanced-practice-nurse/nurse-practitioner",
-      "path_components": ["nurse", "advanced-practice-nurse", "nurse-practitioner"],
-      "depth": 2,
-      "parent_id": "nurse/advanced-practice-nurse",
+      "parent_id": "specialist-medical-practitioners",
       "children_ids": [],
-      "name": "Nurse Practitioner",
-      "description": "Advanced practice nurse with prescriptive authority and diagnostic privileges",
+      "name": "Gerontopsychiatrist",
+      "description": "Medical specialist in gerontopsychiatrist",
       "level_info": {
-        "0": {"name": "Nurse", "level_name": "Role"},
-        "1": {"name": "Advanced Practice Nurse", "level_name": "Category"},
-        "2": {"name": "Nurse Practitioner", "level_name": "Specialty"}
+        "0": {
+          "name": "Specialist Medical Practitioners",
+          "level_name": "Role"
+        },
+        "1": {
+          "name": "Gerontopsychiatrist",
+          "level_name": "Specialty"
+        }
       },
       "metadata": {
-        "certification_required": true,
-        "specialty_focus": "Primary or specialty care",
-        "practice_types": ["Family NP", "Adult-Gerontology NP", "Pediatric NP", "Psychiatric NP"]
+        "specialty_group": "Psychiatric specialties",
+        "medical_specialty": true,
+        "who_classification": true,
+        "requires_specialization": true,
+        "postgraduate_training": true,
+        "board_certification": "varies_by_jurisdiction",
+        "specialty_type": "medical"
       }
     },
     {
-      "id": "allied-health",
-      "path_components": ["allied-health"],
-      "depth": 0,
-      "parent_id": null,
-      "children_ids": [
-        "allied-health/physical-therapist",
-        "allied-health/occupational-therapist",
-        "allied-health/speech-language-pathologist",
-        "allied-health/respiratory-therapist",
-        "allied-health/clinical-psychologist",
-        "allied-health/social-worker",
-        "allied-health/dietitian-nutritionist",
-        "allied-health/pharmacist"
+      "id": "specialist-medical-practitioners/gynaecologist",
+      "path_components": [
+        "specialist-medical-practitioners",
+        "gynaecologist"
       ],
-      "name": "Allied Health Professional",
-      "description": "Healthcare professional with specialized training in therapeutic and diagnostic services",
-      "level_info": {
-        "0": {"name": "Allied Health Professional", "level_name": "Role"}
-      },
-      "metadata": {
-        "role_type": "allied_health",
-        "training_required": "professional_degree_and_licensure",
-        "prescriptive_authority": false,
-        "independent_practice": "varies",
-        "typical_settings": ["hospital", "outpatient", "rehabilitation", "community"]
-      }
-    },
-    {
-      "id": "allied-health/physical-therapist",
-      "path_components": ["allied-health", "physical-therapist"],
       "depth": 1,
-      "parent_id": "allied-health",
-      "children_ids": [
-        "allied-health/physical-therapist/orthopedic-physical-therapy",
-        "allied-health/physical-therapist/neurologic-physical-therapy",
-        "allied-health/physical-therapist/pediatric-physical-therapy",
-        "allied-health/physical-therapist/sports-physical-therapy"
-      ],
-      "name": "Physical Therapist",
-      "description": "Licensed Physical Therapist providing specialized therapeutic services",
-      "level_info": {
-        "0": {"name": "Allied Health Professional", "level_name": "Role"},
-        "1": {"name": "Physical Therapist", "level_name": "Profession"}
-      },
-      "metadata": {
-        "licensure_required": true,
-        "therapy_focus": "physical",
-        "doctorate_required": true
-      }
-    },
-    {
-      "id": "allied-health/physical-therapist/orthopedic-physical-therapy",
-      "path_components": ["allied-health", "physical-therapist", "orthopedic-physical-therapy"],
-      "depth": 2,
-      "parent_id": "allied-health/physical-therapist",
+      "parent_id": "specialist-medical-practitioners",
       "children_ids": [],
-      "name": "Orthopedic Physical Therapy",
-      "description": "Physical Therapist specializing in Orthopedic Physical Therapy",
+      "name": "Gynaecologist",
+      "description": "Medical specialist in gynaecologist",
       "level_info": {
-        "0": {"name": "Allied Health Professional", "level_name": "Role"},
-        "1": {"name": "Physical Therapist", "level_name": "Profession"},
-        "2": {"name": "Orthopedic Physical Therapy", "level_name": "Specialty"}
+        "0": {
+          "name": "Specialist Medical Practitioners",
+          "level_name": "Role"
+        },
+        "1": {
+          "name": "Gynaecologist",
+          "level_name": "Specialty"
+        }
       },
       "metadata": {
-        "specialty_certification": "preferred",
-        "population_focus": "musculoskeletal conditions"
+        "specialty_group": "Obstetric and gynaecological specialties",
+        "medical_specialty": true,
+        "who_classification": true,
+        "requires_specialization": true,
+        "postgraduate_training": true,
+        "board_certification": "varies_by_jurisdiction",
+        "specialty_type": "medical"
       }
     },
     {
-      "id": "allied-health/pharmacist",
-      "path_components": ["allied-health", "pharmacist"],
+      "id": "specialist-medical-practitioners/haematology",
+      "path_components": [
+        "specialist-medical-practitioners",
+        "haematology"
+      ],
       "depth": 1,
-      "parent_id": "allied-health",
-      "children_ids": [
-        "allied-health/pharmacist/clinical-pharmacy",
-        "allied-health/pharmacist/hospital-pharmacy",
-        "allied-health/pharmacist/community-pharmacy"
-      ],
-      "name": "Pharmacist",
-      "description": "Licensed Pharmacist providing medication therapy management",
+      "parent_id": "specialist-medical-practitioners",
+      "children_ids": [],
+      "name": "Haematology",
+      "description": "Medical specialist in haematology",
       "level_info": {
-        "0": {"name": "Allied Health Professional", "level_name": "Role"},
-        "1": {"name": "Pharmacist", "level_name": "Profession"}
+        "0": {
+          "name": "Specialist Medical Practitioners",
+          "level_name": "Role"
+        },
+        "1": {
+          "name": "Haematology",
+          "level_name": "Specialty"
+        }
       },
       "metadata": {
-        "licensure_required": true,
-        "therapy_focus": "medication",
-        "doctorate_required": true
+        "specialty_group": "Medical group of specialties",
+        "medical_specialty": true,
+        "who_classification": true,
+        "requires_specialization": true,
+        "postgraduate_training": true,
+        "board_certification": "varies_by_jurisdiction",
+        "specialty_type": "medical"
       }
     },
     {
-      "id": "physician-assistant",
-      "path_components": ["physician-assistant"],
-      "depth": 0,
-      "parent_id": null,
-      "children_ids": [
-        "physician-assistant/emergency-medicine-pa",
-        "physician-assistant/surgery-pa",
-        "physician-assistant/primary-care-pa",
-        "physician-assistant/specialty-pa"
+      "id": "specialist-medical-practitioners/immunology",
+      "path_components": [
+        "specialist-medical-practitioners",
+        "immunology"
       ],
-      "name": "Physician Assistant",
-      "description": "Licensed healthcare professional practicing medicine under physician supervision",
+      "depth": 1,
+      "parent_id": "specialist-medical-practitioners",
+      "children_ids": [],
+      "name": "Immunology",
+      "description": "Medical specialist in immunology",
       "level_info": {
-        "0": {"name": "Physician Assistant", "level_name": "Role"}
+        "0": {
+          "name": "Specialist Medical Practitioners",
+          "level_name": "Role"
+        },
+        "1": {
+          "name": "Immunology",
+          "level_name": "Specialty"
+        }
       },
       "metadata": {
-        "role_type": "mid_level_provider",
-        "training_required": "masters_degree_and_certification",
-        "prescriptive_authority": true,
-        "supervision_required": true,
-        "typical_settings": ["hospital", "clinic", "urgent_care"]
+        "specialty_group": "Medical group of specialties",
+        "medical_specialty": true,
+        "who_classification": true,
+        "requires_specialization": true,
+        "postgraduate_training": true,
+        "board_certification": "varies_by_jurisdiction",
+        "specialty_type": "medical"
       }
     },
     {
-      "id": "medical-assistant",
-      "path_components": ["medical-assistant"],
+      "id": "specialist-medical-practitioners/infectious-disease",
+      "path_components": [
+        "specialist-medical-practitioners",
+        "infectious-disease"
+      ],
+      "depth": 1,
+      "parent_id": "specialist-medical-practitioners",
+      "children_ids": [],
+      "name": "Infectious Disease",
+      "description": "Medical specialist in infectious disease",
+      "level_info": {
+        "0": {
+          "name": "Specialist Medical Practitioners",
+          "level_name": "Role"
+        },
+        "1": {
+          "name": "Infectious Disease",
+          "level_name": "Specialty"
+        }
+      },
+      "metadata": {
+        "specialty_group": "Medical group of specialties",
+        "medical_specialty": true,
+        "who_classification": true,
+        "requires_specialization": true,
+        "postgraduate_training": true,
+        "board_certification": "varies_by_jurisdiction",
+        "specialty_type": "medical"
+      }
+    },
+    {
+      "id": "specialist-medical-practitioners/intensive-care",
+      "path_components": [
+        "specialist-medical-practitioners",
+        "intensive-care"
+      ],
+      "depth": 1,
+      "parent_id": "specialist-medical-practitioners",
+      "children_ids": [],
+      "name": "Intensive Care",
+      "description": "Medical specialist in intensive care",
+      "level_info": {
+        "0": {
+          "name": "Specialist Medical Practitioners",
+          "level_name": "Role"
+        },
+        "1": {
+          "name": "Intensive Care",
+          "level_name": "Specialty"
+        }
+      },
+      "metadata": {
+        "specialty_group": "Surgical group of specialties",
+        "medical_specialty": true,
+        "who_classification": true,
+        "requires_specialization": true,
+        "postgraduate_training": true,
+        "board_certification": "varies_by_jurisdiction",
+        "specialty_type": "medical"
+      }
+    },
+    {
+      "id": "specialist-medical-practitioners/internal-medicine",
+      "path_components": [
+        "specialist-medical-practitioners",
+        "internal-medicine"
+      ],
+      "depth": 1,
+      "parent_id": "specialist-medical-practitioners",
+      "children_ids": [],
+      "name": "Internal Medicine",
+      "description": "Medical specialist in internal medicine",
+      "level_info": {
+        "0": {
+          "name": "Specialist Medical Practitioners",
+          "level_name": "Role"
+        },
+        "1": {
+          "name": "Internal Medicine",
+          "level_name": "Specialty"
+        }
+      },
+      "metadata": {
+        "specialty_group": "Medical group of specialties",
+        "medical_specialty": true,
+        "who_classification": true,
+        "requires_specialization": true,
+        "postgraduate_training": true,
+        "board_certification": "varies_by_jurisdiction",
+        "specialty_type": "internal_medicine"
+      }
+    },
+    {
+      "id": "specialist-medical-practitioners/neonatologist",
+      "path_components": [
+        "specialist-medical-practitioners",
+        "neonatologist"
+      ],
+      "depth": 1,
+      "parent_id": "specialist-medical-practitioners",
+      "children_ids": [],
+      "name": "Neonatologist",
+      "description": "Medical specialist in neonatologist",
+      "level_info": {
+        "0": {
+          "name": "Specialist Medical Practitioners",
+          "level_name": "Role"
+        },
+        "1": {
+          "name": "Neonatologist",
+          "level_name": "Specialty"
+        }
+      },
+      "metadata": {
+        "specialty_group": "Paediatrics and related specialties",
+        "medical_specialty": true,
+        "who_classification": true,
+        "requires_specialization": true,
+        "postgraduate_training": true,
+        "board_certification": "varies_by_jurisdiction",
+        "specialty_type": "medical"
+      }
+    },
+    {
+      "id": "specialist-medical-practitioners/neurological-surgery",
+      "path_components": [
+        "specialist-medical-practitioners",
+        "neurological-surgery"
+      ],
+      "depth": 1,
+      "parent_id": "specialist-medical-practitioners",
+      "children_ids": [],
+      "name": "Neurological Surgery",
+      "description": "Medical specialist in neurological surgery",
+      "level_info": {
+        "0": {
+          "name": "Specialist Medical Practitioners",
+          "level_name": "Role"
+        },
+        "1": {
+          "name": "Neurological Surgery",
+          "level_name": "Specialty"
+        }
+      },
+      "metadata": {
+        "specialty_group": "Surgical group of specialties",
+        "medical_specialty": true,
+        "who_classification": true,
+        "requires_specialization": true,
+        "postgraduate_training": true,
+        "board_certification": "varies_by_jurisdiction",
+        "specialty_type": "surgical",
+        "procedural_focus": true
+      }
+    },
+    {
+      "id": "specialist-medical-practitioners/neurology",
+      "path_components": [
+        "specialist-medical-practitioners",
+        "neurology"
+      ],
+      "depth": 1,
+      "parent_id": "specialist-medical-practitioners",
+      "children_ids": [],
+      "name": "Neurology",
+      "description": "Medical specialist in neurology",
+      "level_info": {
+        "0": {
+          "name": "Specialist Medical Practitioners",
+          "level_name": "Role"
+        },
+        "1": {
+          "name": "Neurology",
+          "level_name": "Specialty"
+        }
+      },
+      "metadata": {
+        "specialty_group": "Medical group of specialties",
+        "medical_specialty": true,
+        "who_classification": true,
+        "requires_specialization": true,
+        "postgraduate_training": true,
+        "board_certification": "varies_by_jurisdiction",
+        "specialty_type": "medical"
+      }
+    },
+    {
+      "id": "specialist-medical-practitioners/neuropsychiatrist",
+      "path_components": [
+        "specialist-medical-practitioners",
+        "neuropsychiatrist"
+      ],
+      "depth": 1,
+      "parent_id": "specialist-medical-practitioners",
+      "children_ids": [],
+      "name": "Neuropsychiatrist",
+      "description": "Medical specialist in neuropsychiatrist",
+      "level_info": {
+        "0": {
+          "name": "Specialist Medical Practitioners",
+          "level_name": "Role"
+        },
+        "1": {
+          "name": "Neuropsychiatrist",
+          "level_name": "Specialty"
+        }
+      },
+      "metadata": {
+        "specialty_group": "Psychiatric specialties",
+        "medical_specialty": true,
+        "who_classification": true,
+        "requires_specialization": true,
+        "postgraduate_training": true,
+        "board_certification": "varies_by_jurisdiction",
+        "specialty_type": "medical"
+      }
+    },
+    {
+      "id": "specialist-medical-practitioners/obstetrician",
+      "path_components": [
+        "specialist-medical-practitioners",
+        "obstetrician"
+      ],
+      "depth": 1,
+      "parent_id": "specialist-medical-practitioners",
+      "children_ids": [],
+      "name": "Obstetrician",
+      "description": "Medical specialist in obstetrician",
+      "level_info": {
+        "0": {
+          "name": "Specialist Medical Practitioners",
+          "level_name": "Role"
+        },
+        "1": {
+          "name": "Obstetrician",
+          "level_name": "Specialty"
+        }
+      },
+      "metadata": {
+        "specialty_group": "Obstetric and gynaecological specialties",
+        "medical_specialty": true,
+        "who_classification": true,
+        "requires_specialization": true,
+        "postgraduate_training": true,
+        "board_certification": "varies_by_jurisdiction",
+        "specialty_type": "medical"
+      }
+    },
+    {
+      "id": "specialist-medical-practitioners/occupational-medicine",
+      "path_components": [
+        "specialist-medical-practitioners",
+        "occupational-medicine"
+      ],
+      "depth": 1,
+      "parent_id": "specialist-medical-practitioners",
+      "children_ids": [],
+      "name": "Occupational Medicine",
+      "description": "Medical specialist in occupational medicine",
+      "level_info": {
+        "0": {
+          "name": "Specialist Medical Practitioners",
+          "level_name": "Role"
+        },
+        "1": {
+          "name": "Occupational Medicine",
+          "level_name": "Specialty"
+        }
+      },
+      "metadata": {
+        "specialty_group": "Medical group of specialties",
+        "medical_specialty": true,
+        "who_classification": true,
+        "requires_specialization": true,
+        "postgraduate_training": true,
+        "board_certification": "varies_by_jurisdiction",
+        "specialty_type": "internal_medicine"
+      }
+    },
+    {
+      "id": "specialist-medical-practitioners/oncology",
+      "path_components": [
+        "specialist-medical-practitioners",
+        "oncology"
+      ],
+      "depth": 1,
+      "parent_id": "specialist-medical-practitioners",
+      "children_ids": [],
+      "name": "Oncology",
+      "description": "Medical specialist in oncology",
+      "level_info": {
+        "0": {
+          "name": "Specialist Medical Practitioners",
+          "level_name": "Role"
+        },
+        "1": {
+          "name": "Oncology",
+          "level_name": "Specialty"
+        }
+      },
+      "metadata": {
+        "specialty_group": "Medical group of specialties",
+        "medical_specialty": true,
+        "who_classification": true,
+        "requires_specialization": true,
+        "postgraduate_training": true,
+        "board_certification": "varies_by_jurisdiction",
+        "specialty_type": "medical"
+      }
+    },
+    {
+      "id": "specialist-medical-practitioners/ophthalmology",
+      "path_components": [
+        "specialist-medical-practitioners",
+        "ophthalmology"
+      ],
+      "depth": 1,
+      "parent_id": "specialist-medical-practitioners",
+      "children_ids": [],
+      "name": "Ophthalmology",
+      "description": "Medical specialist in ophthalmology",
+      "level_info": {
+        "0": {
+          "name": "Specialist Medical Practitioners",
+          "level_name": "Role"
+        },
+        "1": {
+          "name": "Ophthalmology",
+          "level_name": "Specialty"
+        }
+      },
+      "metadata": {
+        "specialty_group": "Surgical group of specialties",
+        "medical_specialty": true,
+        "who_classification": true,
+        "requires_specialization": true,
+        "postgraduate_training": true,
+        "board_certification": "varies_by_jurisdiction",
+        "specialty_type": "medical"
+      }
+    },
+    {
+      "id": "specialist-medical-practitioners/orthopaedics",
+      "path_components": [
+        "specialist-medical-practitioners",
+        "orthopaedics"
+      ],
+      "depth": 1,
+      "parent_id": "specialist-medical-practitioners",
+      "children_ids": [],
+      "name": "Orthopaedics",
+      "description": "Medical specialist in orthopaedics",
+      "level_info": {
+        "0": {
+          "name": "Specialist Medical Practitioners",
+          "level_name": "Role"
+        },
+        "1": {
+          "name": "Orthopaedics",
+          "level_name": "Specialty"
+        }
+      },
+      "metadata": {
+        "specialty_group": "Surgical group of specialties",
+        "medical_specialty": true,
+        "who_classification": true,
+        "requires_specialization": true,
+        "postgraduate_training": true,
+        "board_certification": "varies_by_jurisdiction",
+        "specialty_type": "medical"
+      }
+    },
+    {
+      "id": "specialist-medical-practitioners/otolaryngology",
+      "path_components": [
+        "specialist-medical-practitioners",
+        "otolaryngology"
+      ],
+      "depth": 1,
+      "parent_id": "specialist-medical-practitioners",
+      "children_ids": [],
+      "name": "Otolaryngology",
+      "description": "Medical specialist in otolaryngology",
+      "level_info": {
+        "0": {
+          "name": "Specialist Medical Practitioners",
+          "level_name": "Role"
+        },
+        "1": {
+          "name": "Otolaryngology",
+          "level_name": "Specialty"
+        }
+      },
+      "metadata": {
+        "specialty_group": "Surgical group of specialties",
+        "medical_specialty": true,
+        "who_classification": true,
+        "requires_specialization": true,
+        "postgraduate_training": true,
+        "board_certification": "varies_by_jurisdiction",
+        "specialty_type": "medical"
+      }
+    },
+    {
+      "id": "specialist-medical-practitioners/paediatric-surgery",
+      "path_components": [
+        "specialist-medical-practitioners",
+        "paediatric-surgery"
+      ],
+      "depth": 1,
+      "parent_id": "specialist-medical-practitioners",
+      "children_ids": [],
+      "name": "Paediatric Surgery",
+      "description": "Medical specialist in paediatric surgery",
+      "level_info": {
+        "0": {
+          "name": "Specialist Medical Practitioners",
+          "level_name": "Role"
+        },
+        "1": {
+          "name": "Paediatric Surgery",
+          "level_name": "Specialty"
+        }
+      },
+      "metadata": {
+        "specialty_group": "Surgical group of specialties",
+        "medical_specialty": true,
+        "who_classification": true,
+        "requires_specialization": true,
+        "postgraduate_training": true,
+        "board_certification": "varies_by_jurisdiction",
+        "specialty_type": "surgical",
+        "procedural_focus": true
+      }
+    },
+    {
+      "id": "specialist-medical-practitioners/paediatrician",
+      "path_components": [
+        "specialist-medical-practitioners",
+        "paediatrician"
+      ],
+      "depth": 1,
+      "parent_id": "specialist-medical-practitioners",
+      "children_ids": [],
+      "name": "Paediatrician",
+      "description": "Medical specialist in paediatrician",
+      "level_info": {
+        "0": {
+          "name": "Specialist Medical Practitioners",
+          "level_name": "Role"
+        },
+        "1": {
+          "name": "Paediatrician",
+          "level_name": "Specialty"
+        }
+      },
+      "metadata": {
+        "specialty_group": "Paediatrics and related specialties",
+        "medical_specialty": true,
+        "who_classification": true,
+        "requires_specialization": true,
+        "postgraduate_training": true,
+        "board_certification": "varies_by_jurisdiction",
+        "specialty_type": "medical"
+      }
+    },
+    {
+      "id": "specialist-medical-practitioners/plastic-surgery",
+      "path_components": [
+        "specialist-medical-practitioners",
+        "plastic-surgery"
+      ],
+      "depth": 1,
+      "parent_id": "specialist-medical-practitioners",
+      "children_ids": [],
+      "name": "Plastic Surgery",
+      "description": "Medical specialist in plastic surgery",
+      "level_info": {
+        "0": {
+          "name": "Specialist Medical Practitioners",
+          "level_name": "Role"
+        },
+        "1": {
+          "name": "Plastic Surgery",
+          "level_name": "Specialty"
+        }
+      },
+      "metadata": {
+        "specialty_group": "Surgical group of specialties",
+        "medical_specialty": true,
+        "who_classification": true,
+        "requires_specialization": true,
+        "postgraduate_training": true,
+        "board_certification": "varies_by_jurisdiction",
+        "specialty_type": "surgical",
+        "procedural_focus": true
+      }
+    },
+    {
+      "id": "specialist-medical-practitioners/psychiatrist",
+      "path_components": [
+        "specialist-medical-practitioners",
+        "psychiatrist"
+      ],
+      "depth": 1,
+      "parent_id": "specialist-medical-practitioners",
+      "children_ids": [],
+      "name": "Psychiatrist",
+      "description": "Medical specialist in psychiatrist",
+      "level_info": {
+        "0": {
+          "name": "Specialist Medical Practitioners",
+          "level_name": "Role"
+        },
+        "1": {
+          "name": "Psychiatrist",
+          "level_name": "Specialty"
+        }
+      },
+      "metadata": {
+        "specialty_group": "Psychiatric specialties",
+        "medical_specialty": true,
+        "who_classification": true,
+        "requires_specialization": true,
+        "postgraduate_training": true,
+        "board_certification": "varies_by_jurisdiction",
+        "specialty_type": "medical"
+      }
+    },
+    {
+      "id": "specialist-medical-practitioners/radiology",
+      "path_components": [
+        "specialist-medical-practitioners",
+        "radiology"
+      ],
+      "depth": 1,
+      "parent_id": "specialist-medical-practitioners",
+      "children_ids": [],
+      "name": "Radiology",
+      "description": "Medical specialist in radiology",
+      "level_info": {
+        "0": {
+          "name": "Specialist Medical Practitioners",
+          "level_name": "Role"
+        },
+        "1": {
+          "name": "Radiology",
+          "level_name": "Specialty"
+        }
+      },
+      "metadata": {
+        "specialty_group": "Medical group of specialties",
+        "medical_specialty": true,
+        "who_classification": true,
+        "requires_specialization": true,
+        "postgraduate_training": true,
+        "board_certification": "varies_by_jurisdiction",
+        "specialty_type": "medical"
+      }
+    },
+    {
+      "id": "specialist-medical-practitioners/rehabilitative-medicine",
+      "path_components": [
+        "specialist-medical-practitioners",
+        "rehabilitative-medicine"
+      ],
+      "depth": 1,
+      "parent_id": "specialist-medical-practitioners",
+      "children_ids": [],
+      "name": "Rehabilitative Medicine",
+      "description": "Medical specialist in rehabilitative medicine",
+      "level_info": {
+        "0": {
+          "name": "Specialist Medical Practitioners",
+          "level_name": "Role"
+        },
+        "1": {
+          "name": "Rehabilitative Medicine",
+          "level_name": "Specialty"
+        }
+      },
+      "metadata": {
+        "specialty_group": "Medical group of specialties",
+        "medical_specialty": true,
+        "who_classification": true,
+        "requires_specialization": true,
+        "postgraduate_training": true,
+        "board_certification": "varies_by_jurisdiction",
+        "specialty_type": "internal_medicine"
+      }
+    },
+    {
+      "id": "specialist-medical-practitioners/respiratory-medicine",
+      "path_components": [
+        "specialist-medical-practitioners",
+        "respiratory-medicine"
+      ],
+      "depth": 1,
+      "parent_id": "specialist-medical-practitioners",
+      "children_ids": [],
+      "name": "Respiratory Medicine",
+      "description": "Medical specialist in respiratory medicine",
+      "level_info": {
+        "0": {
+          "name": "Specialist Medical Practitioners",
+          "level_name": "Role"
+        },
+        "1": {
+          "name": "Respiratory Medicine",
+          "level_name": "Specialty"
+        }
+      },
+      "metadata": {
+        "specialty_group": "Medical group of specialties",
+        "medical_specialty": true,
+        "who_classification": true,
+        "requires_specialization": true,
+        "postgraduate_training": true,
+        "board_certification": "varies_by_jurisdiction",
+        "specialty_type": "internal_medicine"
+      }
+    },
+    {
+      "id": "specialist-medical-practitioners/thoracic-surgery",
+      "path_components": [
+        "specialist-medical-practitioners",
+        "thoracic-surgery"
+      ],
+      "depth": 1,
+      "parent_id": "specialist-medical-practitioners",
+      "children_ids": [],
+      "name": "Thoracic Surgery",
+      "description": "Medical specialist in thoracic surgery",
+      "level_info": {
+        "0": {
+          "name": "Specialist Medical Practitioners",
+          "level_name": "Role"
+        },
+        "1": {
+          "name": "Thoracic Surgery",
+          "level_name": "Specialty"
+        }
+      },
+      "metadata": {
+        "specialty_group": "Surgical group of specialties",
+        "medical_specialty": true,
+        "who_classification": true,
+        "requires_specialization": true,
+        "postgraduate_training": true,
+        "board_certification": "varies_by_jurisdiction",
+        "specialty_type": "surgical",
+        "procedural_focus": true
+      }
+    },
+    {
+      "id": "specialist-medical-practitioners/urology",
+      "path_components": [
+        "specialist-medical-practitioners",
+        "urology"
+      ],
+      "depth": 1,
+      "parent_id": "specialist-medical-practitioners",
+      "children_ids": [],
+      "name": "Urology",
+      "description": "Medical specialist in urology",
+      "level_info": {
+        "0": {
+          "name": "Specialist Medical Practitioners",
+          "level_name": "Role"
+        },
+        "1": {
+          "name": "Urology",
+          "level_name": "Specialty"
+        }
+      },
+      "metadata": {
+        "specialty_group": "Medical group of specialties",
+        "medical_specialty": true,
+        "who_classification": true,
+        "requires_specialization": true,
+        "postgraduate_training": true,
+        "board_certification": "varies_by_jurisdiction",
+        "specialty_type": "medical"
+      }
+    },
+    {
+      "id": "specialist-medical-practitioners/vascular-surgery",
+      "path_components": [
+        "specialist-medical-practitioners",
+        "vascular-surgery"
+      ],
+      "depth": 1,
+      "parent_id": "specialist-medical-practitioners",
+      "children_ids": [],
+      "name": "Vascular Surgery",
+      "description": "Medical specialist in vascular surgery",
+      "level_info": {
+        "0": {
+          "name": "Specialist Medical Practitioners",
+          "level_name": "Role"
+        },
+        "1": {
+          "name": "Vascular Surgery",
+          "level_name": "Specialty"
+        }
+      },
+      "metadata": {
+        "specialty_group": "Surgical group of specialties",
+        "medical_specialty": true,
+        "who_classification": true,
+        "requires_specialization": true,
+        "postgraduate_training": true,
+        "board_certification": "varies_by_jurisdiction",
+        "specialty_type": "surgical",
+        "procedural_focus": true
+      }
+    },
+    {
+      "id": "trades-workers",
+      "path_components": [
+        "trades-workers"
+      ],
       "depth": 0,
       "parent_id": null,
       "children_ids": [],
-      "name": "Medical Assistant",
-      "description": "Medical Assistant providing clinical support services",
+      "name": "Trades workers",
+      "description": "This group covers trades workers working in health systems including, for instance, building trades workers, electrical and electronics trades workers, machinery trades workers, precision-instrument makers and others who apply knowledge and skills to construct and maintain buildings, make and control equipment or tools, or apply chemical products on surroundings to prevent health risks.",
       "level_info": {
-        "0": {"name": "Medical Assistant", "level_name": "Role"}
+        "0": {
+          "name": "Trades Workers",
+          "level_name": "Role"
+        }
       },
       "metadata": {
-        "role_type": "clinical_support",
-        "certification_required": true,
-        "supervision_level": "direct"
+        "isco_code": "",
+        "who_classification": true,
+        "occupation_type": "health_worker",
+        "occupation_examples": [
+          "Ambulance mechanic",
+          "Building exteriors cleaner",
+          "Computer hardware technician",
+          "Health information typesetter",
+          "Malaria control sprayer",
+          "Optical lens moulder",
+          "Orthopaedic appliance maker",
+          "Surgical instruments maker",
+          "Refrigeration mechanic"
+        ],
+        "training_notes": "The tasks and duties of occupations in this category generally require understanding of all stages of the production process, the materials and tools used, and the nature and purpose of the final product, as usually obtained through the completion of secondary education and, in some case, specialized post-secondary vocational education and/or prolonged on-the-job training.",
+        "scope": "health_services"
       }
     },
     {
-      "id": "emergency-medical-technician",
-      "path_components": ["emergency-medical-technician"],
+      "id": "traditional-and-complementary-medicine-associate-professionals",
+      "path_components": [
+        "traditional-and-complementary-medicine-associate-professionals"
+      ],
       "depth": 0,
       "parent_id": null,
-      "children_ids": [
-        "emergency-medical-technician/emt-basic",
-        "emergency-medical-technician/emt-paramedic"
-      ],
-      "name": "Emergency Medical Technician",
-      "description": "Emergency Medical Technician providing pre-hospital emergency care",
+      "children_ids": [],
+      "name": "Traditional and complementary medicine associate professionals",
+      "description": "Traditional and complementary medicine associate professionals prevent, care for and treat physical and mental illnesses, disorders and injuries using herbal and other therapies based on theories and experiences originating in specific cultures. They administer treatments using traditional techniques and medicaments, either acting independently or according to therapeutic care plans established by a traditional medicine or other health professional.",
       "level_info": {
-        "0": {"name": "Emergency Medical Technician", "level_name": "Role"}
+        "0": {
+          "name": "Traditional And Complementary Medicine Associate Professionals",
+          "level_name": "Role"
+        }
       },
       "metadata": {
-        "role_type": "emergency_response",
-        "certification_required": true,
-        "scope": "pre_hospital_care"
+        "isco_code": "3230",
+        "who_classification": true,
+        "occupation_type": "health_worker",
+        "occupation_examples": [
+          "Acupuncture technician",
+          "Ayurvedic technician",
+          "Bonesetter",
+          "Herbalist",
+          "Homeopathy technician",
+          "Scraping and cupping therapist",
+          "Village healer",
+          "sMenpas"
+        ],
+        "training_notes": "This category includes occupations for which competent performance requires knowledge and skills acquired through relatively short periods of education and training, or informally through the traditions and practices of the communities where they originated. Faith healers, who treat human ailments through spiritual therapies, without using herbal therapies or other medicaments or physical treatments, are excluded from here (classified under 'Religious associate professionals'). Occupations that provide therapy using traditional forms of massage and the application of pressure, such as acupressure and shiatsu therapists, are classified under 'Physiotherapy technicians and assistants'-3255.",
+        "scope": "health_services"
+      }
+    },
+    {
+      "id": "traditional-and-complementary-medicine-professionals",
+      "path_components": [
+        "traditional-and-complementary-medicine-professionals"
+      ],
+      "depth": 0,
+      "parent_id": null,
+      "children_ids": [],
+      "name": "Traditional and complementary medicine professionals",
+      "description": "Traditional and complementary medicine professionals examine patients and prevent and treat illness, disease, injury and other physical, mental and psychosocial ailments by applying knowledge, skills and practices acquired through extensive study of the theories and experiences originating in specific cultures. They research, develop and implement treatment plans using applications such as acupuncture, ayurvedic, homoeopathic and herbal medicine.",
+      "level_info": {
+        "0": {
+          "name": "Traditional And Complementary Medicine Professionals",
+          "level_name": "Role"
+        }
+      },
+      "metadata": {
+        "isco_code": "2230",
+        "who_classification": true,
+        "occupation_type": "health_worker",
+        "occupation_examples": [
+          "Acupuncturist",
+          "Ayurvedic practitioner",
+          "Chinese herbal medicine practitioner",
+          "Homeopath",
+          "Naturopath",
+          "Unani practitioner",
+          "Drungtsho"
+        ],
+        "training_notes": "This category includes occupations for which competent performance requires an extensive understanding of the benefits and applications of traditional and complementary therapies, developed as the result of extended formal study of these techniques as well as human anatomy and elements of modern medicine. Practitioners working in the singular application of approaches to herbal medicines, spiritual therapies or manual therapeutic activity are excluded from here.",
+        "scope": "health_services"
       }
     }
   ],
   "dimension_metadata": {
-    "total_roles": 7,
-    "total_specialties": 45,
-    "total_subspecialties": 58,
-    "physician_specialties": 24,
-    "nursing_categories": 2,
-    "allied_health_professions": 8,
-    "support_roles": 3,
-    "abms_certified": true,
-    "interprofessional_ready": true
+    "total_occupations": 51,
+    "total_specialties": 35,
+    "occupation_distribution": {
+      "health_services": 34,
+      "oral_health": 2,
+      "medical_practice": 3,
+      "technical_support": 9,
+      "health_administration": 1,
+      "nursing_care": 2
+    },
+    "specialty_groups": 5,
+    "who_isco_classification": true,
+    "evidence_based": true,
+    "international_standard": true,
+    "last_updated": "2025-01-30"
   }
 }
