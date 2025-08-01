@@ -1,0 +1,193 @@
+Full Physician Specialty Structure from ABMS:
+
+1. Allergy and Immunology
+   - No subspecialties
+
+2. Anesthesiology
+   - Adult Cardiac Anesthesiology
+   - Critical Care Medicine
+   - Hospice and Palliative Medicine
+   - Neurocritical Care
+   - Pain Medicine
+   - Pediatric Anesthesiology
+   - Sleep Medicine
+
+3. Colon and Rectal Surgery
+   - No subspecialties
+
+4. Dermatology
+   - Dermatopathology
+   - Micrographic Dermatologic Surgery
+   - Pediatric Dermatology
+
+5. Emergency Medicine
+   - Critical Care Medicine
+   - Emergency Medical Services
+   - Hospice and Palliative Medicine
+   - Medical Toxicology
+   - Neurocritical Care
+   - Pain Medicine
+   - Pediatric Emergency Medicine
+   - Sports Medicine
+   - Undersea and Hyperbaric Medicine
+
+6. Family Medicine
+   - Adolescent Medicine
+   - Geriatric Medicine
+   - Hospice and Palliative Medicine
+   - Pain Medicine
+   - Sleep Medicine
+   - Sports Medicine
+
+7. Internal Medicine
+   - Adolescent Medicine
+   - Adult Congenital Heart Disease
+   - Advanced Heart Failure and Transplant Cardiology
+   - Cardiovascular Disease
+   - Clinical Cardiac Electrophysiology
+   - Critical Care Medicine
+   - Endocrinology, Diabetes and Metabolism
+   - Gastroenterology
+   - Geriatric Medicine
+   - Hematology
+   - Hospice and Palliative Medicine
+   - Infectious Disease
+   - Interventional Cardiology
+   - Medical Oncology
+   - Nephrology
+   - Neurocritical Care
+   - Pulmonary Disease
+   - Rheumatology
+   - Sleep Medicine
+   - Sports Medicine
+   - Transplant Hepatology
+
+8. Medical Genetics and Genomics
+   - Clinical Biochemical Genetics
+   - Clinical Cytogenetics and Genomics
+   - Clinical Molecular Genetics and Genomics
+   - Medical Biochemical Genetics
+
+9. Neurological Surgery
+   - Endovascular Surgical Neuroradiology
+   - Neurocritical Care
+
+10. Nuclear Medicine
+    - No subspecialties
+
+11. Obstetrics and Gynecology
+    - Complex Family Planning
+    - Critical Care Medicine
+    - Gynecologic Oncology
+    - Maternal-Fetal Medicine
+    - Reproductive Endocrinology and Infertility
+    - Urogynecology and Reconstructive Pelvic Surgery
+
+12. Ophthalmology
+    - No subspecialties
+
+13. Orthopaedic Surgery
+    - Orthopaedic Sports Medicine
+    - Surgery of the Hand
+
+14. Otolaryngology - Head and Neck Surgery
+    - Complex Pediatric Otolaryngology
+    - Neurotology
+    - Sleep Medicine
+
+15. Pathology
+    - Blood Banking/Transfusion Medicine
+    - Clinical Informatics
+    - Cytopathology
+    - Dermatopathology
+    - Forensic Pathology
+    - Hematopathology
+    - Neuropathology
+    - Pediatric Pathology
+
+16. Pediatrics
+    - Adolescent Medicine
+    - Child Abuse Pediatrics
+    - Child and Adolescent Psychiatry
+    - Developmental-Behavioral Pediatrics
+    - Hospice and Palliative Medicine
+    - Medical Toxicology
+    - Neonatal-Perinatal Medicine
+    - Neurodevelopmental Disabilities
+    - Pediatric Cardiology
+    - Pediatric Critical Care Medicine
+    - Pediatric Emergency Medicine
+    - Pediatric Endocrinology
+    - Pediatric Gastroenterology
+    - Pediatric Hematology-Oncology
+    - Pediatric Hospital Medicine
+    - Pediatric Infectious Diseases
+    - Pediatric Nephrology
+    - Pediatric Pulmonology
+    - Pediatric Rehabilitation Medicine
+    - Pediatric Rheumatology
+    - Pediatric Transplant Hepatology
+    - Sleep Medicine
+    - Sports Medicine
+
+17. Physical Medicine and Rehabilitation
+    - Brain Injury Medicine
+    - Hospice and Palliative Medicine
+    - Neuromuscular Medicine
+    - Pain Medicine
+    - Pediatric Rehabilitation Medicine
+    - Spinal Cord Injury Medicine
+    - Sports Medicine
+
+18. Plastic Surgery
+    - Craniofacial Surgery
+    - Hand Surgery
+
+19. Preventive Medicine
+    - Addiction Medicine
+    - Clinical Informatics
+    - Medical Toxicology
+    - Undersea and Hyperbaric Medicine
+
+20. Psychiatry and Neurology
+    - Addiction Medicine
+    - Addiction Psychiatry
+    - Brain Injury Medicine
+    - Child and Adolescent Psychiatry
+    - Clinical Neurophysiology
+    - Consultation-Liaison Psychiatry
+    - Epilepsy
+    - Forensic Psychiatry
+    - Geriatric Psychiatry
+    - Hospice and Palliative Medicine
+    - Neurodevelopmental Disabilities
+    - Neuromuscular Medicine
+    - Pain Medicine
+    - Sleep Medicine
+    - Vascular Neurology
+
+21. Radiology
+    - Abdominal Radiology
+    - Breast Imaging
+    - Cardiothoracic Radiology
+    - Endovascular Surgical Neuroradiology
+    - Musculoskeletal Radiology
+    - Neuroradiology
+    - Nuclear Radiology
+    - Pediatric Radiology
+    - Vascular and Interventional Radiology
+
+22. Surgery
+    - Complex General Surgical Oncology
+    - Hand Surgery
+    - Hospice and Palliative Medicine
+    - Pediatric Surgery
+    - Surgical Critical Care
+    - Vascular Surgery
+
+23. Thoracic Surgery
+    - Congenital Cardiac Surgery
+
+24. Urology
+    - Female Pelvic Medicine and Reconstructive Surgery
+    - Pediatric Urology
