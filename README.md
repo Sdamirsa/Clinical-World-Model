@@ -46,12 +46,12 @@ Healthcare delivery settings with resource availability:
 ## 🚀 Quick Start
 
 ### Interactive Website
-Visit our [live demo](https://your-username.github.io/Clinical-World-Model) to explore dimensions interactively.
+Visit our [live demo](https://sdamirsa.github.io/Clinical-World-Model) to explore dimensions interactively.
 
 ### Local Development
 ```bash
 # Clone the repository
-git clone https://github.com/your-username/Clinical-World-Model.git
+git clone https://github.com/sdamirsa/Clinical-World-Model.git
 cd Clinical-World-Model
 
 # Install Python dependencies for data processing
@@ -146,7 +146,7 @@ We welcome contributions to expand and refine the Clinical World Model:
 
 - [DALY Analysis Methodology](README_diseasesDALY.md) - Disease prioritization approach
 - [Data Model Specification](clinical-skill-mix/skill_mix_dimensions_model.py) - Pydantic schemas
-- [Interactive Website](https://your-username.github.io/Clinical-World-Model) - Live exploration tool
+- [Interactive Website](https://sdamirsa.github.io/Clinical-World-Model) - Live exploration tool
 
 ## 📄 License
 
@@ -159,9 +159,9 @@ If you use this framework in your research, please cite:
 ```bibtex
 @misc{clinical-world-model-2025,
   title={Clinical World Model: Evidence-Based Framework for Healthcare AI Evaluation},
-  author={[Your Name]},
+  author={Safavi-Naini, Seyed Amir Ahmad and Meftah, Elahe},
   year={2025},
-  url={https://github.com/your-username/Clinical-World-Model}
+  url={https://github.com/sdamirsa/Clinical-World-Model}
 }
 ```
 
