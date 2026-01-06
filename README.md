@@ -7,7 +7,7 @@ A comprehensive, evidence-based framework for modeling clinical environments and
 
 ## 🌟 Features
 
-- **Interactive Web Interface**: Explore dimensions through our [GitHub Pages website](https://your-username.github.io/Clinical-World-Model)
+- **Interactive Web Interface**: Explore dimensions through our [GitHub Pages website](https://sdamirsa.github.io/Clinical-World-Model)
 - **Evidence-Based Disease Prioritization**: WHO DALY 2021 data integration with ICD-11 classification
 - **Standardized Data Models**: Pydantic-based JSON format for all dimensions
 - **Hierarchical Structure**: Multi-level organization supporting different analysis depths
