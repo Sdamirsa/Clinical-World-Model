@@ -75,6 +75,7 @@ Visit our [live demo](https://sdamirsa.github.io/Clinical-World-Model) to explor
 ```bash
 # Clone the repository
 git clone https://github.com/sdamirsa/Clinical-World-Model.git
+git clone https://github.com/sdamirsa/Clinical-World-Model.git
 cd Clinical-World-Model
 
 # Install Python dependencies for data processing
@@ -176,6 +177,7 @@ We welcome contributions to expand and refine the Clinical Skill-Mix:
 
 - [DALY Analysis Methodology](README_diseasesDALY.md) - Disease prioritization approach
 - [Data Model Specification](clinical-skill-mix/skill_mix_dimensions_model.py) - Pydantic schemas
+- [Interactive Website](https://sdamirsa.github.io/Clinical-World-Model) - Live exploration tool
 - [Interactive Website](https://sdamirsa.github.io/Clinical-World-Model) - Live exploration tool
 
 ## 📄 License
