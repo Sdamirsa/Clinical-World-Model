@@ -1,12 +1,17 @@
 #!/usr/bin/env python3
 """
-Generate diseases.json from WHO DALY 2021 analysis data
+Generate disease.json from WHO DALY 2021 analysis data
 Uses standardized hierarchical skill-mix dimension format
 """
 
 import json
 from pathlib import Path
 from collections import defaultdict
+import sys
+
+# Add parent directory to path for imports
+sys.path.insert(0, str(Path(__file__).parent.parent / "clinical-skill-mix"))
+
 from skill_mix_dimensions_model import (
     SkillMixDimension, DimensionItem, ReferenceInfo, HierarchyInfo,
     DimensionType, DALYRankingCategory, build_hierarchical_items
@@ -373,14 +378,14 @@ def generate_diseases_json(daly_stats):
     return diseases_dimension
 
 def save_diseases_json(diseases_dimension):
-    """Save the generated diseases.json file using standardized format"""
-    output_path = SKILL_MIX_PATH / 'diseases.json'
+    """Save the generated disease.json file using standardized format"""
+    output_path = SKILL_MIX_PATH / 'disease.json'
     
     # Convert Pydantic model to JSON
     with open(output_path, 'w') as f:
         json.dump(diseases_dimension.model_dump(), f, indent=2)
     
-    print(f"Generated diseases.json saved to {output_path}")
+    print(f"Generated disease.json saved to {output_path}")
     return output_path
 
 def print_summary(diseases_dimension):
@@ -438,12 +443,12 @@ if __name__ == "__main__":
         print(f"✗ Validation error: {e}")
         exit(1)
     
-    print("Saving diseases.json...")
+    print("Saving disease.json...")
     output_path = save_diseases_json(diseases_dimension)
     
     print_summary(diseases_dimension)
     
-    print(f"\n✓ Done! Standardized diseases.json has been generated at {output_path}")
+    print(f"\n✓ Done! Standardized disease.json has been generated at {output_path}")
     
     # Demonstrate depth-aware queries
     print("\n=== Depth-Aware Query Examples ===")
@@ -461,4 +466,4 @@ if __name__ == "__main__":
     cardio_conditions = get_children_at_depth(diseases_dimension, 'cardiovascular', 1)
     print(f"Cardiovascular conditions: {[c.name for c in cardio_conditions[:3]]}")
     
-    print("✓ Depth-aware queries working correctly!")
+    print("✓ Depth-aware queries working correctly!")  

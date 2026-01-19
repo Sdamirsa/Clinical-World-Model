@@ -1,0 +1,1960 @@
+{
+  "dimension": "task",
+  "description": "Cognitive tasks that intelligent systems aim to augment or automate. Anchored in actual cognitive work physicians perform for principled decisions about automation versus augmentation. Based on the Physician Competency Reference Set synthesizing 150+ competency frameworks.",
+  "reference": {
+    "classification": "Physician Competency Reference Set (Englander et al.)",
+    "burden_metric": "Clinical competency requirements across 8 domains",
+    "data_source": "Physician competency frameworks synthesized from 150+ competency lists",
+    "last_updated": "2025-01-30",
+    "sources": [
+      "Physician Competency Reference Set: 58 competencies across 8 domains (Englander et al.)",
+      "MedHELM Framework: 121 medical tasks in 5 categories for LLM evaluation",
+      "Eight Domains: Patient Care, Knowledge for Practice, Practice-Based Learning, Communication, Professionalism, Systems-Based Practice, Interprofessional Collaboration, Personal Development",
+      "AI Interaction Modes: Augmentation, Automation, Collaborative, Human-Essential"
+    ]
+  },
+  "hierarchy": {
+    "structure": "Eight competency domains with specific cognitive tasks categorized by AI interaction modes and MedHELM framework",
+    "levels": [
+      "domain",
+      "competency"
+    ],
+    "max_depth": 1
+  },
+  "items": [
+    {
+      "id": "patient-care",
+      "path_components": [
+        "patient-care"
+      ],
+      "depth": 0,
+      "parent_id": null,
+      "children_ids": [
+        "patient-care/perform-procedures",
+        "patient-care/gather-patient-data",
+        "patient-care/prioritize-care",
+        "patient-care/interpret-diagnostics",
+        "patient-care/clinical-decision-making",
+        "patient-care/develop-care-plans",
+        "patient-care/patient-counseling",
+        "patient-care/coordinate-referrals",
+        "patient-care/preventive-care-delivery",
+        "patient-care/clinical-role-modeling",
+        "patient-care/clinical-supervision"
+      ],
+      "name": "Patient Care",
+      "description": "Core clinical activities including procedures, data gathering, decision-making, and patient education",
+      "level_info": {
+        "0": {
+          "name": "Patient Care",
+          "level_name": "Domain"
+        }
+      },
+      "metadata": {
+        "domain_number": 1,
+        "competency_count": 11
+      }
+    },
+    {
+      "id": "knowledge-practice",
+      "path_components": [
+        "knowledge-practice"
+      ],
+      "depth": 0,
+      "parent_id": null,
+      "children_ids": [
+        "knowledge-practice/clinical-investigation",
+        "knowledge-practice/apply-biophysical-science",
+        "knowledge-practice/apply-clinical-science",
+        "knowledge-practice/apply-epidemiology",
+        "knowledge-practice/apply-social-behavioral-science",
+        "knowledge-practice/research-translation"
+      ],
+      "name": "Knowledge for Practice",
+      "description": "Application of biomedical, clinical, epidemiological, and social-behavioral sciences to patient care",
+      "level_info": {
+        "0": {
+          "name": "Knowledge for Practice",
+          "level_name": "Domain"
+        }
+      },
+      "metadata": {
+        "domain_number": 2,
+        "competency_count": 6
+      }
+    },
+    {
+      "id": "practice-learning",
+      "path_components": [
+        "practice-learning"
+      ],
+      "depth": 0,
+      "parent_id": null,
+      "children_ids": [
+        "practice-learning/self-assessment",
+        "practice-learning/goal-setting",
+        "practice-learning/self-directed-learning",
+        "practice-learning/quality-improvement",
+        "practice-learning/feedback-integration",
+        "practice-learning/evidence-appraisal",
+        "practice-learning/technology-integration",
+        "practice-learning/peer-education",
+        "practice-learning/population-health-analysis",
+        "practice-learning/knowledge-implementation"
+      ],
+      "name": "Practice-Based Learning and Improvement",
+      "description": "Self-assessment, quality improvement, evidence appraisal, and continuous professional development",
+      "level_info": {
+        "0": {
+          "name": "Practice-Based Learning and Improvement",
+          "level_name": "Domain"
+        }
+      },
+      "metadata": {
+        "domain_number": 3,
+        "competency_count": 10
+      }
+    },
+    {
+      "id": "communication",
+      "path_components": [
+        "communication"
+      ],
+      "depth": 0,
+      "parent_id": null,
+      "children_ids": [
+        "communication/patient-communication",
+        "communication/professional-communication",
+        "communication/team-collaboration",
+        "communication/clinical-consultation",
+        "communication/medical-documentation",
+        "communication/sensitive-communication",
+        "communication/emotional-intelligence"
+      ],
+      "name": "Interpersonal & Communication Skills",
+      "description": "Effective communication with patients, families, colleagues, and maintaining medical records",
+      "level_info": {
+        "0": {
+          "name": "Interpersonal & Communication Skills",
+          "level_name": "Domain"
+        }
+      },
+      "metadata": {
+        "domain_number": 4,
+        "competency_count": 7
+      }
+    },
+    {
+      "id": "professionalism",
+      "path_components": [
+        "professionalism"
+      ],
+      "depth": 0,
+      "parent_id": null,
+      "children_ids": [
+        "professionalism/compassionate-care",
+        "professionalism/patient-centered-practice",
+        "professionalism/respect-autonomy",
+        "professionalism/professional-accountability",
+        "professionalism/cultural-competence",
+        "professionalism/ethical-practice"
+      ],
+      "name": "Professionalism",
+      "description": "Ethical practice, compassion, accountability, and respect for diversity and patient autonomy",
+      "level_info": {
+        "0": {
+          "name": "Professionalism",
+          "level_name": "Domain"
+        }
+      },
+      "metadata": {
+        "domain_number": 5,
+        "competency_count": 6
+      }
+    },
+    {
+      "id": "systems-practice",
+      "path_components": [
+        "systems-practice"
+      ],
+      "depth": 0,
+      "parent_id": null,
+      "children_ids": [
+        "systems-practice/system-navigation",
+        "systems-practice/care-coordination",
+        "systems-practice/resource-stewardship",
+        "systems-practice/quality-advocacy",
+        "systems-practice/system-improvement",
+        "systems-practice/practice-management"
+      ],
+      "name": "System-based Practice",
+      "description": "Healthcare system navigation, care coordination, resource stewardship, and quality advocacy",
+      "level_info": {
+        "0": {
+          "name": "System-based Practice",
+          "level_name": "Domain"
+        }
+      },
+      "metadata": {
+        "domain_number": 6,
+        "competency_count": 6
+      }
+    },
+    {
+      "id": "interprofessional",
+      "path_components": [
+        "interprofessional"
+      ],
+      "depth": 0,
+      "parent_id": null,
+      "children_ids": [
+        "interprofessional/interprofessional-trust",
+        "interprofessional/interprofessional-assessment",
+        "interprofessional/interprofessional-communication",
+        "interprofessional/team-leadership"
+      ],
+      "name": "Interperprofessional Collaboration",
+      "description": "Collaborative practice with other health professionals in team-based care delivery",
+      "level_info": {
+        "0": {
+          "name": "Interperprofessional Collaboration",
+          "level_name": "Domain"
+        }
+      },
+      "metadata": {
+        "domain_number": 7,
+        "competency_count": 4
+      }
+    },
+    {
+      "id": "personal-development",
+      "path_components": [
+        "personal-development"
+      ],
+      "depth": 0,
+      "parent_id": null,
+      "children_ids": [
+        "personal-development/self-awareness",
+        "personal-development/stress-management",
+        "personal-development/work-life-balance",
+        "personal-development/adaptive-practice",
+        "personal-development/professional-trustworthiness",
+        "personal-development/leadership-development",
+        "personal-development/therapeutic-presence",
+        "personal-development/uncertainty-management"
+      ],
+      "name": "Personal & Professional Development",
+      "description": "Self-awareness, coping mechanisms, work-life balance, leadership, and managing uncertainty",
+      "level_info": {
+        "0": {
+          "name": "Personal & Professional Development",
+          "level_name": "Domain"
+        }
+      },
+      "metadata": {
+        "domain_number": 8,
+        "competency_count": 8
+      }
+    },
+    {
+      "id": "patient-care/perform-procedures",
+      "path_components": [
+        "patient-care",
+        "perform-procedures"
+      ],
+      "depth": 1,
+      "parent_id": "patient-care",
+      "children_ids": [],
+      "name": "Perform Procedures",
+      "description": "Perform all medical, diagnostic, and surgical procedures considered essential for the area of practice",
+      "level_info": {
+        "0": {
+          "name": "Patient Care",
+          "level_name": "Domain"
+        },
+        "1": {
+          "name": "Perform Procedures",
+          "level_name": "Competency"
+        }
+      },
+      "metadata": {
+        "competency_id": "1.1",
+        "concise_name": "perform-procedures",
+        "ai_interaction_mode": "Human-Essential, Augmentation",
+        "medhelm_category": "Clinical Decision Support",
+        "domain": "Patient Care"
+      }
+    },
+    {
+      "id": "patient-care/gather-patient-data",
+      "path_components": [
+        "patient-care",
+        "gather-patient-data"
+      ],
+      "depth": 1,
+      "parent_id": "patient-care",
+      "children_ids": [],
+      "name": "Gather Patient Data",
+      "description": "Gather essential and accurate information about patients and their condition through history-taking, physical examination, and the use of laboratory data, imaging, and other tests",
+      "level_info": {
+        "0": {
+          "name": "Patient Care",
+          "level_name": "Domain"
+        },
+        "1": {
+          "name": "Gather Patient Data",
+          "level_name": "Competency"
+        }
+      },
+      "metadata": {
+        "competency_id": "1.2",
+        "concise_name": "gather-patient-data",
+        "ai_interaction_mode": "Augmentation, Automation",
+        "medhelm_category": "Clinical Decision Support",
+        "domain": "Patient Care"
+      }
+    },
+    {
+      "id": "patient-care/prioritize-care",
+      "path_components": [
+        "patient-care",
+        "prioritize-care"
+      ],
+      "depth": 1,
+      "parent_id": "patient-care",
+      "children_ids": [],
+      "name": "Prioritize Care",
+      "description": "Organize and prioritize responsibilities to provide care that is safe, effective, and efficient",
+      "level_info": {
+        "0": {
+          "name": "Patient Care",
+          "level_name": "Domain"
+        },
+        "1": {
+          "name": "Prioritize Care",
+          "level_name": "Competency"
+        }
+      },
+      "metadata": {
+        "competency_id": "1.3",
+        "concise_name": "prioritize-care",
+        "ai_interaction_mode": "Augmentation",
+        "medhelm_category": "Administrative & Workflow",
+        "domain": "Patient Care"
+      }
+    },
+    {
+      "id": "patient-care/interpret-diagnostics",
+      "path_components": [
+        "patient-care",
+        "interpret-diagnostics"
+      ],
+      "depth": 1,
+      "parent_id": "patient-care",
+      "children_ids": [],
+      "name": "Interpret Diagnostics",
+      "description": "Interpret laboratory data, imaging studies, and other tests required for the area of practice",
+      "level_info": {
+        "0": {
+          "name": "Patient Care",
+          "level_name": "Domain"
+        },
+        "1": {
+          "name": "Interpret Diagnostics",
+          "level_name": "Competency"
+        }
+      },
+      "metadata": {
+        "competency_id": "1.4",
+        "concise_name": "interpret-diagnostics",
+        "ai_interaction_mode": "Augmentation",
+        "medhelm_category": "Clinical Decision Support",
+        "domain": "Patient Care"
+      }
+    },
+    {
+      "id": "patient-care/clinical-decision-making",
+      "path_components": [
+        "patient-care",
+        "clinical-decision-making"
+      ],
+      "depth": 1,
+      "parent_id": "patient-care",
+      "children_ids": [],
+      "name": "Clinical Decision Making",
+      "description": "Make informed decisions about diagnostic and therapeutic interventions based on patient information and preferences, up-to-date scientific evidence, and clinical judgment",
+      "level_info": {
+        "0": {
+          "name": "Patient Care",
+          "level_name": "Domain"
+        },
+        "1": {
+          "name": "Clinical Decision Making",
+          "level_name": "Competency"
+        }
+      },
+      "metadata": {
+        "competency_id": "1.5",
+        "concise_name": "clinical-decision-making",
+        "ai_interaction_mode": "Augmentation, Collaborative",
+        "medhelm_category": "Clinical Decision Support",
+        "domain": "Patient Care"
+      }
+    },
+    {
+      "id": "patient-care/develop-care-plans",
+      "path_components": [
+        "patient-care",
+        "develop-care-plans"
+      ],
+      "depth": 1,
+      "parent_id": "patient-care",
+      "children_ids": [],
+      "name": "Develop Care Plans",
+      "description": "Develop and carry out patient management plans",
+      "level_info": {
+        "0": {
+          "name": "Patient Care",
+          "level_name": "Domain"
+        },
+        "1": {
+          "name": "Develop Care Plans",
+          "level_name": "Competency"
+        }
+      },
+      "metadata": {
+        "competency_id": "1.6",
+        "concise_name": "develop-care-plans",
+        "ai_interaction_mode": "Augmentation, Collaborative",
+        "medhelm_category": "Clinical Decision Support",
+        "domain": "Patient Care"
+      }
+    },
+    {
+      "id": "patient-care/patient-counseling",
+      "path_components": [
+        "patient-care",
+        "patient-counseling"
+      ],
+      "depth": 1,
+      "parent_id": "patient-care",
+      "children_ids": [],
+      "name": "Patient Counseling",
+      "description": "Counsel and educate patients and their families to empower them to participate in their care and enable shared decision making",
+      "level_info": {
+        "0": {
+          "name": "Patient Care",
+          "level_name": "Domain"
+        },
+        "1": {
+          "name": "Patient Counseling",
+          "level_name": "Competency"
+        }
+      },
+      "metadata": {
+        "competency_id": "1.7",
+        "concise_name": "patient-counseling",
+        "ai_interaction_mode": "Collaborative, Human-Essential",
+        "medhelm_category": "Patient Communication & Education",
+        "domain": "Patient Care"
+      }
+    },
+    {
+      "id": "patient-care/coordinate-referrals",
+      "path_components": [
+        "patient-care",
+        "coordinate-referrals"
+      ],
+      "depth": 1,
+      "parent_id": "patient-care",
+      "children_ids": [],
+      "name": "Coordinate Referrals",
+      "description": "Provide appropriate referral of patients including ensuring continuity of care throughout transitions between providers or settings, and following up on patient progress and outcomes",
+      "level_info": {
+        "0": {
+          "name": "Patient Care",
+          "level_name": "Domain"
+        },
+        "1": {
+          "name": "Coordinate Referrals",
+          "level_name": "Competency"
+        }
+      },
+      "metadata": {
+        "competency_id": "1.8",
+        "concise_name": "coordinate-referrals",
+        "ai_interaction_mode": "Augmentation, Automation",
+        "medhelm_category": "Administrative & Workflow",
+        "domain": "Patient Care"
+      }
+    },
+    {
+      "id": "patient-care/preventive-care-delivery",
+      "path_components": [
+        "patient-care",
+        "preventive-care-delivery"
+      ],
+      "depth": 1,
+      "parent_id": "patient-care",
+      "children_ids": [],
+      "name": "Preventive Care Delivery",
+      "description": "Provide health care services to patients, families, and communities aimed at preventing health problems or maintaining health",
+      "level_info": {
+        "0": {
+          "name": "Patient Care",
+          "level_name": "Domain"
+        },
+        "1": {
+          "name": "Preventive Care Delivery",
+          "level_name": "Competency"
+        }
+      },
+      "metadata": {
+        "competency_id": "1.9",
+        "concise_name": "preventive-care-delivery",
+        "ai_interaction_mode": "Augmentation, Collaborative",
+        "medhelm_category": "Clinical Decision Support",
+        "domain": "Patient Care"
+      }
+    },
+    {
+      "id": "patient-care/clinical-role-modeling",
+      "path_components": [
+        "patient-care",
+        "clinical-role-modeling"
+      ],
+      "depth": 1,
+      "parent_id": "patient-care",
+      "children_ids": [],
+      "name": "Clinical Role Modeling",
+      "description": "Provide appropriate role modeling",
+      "level_info": {
+        "0": {
+          "name": "Patient Care",
+          "level_name": "Domain"
+        },
+        "1": {
+          "name": "Clinical Role Modeling",
+          "level_name": "Competency"
+        }
+      },
+      "metadata": {
+        "competency_id": "1.10",
+        "concise_name": "clinical-role-modeling",
+        "ai_interaction_mode": "Human-Essential",
+        "medhelm_category": "Professional Development",
+        "domain": "Patient Care"
+      }
+    },
+    {
+      "id": "patient-care/clinical-supervision",
+      "path_components": [
+        "patient-care",
+        "clinical-supervision"
+      ],
+      "depth": 1,
+      "parent_id": "patient-care",
+      "children_ids": [],
+      "name": "Clinical Supervision",
+      "description": "Perform supervisory responsibilities commensurate with one's roles, abilities, and qualifications",
+      "level_info": {
+        "0": {
+          "name": "Patient Care",
+          "level_name": "Domain"
+        },
+        "1": {
+          "name": "Clinical Supervision",
+          "level_name": "Competency"
+        }
+      },
+      "metadata": {
+        "competency_id": "1.11",
+        "concise_name": "clinical-supervision",
+        "ai_interaction_mode": "Human-Essential, Augmentation",
+        "medhelm_category": "Administrative & Workflow",
+        "domain": "Patient Care"
+      }
+    },
+    {
+      "id": "knowledge-practice/clinical-investigation",
+      "path_components": [
+        "knowledge-practice",
+        "clinical-investigation"
+      ],
+      "depth": 1,
+      "parent_id": "knowledge-practice",
+      "children_ids": [],
+      "name": "Clinical Investigation",
+      "description": "Demonstrate an investigatory and analytic approach to clinical situations",
+      "level_info": {
+        "0": {
+          "name": "Knowledge for Practice",
+          "level_name": "Domain"
+        },
+        "1": {
+          "name": "Clinical Investigation",
+          "level_name": "Competency"
+        }
+      },
+      "metadata": {
+        "competency_id": "2.1",
+        "concise_name": "clinical-investigation",
+        "ai_interaction_mode": "Augmentation",
+        "medhelm_category": "Clinical Decision Support",
+        "domain": "Knowledge for Practice"
+      }
+    },
+    {
+      "id": "knowledge-practice/apply-biophysical-science",
+      "path_components": [
+        "knowledge-practice",
+        "apply-biophysical-science"
+      ],
+      "depth": 1,
+      "parent_id": "knowledge-practice",
+      "children_ids": [],
+      "name": "Apply Biophysical Science",
+      "description": "Apply established and emerging bio-physical scientific principles fundamental to health care for patients and populations",
+      "level_info": {
+        "0": {
+          "name": "Knowledge for Practice",
+          "level_name": "Domain"
+        },
+        "1": {
+          "name": "Apply Biophysical Science",
+          "level_name": "Competency"
+        }
+      },
+      "metadata": {
+        "competency_id": "2.2",
+        "concise_name": "apply-biophysical-science",
+        "ai_interaction_mode": "Augmentation",
+        "medhelm_category": "Knowledge Synthesis & Research",
+        "domain": "Knowledge for Practice"
+      }
+    },
+    {
+      "id": "knowledge-practice/apply-clinical-science",
+      "path_components": [
+        "knowledge-practice",
+        "apply-clinical-science"
+      ],
+      "depth": 1,
+      "parent_id": "knowledge-practice",
+      "children_ids": [],
+      "name": "Apply Clinical Science",
+      "description": "Apply established and emerging principles of clinical sciences to diagnostic and therapeutic decision-making, clinical problem-solving, and other aspects of evidence-based health care",
+      "level_info": {
+        "0": {
+          "name": "Knowledge for Practice",
+          "level_name": "Domain"
+        },
+        "1": {
+          "name": "Apply Clinical Science",
+          "level_name": "Competency"
+        }
+      },
+      "metadata": {
+        "competency_id": "2.3",
+        "concise_name": "apply-clinical-science",
+        "ai_interaction_mode": "Augmentation",
+        "medhelm_category": "Clinical Decision Support",
+        "domain": "Knowledge for Practice"
+      }
+    },
+    {
+      "id": "knowledge-practice/apply-epidemiology",
+      "path_components": [
+        "knowledge-practice",
+        "apply-epidemiology"
+      ],
+      "depth": 1,
+      "parent_id": "knowledge-practice",
+      "children_ids": [],
+      "name": "Apply Epidemiology",
+      "description": "Apply principles of epidemiological sciences to the identification of health problems, risk factors, treatment strategies, resources, and disease prevention/health promotion efforts for patients and populations",
+      "level_info": {
+        "0": {
+          "name": "Knowledge for Practice",
+          "level_name": "Domain"
+        },
+        "1": {
+          "name": "Apply Epidemiology",
+          "level_name": "Competency"
+        }
+      },
+      "metadata": {
+        "competency_id": "2.4",
+        "concise_name": "apply-epidemiology",
+        "ai_interaction_mode": "Augmentation",
+        "medhelm_category": "Knowledge Synthesis & Research",
+        "domain": "Knowledge for Practice"
+      }
+    },
+    {
+      "id": "knowledge-practice/apply-social-behavioral-science",
+      "path_components": [
+        "knowledge-practice",
+        "apply-social-behavioral-science"
+      ],
+      "depth": 1,
+      "parent_id": "knowledge-practice",
+      "children_ids": [],
+      "name": "Apply Social Behavioral Science",
+      "description": "Apply principles of social-behavioral sciences to provision of patient care, including assessment of the impact of psychosocial and cultural influences on health, disease, care-seeking, care compliance, and barriers to and attitudes toward care",
+      "level_info": {
+        "0": {
+          "name": "Knowledge for Practice",
+          "level_name": "Domain"
+        },
+        "1": {
+          "name": "Apply Social Behavioral Science",
+          "level_name": "Competency"
+        }
+      },
+      "metadata": {
+        "competency_id": "2.5",
+        "concise_name": "apply-social-behavioral-science",
+        "ai_interaction_mode": "Augmentation, Collaborative",
+        "medhelm_category": "Patient Communication & Education",
+        "domain": "Knowledge for Practice"
+      }
+    },
+    {
+      "id": "knowledge-practice/research-translation",
+      "path_components": [
+        "knowledge-practice",
+        "research-translation"
+      ],
+      "depth": 1,
+      "parent_id": "knowledge-practice",
+      "children_ids": [],
+      "name": "Research Translation",
+      "description": "Contribute to the creation, dissemination, application, and translation of new health care knowledge and practices",
+      "level_info": {
+        "0": {
+          "name": "Knowledge for Practice",
+          "level_name": "Domain"
+        },
+        "1": {
+          "name": "Research Translation",
+          "level_name": "Competency"
+        }
+      },
+      "metadata": {
+        "competency_id": "2.6",
+        "concise_name": "research-translation",
+        "ai_interaction_mode": "Augmentation, Collaborative",
+        "medhelm_category": "Knowledge Synthesis & Research",
+        "domain": "Knowledge for Practice"
+      }
+    },
+    {
+      "id": "practice-learning/self-assessment",
+      "path_components": [
+        "practice-learning",
+        "self-assessment"
+      ],
+      "depth": 1,
+      "parent_id": "practice-learning",
+      "children_ids": [],
+      "name": "Self Assessment",
+      "description": "Identify strengths, deficiencies, and limits in ones knowledge and expertise",
+      "level_info": {
+        "0": {
+          "name": "Practice-Based Learning and Improvement",
+          "level_name": "Domain"
+        },
+        "1": {
+          "name": "Self Assessment",
+          "level_name": "Competency"
+        }
+      },
+      "metadata": {
+        "competency_id": "3.1",
+        "concise_name": "self-assessment",
+        "ai_interaction_mode": "Augmentation",
+        "medhelm_category": "Professional Development",
+        "domain": "Practice-Based Learning and Improvement"
+      }
+    },
+    {
+      "id": "practice-learning/goal-setting",
+      "path_components": [
+        "practice-learning",
+        "goal-setting"
+      ],
+      "depth": 1,
+      "parent_id": "practice-learning",
+      "children_ids": [],
+      "name": "Goal Setting",
+      "description": "Set learning and improvement goals",
+      "level_info": {
+        "0": {
+          "name": "Practice-Based Learning and Improvement",
+          "level_name": "Domain"
+        },
+        "1": {
+          "name": "Goal Setting",
+          "level_name": "Competency"
+        }
+      },
+      "metadata": {
+        "competency_id": "3.2",
+        "concise_name": "goal-setting",
+        "ai_interaction_mode": "Augmentation",
+        "medhelm_category": "Professional Development",
+        "domain": "Practice-Based Learning and Improvement"
+      }
+    },
+    {
+      "id": "practice-learning/self-directed-learning",
+      "path_components": [
+        "practice-learning",
+        "self-directed-learning"
+      ],
+      "depth": 1,
+      "parent_id": "practice-learning",
+      "children_ids": [],
+      "name": "Self Directed Learning",
+      "description": "Identify and perform learning activities that address one's gaps in knowledge, skills, and/or attitude",
+      "level_info": {
+        "0": {
+          "name": "Practice-Based Learning and Improvement",
+          "level_name": "Domain"
+        },
+        "1": {
+          "name": "Self Directed Learning",
+          "level_name": "Competency"
+        }
+      },
+      "metadata": {
+        "competency_id": "3.3",
+        "concise_name": "self-directed-learning",
+        "ai_interaction_mode": "Augmentation",
+        "medhelm_category": "Professional Development",
+        "domain": "Practice-Based Learning and Improvement"
+      }
+    },
+    {
+      "id": "practice-learning/quality-improvement",
+      "path_components": [
+        "practice-learning",
+        "quality-improvement"
+      ],
+      "depth": 1,
+      "parent_id": "practice-learning",
+      "children_ids": [],
+      "name": "Quality Improvement",
+      "description": "Systematically analyze practice using quality improvement methods, and implement changes with the goal of practice improvement",
+      "level_info": {
+        "0": {
+          "name": "Practice-Based Learning and Improvement",
+          "level_name": "Domain"
+        },
+        "1": {
+          "name": "Quality Improvement",
+          "level_name": "Competency"
+        }
+      },
+      "metadata": {
+        "competency_id": "3.4",
+        "concise_name": "quality-improvement",
+        "ai_interaction_mode": "Augmentation, Collaborative",
+        "medhelm_category": "Administrative & Workflow",
+        "domain": "Practice-Based Learning and Improvement"
+      }
+    },
+    {
+      "id": "practice-learning/feedback-integration",
+      "path_components": [
+        "practice-learning",
+        "feedback-integration"
+      ],
+      "depth": 1,
+      "parent_id": "practice-learning",
+      "children_ids": [],
+      "name": "Feedback Integration",
+      "description": "Incorporate feedback into daily practice",
+      "level_info": {
+        "0": {
+          "name": "Practice-Based Learning and Improvement",
+          "level_name": "Domain"
+        },
+        "1": {
+          "name": "Feedback Integration",
+          "level_name": "Competency"
+        }
+      },
+      "metadata": {
+        "competency_id": "3.5",
+        "concise_name": "feedback-integration",
+        "ai_interaction_mode": "Augmentation",
+        "medhelm_category": "Professional Development",
+        "domain": "Practice-Based Learning and Improvement"
+      }
+    },
+    {
+      "id": "practice-learning/evidence-appraisal",
+      "path_components": [
+        "practice-learning",
+        "evidence-appraisal"
+      ],
+      "depth": 1,
+      "parent_id": "practice-learning",
+      "children_ids": [],
+      "name": "Evidence Appraisal",
+      "description": "Locate, appraise, and assimilate evidence from scientific studies related to patients' health problems",
+      "level_info": {
+        "0": {
+          "name": "Practice-Based Learning and Improvement",
+          "level_name": "Domain"
+        },
+        "1": {
+          "name": "Evidence Appraisal",
+          "level_name": "Competency"
+        }
+      },
+      "metadata": {
+        "competency_id": "3.6",
+        "concise_name": "evidence-appraisal",
+        "ai_interaction_mode": "Augmentation",
+        "medhelm_category": "Knowledge Synthesis & Research",
+        "domain": "Practice-Based Learning and Improvement"
+      }
+    },
+    {
+      "id": "practice-learning/technology-integration",
+      "path_components": [
+        "practice-learning",
+        "technology-integration"
+      ],
+      "depth": 1,
+      "parent_id": "practice-learning",
+      "children_ids": [],
+      "name": "Technology Integration",
+      "description": "Use information technology to optimize learning",
+      "level_info": {
+        "0": {
+          "name": "Practice-Based Learning and Improvement",
+          "level_name": "Domain"
+        },
+        "1": {
+          "name": "Technology Integration",
+          "level_name": "Competency"
+        }
+      },
+      "metadata": {
+        "competency_id": "3.7",
+        "concise_name": "technology-integration",
+        "ai_interaction_mode": "Automation, Augmentation",
+        "medhelm_category": "Administrative & Workflow",
+        "domain": "Practice-Based Learning and Improvement"
+      }
+    },
+    {
+      "id": "practice-learning/peer-education",
+      "path_components": [
+        "practice-learning",
+        "peer-education"
+      ],
+      "depth": 1,
+      "parent_id": "practice-learning",
+      "children_ids": [],
+      "name": "Peer Education",
+      "description": "Participate in the education of patients, families, students, trainees, peers and other health professionals",
+      "level_info": {
+        "0": {
+          "name": "Practice-Based Learning and Improvement",
+          "level_name": "Domain"
+        },
+        "1": {
+          "name": "Peer Education",
+          "level_name": "Competency"
+        }
+      },
+      "metadata": {
+        "competency_id": "3.8",
+        "concise_name": "peer-education",
+        "ai_interaction_mode": "Collaborative, Human-Essential",
+        "medhelm_category": "Professional Development",
+        "domain": "Practice-Based Learning and Improvement"
+      }
+    },
+    {
+      "id": "practice-learning/population-health-analysis",
+      "path_components": [
+        "practice-learning",
+        "population-health-analysis"
+      ],
+      "depth": 1,
+      "parent_id": "practice-learning",
+      "children_ids": [],
+      "name": "Population Health Analysis",
+      "description": "Obtain and utilize information about individual patients, populations of patients, or communities from which patients are drawn to improve care",
+      "level_info": {
+        "0": {
+          "name": "Practice-Based Learning and Improvement",
+          "level_name": "Domain"
+        },
+        "1": {
+          "name": "Population Health Analysis",
+          "level_name": "Competency"
+        }
+      },
+      "metadata": {
+        "competency_id": "3.9",
+        "concise_name": "population-health-analysis",
+        "ai_interaction_mode": "Augmentation",
+        "medhelm_category": "Knowledge Synthesis & Research",
+        "domain": "Practice-Based Learning and Improvement"
+      }
+    },
+    {
+      "id": "practice-learning/knowledge-implementation",
+      "path_components": [
+        "practice-learning",
+        "knowledge-implementation"
+      ],
+      "depth": 1,
+      "parent_id": "practice-learning",
+      "children_ids": [],
+      "name": "Knowledge Implementation",
+      "description": "Continually identify, analyze, and implement new knowledge, guidelines, standards, technologies, products, or services that have been demonstrated to improve outcomes",
+      "level_info": {
+        "0": {
+          "name": "Practice-Based Learning and Improvement",
+          "level_name": "Domain"
+        },
+        "1": {
+          "name": "Knowledge Implementation",
+          "level_name": "Competency"
+        }
+      },
+      "metadata": {
+        "competency_id": "3.10",
+        "concise_name": "knowledge-implementation",
+        "ai_interaction_mode": "Augmentation",
+        "medhelm_category": "Knowledge Synthesis & Research",
+        "domain": "Practice-Based Learning and Improvement"
+      }
+    },
+    {
+      "id": "communication/patient-communication",
+      "path_components": [
+        "communication",
+        "patient-communication"
+      ],
+      "depth": 1,
+      "parent_id": "communication",
+      "children_ids": [],
+      "name": "Patient Communication",
+      "description": "Communicate effectively with patients, families, and the public, as appropriate, across a broad range of socioeconomic and cultural backgrounds",
+      "level_info": {
+        "0": {
+          "name": "Interpersonal & Communication Skills",
+          "level_name": "Domain"
+        },
+        "1": {
+          "name": "Patient Communication",
+          "level_name": "Competency"
+        }
+      },
+      "metadata": {
+        "competency_id": "4.1",
+        "concise_name": "patient-communication",
+        "ai_interaction_mode": "Collaborative, Human-Essential",
+        "medhelm_category": "Patient Communication & Education",
+        "domain": "Interpersonal & Communication Skills"
+      }
+    },
+    {
+      "id": "communication/professional-communication",
+      "path_components": [
+        "communication",
+        "professional-communication"
+      ],
+      "depth": 1,
+      "parent_id": "communication",
+      "children_ids": [],
+      "name": "Professional Communication",
+      "description": "Communicate effectively with colleagues within one's profession or specialty, other health professionals, and health related agencies",
+      "level_info": {
+        "0": {
+          "name": "Interpersonal & Communication Skills",
+          "level_name": "Domain"
+        },
+        "1": {
+          "name": "Professional Communication",
+          "level_name": "Competency"
+        }
+      },
+      "metadata": {
+        "competency_id": "4.2",
+        "concise_name": "professional-communication",
+        "ai_interaction_mode": "Augmentation, Automation",
+        "medhelm_category": "Documentation & Note Generation",
+        "domain": "Interpersonal & Communication Skills"
+      }
+    },
+    {
+      "id": "communication/team-collaboration",
+      "path_components": [
+        "communication",
+        "team-collaboration"
+      ],
+      "depth": 1,
+      "parent_id": "communication",
+      "children_ids": [],
+      "name": "Team Collaboration",
+      "description": "Work effectively with others as a member or leader of a health care team or other professional group",
+      "level_info": {
+        "0": {
+          "name": "Interpersonal & Communication Skills",
+          "level_name": "Domain"
+        },
+        "1": {
+          "name": "Team Collaboration",
+          "level_name": "Competency"
+        }
+      },
+      "metadata": {
+        "competency_id": "4.3",
+        "concise_name": "team-collaboration",
+        "ai_interaction_mode": "Collaborative, Human-Essential",
+        "medhelm_category": "Administrative & Workflow",
+        "domain": "Interpersonal & Communication Skills"
+      }
+    },
+    {
+      "id": "communication/clinical-consultation",
+      "path_components": [
+        "communication",
+        "clinical-consultation"
+      ],
+      "depth": 1,
+      "parent_id": "communication",
+      "children_ids": [],
+      "name": "Clinical Consultation",
+      "description": "Act in a consultative role to other health professionals",
+      "level_info": {
+        "0": {
+          "name": "Interpersonal & Communication Skills",
+          "level_name": "Domain"
+        },
+        "1": {
+          "name": "Clinical Consultation",
+          "level_name": "Competency"
+        }
+      },
+      "metadata": {
+        "competency_id": "4.4",
+        "concise_name": "clinical-consultation",
+        "ai_interaction_mode": "Augmentation, Collaborative",
+        "medhelm_category": "Clinical Decision Support",
+        "domain": "Interpersonal & Communication Skills"
+      }
+    },
+    {
+      "id": "communication/medical-documentation",
+      "path_components": [
+        "communication",
+        "medical-documentation"
+      ],
+      "depth": 1,
+      "parent_id": "communication",
+      "children_ids": [],
+      "name": "Medical Documentation",
+      "description": "Maintain comprehensive, timely, and legible medical records",
+      "level_info": {
+        "0": {
+          "name": "Interpersonal & Communication Skills",
+          "level_name": "Domain"
+        },
+        "1": {
+          "name": "Medical Documentation",
+          "level_name": "Competency"
+        }
+      },
+      "metadata": {
+        "competency_id": "4.5",
+        "concise_name": "medical-documentation",
+        "ai_interaction_mode": "Automation, Augmentation",
+        "medhelm_category": "Documentation & Note Generation",
+        "domain": "Interpersonal & Communication Skills"
+      }
+    },
+    {
+      "id": "communication/sensitive-communication",
+      "path_components": [
+        "communication",
+        "sensitive-communication"
+      ],
+      "depth": 1,
+      "parent_id": "communication",
+      "children_ids": [],
+      "name": "Sensitive Communication",
+      "description": "Demonstrate sensitivity, honesty, and compassion in difficult conversations, including those about death, end of life, adverse events, bad news, disclosure of errors, and other sensitive topics",
+      "level_info": {
+        "0": {
+          "name": "Interpersonal & Communication Skills",
+          "level_name": "Domain"
+        },
+        "1": {
+          "name": "Sensitive Communication",
+          "level_name": "Competency"
+        }
+      },
+      "metadata": {
+        "competency_id": "4.6",
+        "concise_name": "sensitive-communication",
+        "ai_interaction_mode": "Human-Essential, Collaborative",
+        "medhelm_category": "Patient Communication & Education",
+        "domain": "Interpersonal & Communication Skills"
+      }
+    },
+    {
+      "id": "communication/emotional-intelligence",
+      "path_components": [
+        "communication",
+        "emotional-intelligence"
+      ],
+      "depth": 1,
+      "parent_id": "communication",
+      "children_ids": [],
+      "name": "Emotional Intelligence",
+      "description": "Demonstrate insight and understanding about emotions and human responses to emotions that allow one to develop and manage interpersonal interactions",
+      "level_info": {
+        "0": {
+          "name": "Interpersonal & Communication Skills",
+          "level_name": "Domain"
+        },
+        "1": {
+          "name": "Emotional Intelligence",
+          "level_name": "Competency"
+        }
+      },
+      "metadata": {
+        "competency_id": "4.7",
+        "concise_name": "emotional-intelligence",
+        "ai_interaction_mode": "Human-Essential",
+        "medhelm_category": "Professional Development",
+        "domain": "Interpersonal & Communication Skills"
+      }
+    },
+    {
+      "id": "professionalism/compassionate-care",
+      "path_components": [
+        "professionalism",
+        "compassionate-care"
+      ],
+      "depth": 1,
+      "parent_id": "professionalism",
+      "children_ids": [],
+      "name": "Compassionate Care",
+      "description": "Demonstrate compassion, integrity, and respect for others",
+      "level_info": {
+        "0": {
+          "name": "Professionalism",
+          "level_name": "Domain"
+        },
+        "1": {
+          "name": "Compassionate Care",
+          "level_name": "Competency"
+        }
+      },
+      "metadata": {
+        "competency_id": "5.1",
+        "concise_name": "compassionate-care",
+        "ai_interaction_mode": "Human-Essential",
+        "medhelm_category": "Patient Communication & Education",
+        "domain": "Professionalism"
+      }
+    },
+    {
+      "id": "professionalism/patient-centered-practice",
+      "path_components": [
+        "professionalism",
+        "patient-centered-practice"
+      ],
+      "depth": 1,
+      "parent_id": "professionalism",
+      "children_ids": [],
+      "name": "Patient Centered Practice",
+      "description": "Demonstrate responsiveness to patient needs that supersedes self-interest",
+      "level_info": {
+        "0": {
+          "name": "Professionalism",
+          "level_name": "Domain"
+        },
+        "1": {
+          "name": "Patient Centered Practice",
+          "level_name": "Competency"
+        }
+      },
+      "metadata": {
+        "competency_id": "5.2",
+        "concise_name": "patient-centered-practice",
+        "ai_interaction_mode": "Human-Essential",
+        "medhelm_category": "Professional Development",
+        "domain": "Professionalism"
+      }
+    },
+    {
+      "id": "professionalism/respect-autonomy",
+      "path_components": [
+        "professionalism",
+        "respect-autonomy"
+      ],
+      "depth": 1,
+      "parent_id": "professionalism",
+      "children_ids": [],
+      "name": "Respect Autonomy",
+      "description": "Demonstrate respect for patient privacy and autonomy",
+      "level_info": {
+        "0": {
+          "name": "Professionalism",
+          "level_name": "Domain"
+        },
+        "1": {
+          "name": "Respect Autonomy",
+          "level_name": "Competency"
+        }
+      },
+      "metadata": {
+        "competency_id": "5.3",
+        "concise_name": "respect-autonomy",
+        "ai_interaction_mode": "Human-Essential, Augmentation",
+        "medhelm_category": "Administrative & Workflow",
+        "domain": "Professionalism"
+      }
+    },
+    {
+      "id": "professionalism/professional-accountability",
+      "path_components": [
+        "professionalism",
+        "professional-accountability"
+      ],
+      "depth": 1,
+      "parent_id": "professionalism",
+      "children_ids": [],
+      "name": "Professional Accountability",
+      "description": "Demonstrate accountability to patients, society and the profession",
+      "level_info": {
+        "0": {
+          "name": "Professionalism",
+          "level_name": "Domain"
+        },
+        "1": {
+          "name": "Professional Accountability",
+          "level_name": "Competency"
+        }
+      },
+      "metadata": {
+        "competency_id": "5.4",
+        "concise_name": "professional-accountability",
+        "ai_interaction_mode": "Human-Essential",
+        "medhelm_category": "Professional Development",
+        "domain": "Professionalism"
+      }
+    },
+    {
+      "id": "professionalism/cultural-competence",
+      "path_components": [
+        "professionalism",
+        "cultural-competence"
+      ],
+      "depth": 1,
+      "parent_id": "professionalism",
+      "children_ids": [],
+      "name": "Cultural Competence",
+      "description": "Demonstrate sensitivity and responsiveness to a diverse patient population, including but not limited to diversity in gender, age, culture, race, religion, disabilities, and sexual orientation",
+      "level_info": {
+        "0": {
+          "name": "Professionalism",
+          "level_name": "Domain"
+        },
+        "1": {
+          "name": "Cultural Competence",
+          "level_name": "Competency"
+        }
+      },
+      "metadata": {
+        "competency_id": "5.5",
+        "concise_name": "cultural-competence",
+        "ai_interaction_mode": "Human-Essential, Augmentation",
+        "medhelm_category": "Patient Communication & Education",
+        "domain": "Professionalism"
+      }
+    },
+    {
+      "id": "professionalism/ethical-practice",
+      "path_components": [
+        "professionalism",
+        "ethical-practice"
+      ],
+      "depth": 1,
+      "parent_id": "professionalism",
+      "children_ids": [],
+      "name": "Ethical Practice",
+      "description": "Demonstrate a commitment to ethical principles pertaining to provision or withholding of care, confidentiality, informed consent, and business practices, including compliance with relevant laws, policies, and regulations",
+      "level_info": {
+        "0": {
+          "name": "Professionalism",
+          "level_name": "Domain"
+        },
+        "1": {
+          "name": "Ethical Practice",
+          "level_name": "Competency"
+        }
+      },
+      "metadata": {
+        "competency_id": "5.6",
+        "concise_name": "ethical-practice",
+        "ai_interaction_mode": "Human-Essential, Augmentation",
+        "medhelm_category": "Administrative & Workflow",
+        "domain": "Professionalism"
+      }
+    },
+    {
+      "id": "systems-practice/system-navigation",
+      "path_components": [
+        "systems-practice",
+        "system-navigation"
+      ],
+      "depth": 1,
+      "parent_id": "systems-practice",
+      "children_ids": [],
+      "name": "System Navigation",
+      "description": "Work effectively in various health care delivery settings and systems relevant to one's clinical specialty",
+      "level_info": {
+        "0": {
+          "name": "System-based Practice",
+          "level_name": "Domain"
+        },
+        "1": {
+          "name": "System Navigation",
+          "level_name": "Competency"
+        }
+      },
+      "metadata": {
+        "competency_id": "6.1",
+        "concise_name": "system-navigation",
+        "ai_interaction_mode": "Augmentation",
+        "medhelm_category": "Administrative & Workflow",
+        "domain": "System-based Practice"
+      }
+    },
+    {
+      "id": "systems-practice/care-coordination",
+      "path_components": [
+        "systems-practice",
+        "care-coordination"
+      ],
+      "depth": 1,
+      "parent_id": "systems-practice",
+      "children_ids": [],
+      "name": "Care Coordination",
+      "description": "Coordinate patient care within the health care system relevant to one's clinical specialty",
+      "level_info": {
+        "0": {
+          "name": "System-based Practice",
+          "level_name": "Domain"
+        },
+        "1": {
+          "name": "Care Coordination",
+          "level_name": "Competency"
+        }
+      },
+      "metadata": {
+        "competency_id": "6.2",
+        "concise_name": "care-coordination",
+        "ai_interaction_mode": "Augmentation, Automation",
+        "medhelm_category": "Administrative & Workflow",
+        "domain": "System-based Practice"
+      }
+    },
+    {
+      "id": "systems-practice/resource-stewardship",
+      "path_components": [
+        "systems-practice",
+        "resource-stewardship"
+      ],
+      "depth": 1,
+      "parent_id": "systems-practice",
+      "children_ids": [],
+      "name": "Resource Stewardship",
+      "description": "Incorporate considerations of cost awareness and risk-benefit analysis in patient and/or population-based care",
+      "level_info": {
+        "0": {
+          "name": "System-based Practice",
+          "level_name": "Domain"
+        },
+        "1": {
+          "name": "Resource Stewardship",
+          "level_name": "Competency"
+        }
+      },
+      "metadata": {
+        "competency_id": "6.3",
+        "concise_name": "resource-stewardship",
+        "ai_interaction_mode": "Augmentation",
+        "medhelm_category": "Administrative & Workflow",
+        "domain": "System-based Practice"
+      }
+    },
+    {
+      "id": "systems-practice/quality-advocacy",
+      "path_components": [
+        "systems-practice",
+        "quality-advocacy"
+      ],
+      "depth": 1,
+      "parent_id": "systems-practice",
+      "children_ids": [],
+      "name": "Quality Advocacy",
+      "description": "Advocate for quality patient care and optimal patient care systems",
+      "level_info": {
+        "0": {
+          "name": "System-based Practice",
+          "level_name": "Domain"
+        },
+        "1": {
+          "name": "Quality Advocacy",
+          "level_name": "Competency"
+        }
+      },
+      "metadata": {
+        "competency_id": "6.4",
+        "concise_name": "quality-advocacy",
+        "ai_interaction_mode": "Augmentation, Human-Essential",
+        "medhelm_category": "Administrative & Workflow",
+        "domain": "System-based Practice"
+      }
+    },
+    {
+      "id": "systems-practice/system-improvement",
+      "path_components": [
+        "systems-practice",
+        "system-improvement"
+      ],
+      "depth": 1,
+      "parent_id": "systems-practice",
+      "children_ids": [],
+      "name": "System Improvement",
+      "description": "Participate in identifying system errors and implementing potential systems solutions",
+      "level_info": {
+        "0": {
+          "name": "System-based Practice",
+          "level_name": "Domain"
+        },
+        "1": {
+          "name": "System Improvement",
+          "level_name": "Competency"
+        }
+      },
+      "metadata": {
+        "competency_id": "6.5",
+        "concise_name": "system-improvement",
+        "ai_interaction_mode": "Augmentation, Collaborative",
+        "medhelm_category": "Administrative & Workflow",
+        "domain": "System-based Practice"
+      }
+    },
+    {
+      "id": "systems-practice/practice-management",
+      "path_components": [
+        "systems-practice",
+        "practice-management"
+      ],
+      "depth": 1,
+      "parent_id": "systems-practice",
+      "children_ids": [],
+      "name": "Practice Management",
+      "description": "Perform administrative and practice management responsibilities commensurate with one's role, abilities, and qualifications",
+      "level_info": {
+        "0": {
+          "name": "System-based Practice",
+          "level_name": "Domain"
+        },
+        "1": {
+          "name": "Practice Management",
+          "level_name": "Competency"
+        }
+      },
+      "metadata": {
+        "competency_id": "6.6",
+        "concise_name": "practice-management",
+        "ai_interaction_mode": "Augmentation, Automation",
+        "medhelm_category": "Administrative & Workflow",
+        "domain": "System-based Practice"
+      }
+    },
+    {
+      "id": "interprofessional/interprofessional-trust",
+      "path_components": [
+        "interprofessional",
+        "interprofessional-trust"
+      ],
+      "depth": 1,
+      "parent_id": "interprofessional",
+      "children_ids": [],
+      "name": "Interprofessional Trust",
+      "description": "Work with other health professionals to establish and maintain a climate of mutual respect, dignity, diversity, ethical integrity, and trust",
+      "level_info": {
+        "0": {
+          "name": "Interperprofessional Collaboration",
+          "level_name": "Domain"
+        },
+        "1": {
+          "name": "Interprofessional Trust",
+          "level_name": "Competency"
+        }
+      },
+      "metadata": {
+        "competency_id": "7.1",
+        "concise_name": "interprofessional-trust",
+        "ai_interaction_mode": "Human-Essential",
+        "medhelm_category": "Professional Development",
+        "domain": "Interperprofessional Collaboration"
+      }
+    },
+    {
+      "id": "interprofessional/interprofessional-assessment",
+      "path_components": [
+        "interprofessional",
+        "interprofessional-assessment"
+      ],
+      "depth": 1,
+      "parent_id": "interprofessional",
+      "children_ids": [],
+      "name": "Interprofessional Assessment",
+      "description": "Use the knowledge of one's own role and the roles of other health professionals to appropriately assess and address the health care needs of the patients and populations served",
+      "level_info": {
+        "0": {
+          "name": "Interperprofessional Collaboration",
+          "level_name": "Domain"
+        },
+        "1": {
+          "name": "Interprofessional Assessment",
+          "level_name": "Competency"
+        }
+      },
+      "metadata": {
+        "competency_id": "7.2",
+        "concise_name": "interprofessional-assessment",
+        "ai_interaction_mode": "Augmentation, Collaborative",
+        "medhelm_category": "Clinical Decision Support",
+        "domain": "Interperprofessional Collaboration"
+      }
+    },
+    {
+      "id": "interprofessional/interprofessional-communication",
+      "path_components": [
+        "interprofessional",
+        "interprofessional-communication"
+      ],
+      "depth": 1,
+      "parent_id": "interprofessional",
+      "children_ids": [],
+      "name": "Interprofessional Communication",
+      "description": "Communicate with other health professionals in a responsive and responsible manner that supports the maintenance of health and the treatment of disease in individual patients and populations",
+      "level_info": {
+        "0": {
+          "name": "Interperprofessional Collaboration",
+          "level_name": "Domain"
+        },
+        "1": {
+          "name": "Interprofessional Communication",
+          "level_name": "Competency"
+        }
+      },
+      "metadata": {
+        "competency_id": "7.3",
+        "concise_name": "interprofessional-communication",
+        "ai_interaction_mode": "Augmentation, Collaborative",
+        "medhelm_category": "Documentation & Note Generation",
+        "domain": "Interperprofessional Collaboration"
+      }
+    },
+    {
+      "id": "interprofessional/team-leadership",
+      "path_components": [
+        "interprofessional",
+        "team-leadership"
+      ],
+      "depth": 1,
+      "parent_id": "interprofessional",
+      "children_ids": [],
+      "name": "Team Leadership",
+      "description": "Participate in different team roles to establish, develop, and continuously enhance interprofessional teams to provide patient- and population-centered care that is safe, timely, efficient, effective, and equitable",
+      "level_info": {
+        "0": {
+          "name": "Interperprofessional Collaboration",
+          "level_name": "Domain"
+        },
+        "1": {
+          "name": "Team Leadership",
+          "level_name": "Competency"
+        }
+      },
+      "metadata": {
+        "competency_id": "7.4",
+        "concise_name": "team-leadership",
+        "ai_interaction_mode": "Human-Essential, Collaborative",
+        "medhelm_category": "Administrative & Workflow",
+        "domain": "Interperprofessional Collaboration"
+      }
+    },
+    {
+      "id": "personal-development/self-awareness",
+      "path_components": [
+        "personal-development",
+        "self-awareness"
+      ],
+      "depth": 1,
+      "parent_id": "personal-development",
+      "children_ids": [],
+      "name": "Self Awareness",
+      "description": "Develop the ability to use self-awareness of knowledge, skills and emotional limitations to engage in appropriate help-seeking behaviors",
+      "level_info": {
+        "0": {
+          "name": "Personal & Professional Development",
+          "level_name": "Domain"
+        },
+        "1": {
+          "name": "Self Awareness",
+          "level_name": "Competency"
+        }
+      },
+      "metadata": {
+        "competency_id": "8.1",
+        "concise_name": "self-awareness",
+        "ai_interaction_mode": "Augmentation",
+        "medhelm_category": "Professional Development",
+        "domain": "Personal & Professional Development"
+      }
+    },
+    {
+      "id": "personal-development/stress-management",
+      "path_components": [
+        "personal-development",
+        "stress-management"
+      ],
+      "depth": 1,
+      "parent_id": "personal-development",
+      "children_ids": [],
+      "name": "Stress Management",
+      "description": "Demonstrate healthy coping mechanisms to respond to stress",
+      "level_info": {
+        "0": {
+          "name": "Personal & Professional Development",
+          "level_name": "Domain"
+        },
+        "1": {
+          "name": "Stress Management",
+          "level_name": "Competency"
+        }
+      },
+      "metadata": {
+        "competency_id": "8.2",
+        "concise_name": "stress-management",
+        "ai_interaction_mode": "Human-Essential, Augmentation",
+        "medhelm_category": "Professional Development",
+        "domain": "Personal & Professional Development"
+      }
+    },
+    {
+      "id": "personal-development/work-life-balance",
+      "path_components": [
+        "personal-development",
+        "work-life-balance"
+      ],
+      "depth": 1,
+      "parent_id": "personal-development",
+      "children_ids": [],
+      "name": "Work Life Balance",
+      "description": "Manage conflict between personal and professional responsibilities",
+      "level_info": {
+        "0": {
+          "name": "Personal & Professional Development",
+          "level_name": "Domain"
+        },
+        "1": {
+          "name": "Work Life Balance",
+          "level_name": "Competency"
+        }
+      },
+      "metadata": {
+        "competency_id": "8.3",
+        "concise_name": "work-life-balance",
+        "ai_interaction_mode": "Human-Essential, Augmentation",
+        "medhelm_category": "Professional Development",
+        "domain": "Personal & Professional Development"
+      }
+    },
+    {
+      "id": "personal-development/adaptive-practice",
+      "path_components": [
+        "personal-development",
+        "adaptive-practice"
+      ],
+      "depth": 1,
+      "parent_id": "personal-development",
+      "children_ids": [],
+      "name": "Adaptive Practice",
+      "description": "Practice flexibility and maturity in adjusting to change with the capacity to alter one's behavior",
+      "level_info": {
+        "0": {
+          "name": "Personal & Professional Development",
+          "level_name": "Domain"
+        },
+        "1": {
+          "name": "Adaptive Practice",
+          "level_name": "Competency"
+        }
+      },
+      "metadata": {
+        "competency_id": "8.4",
+        "concise_name": "adaptive-practice",
+        "ai_interaction_mode": "Human-Essential",
+        "medhelm_category": "Professional Development",
+        "domain": "Personal & Professional Development"
+      }
+    },
+    {
+      "id": "personal-development/professional-trustworthiness",
+      "path_components": [
+        "personal-development",
+        "professional-trustworthiness"
+      ],
+      "depth": 1,
+      "parent_id": "personal-development",
+      "children_ids": [],
+      "name": "Professional Trustworthiness",
+      "description": "Demonstrate trustworthiness that makes colleagues feel secure when one is responsible for the care of patients",
+      "level_info": {
+        "0": {
+          "name": "Personal & Professional Development",
+          "level_name": "Domain"
+        },
+        "1": {
+          "name": "Professional Trustworthiness",
+          "level_name": "Competency"
+        }
+      },
+      "metadata": {
+        "competency_id": "8.5",
+        "concise_name": "professional-trustworthiness",
+        "ai_interaction_mode": "Human-Essential",
+        "medhelm_category": "Professional Development",
+        "domain": "Personal & Professional Development"
+      }
+    },
+    {
+      "id": "personal-development/leadership-development",
+      "path_components": [
+        "personal-development",
+        "leadership-development"
+      ],
+      "depth": 1,
+      "parent_id": "personal-development",
+      "children_ids": [],
+      "name": "Leadership Development",
+      "description": "Provide leadership skills that enhance team functioning, the learning environment, and/or the health care delivery system",
+      "level_info": {
+        "0": {
+          "name": "Personal & Professional Development",
+          "level_name": "Domain"
+        },
+        "1": {
+          "name": "Leadership Development",
+          "level_name": "Competency"
+        }
+      },
+      "metadata": {
+        "competency_id": "8.6",
+        "concise_name": "leadership-development",
+        "ai_interaction_mode": "Human-Essential, Augmentation",
+        "medhelm_category": "Professional Development",
+        "domain": "Personal & Professional Development"
+      }
+    },
+    {
+      "id": "personal-development/therapeutic-presence",
+      "path_components": [
+        "personal-development",
+        "therapeutic-presence"
+      ],
+      "depth": 1,
+      "parent_id": "personal-development",
+      "children_ids": [],
+      "name": "Therapeutic Presence",
+      "description": "Demonstrate self-confidence that puts patients, families, and members of the health care team at ease",
+      "level_info": {
+        "0": {
+          "name": "Personal & Professional Development",
+          "level_name": "Domain"
+        },
+        "1": {
+          "name": "Therapeutic Presence",
+          "level_name": "Competency"
+        }
+      },
+      "metadata": {
+        "competency_id": "8.7",
+        "concise_name": "therapeutic-presence",
+        "ai_interaction_mode": "Human-Essential",
+        "medhelm_category": "Patient Communication & Education",
+        "domain": "Personal & Professional Development"
+      }
+    },
+    {
+      "id": "personal-development/uncertainty-management",
+      "path_components": [
+        "personal-development",
+        "uncertainty-management"
+      ],
+      "depth": 1,
+      "parent_id": "personal-development",
+      "children_ids": [],
+      "name": "Uncertainty Management",
+      "description": "Recognize that ambiguity is part of clinical health care and respond by utilizing appropriate resources in dealing with uncertainty",
+      "level_info": {
+        "0": {
+          "name": "Personal & Professional Development",
+          "level_name": "Domain"
+        },
+        "1": {
+          "name": "Uncertainty Management",
+          "level_name": "Competency"
+        }
+      },
+      "metadata": {
+        "competency_id": "8.8",
+        "concise_name": "uncertainty-management",
+        "ai_interaction_mode": "Augmentation, Collaborative",
+        "medhelm_category": "Clinical Decision Support",
+        "domain": "Personal & Professional Development"
+      }
+    }
+  ],
+  "dimension_metadata": {
+    "total_competencies": 58,
+    "total_domains": 8,
+    "ai_interaction_modes": [
+      "Augmentation",
+      "Automation",
+      "Collaborative",
+      "Human-Essential"
+    ],
+    "medhelm_categories": [
+      "Clinical Decision Support",
+      "Documentation & Note Generation",
+      "Patient Communication & Education",
+      "Knowledge Synthesis & Research",
+      "Administrative & Workflow",
+      "Professional Development"
+    ]
+  }
+}

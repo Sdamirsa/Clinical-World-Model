@@ -1,19 +1,20 @@
 {
-  "dimension": "diseases",
-  "description": "Disease categories based on WHO ICD-11 classification and Global Burden of Disease metrics",
+  "dimension": "disease",
+  "description": "Disease list utilizing Global Burden of Diseases taxonomy for population health impact prioritization. ICD-11 coding enables deployment tracking, allowing systems to pause operation when performance falls below thresholds for specific conditions. Ensures explicit disease-specific capabilities rather than assumed generalization.",
   "reference": {
-    "classification": "WHO ICD-11 (International Classification of Diseases, 11th Revision)",
-    "burden_metric": "DALY (Disability-Adjusted Life Years) from GBD 2019",
-    "data_source": "WHO Global Health Estimates 2021 (Top 25 economies)",
+    "classification": "Global Burden of Diseases Taxonomy and ICD-11",
+    "burden_metric": "DALY (Disability-Adjusted Life Years) for population health impact from GBD 2019",
+    "data_source": "WHO Global Health Estimates 2021 (Top 25 economies, 2019 pre-COVID data)",
     "last_updated": "2025-01-30",
     "sources": [
-      "WHO ICD-11 for Mortality and Morbidity Statistics",
-      "WHO Global Health Estimates 2021",
-      "Analysis based on actual DALY data"
+      "Global Burden of Diseases Study: Disease taxonomy prioritized by population health impact",
+      "WHO Global Health Estimates 2021: DALY data for disease burden analysis",
+      "WHO ICD-11 for Mortality and Morbidity Statistics: Deployment tracking",
+      "Evidence-based disease prioritization for AI system evaluation and monitoring"
     ]
   },
   "hierarchy": {
-    "structure": "ICD-11 chapter-based with GBD cause categories",
+    "structure": "ICD-11 chapters with GBD cause categories prioritized by population health impact",
     "levels": [
       "chapter",
       "condition",

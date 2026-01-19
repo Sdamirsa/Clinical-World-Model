@@ -3,13 +3,489 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Clinical Skill-Mix Dimensions | Clinical World Model</title>
-    <meta name="description" content="Interactive visualization of Clinical Skill-Mix dimensions for healthcare AI evaluation">
+    <title>Clinical World Model | Clinical Skill-Mix Cube</title>
+    <meta name="description" content="Clinical World Model framework with Clinical Skill-Mix Cube: Five dimensions for healthcare AI evaluation and deployment">
     <link rel="stylesheet" href="assets/css/styles.css">
     <link rel="preconnect" href="https://fonts.googleapis.com">
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
     <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700&display=swap" rel="stylesheet">
+    <link href="https://fonts.googleapis.com/css2?family=Cormorant+Garamond:wght@400;500;600;700&family=Source+Sans+Pro:wght@300;400;600;700&display=swap" rel="stylesheet">
     <link href="https://cdn.jsdelivr.net/npm/lucide@0.263.1/dist/umd/lucide.js" rel="stylesheet">
+
+    <!-- Decision Making Styles -->
+    <style>
+        /* Decision Making Section Specific Styles */
+        .decision-making-section {
+            position: relative;
+            padding: var(--spacing-xl, 2rem) 0;
+            background: linear-gradient(180deg, var(--gray-50, #f9fafb) 0%, #f5f0ff 25%, #f0f9ff 75%, var(--gray-50, #f9fafb) 100%);
+            overflow: hidden;
+            min-height: 100vh;
+            width: 100%;
+        }
+
+        .decision-making-section::before {
+            content: '';
+            position: absolute;
+            inset: 0;
+            background:
+                radial-gradient(ellipse 80% 50% at 20% 20%, rgba(192, 38, 211, 0.08) 0%, transparent 50%),
+                radial-gradient(ellipse 80% 50% at 80% 80%, rgba(14, 165, 233, 0.08) 0%, transparent 50%);
+            pointer-events: none;
+        }
+
+        .decision-making-section .section-container {
+            position: relative;
+            z-index: 1;
+        }
+
+        .decision-making-section .section-badge {
+            display: inline-flex;
+            align-items: center;
+            gap: var(--spacing-sm, 0.5rem);
+            font-size: 0.8125rem;
+            font-weight: 600;
+            text-transform: uppercase;
+            letter-spacing: 0.12em;
+            color: #8b5cf6;
+            margin-bottom: var(--spacing-lg, 1.5rem);
+            padding: var(--spacing-sm, 0.5rem) var(--spacing-lg, 1.5rem);
+            background: linear-gradient(135deg, rgba(192, 38, 211, 0.1), rgba(14, 165, 233, 0.1));
+            border: 1px solid rgba(139, 92, 246, 0.2);
+            border-radius: 9999px;
+        }
+
+        .decision-making-section .section-badge svg { width: 16px; height: 16px; }
+
+        .decision-making-section .section-title {
+            font-family: 'Cormorant Garamond', Georgia, serif;
+            font-size: clamp(2.5rem, 5vw, 4.5rem);
+            font-weight: 600;
+            color: var(--gray-900, #111827);
+            line-height: 1.15;
+            margin-bottom: var(--spacing-lg, 1.5rem);
+        }
+
+        .decision-making-section .gradient-text {
+            background: linear-gradient(135deg, #c026d3, #8b5cf6, #0ea5e9);
+            -webkit-background-clip: text;
+            -webkit-text-fill-color: transparent;
+            background-clip: text;
+        }
+
+        .decision-making-section .section-subtitle {
+            font-size: 1.125rem;
+            color: var(--gray-600, #4b5563);
+            max-width: 900px;
+            margin: 0 auto;
+            line-height: 1.75;
+        }
+
+        .decision-making-section .section-subtitle strong { color: var(--gray-700, #374151); font-weight: 600; }
+
+        .control-panel {
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            gap: var(--spacing-md, 1rem);
+            margin-bottom: var(--spacing-lg, 1.5rem);
+            flex-wrap: wrap;
+            padding: 0 var(--spacing-md, 1rem);
+        }
+
+        .control-btn {
+            display: inline-flex;
+            align-items: center;
+            gap: var(--spacing-sm, 0.5rem);
+            padding: 10px 20px;
+            background: white;
+            border: 2px solid var(--gray-200, #e5e7eb);
+            border-radius: 9999px;
+            font-family: inherit;
+            font-size: 0.875rem;
+            font-weight: 600;
+            color: var(--gray-700, #374151);
+            cursor: pointer;
+            transition: all 0.25s ease;
+            box-shadow: 0 1px 2px 0 rgba(0, 0, 0, 0.05);
+        }
+
+        .control-btn:hover {
+            border-color: #8b5cf6;
+            color: #8b5cf6;
+            background: rgba(139, 92, 246, 0.05);
+            transform: translateY(-1px);
+        }
+
+        .control-btn.active {
+            background: linear-gradient(135deg, #8b5cf6, #c026d3);
+            border-color: transparent;
+            color: white;
+        }
+
+        .control-btn svg { width: 18px; height: 18px; }
+
+        .speed-control {
+            display: flex;
+            align-items: center;
+            gap: var(--spacing-sm, 0.5rem);
+            padding: 8px 16px;
+            background: white;
+            border: 2px solid var(--gray-200, #e5e7eb);
+            border-radius: 9999px;
+        }
+
+        .speed-control label { font-size: 0.8125rem; font-weight: 600; color: var(--gray-600, #4b5563); }
+        .speed-control input[type="range"] { width: 80px; cursor: pointer; accent-color: #8b5cf6; }
+
+        .visualization-grid {
+            display: grid;
+            grid-template-columns: 1fr 1fr;
+            gap: var(--spacing-md, 1rem);
+            margin-bottom: var(--spacing-xl, 2rem);
+            align-items: start;
+            width: 100%;
+        }
+
+        @media (max-width: 1100px) {
+            .visualization-grid { grid-template-columns: 1fr; gap: var(--spacing-xl, 2rem); }
+        }
+
+        .decision-card {
+            background: white;
+            border-radius: 1.5rem;
+            box-shadow: 0 10px 15px -3px rgba(0, 0, 0, 0.1);
+            overflow: hidden;
+            transition: all 0.4s ease;
+            position: relative;
+        }
+
+        .decision-card::before {
+            content: '';
+            position: absolute;
+            top: 0; left: 0; right: 0;
+            height: 4px;
+            z-index: 10;
+        }
+
+        .decision-card.cdm-card::before {
+            background: linear-gradient(90deg, #c026d3, #a855f7, #7c3aed);
+        }
+
+        .decision-card.pdm-card::before {
+            background: linear-gradient(90deg, #0ea5e9, #06b6d4, #0891b2);
+        }
+
+        .decision-card:hover { transform: translateY(-6px); box-shadow: 0 25px 50px -12px rgba(0,0,0,0.25); }
+
+        .card-header {
+            padding: var(--spacing-xl, 2rem) var(--spacing-xl, 2rem) var(--spacing-lg, 1.5rem);
+            border-bottom: 1px solid var(--gray-100, #f3f4f6);
+        }
+
+        .card-header.cdm-header { background: linear-gradient(180deg, #fae8ff, rgba(250, 232, 255, 0.3)); }
+        .card-header.pdm-header { background: linear-gradient(180deg, #e0f2fe, rgba(224, 242, 254, 0.3)); }
+
+        .card-title-row { display: flex; align-items: center; gap: var(--spacing-md, 1rem); margin-bottom: var(--spacing-sm, 0.5rem); }
+
+        .card-icon {
+            width: 52px;
+            height: 52px;
+            border-radius: 1rem;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            color: white;
+            box-shadow: 0 4px 6px -1px rgba(0, 0, 0, 0.1);
+        }
+
+        .cdm-card .card-icon { background: linear-gradient(135deg, #c026d3, #7c3aed); }
+        .pdm-card .card-icon { background: linear-gradient(135deg, #0ea5e9, #0891b2); }
+        .card-icon svg { width: 26px; height: 26px; }
+
+        .card-title {
+            font-family: 'Cormorant Garamond', Georgia, serif;
+            font-size: 1.75rem;
+            font-weight: 600;
+            color: var(--gray-900, #111827);
+        }
+
+        .card-description { font-size: 0.9375rem; color: var(--gray-500, #6b7280); line-height: 1.5; }
+
+        .card-body { padding: var(--spacing-md, 1rem); background: linear-gradient(180deg, var(--gray-50, #f9fafb), white); }
+
+        .flow-canvas {
+            position: relative;
+            width: 100%;
+            height: 850px;
+            background: white;
+            border-radius: 1rem;
+            overflow: hidden;
+            border: 1px solid var(--gray-100, #f3f4f6);
+        }
+
+        .flow-svg { width: 100%; height: 100%; }
+
+        .status-bar {
+            position: absolute;
+            top: var(--spacing-md, 1rem);
+            left: var(--spacing-md, 1rem);
+            right: var(--spacing-md, 1rem);
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            z-index: 10;
+        }
+
+        .loop-counter, .current-stage {
+            background: white;
+            border-radius: 0.75rem;
+            padding: 8px 14px;
+            box-shadow: 0 4px 6px -1px rgba(0, 0, 0, 0.1);
+            display: flex;
+            align-items: center;
+            gap: var(--spacing-sm, 0.5rem);
+            font-size: 0.75rem;
+            font-weight: 600;
+            color: var(--gray-700, #374151);
+            border: 1px solid var(--gray-100, #f3f4f6);
+        }
+
+        .loop-dots { display: flex; gap: 5px; }
+
+        .loop-dot {
+            width: 10px;
+            height: 10px;
+            border-radius: 50%;
+            background: var(--gray-200, #e5e7eb);
+            transition: all 0.3s ease;
+        }
+
+        .loop-dot.active { transform: scale(1.3); }
+        .cdm-card .loop-dot.active { background: #c026d3; box-shadow: 0 0 10px #c026d3; }
+        .pdm-card .loop-dot.active { background: #0ea5e9; box-shadow: 0 0 10px #0ea5e9; }
+
+        .stage-dot {
+            width: 8px;
+            height: 8px;
+            border-radius: 50%;
+            animation: stagePulse 1.5s ease-in-out infinite;
+        }
+
+        .cdm-card .stage-dot { background: #c026d3; }
+        .pdm-card .stage-dot { background: #0ea5e9; }
+
+        @keyframes stagePulse {
+            0%, 100% { opacity: 1; transform: scale(1); }
+            50% { opacity: 0.4; transform: scale(0.7); }
+        }
+
+        .node-group { cursor: pointer; transition: filter 0.2s ease; }
+        .node-group:hover { filter: brightness(1.08) drop-shadow(0 4px 8px rgba(0,0,0,0.15)); }
+        .node-group.active .glow-effect { opacity: 1; animation: nodeGlow 1.2s ease-in-out infinite; }
+
+        @keyframes nodeGlow { 0%, 100% { opacity: 0.9; } 50% { opacity: 0.4; } }
+
+        .path-active {
+            stroke: #10b981 !important;
+            stroke-width: 4 !important;
+            filter: drop-shadow(0 0 4px rgba(16, 185, 129, 0.6));
+            animation: pathPulse 1.5s ease-in-out infinite;
+        }
+
+        @keyframes pathPulse {
+            0%, 100% { opacity: 1; }
+            50% { opacity: 0.7; }
+        }
+
+        .node-text { font-family: 'Source Sans Pro', sans-serif; pointer-events: none; user-select: none; }
+
+        .flow-path { fill: none; stroke-linecap: round; }
+        .flow-path.animated { stroke-dasharray: 8, 5; animation: flowDash 25s linear infinite; }
+
+        @keyframes flowDash { to { stroke-dashoffset: -1000; } }
+
+        .bidirectional-path { stroke-dasharray: 4, 3; animation: bidirectionalFlow 3s ease-in-out infinite alternate; }
+
+        @keyframes bidirectionalFlow {
+            0% { stroke-dashoffset: 0; opacity: 0.7; }
+            100% { stroke-dashoffset: -20; opacity: 1; }
+        }
+
+        .center-connector { display: none; }
+
+        .info-panels-philosophy {
+            margin-bottom: var(--spacing-lg, 1.5rem);
+            width: 100%;
+        }
+
+        .info-panels-split {
+            display: grid;
+            grid-template-columns: 1fr 2fr;
+            gap: var(--spacing-md, 1rem);
+            width: 100%;
+        }
+
+        .info-panel-full { width: 100%; }
+        .info-panel-third { grid-column: span 1; }
+        .info-panel-twothirds { grid-column: span 1; }
+
+        .info-panel {
+            background: white;
+            border-radius: 1.5rem;
+            padding: var(--spacing-xl, 2rem);
+            box-shadow: 0 4px 6px -1px rgba(0, 0, 0, 0.1);
+            border: 1px solid var(--gray-100, #f3f4f6);
+            transition: all 0.3s ease;
+        }
+
+        .info-panel:hover { box-shadow: 0 10px 15px -3px rgba(0, 0, 0, 0.1); transform: translateY(-2px); }
+
+        .panel-header {
+            display: flex;
+            align-items: center;
+            gap: var(--spacing-md, 1rem);
+            margin-bottom: var(--spacing-lg, 1.5rem);
+            padding-bottom: var(--spacing-md, 1rem);
+            border-bottom: 1px solid var(--gray-100, #f3f4f6);
+        }
+
+        .panel-icon {
+            width: 44px;
+            height: 44px;
+            border-radius: 0.75rem;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+        }
+
+        .panel-icon.legend { background: linear-gradient(135deg, #fef3c7, #fde68a); color: #b45309; }
+        .panel-icon.process { background: linear-gradient(135deg, #ede9fe, #ddd6fe); color: #7c3aed; }
+        .panel-icon.philosophy { background: linear-gradient(135deg, #d1fae5, #a7f3d0); color: #059669; }
+        .panel-icon svg { width: 22px; height: 22px; }
+
+        .panel-title {
+            font-family: 'Cormorant Garamond', Georgia, serif;
+            font-size: 1.25rem;
+            font-weight: 600;
+            color: var(--gray-800, #1f2937);
+        }
+
+        .legend-grid { display: grid; grid-template-columns: repeat(2, 1fr); gap: var(--spacing-sm, 0.5rem); }
+
+        .legend-item {
+            display: flex;
+            align-items: center;
+            gap: var(--spacing-sm, 0.5rem);
+            padding: var(--spacing-sm, 0.5rem) var(--spacing-md, 1rem);
+            border-radius: 0.5rem;
+            transition: background 0.2s ease;
+        }
+
+        .legend-item:hover { background: var(--gray-50, #f9fafb); }
+
+        .legend-swatch {
+            width: 14px;
+            height: 14px;
+            border-radius: 0.375rem;
+            flex-shrink: 0;
+            box-shadow: inset 0 0 0 1px rgba(0,0,0,0.1);
+        }
+
+        .legend-label { font-size: 0.8125rem; color: var(--gray-700, #374151); }
+
+        .process-steps { display: flex; flex-direction: column; gap: var(--spacing-md, 1rem); }
+
+        .process-step {
+            display: flex;
+            align-items: flex-start;
+            gap: var(--spacing-md, 1rem);
+            padding: var(--spacing-md, 1rem);
+            background: var(--gray-50, #f9fafb);
+            border-radius: 0.75rem;
+            border-left: 3px solid #8b5cf6;
+            transition: all 0.2s ease;
+        }
+
+        .process-step:hover { background: rgba(139, 92, 246, 0.05); border-left-color: #c026d3; }
+
+        .step-num {
+            width: 26px;
+            height: 26px;
+            border-radius: 50%;
+            background: linear-gradient(135deg, #8b5cf6, #c026d3);
+            color: white;
+            font-size: 0.75rem;
+            font-weight: 700;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            flex-shrink: 0;
+        }
+
+        .step-content h4 { font-size: 0.875rem; font-weight: 600; color: var(--gray-800, #1f2937); margin-bottom: 2px; }
+        .step-content p { font-size: 0.8125rem; color: var(--gray-500, #6b7280); line-height: 1.45; }
+
+        .philosophy-quote {
+            font-family: 'Cormorant Garamond', Georgia, serif;
+            font-size: 1.0625rem;
+            font-style: italic;
+            color: var(--gray-700, #374151);
+            line-height: 1.7;
+            padding: var(--spacing-md, 1rem);
+            background: linear-gradient(135deg, rgba(16, 185, 129, 0.05), rgba(20, 184, 166, 0.05));
+            border-radius: 0.75rem;
+            border-left: 3px solid #14b8a6;
+        }
+
+        .philosophy-quote cite {
+            display: block;
+            font-size: 0.875rem;
+            font-style: normal;
+            font-family: 'Source Sans Pro', sans-serif;
+            color: var(--gray-500, #6b7280);
+            margin-top: var(--spacing-sm, 0.5rem);
+        }
+
+        .dm-tooltip {
+            position: fixed;
+            background: var(--gray-900, #111827);
+            color: white;
+            padding: var(--spacing-md, 1rem);
+            border-radius: 0.75rem;
+            font-size: 0.8125rem;
+            max-width: 300px;
+            pointer-events: none;
+            opacity: 0;
+            transform: translateY(10px) scale(0.95);
+            transition: all 0.2s ease;
+            z-index: 1000;
+            box-shadow: 0 25px 50px -12px rgba(0,0,0,0.25);
+        }
+
+        .dm-tooltip.visible { opacity: 1; transform: translateY(0) scale(1); }
+        .dm-tooltip-header { font-weight: 700; margin-bottom: 6px; padding-bottom: 6px; border-bottom: 1px solid rgba(255,255,255,0.2); }
+        .dm-tooltip-list { font-size: 0.75rem; opacity: 0.9; padding-left: 16px; }
+        .dm-tooltip-list li { margin-bottom: 3px; }
+
+        @keyframes fadeInUp { from { opacity: 0; transform: translateY(30px); } to { opacity: 1; transform: translateY(0); } }
+        .animate-in { animation: fadeInUp 0.7s ease forwards; }
+        .delay-100 { animation-delay: 0.1s; opacity: 0; }
+        .delay-200 { animation-delay: 0.2s; opacity: 0; }
+        .delay-300 { animation-delay: 0.3s; opacity: 0; }
+
+        @media (max-width: 768px) {
+            .decision-making-section { padding: var(--spacing-lg, 1.5rem) 0; }
+            .decision-making-section .section-title { font-size: 2.25rem; }
+            .flow-canvas { height: 750px; }
+            .control-panel { gap: var(--spacing-sm, 0.5rem); }
+            .control-btn { padding: 8px 14px; font-size: 0.8125rem; }
+            .legend-grid { grid-template-columns: 1fr; }
+            .info-panels-split { grid-template-columns: 1fr; }
+            .info-panels-philosophy { margin-bottom: var(--spacing-md, 1rem); }
+            .visualization-grid { gap: var(--spacing-sm, 0.5rem); }
+        }
+    </style>
 </head>
 <body>
     <!-- Navigation -->
@@ -17,217 +493,236 @@
         <div class="nav-container">
             <div class="nav-brand">
                 <h1>Clinical World Model</h1>
-                <span class="nav-subtitle">Skill-Mix Dimensions</span>
+                <span class="nav-subtitle">Clinical Skill-Mix Cube</span>
             </div>
             <div class="nav-links">
-                <a href="#overview" class="nav-link active">Overview</a>
-                <a href="#dimensions" class="nav-link">Dimensions</a>
-                <a href="#explorer" class="nav-link">Explorer</a>
-                <a href="#about" class="nav-link">About</a>
+                <a href="#framework" class="nav-link active">Framework</a>
+                <a href="#overview" class="nav-link">Skill-Mix Cube</a>
+                <a href="#competency-explorer" class="nav-link">Competency Explorer</a>
+                <a href="#components" class="nav-link">Cube Dimensions</a>
+                <a href="#decision-making" class="nav-link">Decision Making</a>
             </div>
         </div>
     </nav>
 
-    <!-- Hero Section -->
+    <!-- Framework Overview -->
+    <section id="framework" class="framework-section">
+        <div class="section-container">
+            <div class="framework-content">
+                <div class="framework-header">
+                    <h2 class="section-title">The Clinical World Model Framework</h2>
+                    <p class="section-subtitle">
+                        Five dimensions operationalize the clinical environment for AI deployment and evaluation
+                    </p>
+                    <p class="framework-intro">
+                        Healthcare delivery involves clinicians and patients interacting within specific clinical contexts.
+                        Evaluating AI systems requires decomposing these contexts into measurable dimensions—disease conditions,
+                        disease stages, care locations, cognitive tasks, and caregiver personas. Each combination forms a distinct
+                        clinical competency cell, enabling precise specification of where AI augmentation is appropriate.
+                    </p>
+                </div>
+
+                <div class="framework-diagram">
+                    <div class="framework-players">
+                        <div class="player-box clinician-box">
+                            <div class="player-icon">
+                                <i data-lucide="user-round"></i>
+                            </div>
+                            <h4>Clinician</h4>
+                            <p>Processes inputs through intuitive and analytical reasoning to generate clinical actions</p>
+                        </div>
+
+                        <div class="interaction-arrows">
+                            <div class="arrow-line">
+                                <span class="arrow-label">Actions</span>
+                                <i data-lucide="arrow-right"></i>
+                            </div>
+                            <div class="arrow-line reverse">
+                                <i data-lucide="arrow-left"></i>
+                                <span class="arrow-label">Preferences</span>
+                            </div>
+                        </div>
+
+                        <div class="player-box patient-box">
+                            <div class="player-icon">
+                                <i data-lucide="heart"></i>
+                            </div>
+                            <h4>Patient</h4>
+                            <p>Mirrors cognitive architecture, processing information through personal mediators to form preferences</p>
+                        </div>
+                    </div>
+
+                    <div class="context-box">
+                        <div class="context-header">
+                            <i data-lucide="layers"></i>
+                            <h4>Clinical Context</h4>
+                        </div>
+                        <p class="context-description">
+                            The clinical context represents the healthcare environment where patient-clinician interactions occur. This multidimensional space encompasses the conditions being treated, the progression of illness, the care setting, the medical tasks performed, and the healthcare professionals involved. It is within this context that both clinicians and patients engage in parallel cognitive processes to make informed decisions.
+                        </p>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Clinical Skill-Mix Cube Section -->
     <section id="overview" class="hero">
         <div class="hero-container">
             <div class="hero-content">
-                <h1 class="hero-title">Clinical Skill-Mix Dimensions</h1>
+                <h1 class="hero-title">Clinical World Model<br><span class="hero-subtitle-inline">Clinical Skill-Mix Cube</span></h1>
                 <p class="hero-subtitle">
-                    Evidence-based framework for evaluating healthcare AI systems across 5 clinical dimensions
+                    Five dimensions decompose the clinical environment for AI deployment and evaluation: Disease, Stage, Location, Task, Persona
                 </p>
                 <div class="hero-stats">
-                    <div class="stat-item">
-                        <span class="stat-number">5</span>
-                        <span class="stat-label">Dimensions</span>
-                    </div>
-                    <div class="stat-item">
-                        <span class="stat-number">168</span>
-                        <span class="stat-label">Total Items</span>
-                    </div>
-                    <div class="stat-item">
+                    <div class="stat-item stat-disease">
                         <span class="stat-number">98</span>
-                        <span class="stat-label">Disease Conditions</span>
+                        <span class="stat-label">Disease</span>
+                    </div>
+                    <div class="stat-item stat-stage">
+                        <span class="stat-number">7</span>
+                        <span class="stat-label">Stage</span>
+                    </div>
+                    <div class="stat-item stat-location">
+                        <span class="stat-number">12</span>
+                        <span class="stat-label">Location</span>
+                    </div>
+                    <div class="stat-item stat-task">
+                        <span class="stat-number">58</span>
+                        <span class="stat-label">Task</span>
+                    </div>
+                    <div class="stat-item stat-persona">
+                        <span class="stat-number">86</span>
+                        <span class="stat-label">Persona</span>
+                        <span class="stat-breakdown">37 Clinicians / 49 HCW</span>
                     </div>
                 </div>
+                <div class="hero-total">
+                    <p class="total-label">Total Clinical Skill-Mix Cells:</p>
+                    <p class="total-number">41,061,216</p>
+                    <p class="total-breakdown">17.7M Clinicians / 23.4M HCW</p>
+                </div>
                 <div class="hero-actions">
-                    <button class="btn btn-primary" onclick="scrollToSection('dimensions')">
-                        Explore Dimensions
+                    <button class="btn btn-primary" onclick="scrollToSection('competency-explorer')">
+                        <i data-lucide="box"></i>
+                        Explore Competency Cells
                     </button>
-                    <button class="btn btn-secondary" onclick="scrollToSection('explorer')">
-                        Interactive Explorer
+                    <button class="btn btn-secondary" onclick="scrollToSection('components')">
+                        <i data-lucide="layers"></i>
+                        View Clinical Dimensions
                     </button>
                 </div>
             </div>
             <div class="hero-visual">
                 <div class="dimension-cube">
-                    <div class="cube-face front">Skills</div>
-                    <div class="cube-face back">Locations</div>
-                    <div class="cube-face right">Personas</div>
-                    <div class="cube-face left">Timeline</div>
-                    <div class="cube-face top">Diseases</div>
-                    <div class="cube-face bottom">Framework</div>
+                    <div class="cube-face front">Task</div>
+                    <div class="cube-face back">Location</div>
+                    <div class="cube-face right">Persona</div>
+                    <div class="cube-face left">Stage</div>
+                    <div class="cube-face top">Disease</div>
+                    <div class="cube-face bottom">Cube</div>
                 </div>
             </div>
         </div>
     </section>
 
-    <!-- Dimensions Overview -->
-    <section id="dimensions" class="dimensions-section">
+    <!-- Competency Explorer -->
+    <section id="competency-explorer" class="competency-explorer-section">
         <div class="section-container">
             <div class="section-header">
-                <h2 class="section-title">Five Clinical Dimensions</h2>
+                <h2 class="section-title">Clinical Skill Mix Cell (i.e. Competency)</h2>
                 <p class="section-subtitle">
-                    Each dimension represents a critical aspect of clinical practice, providing comprehensive coverage for AI evaluation
+                    Select one element from each dimension to explore a specific clinical competency from the Cube
                 </p>
             </div>
-            
-            <div class="dimensions-grid">
-                <!-- Task Skills -->
-                <div class="dimension-card" data-dimension="task-skills">
-                    <div class="dimension-header">
-                        <div class="dimension-icon">
-                            <i data-lucide="stethoscope"></i>
-                        </div>
-                        <h3 class="dimension-title">Task Skills</h3>
-                        <span class="dimension-count">20 Skills</span>
-                    </div>
-                    <p class="dimension-description">
-                        Clinical competencies based on CanMEDS and ACGME frameworks covering data gathering, reasoning, intervention, and communication.
-                    </p>
-                    <div class="dimension-metrics">
-                        <div class="metric">
-                            <span class="metric-label">Domains</span>
-                            <span class="metric-value">4</span>
-                        </div>
-                        <div class="metric">
-                            <span class="metric-label">Evidence Base</span>
-                            <span class="metric-value">CanMEDS</span>
-                        </div>
-                    </div>
-                    <button class="btn btn-outline" onclick="loadDimension('task-skills')">
-                        View Details
-                    </button>
+
+            <div class="cube-selector-grid">
+                <div class="dimension-selector-item" data-dimension="disease">
+                    <label class="selector-label">
+                        <span class="label-icon">🏥</span>
+                        <span class="label-text">Disease</span>
+                    </label>
+                    <select id="disease-select" class="dimension-select">
+                        <option value="">Select a disease...</option>
+                    </select>
                 </div>
 
-                <!-- Personas -->
-                <div class="dimension-card" data-dimension="personas">
-                    <div class="dimension-header">
-                        <div class="dimension-icon">
-                            <i data-lucide="users"></i>
-                        </div>
-                        <h3 class="dimension-title">Personas</h3>
-                        <span class="dimension-count">5 Roles</span>
-                    </div>
-                    <p class="dimension-description">
-                        Healthcare provider roles from attending physicians to allied health professionals with distinct characteristics and responsibilities.
-                    </p>
-                    <div class="dimension-metrics">
-                        <div class="metric">
-                            <span class="metric-label">Characteristics</span>
-                            <span class="metric-value">20</span>
-                        </div>
-                        <div class="metric">
-                            <span class="metric-label">Evidence Base</span>
-                            <span class="metric-value">ISCO-08</span>
-                        </div>
-                    </div>
-                    <button class="btn btn-outline" onclick="loadDimension('personas')">
-                        View Details
-                    </button>
+                <div class="dimension-selector-item" data-dimension="stage">
+                    <label class="selector-label">
+                        <span class="label-icon">⏱️</span>
+                        <span class="label-text">Stage</span>
+                    </label>
+                    <select id="stage-select" class="dimension-select">
+                        <option value="">Select a stage...</option>
+                    </select>
                 </div>
 
-                <!-- Diseases -->
-                <div class="dimension-card" data-dimension="diseases">
-                    <div class="dimension-header">
-                        <div class="dimension-icon">
-                            <i data-lucide="activity"></i>
-                        </div>
-                        <h3 class="dimension-title">Diseases</h3>
-                        <span class="dimension-count">98 Conditions</span>
-                    </div>
-                    <p class="dimension-description">
-                        Evidence-based disease prioritization using WHO DALY data, organized by ICD-11 classification with global burden metrics.
-                    </p>
-                    <div class="dimension-metrics">
-                        <div class="metric">
-                            <span class="metric-label">Chapters</span>
-                            <span class="metric-value">14</span>
-                        </div>
-                        <div class="metric">
-                            <span class="metric-label">Evidence Base</span>
-                            <span class="metric-value">WHO DALY</span>
-                        </div>
-                    </div>
-                    <button class="btn btn-outline" onclick="loadDimension('diseases')">
-                        View Details
-                    </button>
+                <div class="dimension-selector-item" data-dimension="location">
+                    <label class="selector-label">
+                        <span class="label-icon">📍</span>
+                        <span class="label-text">Location</span>
+                    </label>
+                    <select id="location-select" class="dimension-select">
+                        <option value="">Select a location...</option>
+                    </select>
                 </div>
 
-                <!-- Timeline -->
-                <div class="dimension-card" data-dimension="timeline">
-                    <div class="dimension-header">
-                        <div class="dimension-icon">
-                            <i data-lucide="git-branch"></i>
-                        </div>
-                        <h3 class="dimension-title">Timeline</h3>
-                        <span class="dimension-count">12 States</span>
-                    </div>
-                    <p class="dimension-description">
-                        Disease progression states from healthy to terminal outcomes, with 26 possible transitions based on clinical pathophysiology.
-                    </p>
-                    <div class="dimension-metrics">
-                        <div class="metric">
-                            <span class="metric-label">Transitions</span>
-                            <span class="metric-value">26</span>
-                        </div>
-                        <div class="metric">
-                            <span class="metric-label">Evidence Base</span>
-                            <span class="metric-value">Clinical Pathways</span>
-                        </div>
-                    </div>
-                    <button class="btn btn-outline" onclick="loadDimension('timeline')">
-                        View Details
-                    </button>
+                <div class="dimension-selector-item" data-dimension="task">
+                    <label class="selector-label">
+                        <span class="label-icon">🎯</span>
+                        <span class="label-text">Task</span>
+                    </label>
+                    <select id="task-select" class="dimension-select">
+                        <option value="">Select a task...</option>
+                    </select>
                 </div>
 
-                <!-- Location Resources -->
-                <div class="dimension-card" data-dimension="location-resources">
-                    <div class="dimension-header">
-                        <div class="dimension-icon">
-                            <i data-lucide="map-pin"></i>
-                        </div>
-                        <h3 class="dimension-title">Location-Resources</h3>
-                        <span class="dimension-count">24 Combinations</span>
-                    </div>
-                    <p class="dimension-description">
-                        Healthcare delivery locations from pre-hospital to workplace settings, each with limited or rich resource availability.
-                    </p>
-                    <div class="dimension-metrics">
-                        <div class="metric">
-                            <span class="metric-label">Locations</span>
-                            <span class="metric-value">12</span>
-                        </div>
-                        <div class="metric">
-                            <span class="metric-label">Evidence Base</span>
-                            <span class="metric-value">Care Delivery</span>
-                        </div>
-                    </div>
-                    <button class="btn btn-outline" onclick="loadDimension('location-resources')">
-                        View Details
+                <div class="dimension-selector-item" data-dimension="persona">
+                    <label class="selector-label">
+                        <span class="label-icon">👤</span>
+                        <span class="label-text">Persona</span>
+                    </label>
+                    <select id="persona-select" class="dimension-select">
+                        <option value="">Select a persona...</option>
+                    </select>
+                </div>
+            </div>
+
+            <div class="scenario-box">
+                <div class="scenario-header">
+                    <h3>Selected Competency Cell</h3>
+                    <button class="btn btn-sm" onclick="copyScenarioText()" title="Copy to clipboard">
+                        <i data-lucide="copy"></i>
+                        Copy
                     </button>
+                </div>
+                <div id="scenario-text" class="scenario-text">
+                    Select elements from each dimension above to generate a clinical competency...
+                </div>
+            </div>
+
+            <div class="competency-callout">
+                <i data-lucide="layers"></i>
+                <div>
+                    <strong>Clinical Competency Levels</strong>
+                    <p>
+                        Each Selected Competency Cell can be evaluated at different Clinical Competency Levels, defined by:
+                        <strong>Accuracy</strong> (lower, similar, or higher than standard/human performance),
+                        <strong>Safety</strong> (interpretability of output and bias within input), and
+                        <strong>Competency Coverage</strong> (number of tasks covered across one or multiple diseases).
+                    </p>
                 </div>
             </div>
         </div>
     </section>
 
-    <!-- Interactive Explorer -->
-    <section id="explorer" class="explorer-section">
+    <!-- Cube Dimensions -->
+    <section id="components" class="explorer-section">
         <div class="section-container">
             <div class="section-header">
-                <h2 class="section-title">Interactive Dimension Explorer</h2>
+                <h2 class="section-title">Cube Dimensions</h2>
                 <p class="section-subtitle">
-                    Explore individual dimensions, view hierarchical structures, and analyze relationships
+                    Each dimension represents a constituent element of the Clinical Skill-Mix Cube. Together they form a multidimensional space where each cell represents a specific clinical competency (N_D × N_S × N_L × N_T × N_P = N_Total)
                 </p>
             </div>
 
@@ -237,23 +732,23 @@
                     <div class="dimension-selector">
                         <h3>Select Dimension</h3>
                         <div class="selector-buttons">
-                            <button class="selector-btn active" data-dimension="task-skills">
+                            <button class="selector-btn active" data-dimension="task">
                                 <i data-lucide="stethoscope"></i>
                                 <span>Task Skills</span>
                             </button>
-                            <button class="selector-btn" data-dimension="personas">
+                            <button class="selector-btn" data-dimension="persona">
                                 <i data-lucide="users"></i>
                                 <span>Personas</span>
                             </button>
-                            <button class="selector-btn" data-dimension="diseases">
+                            <button class="selector-btn" data-dimension="disease">
                                 <i data-lucide="activity"></i>
                                 <span>Diseases</span>
                             </button>
-                            <button class="selector-btn" data-dimension="timeline">
+                            <button class="selector-btn" data-dimension="stage">
                                 <i data-lucide="git-branch"></i>
                                 <span>Timeline</span>
                             </button>
-                            <button class="selector-btn" data-dimension="location-resources">
+                            <button class="selector-btn" data-dimension="location">
                                 <i data-lucide="map-pin"></i>
                                 <span>Locations</span>
                             </button>
@@ -271,20 +766,12 @@
                                 <input type="radio" name="view-mode" value="list">
                                 <span>List View</span>
                             </label>
-                            <label class="control-label">
-                                <input type="radio" name="view-mode" value="network">
-                                <span>Network View</span>
-                            </label>
                         </div>
-                        
+
                         <div class="control-group">
                             <label class="control-label">
                                 <input type="checkbox" id="show-metadata" checked>
                                 <span>Show Metadata</span>
-                            </label>
-                            <label class="control-label">
-                                <input type="checkbox" id="show-references">
-                                <span>Show References</span>
                             </label>
                         </div>
                     </div>
@@ -315,22 +802,170 @@
                             </div>
                         </div>
                     </div>
-                    
-                    <div class="dimension-info">
-                        <div class="info-tabs">
-                            <button class="info-tab active" data-tab="overview">Overview</button>
-                            <button class="info-tab" data-tab="statistics">Statistics</button>
-                            <button class="info-tab" data-tab="reference">Reference</button>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Decision Making Section -->
+    <section id="decision-making" class="decision-making-section">
+        <div class="section-container">
+            <header class="section-header animate-in">
+                <div class="section-badge">
+                    <i data-lucide="brain"></i>
+                    <span>Cognitive Framework</span>
+                </div>
+                <h2 class="section-title">
+                    <span class="gradient-text">Decision Making</span> in Clinical Practice
+                </h2>
+                <p class="section-subtitle">
+                    A philosophical exploration of <strong>medical cognition</strong>—mapping how clinicians and patients
+                    process information through iterative cycles of <strong>intuition</strong>, <strong>analysis</strong>,
+                    and <strong>reflection</strong>. The hypothesis serves as the central organizing concept, mediating
+                    between three cognitive processor engines in a dynamic, bidirectional exchange.
+                </p>
+            </header>
+
+            <div class="control-panel animate-in delay-100">
+                <button class="control-btn active" id="playBtn"><i data-lucide="play"></i><span>Simulate</span></button>
+                <button class="control-btn" id="pauseBtn"><i data-lucide="pause"></i><span>Pause</span></button>
+                <button class="control-btn" id="resetBtn"><i data-lucide="rotate-ccw"></i><span>Reset</span></button>
+                <div class="speed-control">
+                    <label>Speed:</label>
+                    <input type="range" id="speedSlider" min="0.5" max="2.5" step="0.25" value="1">
+                </div>
+                <button class="control-btn" id="syncBtn"><i data-lucide="link"></i><span>Sync</span></button>
+            </div>
+
+            <div class="visualization-grid animate-in delay-200">
+                <div class="decision-card cdm-card" id="cdmCard">
+                    <div class="card-header cdm-header">
+                        <div class="card-title-row">
+                            <div class="card-icon"><i data-lucide="stethoscope"></i></div>
+                            <h3 class="card-title">Clinician Decision Making</h3>
                         </div>
-                        <div class="info-content">
-                            <div id="info-overview" class="info-panel active">
-                                <p>Select a dimension to view detailed information and hierarchical structure.</p>
+                        <p class="card-description">The physician's cognitive architecture: integrating clinical data, knowledge, and experience through dual-process reasoning.</p>
+                    </div>
+                    <div class="card-body">
+                        <div class="flow-canvas" id="cdmCanvas">
+                            <div class="status-bar">
+                                <div class="loop-counter">
+                                    <span>Iteration:</span>
+                                    <div class="loop-dots" id="cdmLoopDots">
+                                        <div class="loop-dot active"></div>
+                                        <div class="loop-dot"></div>
+                                        <div class="loop-dot"></div>
+                                        <div class="loop-dot"></div>
+                                    </div>
+                                </div>
+                                <div class="current-stage">
+                                    <div class="stage-dot"></div>
+                                    <span id="cdmStageText">Awaiting Input</span>
+                                </div>
                             </div>
-                            <div id="info-statistics" class="info-panel">
-                                <p>Statistical analysis and metrics will appear here.</p>
+                            <svg class="flow-svg" id="cdmSvg" viewBox="0 0 520 880"></svg>
+                        </div>
+                    </div>
+                </div>
+
+                <div class="center-connector">
+                    <span class="connector-label">Shared</span>
+                    <div class="connector-line"></div>
+                    <div class="interaction-hub" id="interactionHub">
+                        <div class="hub-icon-wrapper"><i data-lucide="repeat"></i></div>
+                        <span class="hub-label">Clinical</span>
+                        <span class="hub-sublabel">Encounter</span>
+                    </div>
+                    <div class="connector-line"></div>
+                    <span class="connector-label">Decision</span>
+                </div>
+
+                <div class="decision-card pdm-card" id="pdmCard">
+                    <div class="card-header pdm-header">
+                        <div class="card-title-row">
+                            <div class="card-icon"><i data-lucide="user"></i></div>
+                            <h3 class="card-title">Patient Decision Making</h3>
+                        </div>
+                        <p class="card-description">The patient's cognitive journey: processing clinical information through values, context, and lived experience.</p>
+                    </div>
+                    <div class="card-body">
+                        <div class="flow-canvas" id="pdmCanvas">
+                            <div class="status-bar">
+                                <div class="loop-counter">
+                                    <span>Iteration:</span>
+                                    <div class="loop-dots" id="pdmLoopDots">
+                                        <div class="loop-dot active"></div>
+                                        <div class="loop-dot"></div>
+                                        <div class="loop-dot"></div>
+                                        <div class="loop-dot"></div>
+                                    </div>
+                                </div>
+                                <div class="current-stage">
+                                    <div class="stage-dot"></div>
+                                    <span id="pdmStageText">Awaiting Input</span>
+                                </div>
                             </div>
-                            <div id="info-reference" class="info-panel">
-                                <p>Evidence base and citation information will be displayed here.</p>
+                            <svg class="flow-svg" id="pdmSvg" viewBox="0 0 520 880"></svg>
+                        </div>
+                    </div>
+                </div>
+            </div>
+
+            <!-- Philosophy Foundation - Full Width -->
+            <div class="info-panels-philosophy animate-in delay-300">
+                <div class="info-panel info-panel-full">
+                    <div class="panel-header">
+                        <div class="panel-icon philosophy"><i data-lucide="sparkles"></i></div>
+                        <h4 class="panel-title">Philosophical Foundation</h4>
+                    </div>
+                    <blockquote class="philosophy-quote">
+                        "Clinical reasoning is not merely the application of medical knowledge, but an iterative dialogue between intuitive pattern recognition and deliberate analytical thinking—a cognitive dance where the hypothesis serves as both guide and test of our understanding."
+                        <cite>— Clinical World Model Framework</cite>
+                    </blockquote>
+                </div>
+            </div>
+
+            <!-- Legend and Process Flow - 1/3 and 2/3 -->
+            <div class="info-panels-split animate-in delay-300">
+                <div class="info-panel info-panel-third">
+                    <div class="panel-header">
+                        <div class="panel-icon legend"><i data-lucide="palette"></i></div>
+                        <h4 class="panel-title">Visual Legend</h4>
+                    </div>
+                    <div class="legend-grid" id="legendGrid"></div>
+                </div>
+                <div class="info-panel info-panel-twothirds">
+                    <div class="panel-header">
+                        <div class="panel-icon process"><i data-lucide="git-branch"></i></div>
+                        <h4 class="panel-title">Cognitive Process Flow</h4>
+                    </div>
+                    <div class="process-steps">
+                        <div class="process-step">
+                            <div class="step-num">1</div>
+                            <div class="step-content">
+                                <h4>Input Integration</h4>
+                                <p>Clinical data, context, and prior knowledge converge at the processor</p>
+                            </div>
+                        </div>
+                        <div class="process-step">
+                            <div class="step-num">2</div>
+                            <div class="step-content">
+                                <h4>Hypothesis Formation</h4>
+                                <p>Central concept emerges, mediating three processor engines (2-4 iterations)</p>
+                            </div>
+                        </div>
+                        <div class="process-step">
+                            <div class="step-num">3</div>
+                            <div class="step-content">
+                                <h4>Dual-System Processing</h4>
+                                <p>System I (intuition) and System II (analysis) evaluate in bidirectional reflection</p>
+                            </div>
+                        </div>
+                        <div class="process-step">
+                            <div class="step-num">4</div>
+                            <div class="step-content">
+                                <h4>Action Resolution</h4>
+                                <p>Proceed to planning/preference or loop back via data collection</p>
                             </div>
                         </div>
                     </div>
@@ -339,86 +974,68 @@
         </div>
     </section>
 
-    <!-- About Section -->
-    <section id="about" class="about-section">
-        <div class="section-container">
-            <div class="about-content">
-                <div class="about-text">
-                    <h2>About the Clinical World Model</h2>
+    <div class="dm-tooltip" id="dmTooltip">
+        <div class="dm-tooltip-header"></div>
+        <ul class="dm-tooltip-list"></ul>
+    </div>
+
+    <!-- Footer -->
+    <footer class="footer">
+        <div class="footer-container">
+            <!-- About and Resources Section -->
+            <div class="footer-about-resources">
+                <div class="footer-about">
+                    <h4>About the Clinical World Model</h4>
                     <p>
-                        The Clinical Skill-Mix framework provides a comprehensive, evidence-based approach to evaluating 
-                        healthcare AI systems across five critical dimensions of clinical practice.
+                        The Clinical World Model framework provides an evidence-based approach to evaluating healthcare AI systems through the Clinical Skill-Mix Cube, which decomposes clinical environments across five critical dimensions: Disease, Stage, Location, Task, and Persona. This multidimensional structure creates over 41 million unique clinical scenario cells, enabling comprehensive AI deployment tracking and evaluation. Built on established clinical frameworks including WHO classifications, ICD-11, and physician competency standards, the model ensures standardized assessment across diverse healthcare contexts. The framework supports both clinical decision-making analysis and patient-centered care evaluation, making it applicable to the full spectrum of healthcare AI applications.
                     </p>
-                    <div class="about-features">
-                        <div class="feature">
-                            <i data-lucide="shield-check"></i>
-                            <div>
-                                <h4>Evidence-Based</h4>
-                                <p>All dimensions grounded in established clinical frameworks and real-world data</p>
-                            </div>
-                        </div>
-                        <div class="feature">
-                            <i data-lucide="layers"></i>
-                            <div>
-                                <h4>Hierarchical Structure</h4>
-                                <p>Multi-level organization supporting different depths of analysis</p>
-                            </div>
-                        </div>
-                        <div class="feature">
-                            <i data-lucide="zap"></i>
-                            <div>
-                                <h4>Interoperable</h4>
-                                <p>Standardized format enables cross-dimensional analysis and comparison</p>
-                            </div>
-                        </div>
-                    </div>
                 </div>
-                <div class="about-links">
-                    <h3>Resources</h3>
-                    <div class="resource-links">
-                        <a href="https://github.com/your-username/clinical-world-model" class="resource-link">
+                <div class="footer-resources">
+                    <h4>Resources</h4>
+                    <div class="footer-resource-links">
+                        <a href="https://github.com/sdamirsa/Clinical-World-Model" class="footer-resource-link">
                             <i data-lucide="github"></i>
                             <span>GitHub Repository</span>
                         </a>
-                        <a href="README_diseasesDALY.md" class="resource-link">
-                            <i data-lucide="file-text"></i>
-                            <span>DALY Analysis Documentation</span>
-                        </a>
-                        <a href="clinical-skill-mix/" class="resource-link">
+                        <a href="clinical-skill-mix/" class="footer-resource-link">
                             <i data-lucide="database"></i>
                             <span>Raw Data Files</span>
                         </a>
                     </div>
                 </div>
             </div>
-        </div>
-    </section>
 
-    <!-- Footer -->
-    <footer class="footer">
-        <div class="footer-container">
-            <div class="footer-content">
-                <div class="footer-section">
-                    <h4>Clinical World Model</h4>
-                    <p>Evidence-based framework for healthcare AI evaluation</p>
+            <div class="footer-citation">
+                <h4>Cite this Paper</h4>
+                <div class="footer-citation-content">
+                    <p class="citation-title">
+                        <strong>Beyond Pattern Recognition: The Clinical World Model Framework for Cognition-Informed Medical AI</strong>
+                    </p>
+                    <p class="citation-authors">
+                        Seyed Amir Ahmad Safavi-Naini, Elahe Meftah, Josh Mohess,
+                        Pooya Mohammadi Kazaj, Georgios Siontis, Zahra Atf,
+                        Akhil Vaid, Peter R. Lewis, Girish Nadkarni,
+                        Stephan Windecker, Christoph Gräni, Ali Soroush, Isaac Shiri
+                    </p>
+                    <p class="citation-correspondence">
+                        Correspondence: Seyed Amir Ahmad Safavi-Naini (<a href="mailto:sdamirsa@ymail.com">sdamirsa@ymail.com</a>)
+                    </p>
                 </div>
-                <div class="footer-section">
-                    <h4>Dimensions</h4>
-                    <ul>
-                        <li><a href="#" onclick="loadDimension('task-skills')">Task Skills</a></li>
-                        <li><a href="#" onclick="loadDimension('personas')">Personas</a></li>
-                        <li><a href="#" onclick="loadDimension('diseases')">Diseases</a></li>
-                        <li><a href="#" onclick="loadDimension('timeline')">Timeline</a></li>
-                        <li><a href="#" onclick="loadDimension('location-resources')">Location-Resources</a></li>
-                    </ul>
+            </div>
+
+            <div class="footer-affiliations">
+                <h4>Affiliations</h4>
+                <div class="footer-affiliation-list">
+                    <p>Department of Digital Medicine, Bern University Hospital, University of Bern, Bern, Switzerland</p>
+                    <p>Division of Data-Driven and Digital Medicine (D3M), Icahn School of Medicine at Mount Sinai, New York, United States</p>
                 </div>
-                <div class="footer-section">
-                    <h4>Resources</h4>
-                    <ul>
-                        <li><a href="https://github.com/your-username/clinical-world-model">GitHub</a></li>
-                        <li><a href="README_diseasesDALY.md">Documentation</a></li>
-                        <li><a href="clinical-skill-mix/">Data</a></li>
-                    </ul>
+                <div class="footer-logos">
+                    <a href="https://ai-cvm.org" target="_blank" rel="noopener noreferrer">
+                        <img src="assets/logo/AI-CVM-Wide-White.webp" alt="AI-CVM" class="footer-logo">
+                    </a>
+                    <a href="https://aisinai.org" target="_blank" rel="noopener noreferrer">
+                        <img src="assets/logo/SINAI-color-white-smalled.png" alt="Mount Sinai" class="footer-logo">
+                    </a>
                 </div>
             </div>
             <div class="footer-bottom">
@@ -432,5 +1049,1126 @@
     <script src="assets/js/main.js"></script>
     <script src="assets/js/dimension-loader.js"></script>
     <script src="assets/js/visualization.js"></script>
+
+    <!-- Decision Making Visualization Script -->
+    <script>
+        // ============================================
+        // COMPLETE DATA STRUCTURES FROM FIGURES
+        // ============================================
+
+        const CDM_DATA = {
+            id: "cdm",
+            title: "Clinician Decision Making",
+            colors: {
+                primary: "#c026d3",
+                secondary: "#a855f7",
+                tertiary: "#7c3aed",
+                light: "#fae8ff",
+                input: "#db2777",
+                processor: "#7c3aed",
+                hypothesis: "#d1d5db",
+                system1: "#3b82f6",
+                system2: "#6366f1",
+                planning: "#3b82f6",
+                collection: "#3b82f6"
+            },
+            inputs: {
+                main: { id: "input", label: "Input", color: "#db2777" },
+                categories: [
+                    {
+                        id: "clinic_data",
+                        label: "Clinic data",
+                        color: "#f9a8d4",
+                        items: [
+                            "Verbal communication",
+                            "Clinician sense/flow",
+                            "Physical interaction",
+                            "Clinical Documentations"
+                        ]
+                    },
+                    {
+                        id: "clinic_context",
+                        label: "Clinic context",
+                        color: "#f9a8d4",
+                        items: [
+                            "Resources (team dynamics, equipment, time)",
+                            "Routines (legal authority, national guidelines)",
+                            "Preferance"
+                        ]
+                    },
+                    {
+                        id: "patient_context",
+                        label: "Patient context",
+                        color: "#f9a8d4",
+                        items: [
+                            "Socio-economic"
+                        ]
+                    },
+                    {
+                        id: "paraclinic_data",
+                        label: "Para-clinic data",
+                        color: "#f9a8d4",
+                        items: [
+                            "Labs",
+                            "Images",
+                            "Diagnostic procedures"
+                        ]
+                    }
+                ]
+            },
+            processor: {
+                id: "data_processor",
+                label: "Data processor",
+                color: "#7c3aed",
+                knowledge: [
+                    { id: "official", label: "Official knowledge", sub: "(e.g. book)" },
+                    { id: "unofficial", label: "Unofficial knowledge", sub: "(e.g peers)" },
+                    { id: "experience", label: "Clinical experience", sub: "& encounters" },
+                    { id: "personal", label: "Clinician personal", sub: "context" }
+                ]
+            },
+            hypothesis: {
+                id: "hypothesis",
+                label: "Hypothesis",
+                color: "#d1d5db",
+                textColor: "#1f2937"
+            },
+            systems: {
+                system2: {
+                    id: "system2",
+                    label: "System II:",
+                    sub: "Analytical",
+                    color: "#6366f1",
+                    position: "left",
+                    hexagons: [
+                        { id: "hyp_impact", label: "Hypothesis", sub: "impact" },
+                        { id: "dec_breakdown", label: "Decision", sub: "breakdown" }
+                    ]
+                },
+                system1: {
+                    id: "system1",
+                    label: "System I:",
+                    sub: "Clinical Intuition",
+                    color: "#3b82f6",
+                    position: "right"
+                },
+                reflection: {
+                    id: "reflection",
+                    label: "Reflection",
+                    color: "#9ca3af"
+                }
+            },
+            outputs: {
+                planning: {
+                    id: "planning",
+                    label: "Planning",
+                    color: "#3b82f6",
+                    items: ["Diagnosis", "Treatment", "Monitor", "Referral", "Assurance"]
+                },
+                collection: {
+                    id: "collection",
+                    label: "Collection",
+                    color: "#3b82f6",
+                    items: [
+                        "Ask and interact with patient",
+                        "Check system (EHR) and history",
+                        "Request an investigation and test",
+                        "Ask staff or consult a provider",
+                        "Look for knowledge (e.g. guideline)"
+                    ]
+                }
+            },
+            refinement: ["Refinement", "Evaluation", "Action Generation"]
+        };
+
+        const PDM_DATA = {
+            id: "pdm",
+            title: "Patient Decision Making",
+            colors: {
+                primary: "#0ea5e9",
+                secondary: "#06b6d4",
+                tertiary: "#0891b2",
+                light: "#e0f2fe",
+                input: "#db2777",
+                processor: "#7c3aed",
+                hypothesis: "#d1d5db",
+                system1: "#3b82f6",
+                system2: "#6366f1",
+                finalized: "#111827",
+                seeking: "#111827"
+            },
+            inputs: {
+                main: { id: "input", label: "Input", color: "#db2777" },
+                categories: [
+                    {
+                        id: "clinician_patient_relationship",
+                        label: "Clinician-patient relationship factors",
+                        color: "#f9a8d4",
+                        items: [
+                            "Trust & rapport",
+                            "Communication skills & barriers"
+                        ]
+                    },
+                    {
+                        id: "other_information_sources",
+                        label: "Other information sources",
+                        color: "#f9a8d4",
+                        items: [
+                            "Digital sources (e.g., social media & internet)",
+                            "Social networks and community resources",
+                            "verified / official / institutional sources"
+                        ]
+                    },
+                    {
+                        id: "clinical_information",
+                        label: "Clinical information",
+                        color: "#f9a8d4",
+                        items: [
+                            "diagnosis and disease course",
+                            "Debilitation and prognosis",
+                            "available options for a decision"
+                        ]
+                    }
+                ]
+            },
+            processor: {
+                id: "data_processor",
+                label: "Data processor",
+                color: "#7c3aed",
+                knowledge: [
+                    { id: "competence", label: "Decision competence", sub: "& autonomy" },
+                    { id: "affect", label: "Affect and", sub: "bodily states" },
+                    { id: "values", label: "Values, Social identity", sub: "& norms" },
+                    { id: "experience", label: "Previous healthcare", sub: "and disease experience" },
+                    { id: "support", label: "Social & economic", sub: "support" },
+                    { id: "literacy", label: "Health literacy", sub: "" }
+                ]
+            },
+            hypothesis: {
+                id: "hypothesis",
+                label: "Hypothesis",
+                color: "#d1d5db",
+                textColor: "#1f2937"
+            },
+            systems: {
+                system2: {
+                    id: "system2",
+                    label: "System II:",
+                    sub: "Analytical",
+                    color: "#6366f1",
+                    position: "left",
+                    hexagons: [
+                        { id: "hyp_impact", label: "Hypothesis", sub: "impact" },
+                        { id: "dec_breakdown", label: "Decision", sub: "breakdown" }
+                    ]
+                },
+                system1: {
+                    id: "system1",
+                    label: "System I:",
+                    sub: "Clinical Intuition",
+                    color: "#3b82f6",
+                    position: "right"
+                },
+                reflection: {
+                    id: "reflection",
+                    label: "Reflection",
+                    color: "#9ca3af"
+                }
+            },
+            outputs: {
+                finalized: {
+                    id: "finalized_preference",
+                    label: "Finalized Preference",
+                    color: "#111827",
+                    items: []
+                },
+                seeking: {
+                    id: "information_seeking",
+                    label: "Information seeking",
+                    color: "#111827",
+                    items: []
+                }
+            },
+            communication: "Communicating the decision with the care provider",
+            refinement: ["Refinement", "Evaluation", "Action Generation"]
+        };
+
+        const LEGEND_DATA = [
+            { color: "#db2777", label: "Input Hub" },
+            { color: "#f9a8d4", label: "Input Categories" },
+            { color: "#fce7f3", label: "Input Sub-items" },
+            { color: "#7c3aed", label: "Data Processor" },
+            { color: "#ede9fe", label: "Processor Knowledge" },
+            { color: "#d1d5db", label: "Hypothesis (Central)" },
+            { color: "#3b82f6", label: "System I (Intuition)" },
+            { color: "#6366f1", label: "System II (Analytical)" },
+            { color: "#9ca3af", label: "Reflection" },
+            { color: "#3b82f6", label: "Planning (CDM)" },
+            { color: "#111827", label: "Preference (PDM)" },
+            { color: "#e71a20", label: "Loop Back Path" }
+        ];
+
+        // ============================================
+        // SVG RENDERER
+        // ============================================
+
+        class FlowRenderer {
+            constructor(svgElement, data, type) {
+                this.svg = svgElement;
+                this.data = data;
+                this.type = type;
+                this.render();
+            }
+
+            render() {
+                this.svg.innerHTML = '';
+                this.createDefs();
+                this.drawConnections();
+                this.drawRefinementLoop();
+                this.drawInputLayer();
+                this.drawProcessor();
+                this.drawHypothesis();
+                this.drawSystems();
+                this.drawOutputs();
+            }
+
+            createDefs() {
+                const defs = document.createElementNS('http://www.w3.org/2000/svg', 'defs');
+
+                // Use black colors for Plan/Coll in CDM, blue in PDM
+                const planColors = this.type === 'cdm' ? ['#111827', '#1f2937'] : ['#3b82f6', '#2563eb'];
+                const collColors = this.type === 'cdm' ? ['#1f2937', '#374151'] : ['#3b82f6', '#1d4ed8'];
+
+                const gradients = [
+                    { id: `${this.type}Input`, colors: ['#db2777', '#ec4899'] },
+                    { id: `${this.type}Proc`, colors: ['#7c3aed', '#8b5cf6'] },
+                    { id: `${this.type}Sys1`, colors: ['#3b82f6', '#60a5fa'] },
+                    { id: `${this.type}Sys2`, colors: ['#6366f1', '#818cf8'] },
+                    { id: `${this.type}Plan`, colors: planColors },
+                    { id: `${this.type}Coll`, colors: collColors },
+                    { id: `${this.type}Black`, colors: ['#111827', '#1f2937'] }
+                ];
+
+                gradients.forEach(g => {
+                    defs.innerHTML += `
+                        <linearGradient id="${g.id}" x1="0%" y1="0%" x2="100%" y2="100%">
+                            <stop offset="0%" style="stop-color:${g.colors[0]}"/>
+                            <stop offset="100%" style="stop-color:${g.colors[1]}"/>
+                        </linearGradient>
+                    `;
+                });
+
+                defs.innerHTML += `
+                    <marker id="${this.type}Arrow" markerWidth="10" markerHeight="7" refX="9" refY="3.5" orient="auto">
+                        <polygon points="0 0, 10 3.5, 0 7" fill="#9ca3af"/>
+                    </marker>
+                    <marker id="${this.type}ArrowRed" markerWidth="10" markerHeight="7" refX="9" refY="3.5" orient="auto">
+                        <polygon points="0 0, 10 3.5, 0 7" fill="#e71a20"/>
+                    </marker>
+                    <marker id="${this.type}ArrowBlue" markerWidth="10" markerHeight="7" refX="9" refY="3.5" orient="auto">
+                        <polygon points="0 0, 10 3.5, 0 7" fill="#3b82f6"/>
+                    </marker>
+                `;
+
+                this.svg.appendChild(defs);
+            }
+
+            drawConnections() {
+                const g = this.createGroup('connections-layer');
+
+                // Main flow paths
+                const paths = [
+                    { d: 'M260 145 L260 210', stroke: '#d1d5db', width: 2, id: 'path-input-processor' },
+                    { d: 'M260 310 L260 370', stroke: '#d1d5db', width: 2, id: 'path-processor-hypothesis' },
+                    // Connect from side of hypothesis triangle (bottom corners) to top of systems (now at 455 with radius 60)
+                    { d: 'M195 435 L150 455', stroke: '#d1d5db', width: 2, id: 'path-hypothesis-sys2' },
+                    { d: 'M325 435 L370 455', stroke: '#d1d5db', width: 2, id: 'path-hypothesis-sys1' },
+                    // Elbowed paths from reflection to outputs (with space before boxes)
+                    { d: 'M260 670 L260 680 L137 680 L137 705', stroke: '#d1d5db', width: 2, id: 'path-reflection-planning' },
+                    { d: 'M260 670 L260 680 L382 680 L382 705', stroke: '#d1d5db', width: 2, id: 'path-reflection-collection' }
+                ];
+
+                paths.forEach(p => {
+                    const path = this.createPath(p.d, p.stroke, p.width, `url(#${this.type}Arrow)`);
+                    if (p.id) path.setAttribute('id', p.id);
+                    g.appendChild(path);
+                });
+
+                // Bidirectional arrow from triangle to reflection circle
+                g.appendChild(this.createBidirectionalArrow(260, 545, 260, 635, '#10b981'));
+
+                // Collection loop back path - different for CDM and PDM
+                // Input circle is at (260, 110) with radius 38, so just below is around (260, 150)
+                if (this.type === 'cdm') {
+                    // CDM: Go down first, then left, then up to just below Input
+                    g.appendChild(this.createPath('M382 795 L382 820 Q382 840 362 840 L30 840 Q10 840 10 820 L10 160 Q10 150 20 150 L260 150', '#e71a20', 2, `url(#${this.type}ArrowRed)`, true, 'flow-path animated', '4,4', 0.5));
+                    g.appendChild(this.text(15, 505, 'Loop Back', 8, '#e71a20', '500', 'rotate(-90 15 505)'));
+                } else {
+                    // PDM: Also connect to just below Input
+                    g.appendChild(this.createPath('M365 760 L365 780 Q365 800 345 800 L30 800 Q10 800 10 780 L10 160 Q10 150 20 150 L260 150', '#e71a20', 2, `url(#${this.type}ArrowRed)`, true, 'flow-path animated', '4,4', 0.5));
+                    g.appendChild(this.text(15, 475, 'Loop Back', 8, '#e71a20', '500', 'rotate(-90 15 475)'));
+                }
+
+                // Draw the triangular processing region
+                this.drawProcessingTriangle(g);
+
+                this.svg.appendChild(g);
+            }
+
+            drawProcessingTriangle(g) {
+                // Calculate outer lower vertices of hexagons
+                // System II (150, 515, r=60): bottom-left vertex at angle 5π/6
+                const sys2VertexX = 150 + 60 * Math.cos(Math.PI * 5 / 6);  // 150 - 51.96 ≈ 98
+                const sys2VertexY = 515 + 60 * Math.sin(Math.PI * 5 / 6);  // 515 + 30 = 545
+
+                // System I (370, 515, r=60): bottom-right vertex at angle π/6
+                const sys1VertexX = 370 + 60 * Math.cos(Math.PI / 6);      // 370 + 51.96 ≈ 422
+                const sys1VertexY = 515 + 60 * Math.sin(Math.PI / 6);      // 515 + 30 = 545
+
+                // Draw triangle connecting Data Processor center to hexagon vertices
+                const trianglePath = `M260 260 L${sys2VertexX.toFixed(1)} ${sys2VertexY.toFixed(1)} L${sys1VertexX.toFixed(1)} ${sys1VertexY.toFixed(1)} Z`;
+                const triangle = document.createElementNS('http://www.w3.org/2000/svg', 'path');
+                triangle.setAttribute('d', trianglePath);
+                triangle.setAttribute('fill', 'rgba(251, 191, 36, 0.05)');
+                triangle.setAttribute('stroke', '#fbbf24');
+                triangle.setAttribute('stroke-width', '2');
+                triangle.setAttribute('stroke-dasharray', '6,4');
+                g.appendChild(triangle);
+
+                // Add bidirectional arrows on edges (only top two edges)
+                // Edge 1: Data Processor to System II outer vertex
+                g.appendChild(this.createBidirectionalArrow(260, 260, sys2VertexX, sys2VertexY, '#fbbf24'));
+
+                // Edge 2: Data Processor to System I outer vertex
+                g.appendChild(this.createBidirectionalArrow(260, 260, sys1VertexX, sys1VertexY, '#fbbf24'));
+            }
+
+            createBidirectionalArrow(x1, y1, x2, y2, color) {
+                const g = document.createElementNS('http://www.w3.org/2000/svg', 'g');
+
+                // Draw connecting line
+                const line = document.createElementNS('http://www.w3.org/2000/svg', 'line');
+                line.setAttribute('x1', x1);
+                line.setAttribute('y1', y1);
+                line.setAttribute('x2', x2);
+                line.setAttribute('y2', y2);
+                line.setAttribute('stroke', color);
+                line.setAttribute('stroke-width', '2');
+                g.appendChild(line);
+
+                // Calculate midpoint
+                const midX = (x1 + x2) / 2;
+                const midY = (y1 + y2) / 2;
+
+                // Calculate direction vector
+                const dx = x2 - x1;
+                const dy = y2 - y1;
+                const length = Math.sqrt(dx * dx + dy * dy);
+                const ux = dx / length;
+                const uy = dy / length;
+
+                // Arrow size
+                const arrowSize = 8;
+                const offset = 15; // Offset from midpoint for arrows
+
+                // First arrow (pointing from 1 to 2)
+                const arrow1X = midX - ux * offset;
+                const arrow1Y = midY - uy * offset;
+                const arrow1 = document.createElementNS('http://www.w3.org/2000/svg', 'polygon');
+                const perpX = -uy;
+                const perpY = ux;
+                const a1points = `${arrow1X + ux * arrowSize},${arrow1Y + uy * arrowSize} ${arrow1X - ux * arrowSize/2 + perpX * arrowSize/2},${arrow1Y - uy * arrowSize/2 + perpY * arrowSize/2} ${arrow1X - ux * arrowSize/2 - perpX * arrowSize/2},${arrow1Y - uy * arrowSize/2 - perpY * arrowSize/2}`;
+                arrow1.setAttribute('points', a1points);
+                arrow1.setAttribute('fill', color);
+                g.appendChild(arrow1);
+
+                // Second arrow (pointing from 2 to 1)
+                const arrow2X = midX + ux * offset;
+                const arrow2Y = midY + uy * offset;
+                const arrow2 = document.createElementNS('http://www.w3.org/2000/svg', 'polygon');
+                const a2points = `${arrow2X - ux * arrowSize},${arrow2Y - uy * arrowSize} ${arrow2X + ux * arrowSize/2 + perpX * arrowSize/2},${arrow2Y + uy * arrowSize/2 + perpY * arrowSize/2} ${arrow2X + ux * arrowSize/2 - perpX * arrowSize/2},${arrow2Y + uy * arrowSize/2 - perpY * arrowSize/2}`;
+                arrow2.setAttribute('points', a2points);
+                arrow2.setAttribute('fill', color);
+                g.appendChild(arrow2);
+
+                return g;
+            }
+
+            drawInputLayer() {
+                const g = this.createGroup('input-layer');
+
+                const inputX = 260;
+                const inputY = 110;
+                const inputRadius = 38;
+
+                // Categories - Draw lines FIRST (background)
+                const catPositions = this.type === 'cdm'
+                    ? [{ x: 95, y: 95 }, { x: 165, y: 50 }, { x: 355, y: 50 }, { x: 425, y: 95 }]
+                    : [{ x: 260, y: 42 }, { x: 110, y: 100 }, { x: 410, y: 100 }];
+
+                this.data.inputs.categories.forEach((cat, i) => {
+                    if (i >= catPositions.length) return;
+                    const pos = catPositions[i];
+
+                    // Calculate connection point on Input circle circumference
+                    const angle = Math.atan2(inputY - pos.y, inputX - pos.x);
+                    const connectionX = inputX - Math.cos(angle) * inputRadius;
+                    const connectionY = inputY - Math.sin(angle) * inputRadius;
+
+                    // Draw line to circumference point
+                    g.appendChild(this.line(pos.x, pos.y, connectionX, connectionY, '#e5e7eb', 1.5));
+                });
+
+                // Draw child nodes SECOND (middle layer)
+                this.data.inputs.categories.forEach((cat, i) => {
+                    if (i >= catPositions.length) return;
+                    const pos = catPositions[i];
+                    g.appendChild(this.circleNode(pos.x, pos.y, 28, cat.color, cat.id, cat.label.split(' ').slice(0, 2).join(' '), cat.items, false, '#f472b6'));
+                });
+
+                // Main input LAST (foreground)
+                g.appendChild(this.circleNode(inputX, inputY, inputRadius, `url(#${this.type}Input)`, 'input', 'Input', null, true));
+
+                this.svg.appendChild(g);
+            }
+
+            drawProcessor() {
+                const g = this.createGroup('processor-layer');
+
+                // Increased size: 58 -> 70
+                const procHex = this.hexPoints(260, 260, 70);
+                g.appendChild(this.polygonNode(procHex, `url(#${this.type}Proc)`, 'processor', 'Data', 'processor'));
+
+                // Honeycomb arrangement on the left side
+                const kPositions = this.type === 'cdm'
+                    ? [
+                        { x: 85, y: 215 },   // Top-left
+                        { x: 85, y: 280 },   // Bottom-left
+                        { x: 145, y: 248 },  // Middle-right (offset)
+                        { x: 145, y: 313 }   // Bottom-right (offset)
+                    ]
+                    : [
+                        { x: 70, y: 200 },   // Top-left
+                        { x: 70, y: 258 },   // Middle-left
+                        { x: 70, y: 316 },   // Bottom-left
+                        { x: 130, y: 229 },  // Top-right (offset)
+                        { x: 130, y: 287 },  // Middle-right (offset)
+                        { x: 130, y: 345 }   // Bottom-right (offset)
+                    ];
+
+                this.data.processor.knowledge.forEach((k, i) => {
+                    if (i >= kPositions.length) return;
+                    const pos = kPositions[i];
+                    const kHex = this.hexPoints(pos.x, pos.y, 32);
+                    g.appendChild(this.polygonNode(kHex, '#ede9fe', k.id, k.label.split(' ').slice(0, 2).join(' '), k.sub || '', '#c4b5fd', '#6d28d9'));
+                });
+
+                this.svg.appendChild(g);
+            }
+
+            drawHypothesis() {
+                const g = this.createGroup('hypothesis-layer');
+                const trianglePoints = '260,370 325,435 195,435';
+                g.appendChild(this.polygonNode(trianglePoints, '#d1d5db', 'hypothesis', 'Hypothesis', '', '#9ca3af', '#1f2937'));
+                this.svg.appendChild(g);
+            }
+
+            drawSystems() {
+                const g = this.createGroup('systems-layer');
+
+                // System II (Left) - increased size from 48 to 60
+                const sys2Hex = this.hexPoints(150, 515, 60);
+                g.appendChild(this.polygonNode(sys2Hex, `url(#${this.type}Sys2)`, 'system2', this.data.systems.system2.label, this.data.systems.system2.sub));
+
+                // System II hexagons in honeycomb pattern (left side of System II)
+                if (this.data.systems.system2.hexagons) {
+                    const hexPositions = [
+                        { x: 80, y: 485 },  // Upper left
+                        { x: 80, y: 545 }   // Lower left
+                    ];
+                    this.data.systems.system2.hexagons.forEach((hex, i) => {
+                        if (i >= hexPositions.length) return;
+                        const pos = hexPositions[i];
+                        const hexPts = this.hexPoints(pos.x, pos.y, 32);
+                        g.appendChild(this.polygonNode(hexPts, '#ede9fe', hex.id, hex.label, hex.sub, '#c4b5fd', '#6d28d9'));
+                    });
+                }
+
+                // System I (Right) - increased size from 48 to 60
+                const sys1Hex = this.hexPoints(370, 515, 60);
+                g.appendChild(this.polygonNode(sys1Hex, `url(#${this.type}Sys1)`, 'system1', this.data.systems.system1.label, this.data.systems.system1.sub));
+
+                // Reflection node
+                g.appendChild(this.circleNode(260, 635, 35, '#10b981', 'reflection', 'Reflect', null, true));
+
+                this.svg.appendChild(g);
+            }
+
+            drawOutputs() {
+                const g = this.createGroup('outputs-layer');
+
+                if (this.type === 'cdm') {
+                    const planItems = this.data.outputs.planning.items;
+                    const collItems = this.data.outputs.collection.items;
+
+                    // Calculate card heights: title space + items
+                    const planHeight = 30 + (planItems.length * 11);
+                    const collHeight = 30 + (Math.min(collItems.length, 5) * 11);
+
+                    // Draw planning card (background only, we'll add title and items separately)
+                    const planRect = document.createElementNS('http://www.w3.org/2000/svg', 'rect');
+                    planRect.setAttribute('x', 75);
+                    planRect.setAttribute('y', 705);
+                    planRect.setAttribute('width', 125);
+                    planRect.setAttribute('height', planHeight);
+                    planRect.setAttribute('rx', 10);
+                    planRect.setAttribute('fill', `url(#${this.type}Plan)`);
+                    planRect.setAttribute('data-id', `${this.type}_planning`);
+                    planRect.classList.add('node-group');
+                    g.appendChild(planRect);
+
+                    // Planning title at top
+                    g.appendChild(this.text(137, 720, this.data.outputs.planning.label, 10, 'rgba(255,255,255,0.95)', '700'));
+
+                    // Planning items below title
+                    planItems.forEach((item, i) => {
+                        const txt = this.text(137, 735 + i * 11, item, 7, 'rgba(255,255,255,0.85)', '400');
+                        txt.setAttribute('text-anchor', 'middle');
+                        g.appendChild(txt);
+                    });
+
+                    // Draw collection card (background only)
+                    const collRect = document.createElementNS('http://www.w3.org/2000/svg', 'rect');
+                    collRect.setAttribute('x', 320);
+                    collRect.setAttribute('y', 705);
+                    collRect.setAttribute('width', 125);
+                    collRect.setAttribute('height', collHeight);
+                    collRect.setAttribute('rx', 10);
+                    collRect.setAttribute('fill', `url(#${this.type}Coll)`);
+                    collRect.setAttribute('data-id', `${this.type}_collection`);
+                    collRect.classList.add('node-group');
+                    g.appendChild(collRect);
+
+                    // Collection title at top
+                    g.appendChild(this.text(382, 720, this.data.outputs.collection.label, 10, 'rgba(255,255,255,0.95)', '700'));
+
+                    // Collection items below title
+                    collItems.slice(0, 5).forEach((item, i) => {
+                        const displayText = item.length > 18 ? item.slice(0, 16) + '...' : item;
+                        const txt = this.text(382, 735 + i * 11, displayText, 7, 'rgba(255,255,255,0.85)', '400');
+                        txt.setAttribute('text-anchor', 'middle');
+                        g.appendChild(txt);
+                    });
+                } else {
+                    g.appendChild(this.rectNode(75, 705, 125, 55, 10, `url(#${this.type}Black)`, 'finalized', 'Finalized', [], 'Preference'));
+                    g.appendChild(this.rectNode(320, 705, 125, 55, 10, `url(#${this.type}Black)`, 'seeking', 'Information', [], 'seeking'));
+                    g.appendChild(this.text(260, 785, this.data.communication, 10, '#6b7280', '500'));
+                }
+
+                this.svg.appendChild(g);
+            }
+
+            drawRefinementLoop() {
+                const g = this.createGroup('experience-storage-layer');
+
+                // Storage container position
+                const containerX = 440;
+                const containerY = 300;
+                const containerWidth = 70;
+                const containerHeight = 220;
+
+                // Draw storage container (database-like cylinder)
+                const container = document.createElementNS('http://www.w3.org/2000/svg', 'rect');
+                container.setAttribute('x', containerX);
+                container.setAttribute('y', containerY);
+                container.setAttribute('width', containerWidth);
+                container.setAttribute('height', containerHeight);
+                container.setAttribute('rx', '8');
+                container.setAttribute('fill', 'rgba(139, 92, 246, 0.08)');
+                container.setAttribute('stroke', '#8b5cf6');
+                container.setAttribute('stroke-width', '2');
+                container.setAttribute('stroke-dasharray', '4,3');
+                g.appendChild(container);
+
+                // Top ellipse for cylinder effect
+                const ellipse = document.createElementNS('http://www.w3.org/2000/svg', 'ellipse');
+                ellipse.setAttribute('cx', containerX + containerWidth/2);
+                ellipse.setAttribute('cy', containerY);
+                ellipse.setAttribute('rx', containerWidth/2);
+                ellipse.setAttribute('ry', '8');
+                ellipse.setAttribute('fill', 'rgba(139, 92, 246, 0.15)');
+                ellipse.setAttribute('stroke', '#8b5cf6');
+                ellipse.setAttribute('stroke-width', '2');
+                g.appendChild(ellipse);
+
+                // Storage icon
+                const iconY = containerY + 20;
+                const dbIcon = document.createElementNS('http://www.w3.org/2000/svg', 'g');
+                dbIcon.innerHTML = `
+                    <circle cx="${containerX + containerWidth/2}" cy="${iconY}" r="8" fill="#8b5cf6" opacity="0.3"/>
+                    <text x="${containerX + containerWidth/2}" y="${iconY}" font-size="10" fill="#6d28d9" font-weight="700" text-anchor="middle" dominant-baseline="middle">M</text>
+                `;
+                g.appendChild(dbIcon);
+
+                // Title
+                const title = this.text(containerX + containerWidth/2, containerY + 45, 'Experience', 8, '#6d28d9', '700');
+                g.appendChild(title);
+
+                const title2 = this.text(containerX + containerWidth/2, containerY + 57, '& Learning', 8, '#6d28d9', '700');
+                g.appendChild(title2);
+
+                // Storage items
+                const items = ['Action', 'Evaluation', 'Refinement'];
+                const itemY = containerY + 85;
+                const itemSpacing = 35;
+
+                items.forEach((label, i) => {
+                    const y = itemY + (i * itemSpacing);
+
+                    // Item background
+                    const itemBg = document.createElementNS('http://www.w3.org/2000/svg', 'rect');
+                    itemBg.setAttribute('x', containerX + 8);
+                    itemBg.setAttribute('y', y - 10);
+                    itemBg.setAttribute('width', containerWidth - 16);
+                    itemBg.setAttribute('height', 22);
+                    itemBg.setAttribute('rx', '4');
+                    itemBg.setAttribute('fill', 'rgba(139, 92, 246, 0.12)');
+                    g.appendChild(itemBg);
+
+                    // Item label
+                    const txt = this.text(containerX + containerWidth/2, y, label, 7, '#6d28d9', '600');
+                    g.appendChild(txt);
+
+                    // Small dot indicator
+                    g.appendChild(this.simpleCircle(containerX + 15, y, 2, '#8b5cf6', 'none', 0));
+                });
+
+                this.svg.appendChild(g);
+            }
+
+            // Helpers
+            createGroup(className) {
+                const g = document.createElementNS('http://www.w3.org/2000/svg', 'g');
+                g.setAttribute('class', className);
+                return g;
+            }
+
+            createPath(d, stroke, width, marker = null, animated = false, className = '', dasharray = null, opacity = 1) {
+                const path = document.createElementNS('http://www.w3.org/2000/svg', 'path');
+                path.setAttribute('d', d);
+                path.setAttribute('stroke', stroke);
+                path.setAttribute('stroke-width', width);
+                path.setAttribute('fill', 'none');
+                path.setAttribute('stroke-linecap', 'round');
+                if (marker) path.setAttribute('marker-end', marker);
+                if (animated) path.setAttribute('class', className || 'flow-path animated');
+                if (dasharray) path.setAttribute('stroke-dasharray', dasharray);
+                if (opacity !== 1) path.setAttribute('opacity', opacity);
+                return path;
+            }
+
+            line(x1, y1, x2, y2, stroke, width) {
+                const line = document.createElementNS('http://www.w3.org/2000/svg', 'line');
+                line.setAttribute('x1', x1);
+                line.setAttribute('y1', y1);
+                line.setAttribute('x2', x2);
+                line.setAttribute('y2', y2);
+                line.setAttribute('stroke', stroke);
+                line.setAttribute('stroke-width', width);
+                return line;
+            }
+
+            text(x, y, content, size, fill, weight = '400', transform = null) {
+                const text = document.createElementNS('http://www.w3.org/2000/svg', 'text');
+                text.setAttribute('x', x);
+                text.setAttribute('y', y);
+                text.setAttribute('font-size', size);
+                text.setAttribute('fill', fill);
+                text.setAttribute('font-weight', weight);
+                text.setAttribute('text-anchor', 'middle');
+                text.setAttribute('dominant-baseline', 'middle');
+                text.setAttribute('class', 'node-text');
+                if (transform) text.setAttribute('transform', transform);
+                text.textContent = content;
+                return text;
+            }
+
+            simpleCircle(cx, cy, r, fill, stroke, strokeWidth) {
+                const circle = document.createElementNS('http://www.w3.org/2000/svg', 'circle');
+                circle.setAttribute('cx', cx);
+                circle.setAttribute('cy', cy);
+                circle.setAttribute('r', r);
+                circle.setAttribute('fill', fill);
+                circle.setAttribute('stroke', stroke);
+                circle.setAttribute('stroke-width', strokeWidth);
+                return circle;
+            }
+
+            circleNode(cx, cy, r, fill, id, label, items = null, showGlow = false, stroke = null) {
+                const g = this.createGroup('node-group');
+                g.setAttribute('data-id', `${this.type}_${id}`);
+                if (items) g.setAttribute('data-items', JSON.stringify(items));
+
+                if (showGlow) {
+                    const glow = document.createElementNS('http://www.w3.org/2000/svg', 'circle');
+                    glow.setAttribute('cx', cx);
+                    glow.setAttribute('cy', cy);
+                    glow.setAttribute('r', r + 10);
+                    glow.setAttribute('fill', 'none');
+                    glow.setAttribute('stroke', '#db2777');
+                    glow.setAttribute('stroke-width', '3');
+                    glow.setAttribute('opacity', '0');
+                    glow.setAttribute('class', 'glow-effect');
+                    g.appendChild(glow);
+                }
+
+                const circle = document.createElementNS('http://www.w3.org/2000/svg', 'circle');
+                circle.setAttribute('cx', cx);
+                circle.setAttribute('cy', cy);
+                circle.setAttribute('r', r);
+                circle.setAttribute('fill', fill);
+                if (stroke) {
+                    circle.setAttribute('stroke', stroke);
+                    circle.setAttribute('stroke-width', '2');
+                }
+                g.appendChild(circle);
+
+                const textColor = stroke ? '#1f2937' : 'white';
+                g.appendChild(this.text(cx, cy, label, r < 32 ? 8 : 12, textColor, '600'));
+
+                return g;
+            }
+
+            polygonNode(points, fill, id, label, sublabel = '', stroke = null, textColor = 'white') {
+                const g = this.createGroup('node-group');
+                g.setAttribute('data-id', `${this.type}_${id}`);
+
+                const polygon = document.createElementNS('http://www.w3.org/2000/svg', 'polygon');
+                polygon.setAttribute('points', points);
+                polygon.setAttribute('fill', fill);
+                if (stroke) {
+                    polygon.setAttribute('stroke', stroke);
+                    polygon.setAttribute('stroke-width', '2');
+                }
+                g.appendChild(polygon);
+
+                const pts = points.split(' ').map(p => p.split(',').map(Number));
+                const cx = pts.reduce((s, p) => s + p[0], 0) / pts.length;
+                const cy = pts.reduce((s, p) => s + p[1], 0) / pts.length;
+
+                const labelSize = label.length > 14 ? 8 : 10;
+                g.appendChild(this.text(cx, sublabel ? cy - 7 : cy, label, labelSize, textColor, '600'));
+                if (sublabel) {
+                    g.appendChild(this.text(cx, cy + 8, sublabel, labelSize, textColor === 'white' ? 'rgba(255,255,255,0.8)' : '#78716c', '600'));
+                }
+
+                return g;
+            }
+
+            rectNode(x, y, w, h, rx, fill, id, label, items = null, sublabel = '') {
+                const g = this.createGroup('node-group');
+                g.setAttribute('data-id', `${this.type}_${id}`);
+                if (items && items.length) g.setAttribute('data-items', JSON.stringify(items));
+
+                const rect = document.createElementNS('http://www.w3.org/2000/svg', 'rect');
+                rect.setAttribute('x', x);
+                rect.setAttribute('y', y);
+                rect.setAttribute('width', w);
+                rect.setAttribute('height', h);
+                rect.setAttribute('rx', rx);
+                rect.setAttribute('fill', fill);
+                g.appendChild(rect);
+
+                g.appendChild(this.text(x + w/2, sublabel ? y + h/2 - 8 : y + h/2, label, 11, 'white', '600'));
+                if (sublabel) {
+                    g.appendChild(this.text(x + w/2, y + h/2 + 8, sublabel, 9, 'rgba(255,255,255,0.8)', '400'));
+                }
+
+                return g;
+            }
+
+            hexPoints(cx, cy, r) {
+                const pts = [];
+                for (let i = 0; i < 6; i++) {
+                    const angle = (Math.PI / 3) * i - Math.PI / 2;
+                    pts.push(`${(cx + r * Math.cos(angle)).toFixed(1)},${(cy + r * Math.sin(angle)).toFixed(1)}`);
+                }
+                return pts.join(' ');
+            }
+
+            setActive(stageId) {
+                // Clear previous active states
+                this.svg.querySelectorAll('.node-group.active').forEach(n => n.classList.remove('active'));
+                this.svg.querySelectorAll('.path-active').forEach(p => p.classList.remove('path-active'));
+
+                // Set active node
+                const node = this.svg.querySelector(`[data-id="${this.type}_${stageId}"]`);
+                if (node) {
+                    node.classList.add('active');
+
+                    // Highlight active path based on stage
+                    const pathMap = {
+                        'input': 'path-input-processor',
+                        'processor': 'path-processor-hypothesis',
+                        'hypothesis': ['path-hypothesis-sys2', 'path-hypothesis-sys1'],
+                        'system2': 'path-triangle-reflection',
+                        'system1': 'path-triangle-reflection',
+                        'reflection': ['path-reflection-planning', 'path-reflection-collection'],
+                        'planning': null,
+                        'collection': null,
+                        'finalized': null,
+                        'seeking': null
+                    };
+
+                    const pathIds = pathMap[stageId];
+                    if (pathIds) {
+                        const ids = Array.isArray(pathIds) ? pathIds : [pathIds];
+                        ids.forEach(pathId => {
+                            const path = this.svg.querySelector(`#${pathId}`);
+                            if (path) {
+                                path.classList.add('path-active');
+                            }
+                        });
+                    }
+                }
+            }
+        }
+
+        // ============================================
+        // ANIMATION CONTROLLER
+        // ============================================
+
+        class AnimationController {
+            constructor() {
+                this.cdmRenderer = null;
+                this.pdmRenderer = null;
+                this.isPlaying = false;
+                this.isSynced = false;
+                this.speed = 1;
+                this.stageIndex = 0;
+                this.loopCount = 1;
+                this.timeout = null;
+
+                this.stages = [
+                    { id: 'input', label: 'Input Integration', duration: 1600 },
+                    { id: 'processor', label: 'Data Processing', duration: 2000 },
+                    { id: 'hypothesis', label: 'Hypothesis Formation', duration: 1800 },
+                    { id: 'system2', label: 'System II: Analytical', duration: 2200 },
+                    { id: 'system1', label: 'System I: Intuition', duration: 1800 },
+                    { id: 'reflection', label: 'Reflection', duration: 2500 },
+                    { id: 'decision', label: 'Decision Point', duration: 1200 }
+                ];
+
+                this.init();
+            }
+
+            init() {
+                // Check if SVG elements exist before initializing
+                const cdmSvg = document.getElementById('cdmSvg');
+                const pdmSvg = document.getElementById('pdmSvg');
+
+                if (!cdmSvg || !pdmSvg) {
+                    console.warn('Decision making SVG elements not found. Skipping initialization.');
+                    return;
+                }
+
+                this.cdmRenderer = new FlowRenderer(cdmSvg, CDM_DATA, 'cdm');
+                this.pdmRenderer = new FlowRenderer(pdmSvg, PDM_DATA, 'pdm');
+
+                this.populateLegend();
+                this.setupControls();
+                this.setupTooltips();
+
+                lucide.createIcons();
+                this.play();
+            }
+
+            populateLegend() {
+                const grid = document.getElementById('legendGrid');
+                if (!grid) return;
+
+                LEGEND_DATA.forEach(item => {
+                    grid.innerHTML += `
+                        <div class="legend-item">
+                            <div class="legend-swatch" style="background:${item.color}"></div>
+                            <span class="legend-label">${item.label}</span>
+                        </div>
+                    `;
+                });
+            }
+
+            setupControls() {
+                const playBtn = document.getElementById('playBtn');
+                const pauseBtn = document.getElementById('pauseBtn');
+                const resetBtn = document.getElementById('resetBtn');
+                const syncBtn = document.getElementById('syncBtn');
+                const interactionHub = document.getElementById('interactionHub');
+                const speedSlider = document.getElementById('speedSlider');
+
+                if (playBtn) playBtn.onclick = () => this.play();
+                if (pauseBtn) pauseBtn.onclick = () => this.pause();
+                if (resetBtn) resetBtn.onclick = () => this.reset();
+                if (syncBtn) syncBtn.onclick = () => this.toggleSync();
+                if (interactionHub) interactionHub.onclick = () => this.toggleSync();
+                if (speedSlider) speedSlider.oninput = (e) => this.speed = parseFloat(e.target.value);
+            }
+
+            setupTooltips() {
+                const tooltip = document.getElementById('dmTooltip');
+                if (!tooltip) return;
+
+                document.querySelectorAll('.node-group').forEach(node => {
+                    node.addEventListener('mouseenter', () => {
+                        const id = node.getAttribute('data-id');
+                        const items = node.getAttribute('data-items');
+
+                        if (id) {
+                            const label = id.split('_').slice(1).join(' ').replace(/_/g, ' ').replace(/\b\w/g, l => l.toUpperCase());
+                            const header = tooltip.querySelector('.dm-tooltip-header');
+                            if (header) header.textContent = label;
+
+                            const list = tooltip.querySelector('.dm-tooltip-list');
+                            if (list) {
+                                list.innerHTML = '';
+                                if (items) {
+                                    JSON.parse(items).forEach(item => {
+                                        list.innerHTML += `<li>${item}</li>`;
+                                    });
+                                }
+                            }
+
+                            tooltip.classList.add('visible');
+                        }
+                    });
+
+                    node.addEventListener('mousemove', (e) => {
+                        tooltip.style.left = e.clientX + 15 + 'px';
+                        tooltip.style.top = e.clientY + 15 + 'px';
+                    });
+
+                    node.addEventListener('mouseleave', () => {
+                        tooltip.classList.remove('visible');
+                    });
+                });
+            }
+
+            play() {
+                this.isPlaying = true;
+                this.updateButtons();
+                this.runAnimation();
+            }
+
+            pause() {
+                this.isPlaying = false;
+                this.updateButtons();
+                clearTimeout(this.timeout);
+            }
+
+            reset() {
+                this.pause();
+                this.stageIndex = 0;
+                this.loopCount = 1;
+                this.updateLoops();
+                this.updateStage('Awaiting Input');
+                if (this.cdmRenderer) this.cdmRenderer.setActive('input');
+                if (this.pdmRenderer) this.pdmRenderer.setActive('input');
+            }
+
+            toggleSync() {
+                this.isSynced = !this.isSynced;
+                const interactionHub = document.getElementById('interactionHub');
+                const syncBtn = document.getElementById('syncBtn');
+                if (interactionHub) interactionHub.classList.toggle('synced', this.isSynced);
+                if (syncBtn) syncBtn.classList.toggle('active', this.isSynced);
+            }
+
+            updateButtons() {
+                const playBtn = document.getElementById('playBtn');
+                const pauseBtn = document.getElementById('pauseBtn');
+                if (playBtn) playBtn.classList.toggle('active', this.isPlaying);
+                if (pauseBtn) pauseBtn.classList.toggle('active', !this.isPlaying);
+            }
+
+            runAnimation() {
+                if (!this.isPlaying) return;
+
+                const stage = this.stages[this.stageIndex];
+                this.updateStage(stage.label);
+                if (this.cdmRenderer) this.cdmRenderer.setActive(stage.id);
+
+                if (this.isSynced) {
+                    if (this.pdmRenderer) this.pdmRenderer.setActive(stage.id);
+                } else {
+                    setTimeout(() => {
+                        if (this.isPlaying && this.pdmRenderer) this.pdmRenderer.setActive(stage.id);
+                    }, 350);
+                }
+
+                if (stage.id === 'decision') {
+                    const shouldLoop = this.loopCount < 4 && Math.random() > 0.55;
+
+                    if (shouldLoop) {
+                        this.loopCount++;
+                        this.updateLoops();
+                        this.stageIndex = 1;
+                        this.updateStage('Iterating: Re-processing');
+                    } else {
+                        const goToPlanning = Math.random() > 0.35;
+
+                        if (goToPlanning) {
+                            if (this.cdmRenderer) this.cdmRenderer.setActive('planning');
+                            if (this.pdmRenderer) this.pdmRenderer.setActive('finalized');
+                            this.updateStage('Action: Planning Complete');
+
+                            this.timeout = setTimeout(() => {
+                                this.reset();
+                                this.play();
+                            }, 5000 / this.speed);
+                            return;
+                        } else {
+                            if (this.cdmRenderer) this.cdmRenderer.setActive('collection');
+                            if (this.pdmRenderer) this.pdmRenderer.setActive('seeking');
+                            this.updateStage('Collecting More Data');
+
+                            this.timeout = setTimeout(() => {
+                                this.loopCount++;
+                                if (this.loopCount > 4) this.loopCount = 1;
+                                this.updateLoops();
+                                this.stageIndex = 0;
+                                if (this.isPlaying) this.runAnimation();
+                            }, 2500 / this.speed);
+                            return;
+                        }
+                    }
+                } else {
+                    this.stageIndex = (this.stageIndex + 1) % this.stages.length;
+                }
+
+                this.timeout = setTimeout(() => {
+                    if (this.isPlaying) this.runAnimation();
+                }, stage.duration / this.speed);
+            }
+
+            updateStage(label) {
+                const cdmStageText = document.getElementById('cdmStageText');
+                const pdmStageText = document.getElementById('pdmStageText');
+                if (cdmStageText) cdmStageText.textContent = label;
+                if (pdmStageText) pdmStageText.textContent = label;
+            }
+
+            updateLoops() {
+                ['cdm', 'pdm'].forEach(type => {
+                    const dots = document.querySelectorAll(`#${type}LoopDots .loop-dot`);
+                    dots.forEach((dot, i) => {
+                        dot.classList.toggle('active', i < this.loopCount);
+                    });
+                });
+            }
+        }
+
+        document.addEventListener('DOMContentLoaded', () => {
+            new AnimationController();
+        });
+    </script>
 </body>
 </html>

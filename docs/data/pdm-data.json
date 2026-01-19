@@ -1,0 +1,179 @@
+{
+  "id": "pdm",
+  "title": "Patient Decision Making",
+  "description": "The patient's cognitive journey: processing clinical information through personal values, social context, and lived experience toward informed preference.",
+  
+  "colors": {
+    "primary": "#0ea5e9",
+    "secondary": "#06b6d4",
+    "tertiary": "#0891b2",
+    "light": "#e0f2fe",
+    "input": "#0284c7"
+  },
+  
+  "inputs": {
+    "main": {
+      "id": "input",
+      "label": "Input",
+      "color": "#0ea5e9",
+      "description": "Central hub receiving all information relevant to patient's decision"
+    },
+    "categories": [
+      {
+        "id": "relationship",
+        "label": "Clinician-Patient Relationship Factors",
+        "color": "#7dd3fc",
+        "position": { "x": 250, "y": 38 },
+        "items": [
+          "Trust & Rapport",
+          "Communication Skills & Barriers"
+        ]
+      },
+      {
+        "id": "info_sources",
+        "label": "Other Information Sources",
+        "color": "#7dd3fc",
+        "position": { "x": 105, "y": 90 },
+        "items": [
+          "Digital Sources (e.g., social media & internet)",
+          "Social Networks and Community Resources",
+          "Verified / Official / Institutional Sources"
+        ]
+      },
+      {
+        "id": "clinical_info",
+        "label": "Clinical Information",
+        "color": "#7dd3fc",
+        "position": { "x": 395, "y": 90 },
+        "items": [
+          "Diagnosis and Disease Course",
+          "Debilitation and Prognosis",
+          "Available Options for a Decision"
+        ]
+      }
+    ]
+  },
+  
+  "processor": {
+    "id": "processor",
+    "label": "Data Processor",
+    "color": "#0891b2",
+    "description": "Personal context, capacity, and individual factors shaping information processing",
+    "knowledge": [
+      {
+        "id": "competence",
+        "label": "Decision Competence",
+        "sublabel": "& Autonomy",
+        "description": "Cognitive capacity and ability to make independent decisions"
+      },
+      {
+        "id": "affect",
+        "label": "Affect and Bodily",
+        "sublabel": "States",
+        "description": "Emotional state, physical symptoms, and embodied experience"
+      },
+      {
+        "id": "values",
+        "label": "Values, Social Identity",
+        "sublabel": "& Norms",
+        "description": "Personal values, cultural identity, and social expectations"
+      },
+      {
+        "id": "healthcare_exp",
+        "label": "Previous Healthcare",
+        "sublabel": "and Disease Experience",
+        "description": "Past encounters with the healthcare system and illness"
+      },
+      {
+        "id": "support",
+        "label": "Social & Economic",
+        "sublabel": "Support",
+        "description": "Family support, financial resources, social network"
+      },
+      {
+        "id": "literacy",
+        "label": "Health Literacy",
+        "sublabel": "",
+        "description": "Ability to understand and use health information"
+      }
+    ]
+  },
+  
+  "hypothesis": {
+    "id": "hypothesis",
+    "label": "Hypothesis",
+    "color": "#fbbf24",
+    "description": "Initial understanding and emerging preference - the central concept mediating patient's cognitive processing",
+    "shape": "triangle"
+  },
+  
+  "systems": {
+    "system1": {
+      "id": "system1",
+      "label": "System I",
+      "sublabel": "Intuition",
+      "color": "#ec4899",
+      "description": "Gut feeling, emotional response, instinctive reaction to information",
+      "position": "right"
+    },
+    "system2": {
+      "id": "system2",
+      "label": "System II",
+      "sublabel": "Analytical",
+      "color": "#14b8a6",
+      "description": "Careful consideration of options, weighing pros and cons, deliberate reasoning",
+      "position": "left"
+    },
+    "reflection": {
+      "id": "reflection",
+      "label": "Reflection",
+      "color": "#8b5cf6",
+      "description": "Personal value alignment and preference crystallization - bidirectional exchange between intuitive and analytical processing"
+    }
+  },
+  
+  "outputs": {
+    "planning": {
+      "id": "finalized",
+      "label": "Finalized Preference",
+      "color": "#111827",
+      "description": "Communicated decision when patient reaches clarity",
+      "items": [
+        "Communicating the decision with the care provider"
+      ]
+    },
+    "collection": {
+      "id": "seeking",
+      "label": "Information Seeking",
+      "color": "#111827",
+      "description": "Request additional information when uncertainty remains",
+      "items": [
+        "Request more details from provider",
+        "Seek second opinion",
+        "Research options independently",
+        "Consult family and friends"
+      ],
+      "loopback": "Returns to Input - new information updates understanding"
+    }
+  },
+  
+  "refinement": {
+    "description": "Continuous iterative loop on the side",
+    "stages": [
+      "Refinement",
+      "Evaluation",
+      "Action Generation"
+    ]
+  },
+  
+  "communication": {
+    "label": "Communicating the decision with the care provider",
+    "description": "Final step where patient preference is shared with the clinical team"
+  },
+  
+  "flowDescription": {
+    "overview": "Information flows from Inputs through the Data Processor to form a Hypothesis (initial understanding/preference). The Hypothesis mediates bidirectional exchange between three processor engines: Data Processor, System I (Intuition), and System II (Analytical). System I and II engage in Reflection (bidirectional evaluation). This cycle may iterate 2-4 times.",
+    "decisionPoint": "At Reflection, the preference is either: (1) CRYSTALLIZED → proceeds to Finalized Preference, (2) NEEDS REVISION → loops back to Data Processor, or (3) NEEDS MORE INFO → proceeds to Information Seeking which returns new data to Input.",
+    "patientSpecific": "Unlike clinician decision-making, patient processing is heavily influenced by values, social identity, emotional states, and health literacy. The output is a preference rather than a clinical action plan."
+  }
+}

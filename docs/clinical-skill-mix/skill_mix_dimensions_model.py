@@ -1,7 +1,8 @@
 #!/usr/bin/env python3
 """
-Pydantic models for Clinical Skill-Mix dimensions
-Hierarchical path-based structure with flexible depth selection
+Pydantic models for Clinical Skill-Mix components
+Hierarchical path-based structure for the Clinical Skill-Mix Cube
+Five constituent elements: Disease, Stage, Location, Task, Persona
 """
 
 from datetime import date
@@ -26,7 +27,14 @@ class ResourceLevel(str, Enum):
     RICH = "rich"
 
 class DimensionType(str, Enum):
-    """Types of skill-mix dimensions"""
+    """Types of skill-mix components (Clinical Skill-Mix Cube elements)"""
+    TASK = "task"  # Cognitive tasks for AI augmentation/automation
+    PERSONA = "persona"  # Caregiver persona (role and expertise level)
+    DISEASE = "disease"  # Disease list (GBD taxonomy, ICD-11)
+    STAGE = "stage"  # Disease stage (temporal dimension of illness)
+    LOCATION = "location"  # Location of care (care settings)
+
+    # Legacy aliases for backward compatibility
     TASK_SKILLS = "task-skills"
     PERSONAS = "personas"
     DISEASES = "diseases"
@@ -38,7 +46,7 @@ class DimensionType(str, Enum):
 # =============================================================================
 
 class ReferenceInfo(BaseModel):
-    """Standard reference information for evidence-based dimensions"""
+    """Standard reference information for evidence-based components"""
     classification: Optional[str] = Field(None, description="Primary classification system used")
     burden_metric: Optional[str] = Field(None, description="Burden or importance metric used")
     data_source: Optional[str] = Field(None, description="Primary data source")
@@ -123,25 +131,29 @@ class DimensionItem(BaseModel):
         return self.level_info.get(level, {}).get('name')
 
 # =============================================================================
-# Unified Dimension Structure
+# Unified Component Structure (Clinical Skill-Mix Cube Elements)
 # =============================================================================
 
 class SkillMixDimension(BaseModel):
-    """Unified structure for all skill-mix dimensions with hierarchical support"""
-    
+    """Unified structure for all Clinical Skill-Mix components with hierarchical support
+
+    Represents one element of the Clinical Skill-Mix Cube: Disease, Stage, Location, Task, or Persona.
+    Each component contributes to the multidimensional space where N_D × N_S × N_L × N_T × N_P = N_Total.
+    """
+
     # Core identification
-    dimension: DimensionType = Field(..., description="Dimension type identifier")
-    description: str = Field(..., description="Brief description of the dimension")
-    
+    dimension: DimensionType = Field(..., description="Component type identifier (dimension field for backward compatibility)")
+    description: str = Field(..., description="Brief description of the component")
+
     # Reference and structure information
     reference: Optional[ReferenceInfo] = Field(None, description="Reference and citation information")
     hierarchy: HierarchyInfo = Field(..., description="Hierarchical structure information")
-    
+
     # Hierarchical items (all levels flattened with path information)
     items: List[DimensionItem] = Field(..., description="All items with hierarchical path information")
-    
-    # Dimension-specific global metadata
-    dimension_metadata: Dict[str, Any] = Field(default_factory=dict, description="Global dimension metadata")
+
+    # Component-specific global metadata
+    dimension_metadata: Dict[str, Any] = Field(default_factory=dict, description="Global component metadata")
     
     @validator('items')
     def items_not_empty(cls, v):
@@ -153,7 +165,7 @@ class SkillMixDimension(BaseModel):
     def unique_item_ids(cls, v):
         ids = [item.id for item in v]
         if len(ids) != len(set(ids)):
-            raise ValueError('Item IDs must be unique within dimension')
+            raise ValueError('Item IDs must be unique within component')
         return v
     
     @validator('items')
@@ -241,20 +253,23 @@ def expand_to_depth(dimension: SkillMixDimension, item_id: str, target_depth: in
         return []  # Item is deeper than target
 
 # =============================================================================
-# Multi-Dimensional Operations with Depth Control
+# Clinical Skill-Mix Cube Operations (Multi-Component Combinations)
 # =============================================================================
 
 def multiply_dimensions_at_depth(
     *dimension_depth_pairs: Tuple[SkillMixDimension, int]
 ) -> List[Dict[str, DimensionItem]]:
     """
-    Multiply dimensions at specified depth levels
-    
+    Multiply Clinical Skill-Mix components at specified depth levels to create Cube cells
+
+    Combines components: N_D × N_S × N_L × N_T × N_P = N_Total
+    Each resulting cell represents a specific clinical scenario.
+
     Args:
-        dimension_depth_pairs: Tuples of (dimension, depth_level)
-        
+        dimension_depth_pairs: Tuples of (component, depth_level)
+
     Returns:
-        List of combination dictionaries
+        List of combination dictionaries representing Cube cells
     """
     if not dimension_depth_pairs:
         return []
@@ -282,17 +297,19 @@ def multiply_dimensions_flexible_depth(
     dimension_specs: List[Dict[str, Any]]
 ) -> List[Dict[str, DimensionItem]]:
     """
-    Multiply dimensions with flexible depth specifications
-    
+    Multiply Clinical Skill-Mix components with flexible depth specifications
+
+    Creates Clinical Skill-Mix Cube cells with customizable component selections.
+
     Args:
         dimension_specs: List of specs, each containing:
-            - dimension: SkillMixDimension
+            - dimension: SkillMixDimension (component)
             - depth: int (optional, default: max depth)
             - filter_ids: List[str] (optional, filter to specific item IDs)
             - parent_id: str (optional, only descendants of this item)
-    
+
     Returns:
-        List of combination dictionaries
+        List of combination dictionaries representing Cube cells
     """
     dimension_items = []
     dimension_names = []
@@ -327,7 +344,7 @@ def multiply_dimensions_flexible_depth(
     return combinations
 
 # =============================================================================
-# Helper Functions for Building Hierarchical Dimensions
+# Helper Functions for Building Hierarchical Components
 # =============================================================================
 
 def build_hierarchical_items(

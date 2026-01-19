@@ -1,0 +1,182 @@
+{
+  "id": "cdm",
+  "title": "Clinician Decision Making",
+  "description": "The physician's cognitive architecture: integrating clinical data, knowledge, and experience through dual-process reasoning toward diagnosis and treatment.",
+  
+  "colors": {
+    "primary": "#c026d3",
+    "secondary": "#a855f7",
+    "tertiary": "#7c3aed",
+    "light": "#fae8ff",
+    "input": "#db2777"
+  },
+  
+  "inputs": {
+    "main": {
+      "id": "input",
+      "label": "Input",
+      "color": "#db2777",
+      "description": "Central hub receiving all incoming clinical information"
+    },
+    "categories": [
+      {
+        "id": "clinic_data",
+        "label": "Clinic Data",
+        "color": "#f9a8d4",
+        "position": { "x": 90, "y": 85 },
+        "items": [
+          "Verbal Communication",
+          "Clinician Sense/Flow",
+          "Physical Interaction",
+          "Clinical Documentation"
+        ]
+      },
+      {
+        "id": "clinic_context",
+        "label": "Clinic Context",
+        "color": "#f9a8d4",
+        "position": { "x": 160, "y": 45 },
+        "items": [
+          "Resources (team dynamics, equipment, time)",
+          "Routines (legal authority, national guidelines)",
+          "Preference"
+        ]
+      },
+      {
+        "id": "patient_context",
+        "label": "Patient Context",
+        "color": "#f9a8d4",
+        "position": { "x": 340, "y": 45 },
+        "items": [
+          "Socio-economic Status"
+        ]
+      },
+      {
+        "id": "paraclinic_data",
+        "label": "Para-clinic Data",
+        "color": "#f9a8d4",
+        "position": { "x": 410, "y": 85 },
+        "items": [
+          "Labs",
+          "Images",
+          "Diagnostic Procedures"
+        ]
+      }
+    ]
+  },
+  
+  "processor": {
+    "id": "processor",
+    "label": "Data Processor",
+    "color": "#7c3aed",
+    "description": "Integration of knowledge, experience, and context",
+    "knowledge": [
+      {
+        "id": "official",
+        "label": "Official Knowledge",
+        "sublabel": "(e.g., textbooks)",
+        "description": "Formal medical education, textbooks, peer-reviewed literature"
+      },
+      {
+        "id": "unofficial",
+        "label": "Unofficial Knowledge",
+        "sublabel": "(e.g., peers)",
+        "description": "Tacit knowledge from colleagues, mentors, case discussions"
+      },
+      {
+        "id": "experience",
+        "label": "Clinical Experience",
+        "sublabel": "& Encounters",
+        "description": "Pattern recognition from past patient encounters"
+      },
+      {
+        "id": "personal",
+        "label": "Clinician Personal",
+        "sublabel": "Context",
+        "description": "Individual background, biases, emotional state"
+      }
+    ]
+  },
+  
+  "hypothesis": {
+    "id": "hypothesis",
+    "label": "Hypothesis",
+    "color": "#fbbf24",
+    "description": "Working diagnostic hypothesis - the central organizing concept mediating between all three processor engines",
+    "shape": "triangle"
+  },
+  
+  "systems": {
+    "system1": {
+      "id": "system1",
+      "label": "System I",
+      "sublabel": "Clinical Intuition",
+      "color": "#0ea5e9",
+      "description": "Fast, automatic, pattern-based reasoning. Relies on heuristics and pattern recognition from experience.",
+      "position": "right"
+    },
+    "system2": {
+      "id": "system2",
+      "label": "System II",
+      "sublabel": "Analytical",
+      "color": "#6366f1",
+      "description": "Slow, deliberate, logical reasoning. Systematic analysis of evidence and probabilities.",
+      "position": "left",
+      "extras": [
+        "Hypothesis Impact",
+        "Decision Breakdown"
+      ]
+    },
+    "reflection": {
+      "id": "reflection",
+      "label": "Reflection",
+      "color": "#10b981",
+      "description": "Critical evaluation and metacognition - bidirectional exchange between System I and System II"
+    }
+  },
+  
+  "outputs": {
+    "planning": {
+      "id": "planning",
+      "label": "Planning",
+      "color": "#f59e0b",
+      "description": "Action plan formulation when hypothesis is confirmed",
+      "items": [
+        "Diagnosis",
+        "Treatment",
+        "Monitor",
+        "Referral",
+        "Assurance"
+      ]
+    },
+    "collection": {
+      "id": "collection",
+      "label": "Collection",
+      "color": "#4f46e5",
+      "description": "Gather additional information when uncertainty remains",
+      "items": [
+        "Ask and interact with patient",
+        "Check system (EHR) and history",
+        "Request an investigation and test",
+        "Ask staff or consult a provider",
+        "Look for knowledge (e.g., guideline)"
+      ],
+      "loopback": "Returns to Input - new data changes the input information"
+    }
+  },
+  
+  "refinement": {
+    "description": "Continuous iterative loop on the side",
+    "stages": [
+      "Refinement",
+      "Evaluation", 
+      "Action Generation"
+    ]
+  },
+  
+  "flowDescription": {
+    "overview": "Information flows from Inputs through the Data Processor to form a Hypothesis. The Hypothesis mediates bidirectional exchange between three processor engines: Data Processor, System I (Intuition), and System II (Analytical). System I and II engage in Reflection (bidirectional evaluation). This cycle may iterate 2-4 times before reaching Reflection checkpoint.",
+    "decisionPoint": "At Reflection, the hypothesis is either: (1) ACCEPTED → proceeds to Planning, (2) REJECTED → loops back to Data Processor for re-processing, or (3) UNCERTAIN → proceeds to Collection which returns new data to Input.",
+    "timing": "Planning completion triggers a 5-second pause before the cycle restarts."
+  }
+}

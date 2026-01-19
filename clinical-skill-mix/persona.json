@@ -1,5 +1,5 @@
 {
-  "dimension": "personas",
+  "dimension": "persona",
   "description": "Healthcare provider roles based on WHO health worker classification with ISCO codes",
   "reference": {
     "classification": "WHO Health Worker Classification and ISCO-08 Standards",
@@ -20,6 +20,22 @@
       "specialty"
     ],
     "max_depth": 1
+  },
+  "statistics": {
+    "total_personas": 86,
+    "clinicians": {
+      "count": 37,
+      "description": "Medical practitioners (generalist and specialist physicians)",
+      "parent_groups": ["generalist-medical-practitioners", "specialist-medical-practitioners"],
+      "skill_mix_cells": 17665872
+    },
+    "healthcare_workers": {
+      "count": 49,
+      "description": "Other healthcare professionals and support workers",
+      "skill_mix_cells": 23395344
+    },
+    "total_skill_mix_cells": 41061216,
+    "calculation_note": "Total Clinical Skill-Mix Cells = Diseases (98) × Stages (7) × Locations (12) × Tasks (58) × Personas (86)"
   },
   "items": [
     {

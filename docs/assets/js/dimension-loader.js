@@ -191,15 +191,19 @@ function getSelectedViewMode() {
  */
 function renderHierarchicalView(container, data) {
     const hierarchyDiv = createElement('div', 'hierarchy-view');
-    
+    hierarchyDiv.setAttribute('data-dimension', data.dimension);
+
     // Create header
     const header = createElement('div', 'hierarchy-header');
+    const frameworkInfo = data.reference && data.reference.classification ?
+        `<span class="stat-chip framework-chip">Grounded Framework: ${data.reference.classification}</span>` : '';
     header.innerHTML = `
         <h4>${data.description}</h4>
         <div class="hierarchy-stats">
             <span class="stat-chip">Items: ${data.statistics.totalItems}</span>
             <span class="stat-chip">Max Depth: ${data.maxDepth}</span>
             <span class="stat-chip">Leaf Nodes: ${data.statistics.leafNodes}</span>
+            ${frameworkInfo}
         </div>
     `;
     hierarchyDiv.appendChild(header);
@@ -292,23 +296,23 @@ function toggleNodeExpansion(nodeDiv, childrenContainer) {
  */
 function getNodeIcon(item, dimension) {
     const icons = {
-        'task-skills': {
+        'task': {
             0: '🎯', // domains
-            1: '⚡'  // skills
+            1: '⚡'  // competencies
         },
-        'personas': {
+        'persona': {
             0: '👤', // roles
-            1: '📋'  // characteristics
+            1: '📋'  // specialties
         },
-        'diseases': {
+        'disease': {
             0: '📚', // chapters
             1: '🔬'  // conditions
         },
-        'timeline': {
-            0: '⏰', // states
+        'stage': {
+            0: '⏰', // stages
             1: '➡️'  // transitions
         },
-        'location-resources': {
+        'location': {
             0: '🏥', // locations
             1: '⚙️'  // resource levels
         }
@@ -364,7 +368,8 @@ function shouldShowReferences() {
  */
 function renderListView(container, data) {
     const listDiv = createElement('div', 'list-view');
-    
+    listDiv.setAttribute('data-dimension', data.dimension);
+
     // Create header
     const header = createElement('div', 'list-header');
     header.innerHTML = `

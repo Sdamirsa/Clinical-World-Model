@@ -1,0 +1,266 @@
+{
+  "dimension": "stage",
+  "description": "Disease stage represents the temporal dimension of illness, characterized through seven milestones and six actionable stages spanning the continuum from health through pathologic process, illness manifestation, diagnosis, treatment, follow-up, to final outcomes. Patients may occupy multiple positions simultaneously.",
+  "reference": {
+    "classification": "Disease Stage Framework: Seven Milestones and Six Actionable Stages",
+    "burden_metric": "Clinical significance across patient journey",
+    "data_source": "Clinical pathophysiology and patient journey models",
+    "last_updated": "2025-01-30",
+    "sources": [
+      "Seven Milestones: Health → Pathologic process → Illness manifestation → Diagnosis → Treatment → Follow-up → (Cure/Disability/Death)",
+      "Six Actionable Stages: At-risk identification, Pre-symptomatic detection, Diagnostic workup, Treatment planning, Post-treatment care, Longitudinal follow-up/coping",
+      "SEIPS Framework: Systems Engineering Initiative for Patient Safety",
+      "Clinical pathway and patient journey frameworks"
+    ]
+  },
+  "hierarchy": {
+    "structure": "Seven disease stage milestones with actionable intervention points",
+    "levels": [
+      "stage"
+    ],
+    "max_depth": 0
+  },
+  "items": [
+    {
+      "id": "at-risk",
+      "path_components": [
+        "at-risk"
+      ],
+      "depth": 0,
+      "parent_id": null,
+      "children_ids": [],
+      "name": "At-Risk Identification",
+      "description": "Identification of individuals at increased risk before disease manifestation",
+      "level_info": {
+        "0": {
+          "name": "At-Risk Identification",
+          "level_name": "Actionable Stage"
+        }
+      },
+      "metadata": {
+        "milestone": "Health → Pathologic process",
+        "interventions": [
+          "Risk assessment",
+          "Primary prevention",
+          "Lifestyle modification"
+        ],
+        "typical_locations": [
+          "Community",
+          "Clinic",
+          "Tele-medicine"
+        ],
+        "reversible": true,
+        "temporal_position": 1,
+        "note": "Patients may occupy multiple stages simultaneously"
+      }
+    },
+    {
+      "id": "pre-symptomatic",
+      "path_components": [
+        "pre-symptomatic"
+      ],
+      "depth": 0,
+      "parent_id": null,
+      "children_ids": [],
+      "name": "Pre-Symptomatic Detection",
+      "description": "Detection of pathologic process before symptom manifestation",
+      "level_info": {
+        "0": {
+          "name": "Pre-Symptomatic Detection",
+          "level_name": "Actionable Stage"
+        }
+      },
+      "metadata": {
+        "milestone": "Pathologic process → Illness manifestation",
+        "interventions": [
+          "Screening",
+          "Early detection",
+          "Biomarker monitoring"
+        ],
+        "typical_locations": [
+          "Clinic",
+          "Diagnostic facility",
+          "Community"
+        ],
+        "reversible": true,
+        "temporal_position": 2,
+        "note": "Patients may occupy multiple stages simultaneously"
+      }
+    },
+    {
+      "id": "diagnostic-workup",
+      "path_components": [
+        "diagnostic-workup"
+      ],
+      "depth": 0,
+      "parent_id": null,
+      "children_ids": [],
+      "name": "Diagnostic Workup",
+      "description": "Comprehensive evaluation to establish diagnosis after illness manifestation",
+      "level_info": {
+        "0": {
+          "name": "Diagnostic Workup",
+          "level_name": "Actionable Stage"
+        }
+      },
+      "metadata": {
+        "milestone": "Illness manifestation → Diagnosis",
+        "interventions": [
+          "Diagnostic testing",
+          "Imaging",
+          "Clinical evaluation",
+          "Differential diagnosis"
+        ],
+        "typical_locations": [
+          "Emergency room",
+          "Clinic",
+          "Diagnostic facility",
+          "Ward"
+        ],
+        "reversible": false,
+        "temporal_position": 3,
+        "note": "Patients may occupy multiple stages simultaneously"
+      }
+    },
+    {
+      "id": "treatment-planning",
+      "path_components": [
+        "treatment-planning"
+      ],
+      "depth": 0,
+      "parent_id": null,
+      "children_ids": [],
+      "name": "Treatment Planning",
+      "description": "Development of therapeutic strategy following diagnosis",
+      "level_info": {
+        "0": {
+          "name": "Treatment Planning",
+          "level_name": "Actionable Stage"
+        }
+      },
+      "metadata": {
+        "milestone": "Diagnosis → Treatment",
+        "interventions": [
+          "Treatment selection",
+          "Shared decision-making",
+          "Risk-benefit analysis",
+          "Resource allocation"
+        ],
+        "typical_locations": [
+          "Clinic",
+          "Ward",
+          "Tele-medicine"
+        ],
+        "reversible": false,
+        "temporal_position": 4,
+        "note": "Patients may occupy multiple stages simultaneously"
+      }
+    },
+    {
+      "id": "post-treatment-care",
+      "path_components": [
+        "post-treatment-care"
+      ],
+      "depth": 0,
+      "parent_id": null,
+      "children_ids": [],
+      "name": "Post-Treatment Care",
+      "description": "Immediate care following therapeutic intervention",
+      "level_info": {
+        "0": {
+          "name": "Post-Treatment Care",
+          "level_name": "Actionable Stage"
+        }
+      },
+      "metadata": {
+        "milestone": "Treatment → Follow-up",
+        "interventions": [
+          "Complication monitoring",
+          "Recovery support",
+          "Rehabilitation",
+          "Medication management"
+        ],
+        "typical_locations": [
+          "Ward",
+          "Intensive care units",
+          "Long-term care center",
+          "Home"
+        ],
+        "reversible": false,
+        "temporal_position": 5,
+        "note": "Patients may occupy multiple stages simultaneously"
+      }
+    },
+    {
+      "id": "follow-up",
+      "path_components": [
+        "follow-up"
+      ],
+      "depth": 0,
+      "parent_id": null,
+      "children_ids": [],
+      "name": "Longitudinal Follow-Up",
+      "description": "Ongoing monitoring and disease surveillance",
+      "level_info": {
+        "0": {
+          "name": "Longitudinal Follow-Up",
+          "level_name": "Actionable Stage"
+        }
+      },
+      "metadata": {
+        "milestone": "Follow-up → Outcomes assessment",
+        "interventions": [
+          "Surveillance",
+          "Recurrence detection",
+          "Chronic disease management",
+          "Secondary prevention"
+        ],
+        "typical_locations": [
+          "Clinic",
+          "Tele-medicine",
+          "Home",
+          "Community"
+        ],
+        "reversible": false,
+        "temporal_position": 6,
+        "note": "Patients may occupy multiple stages simultaneously"
+      }
+    },
+    {
+      "id": "coping",
+      "path_components": [
+        "coping"
+      ],
+      "depth": 0,
+      "parent_id": null,
+      "children_ids": [],
+      "name": "Coping Support",
+      "description": "Psychosocial support for living with disease outcomes (disability, chronic illness, end-of-life)",
+      "level_info": {
+        "0": {
+          "name": "Coping Support",
+          "level_name": "Actionable Stage"
+        }
+      },
+      "metadata": {
+        "milestone": "Follow-up → Cure/Disability/Death",
+        "interventions": [
+          "Palliative care",
+          "Psychosocial support",
+          "Advance care planning",
+          "Caregiver support"
+        ],
+        "typical_locations": [
+          "Home",
+          "Long-term care center",
+          "Clinic",
+          "Community"
+        ],
+        "reversible": false,
+        "temporal_position": 7,
+        "note": "Patients may occupy multiple stages simultaneously"
+      }
+    }
+  ],
+  "dimension_metadata": {}
+}
