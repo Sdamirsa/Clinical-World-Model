@@ -1,7 +1,7 @@
 #!/usr/bin/env python3
 """
-Generate task.json for the Clinical Skill-Mix Cube
-Cognitive tasks that intelligent systems aim to augment or automate
+Generate care_task.json for the Clinical Competency Cube (5C)
+Care tasks represent cognitive activities for AI augmentation/automation
 Based on Physician Competency Reference Set (Englander et al.)
 """
 
@@ -163,7 +163,7 @@ def generate_task_dimension():
     items = create_task_items()
 
     dimension = SkillMixDimension(
-        dimension=DimensionType.TASK,
+        dimension=DimensionType.CARE_TASK,
         description="Cognitive tasks that intelligent systems aim to augment or automate. Anchored in actual cognitive work physicians perform for principled decisions about automation versus augmentation. Based on the Physician Competency Reference Set synthesizing 150+ competency frameworks.",
         reference=ReferenceInfo(
             classification="Physician Competency Reference Set (Englander et al.)",
@@ -202,12 +202,12 @@ def generate_task_dimension():
 
 def save_dimension(dimension):
     """Save the task dimension to JSON file"""
-    output_path = SKILL_MIX_PATH / 'task.json'
+    output_path = SKILL_MIX_PATH / 'care_task.json'
 
     with open(output_path, 'w', encoding='utf-8') as f:
         json.dump(dimension.dict(), f, indent=2, ensure_ascii=False)
 
-    print(f"✓ Generated task.json with {len(dimension.items)} items")
+    print(f"✓ Generated care_task.json with {len(dimension.items)} care tasks")
     print(f"  - 8 domains (depth 0)")
     print(f"  - 58 competencies (depth 1)")
     print(f"✓ Saved to {output_path}")

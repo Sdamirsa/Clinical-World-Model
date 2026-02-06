@@ -1,0 +1,107 @@
+{
+  "dimension": "agent_facing",
+  "description": "Defines whose cognition AI engages: provider (CDM), patient (PDM), or encounter (system-level integration). This dimension specifies the primary cognitive agent interacting with AI in the clinical workflow.",
+  "reference": {
+    "classification": "Agent Facing Framework: Three Cognitive Engagement Types",
+    "burden_metric": "User perspective and cognitive model integration",
+    "data_source": "Clinical decision-making models (CDM/PDM framework)",
+    "last_updated": "2026-02-04",
+    "sources": [
+      "Clinician Decision Making (CDM) model",
+      "Patient Decision Making (PDM) model",
+      "Clinical encounter workflow frameworks",
+      "Human-AI interaction patterns in healthcare"
+    ]
+  },
+  "hierarchy": {
+    "structure": "Flat list of three agent types",
+    "levels": [
+      "agent"
+    ],
+    "max_depth": 0
+  },
+  "items": [
+    {
+      "id": "provider_facing",
+      "path_components": [
+        "provider_facing"
+      ],
+      "depth": 0,
+      "parent_id": null,
+      "children_ids": [],
+      "name": "Provider-Facing",
+      "description": "AI engages with healthcare provider's cognitive processes (CDM model)",
+      "level_info": {
+        "0": {
+          "name": "Provider-Facing",
+          "level_name": "Agent Type"
+        }
+      },
+      "metadata": {
+        "cognitive_model": "Clinician Decision Making (CDM)",
+        "primary_user": "Healthcare professionals",
+        "example_applications": [
+          "Clinical decision support systems",
+          "Diagnostic assistance tools",
+          "Treatment planning aids",
+          "Medical documentation automation"
+        ]
+      }
+    },
+    {
+      "id": "patient_facing",
+      "path_components": [
+        "patient_facing"
+      ],
+      "depth": 0,
+      "parent_id": null,
+      "children_ids": [],
+      "name": "Patient-Facing",
+      "description": "AI engages with patient's cognitive processes (PDM model)",
+      "level_info": {
+        "0": {
+          "name": "Patient-Facing",
+          "level_name": "Agent Type"
+        }
+      },
+      "metadata": {
+        "cognitive_model": "Patient Decision Making (PDM)",
+        "primary_user": "Patients and caregivers",
+        "example_applications": [
+          "Patient education platforms",
+          "Symptom checkers",
+          "Shared decision-making tools",
+          "Self-management apps"
+        ]
+      }
+    },
+    {
+      "id": "encounter_facing",
+      "path_components": [
+        "encounter_facing"
+      ],
+      "depth": 0,
+      "parent_id": null,
+      "children_ids": [],
+      "name": "Encounter-Facing",
+      "description": "AI engages with system-level clinical encounter (CDM + PDM integration)",
+      "level_info": {
+        "0": {
+          "name": "Encounter-Facing",
+          "level_name": "Agent Type"
+        }
+      },
+      "metadata": {
+        "cognitive_model": "Integrated CDM + PDM",
+        "primary_user": "Healthcare system / encounter workflow",
+        "example_applications": [
+          "Encounter workflow optimization",
+          "Communication facilitation tools",
+          "Coordination platforms",
+          "Integrated care pathway systems"
+        ]
+      }
+    }
+  ],
+  "dimension_metadata": {}
+}

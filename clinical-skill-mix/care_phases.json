@@ -1,5 +1,5 @@
 {
-  "dimension": "stage",
+  "dimension": "care_phase",
   "description": "Disease stage represents the temporal dimension of illness, characterized through seven milestones and six actionable stages spanning the continuum from health through pathologic process, illness manifestation, diagnosis, treatment, follow-up, to final outcomes. Patients may occupy multiple positions simultaneously.",
   "reference": {
     "classification": "Disease Stage Framework: Seven Milestones and Six Actionable Stages",

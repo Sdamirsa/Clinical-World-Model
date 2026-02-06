@@ -3,49 +3,52 @@
 [![GitHub Pages](https://img.shields.io/badge/GitHub%20Pages-Live%20Demo-blue)](https://sdamirsa.github.io/Clinical-World-Model)
 [![License: MIT](https://img.shields.io/badge/License-MIT-yellow.svg)](https://opensource.org/licenses/MIT)
 
-An evidence-based framework for modeling clinical environments through the Clinical Skill-Mix, which operationalizes contextual dimensions via five constituent elements that decompose the clinical environment for AI deployment and evaluation.
+An evidence-based framework for modeling clinical environments through Clinical Competency Space (5C) and AI Cognitive Engagement (3A), creating an 8-dimensional Clinical Intelligence space for comprehensive healthcare AI evaluation.
 
 ## 🌟 Features
 
-- **Clinical Skill-Mix Cube**: Multidimensional space with 41,061,216 unique clinical scenario cells (98 diseases × 7 stages × 12 locations × 58 tasks × 86 personas)
-- **Interactive Web Interface**: Explore components through our [GitHub Pages website](https://sdamirsa.github.io/Clinical-World-Model)
-- **Evidence-Based Disease Prioritization**: Global Burden of Diseases taxonomy with WHO DALY 2021 data and ICD-11 classification
+- **Clinical Competency Cube (5C)**: Multidimensional space with 803,626,656 unique clinical scenario cells (1,918 conditions × 7 care phases × 12 care settings × 58 care tasks × 86 care provider roles)
+- **AI Cognitive Engagement Cube (3A)**: 3-dimension framework capturing how AI engages with clinical workflows (Agent Facing × Anchoring Layer × Assigned Authority)
+- **Clinical Intelligence Space**: 5C × 3A = 8-dimensional space (803.6M clinical scenarios × 63 AI engagement patterns = 50.6B unique cells)
+- **Interactive Web Interface**: Explore both cubes through our [GitHub Pages website](https://sdamirsa.github.io/Clinical-World-Model)
+- **Standardized Condition Classification**: ICD-10-CM major category codes (3-character) for comprehensive disease coverage
 - **Standardized Data Models**: Pydantic-based JSON format for all components
 - **Hierarchical Structure**: Multi-level organization supporting different analysis depths
-- **5-Component Framework**: Disease, Stage, Location, Task, and Persona for comprehensive clinical coverage
 
-## 🏥 Clinical Skill-Mix Components
+## 🏥 Clinical Competency Dimensions
 
-### 1. **Disease** (98 conditions, 14 ICD-11 chapters)
-Disease list utilizing Global Burden of Diseases taxonomy for population health impact prioritization:
-- Evidence-based ranking with high/medium/low DALY burden
-- ICD-11 coding for deployment tracking and performance monitoring
-- Explicit disease-specific capabilities rather than assumed generalization
-- Hierarchical organization from chapters to specific conditions
-- Cardiovascular, respiratory, neurological, infectious diseases, and more
+### 1. **Condition** (1,918 codes, 26 ICD-10-CM chapters)
+Medical conditions using ICD-10-CM 3-character codes (complete coverage):
+- Comprehensive coverage across all disease chapters (A-Z)
+- Standardized clinical terminology (1,918 3-character codes across 26 chapters)
+- ICD-10-CM clinical modification used worldwide for medical coding
+- Explicit condition-specific capabilities rather than assumed generalization
+- Hierarchical organization from chapters to major category codes
+- Covers all disease categories: infectious, neoplasms, circulatory, respiratory, endocrine, mental health, and more
 
-### 2. **Stage** (7 milestones, 6 actionable stages)
-Disease stage representing the temporal dimension of illness:
-- **Seven Milestones**: Health → Pathologic process → Illness manifestation → Diagnosis → Treatment → Follow-up → (Cure/Disability/Death)
-- **Six Actionable Stages**:
-  - At-risk identification
-  - Pre-symptomatic detection
-  - Diagnostic workup
-  - Treatment planning
-  - Post-treatment care
-  - Longitudinal follow-up (including coping support)
+### 2. **Care Phase** (7 phases)
+Temporal dimension of illness representing the patient journey:
+- **Seven Phases**:
+  1. At-Risk Identification
+  2. Pre-Symptomatic Detection
+  3. Diagnostic Workup
+  4. Treatment Planning
+  5. Post-Treatment Care
+  6. Longitudinal Follow-Up
+  7. Coping Support
 - Patients may occupy multiple positions simultaneously
-- Integrated with location of care across patient journey
+- Integrated with care settings across patient journey
+- Maps to clinical milestones: Health → Pathologic Process → Illness → Diagnosis → Treatment → Follow-up → Cure/Disability/Death
 
-### 3. **Location** (12 care settings)
-Location of care intrinsically linked to disease stage:
+### 3. **Care Setting** (12 settings)
+Location of care delivery intrinsically linked to care phase:
 - Community screening, home-based care, outpatient clinics
 - Emergency departments, inpatient wards, intensive care units
 - Operating rooms, rehabilitation facilities, telemedicine
 - Alternative framework: SEIPS (Systems Engineering Initiative for Patient Safety)
-- Integrated with disease stage for comprehensive patient journey mapping
+- Integrated with care phase for comprehensive patient journey mapping
 
-### 4. **Task** (58 competencies, 8 domains)
+### 4. **Care Task** (58 competencies, 8 domains)
 Cognitive tasks that intelligent systems aim to augment or automate:
 - **Framework**: Physician Competency Reference Set (Englander et al.)
 - **Eight Domains**: Patient Care, Medical Knowledge, Practice-Based Learning and Improvement, Interpersonal and Communication Skills, Professionalism, Systems-Based Practice, Interprofessional Collaboration, Personal and Professional Development
@@ -53,38 +56,68 @@ Cognitive tasks that intelligent systems aim to augment or automate:
 - Anchored in actual cognitive work physicians perform
 - Principled decisions about automation vs. augmentation
 
-### 5. **Persona** (86 personas, 5 WHO groupings)
-Caregiver persona capturing role and level of expertise:
+### 5. **Care Provider Role** (86 roles, WHO classification)
+Healthcare professional role capturing expertise level:
 - **Framework**: WHO International Classification of Health Workers (based on ISCO-08)
-- **Total Personas**: 86 (37 Clinicians, 49 Healthcare Workers)
+- **Total Roles**: 86 (51 major categories + 35 specialized subcategories)
 - **Five Broad Groupings**:
-  1. Health professionals
-  2. Health associate professionals
+  1. Health professionals (physicians, nurses, pharmacists, dentists, etc.)
+  2. Health associate professionals (nursing associates, medical assistants, etc.)
   3. Personal care workers in health services
   4. Health management and support personnel
   5. Other health service providers
-- **Skill-Mix Cells**: 41,061,216 total clinical scenarios (17.7M Clinicians / 23.4M HCW)
 - Identifies whose work the intelligent system aims to support
+- Includes specialist medical practitioners across 35 medical specialties
+
+## 🧠 AI Cognitive Engagement Dimensions (3A)
+
+### 1. **Agent Facing** (3 options)
+Defines whose cognition AI engages:
+- **Provider-Facing**: Healthcare provider perspective (CDM model)
+- **Patient-Facing**: Patient perspective (PDM model)
+- **Encounter-Facing**: System-level interaction perspective (CDM + PDM)
+
+### 2. **Anchoring Layer** (7 layers)
+Specifies the point in cognitive architecture where AI intervenes:
+- **Input**: Data entry and acquisition
+- **Data Processor**: Information processing and transformation
+- **Hypothesis**: Differential diagnosis and hypothesis generation
+- **System I**: Intuitive, pattern-recognition reasoning
+- **System II**: Analytical, deliberative reasoning
+- **Reflection**: Metacognitive evaluation and learning
+- **Action**: Decision execution and implementation
+
+### 3. **Assigned Authority** (3 levels)
+Specifies the degree of AI cognitive takeover:
+- **Monitoring**: AI observes and flags issues for human review (Observer role)
+- **Augmentation**: AI provides supportive recommendations while human retains decision authority (Supportive contributor)
+- **Automation**: AI executes decisions autonomously with human oversight for exceptions (Primary processor)
 
 ## 🚀 Quick Start
 
 ### Interactive Website
-Visit our [live demo](https://sdamirsa.github.io/Clinical-World-Model) to explore the Clinical Skill-Mix Cube interactively.
+Visit our [live demo](https://sdamirsa.github.io/Clinical-World-Model) to explore the Clinical Competency (5C) and AI Cognitive Engagement (3A) cubes interactively.
 
 ### Local Development
 ```bash
 # Clone the repository
-git clone https://github.com/sdamirsa/Clinical-World-Model.git
 git clone https://github.com/sdamirsa/Clinical-World-Model.git
 cd Clinical-World-Model
 
 # Install Python dependencies for data processing
 pip install pandas pydantic
 
-# Generate component data
-python code/analyze_daly_data.py
-python code/generate_diseases_json.py
-python code/generate_personas_from_who.py
+# Generate 5C dimension data
+python code/generate_conditions_json.py
+python code/generate_care_phases_json.py
+python code/generate_care_settings_json.py
+python code/generate_care_task_json.py
+python code/generate_care_provider_role_json.py
+
+# Generate 3A dimension data
+python code/generate_agent_facing_json.py
+python code/generate_anchoring_layer_json.py
+python code/generate_assigned_authority_json.py
 
 # Sync data to website folder (after any changes to clinical-skill-mix/)
 cp -r clinical-skill-mix/* docs/clinical-skill-mix/
@@ -96,9 +129,11 @@ cd docs && python -m http.server 8000
 
 ## 📊 Data Sources
 
-- **Global Burden of Diseases**: Disease taxonomy for population health impact
-- **WHO DALY 2021**: Global disease burden data (2019 pre-COVID)
-- **ICD-11**: Disease classification for deployment tracking
+- **ICD-10-CM**: International Classification of Diseases, 10th Revision, Clinical Modification
+  - All 3-character codes (e.g., I25, C50, J44) - complete coverage
+  - Source: Centers for Medicare & Medicaid Services (CMS), WHO ICD-10 base
+  - 1,918 codes across 26 disease chapters
+- **ICD-11**: Condition classification for deployment tracking
 - **WHO International Classification of Health Workers**: Five broad professional groupings
 - **ISCO-08**: International Standard Classification of Occupations
 - **Physician Competency Reference Set**: 58 competencies across 8 domains (Englander et al.)
@@ -117,11 +152,15 @@ Clinical-World-Model/
 │       ├── css/styles.css         # Modern responsive design
 │       └── js/                    # Interactive functionality
 ├── clinical-skill-mix/            # 📊 Source component data
-│   ├── task.json                  # Cognitive tasks (to augment/automate)
-│   ├── persona.json               # Caregiver personas (role & expertise)
-│   ├── disease.json               # Disease list (GBD/ICD-11)
-│   ├── stage.json                 # Disease stages (temporal dimension)
-│   ├── location.json              # Location of care (care settings)
+│   ├── competency_domains.json    # Competency domains (to augment/automate)
+│   ├── provider_roles.json        # Provider roles (role & expertise)
+│   ├── conditions.json            # Conditions (GBD/ICD-11)
+│   ├── care_phases.json           # Care phases (temporal dimension)
+│   ├── care_settings.json         # Care settings (location of care)
+│   ├── agent.json                 # Cognitive Engagement: Agent
+│   ├── reasoning_layer.json       # Cognitive Engagement: Reasoning Layer
+│   ├── integration_mode.json      # Cognitive Engagement: Integration Mode
+│   ├── temporality.json           # Cognitive Engagement: Temporality
 │   └── skill_mix_dimensions_model.py # Pydantic data models
 ├── code/                          # 🔧 Data processing scripts
 ├── data/                          # 📈 Raw WHO DALY data
@@ -131,17 +170,29 @@ Clinical-World-Model/
 ## 💡 Use Cases
 
 ### Healthcare AI Evaluation
-Create comprehensive test scenarios using the Clinical Skill-Mix Cube:
+Create comprehensive test scenarios using the Clinical Intelligence space:
 ```python
-# Example: Emergency medicine scenario cell in the Cube
-scenario = {
-    "disease": "cardiovascular/acute-myocardial-infarction",
-    "stage": "diagnostic-workup",
-    "location": "emergency-department",
-    "task": "clinical-decision-support",
-    "persona": "emergency-physician"
+# Example: Emergency medicine scenario in Clinical Competency Cube
+clinical_competency = {
+    "condition": "cardiovascular/acute-myocardial-infarction",
+    "care_phase": "diagnostic-workup",
+    "care_setting": "emergency-department",
+    "competency_domain": "clinical-decision-support",
+    "provider_role": "emergency-physician"
 }
-# Total cells in the Cube: 98 × 7 × 12 × 58 × 86 = 41,061,216 clinical scenarios
+# Clinical Competency Cube: 98 × 7 × 12 × 58 × 86 = 41,061,216 scenarios
+
+# Example: AI engagement specification in Cognitive Engagement Cube
+cognitive_engagement = {
+    "agent": "clinician",
+    "reasoning_layer": "hypothesis",
+    "integration_mode": "augment",
+    "temporality": "concurrent"
+}
+# Cognitive Engagement Cube: 3 × 7 × 3 × 3 = 189 engagement scenarios
+
+# Clinical Intelligence = Clinical Competency × Cognitive Engagement
+# Total distinct capability claims requiring evaluation
 ```
 
 ### Clinical Education
@@ -156,20 +207,27 @@ scenario = {
 
 ## 📈 Evidence Base
 
-The Clinical Skill-Mix is grounded in established clinical standards:
+The Clinical World Model is grounded in established clinical standards:
 
-- **Disease Component**: Global Burden of Diseases taxonomy and WHO DALY data for population health impact
-- **Stage Component**: Seven milestones and six actionable stages across the patient journey
-- **Location Component**: Real-world care delivery settings with SEIPS framework integration
-- **Task Component**: Physician Competency Reference Set (58 competencies, 8 domains) and MedHELM framework
-- **Persona Component**: WHO International Classification of Health Workers (five broad groupings)
+**Clinical Competency Dimensions**:
+- **Condition**: Global Burden of Diseases taxonomy and WHO DALY data for population health impact
+- **Care Phase**: Seven milestones and six actionable phases across the patient journey
+- **Care Setting**: Real-world care delivery settings with SEIPS framework integration
+- **Competency Domain**: Physician Competency Reference Set (58 competencies, 8 domains) and MedHELM framework
+- **Provider Role**: WHO International Classification of Health Workers (five broad groupings)
+
+**Cognitive Engagement Aspects**:
+- **Agent**: Clinician, Patient, and Encounter perspectives
+- **Reasoning Layer**: Seven cognitive architecture layers from dual-process theory
+- **Integration Mode**: Three modes of AI-workflow integration
+- **Temporality**: Three timeframes for AI intervention
 
 ## 🤝 Contributing
 
-We welcome contributions to expand and refine the Clinical Skill-Mix:
+We welcome contributions to expand and refine the Clinical World Model:
 
 1. **Data Enhancement**: Add new components or refine existing ones
-2. **Analysis Tools**: Develop Clinical Skill-Mix Cube analysis capabilities
+2. **Analysis Tools**: Develop Clinical Intelligence space analysis capabilities
 3. **Validation Studies**: Test framework applicability in real clinical settings
 4. **Integration**: Connect with existing healthcare AI evaluation tools
 
@@ -194,7 +252,7 @@ If you use this framework in your research, please cite:
   author={Safavi-Naini, Seyed Amir Ahmad and Meftah, Elahe and Mohess, Josh and Kazaj, Pooya Mohammadi and Siontis, Georgios and Atf, Zahra and Vaid, Akhil and Lewis, Peter R. and Nadkarni, Girish and Windecker, Stephan and Gräni, Christoph and Soroush, Ali and Shiri, Isaac},
   year={2025},
   url={https://github.com/sdamirsa/Clinical-World-Model},
-  note={Clinical Skill-Mix Cube: Five constituent elements for AI deployment and evaluation}
+  note={Clinical Competency × Cognitive Engagement = Clinical Intelligence for AI evaluation}
 }
 ```
 

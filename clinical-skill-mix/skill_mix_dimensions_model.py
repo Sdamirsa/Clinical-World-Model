@@ -27,14 +27,26 @@ class ResourceLevel(str, Enum):
     RICH = "rich"
 
 class DimensionType(str, Enum):
-    """Types of skill-mix components (Clinical Skill-Mix Cube elements)"""
-    TASK = "task"  # Cognitive tasks for AI augmentation/automation
-    PERSONA = "persona"  # Caregiver persona (role and expertise level)
-    DISEASE = "disease"  # Disease list (GBD taxonomy, ICD-11)
-    STAGE = "stage"  # Disease stage (temporal dimension of illness)
-    LOCATION = "location"  # Location of care (care settings)
+    """Types of Clinical World Model dimensions (8-dimension framework: 5C + 3A)"""
 
-    # Legacy aliases for backward compatibility
+    # Clinical Competency Space (5C)
+    CONDITION = "condition"  # Medical conditions (GBD taxonomy, ICD-11)
+    CARE_PHASE = "care_phase"  # Temporal dimension of illness journey
+    CARE_SETTING = "care_setting"  # Location of care delivery
+    CARE_TASK = "care_task"  # Cognitive tasks for AI augmentation/automation
+    CARE_PROVIDER_ROLE = "care_provider_role"  # Healthcare professional role and expertise level
+
+    # AI Cognitive Engagement (3A)
+    AGENT_FACING = "agent_facing"  # Whose cognition AI engages (provider/patient/encounter)
+    ANCHORING_LAYER = "anchoring_layer"  # Point in cognitive architecture (input/hypothesis/system-i/etc)
+    ASSIGNED_AUTHORITY = "assigned_authority"  # Degree of AI takeover (monitoring/augmentation/automation)
+
+    # Legacy aliases for backward compatibility (deprecated, will be removed in v3.0)
+    TASK = "task"
+    PERSONA = "persona"
+    DISEASE = "disease"
+    STAGE = "stage"
+    LOCATION = "location"
     TASK_SKILLS = "task-skills"
     PERSONAS = "personas"
     DISEASES = "diseases"

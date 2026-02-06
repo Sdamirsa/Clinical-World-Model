@@ -16,7 +16,7 @@ async function loadDimension(dimensionName) {
     try {
         // Show loading state
         updateLoadingState(true);
-        
+
         // Check cache first
         if (dimensionCache.has(dimensionName)) {
             const cachedData = dimensionCache.get(dimensionName);
@@ -25,9 +25,23 @@ async function loadDimension(dimensionName) {
             updateLoadingState(false, dimensionName);
             return cachedData;
         }
-        
+
+        // Map dimension names to file names (some are plural)
+        const fileNameMap = {
+            'condition': 'conditions',
+            'care_phase': 'care_phases',
+            'care_setting': 'care_settings',
+            'care_task': 'care_task',
+            'care_provider_role': 'care_provider_role',
+            'agent_facing': 'agent_facing',
+            'anchoring_layer': 'anchoring_layer',
+            'assigned_authority': 'assigned_authority'
+        };
+
+        const fileName = fileNameMap[dimensionName] || dimensionName;
+
         // Fetch dimension data
-        const response = await fetch(`clinical-skill-mix/${dimensionName}.json`);
+        const response = await fetch(`clinical-skill-mix/${fileName}.json`);
         
         if (!response.ok) {
             throw new Error(`Failed to load ${dimensionName}: ${response.status}`);

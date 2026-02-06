@@ -1,9 +1,9 @@
 #!/usr/bin/env python3
 """
-Generate persona.json from WHO health worker classification data.
+Generate care_provider_role.json from WHO health worker classification data.
 
-This script processes WHO CSV files to create a comprehensive personas dimension
-following the standardized Pydantic format for clinical skill-mix dimensions.
+This script processes WHO CSV files to create a comprehensive care provider role dimension
+following the standardized Pydantic format for Clinical Competency Cube (5C) dimensions.
 
 Data Sources:
 - WHO_health_worker_classification.csv: Main occupational categories with ISCO codes
@@ -239,7 +239,7 @@ def generate_personas_json(
     output_path: str
 ) -> None:
     """
-    Generate comprehensive persona.json from WHO data.
+    Generate comprehensive care_provider_role.json from WHO data.
     
     Args:
         classification_csv_path: Path to main classification CSV
@@ -260,7 +260,7 @@ def generate_personas_json(
     
     # Initialize the dimension structure
     dimension_data = {
-        "dimension": "personas",
+        "dimension": "care_provider_role",
         "description": "Healthcare provider roles based on WHO health worker classification with ISCO codes",
         "reference": {
             "classification": "WHO Health Worker Classification and ISCO-08 Standards",
@@ -415,7 +415,7 @@ def generate_personas_json(
     }
     
     # Write to file
-    print(f"Writing persona.json with {len(all_items)} total items...")
+    print(f"Writing care_provider_role.json with {len(all_items)} total items...")
     
     # Ensure output directory exists
     Path(output_path).parent.mkdir(parents=True, exist_ok=True)
@@ -439,7 +439,7 @@ def main():
     
     classification_csv = data_dir / "WHO_health_worker_classification.csv"
     specialties_csv = data_dir / "WHO_health_worker_classification_specialities.csv"
-    output_json = output_dir / "persona.json"
+    output_json = output_dir / "care_provider_role.json"
     
     # Verify input files exist
     if not classification_csv.exists():
@@ -450,7 +450,7 @@ def main():
         print(f"Warning: {specialties_csv} not found - proceeding without specialties")
         specialties_csv = None
     
-    # Generate the persona.json file
+    # Generate the care_provider_role.json file
     try:
         generate_personas_json(
             str(classification_csv),
@@ -460,12 +460,12 @@ def main():
         
         print("\n🎉 Personas dimension generated successfully!")
         print("📋 Next steps:")
-        print("   1. Review the generated persona.json file")
+        print("   1. Review the generated care_provider_role.json file")
         print("   2. Copy to docs/clinical-skill-mix/ for website access")
         print("   3. Test with the interactive website")
         
     except Exception as e:
-        print(f"❌ Error generating persona.json: {e}")
+        print(f"❌ Error generating care_provider_role.json: {e}")
         import traceback
         traceback.print_exc()
 

@@ -1,5 +1,5 @@
 {
-  "dimension": "location",
+  "dimension": "care_setting",
   "description": "Location of care is intrinsically linked to disease stage, as different stages typically occur in distinct settings ranging from community screening to emergency departments, inpatient wards, intensive care units, rehabilitation facilities, and home-based care.",
   "reference": {
     "classification": "Care Delivery Settings and Patient Journey Mapping",

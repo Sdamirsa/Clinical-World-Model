@@ -1,5 +1,5 @@
 {
-  "dimension": "task",
+  "dimension": "care_task",
   "description": "Cognitive tasks that intelligent systems aim to augment or automate. Anchored in actual cognitive work physicians perform for principled decisions about automation versus augmentation. Based on the Physician Competency Reference Set synthesizing 150+ competency frameworks.",
   "reference": {
     "classification": "Physician Competency Reference Set (Englander et al.)",

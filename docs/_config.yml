@@ -1,6 +1,6 @@
 # GitHub Pages Configuration
-title: "Clinical Skill-Mix Dimensions"
-description: "Interactive visualization of Clinical Skill-Mix dimensions for healthcare AI evaluation"
+title: "Clinical World Model"
+description: "8-Dimension Framework for Healthcare AI Evaluation (5C + 3A)"
 url: "https://your-username.github.io"
 baseurl: "/Clinical-World-Model"
 

@@ -1,0 +1,222 @@
+{
+  "dimension": "anchoring_layer",
+  "description": "Specifies the point in cognitive architecture where AI intervenes, from initial data input through hypothesis generation, dual-process reasoning (System I/II), reflection, to action execution. Based on the CDM cognitive framework.",
+  "reference": {
+    "classification": "Anchoring Layer Framework: Seven Cognitive Processing Stages",
+    "burden_metric": "Cognitive depth and reasoning complexity",
+    "data_source": "Clinician Decision Making (CDM) cognitive architecture",
+    "last_updated": "2026-02-04",
+    "sources": [
+      "CDM Framework: Input → Data Processor → Hypothesis → System I/II → Reflection → Action",
+      "Dual-process theory (Kahneman): System I (intuition) and System II (analysis)",
+      "Clinical reasoning models",
+      "Cognitive load theory in healthcare"
+    ]
+  },
+  "hierarchy": {
+    "structure": "Sequential cognitive processing layers from input to action",
+    "levels": [
+      "layer"
+    ],
+    "max_depth": 0
+  },
+  "items": [
+    {
+      "id": "input",
+      "path_components": [
+        "input"
+      ],
+      "depth": 0,
+      "parent_id": null,
+      "children_ids": [],
+      "name": "Input",
+      "description": "Clinical data gathering and acquisition layer",
+      "level_info": {
+        "0": {
+          "name": "Input",
+          "level_name": "Cognitive Layer"
+        }
+      },
+      "metadata": {
+        "order": 1,
+        "cdm_function": "Encounter data collection, patient records, clinical observations",
+        "example_ai_applications": [
+          "Voice-to-text documentation",
+          "Automated data extraction from EHR",
+          "Sensor data integration",
+          "Patient-reported outcome capture"
+        ],
+        "reasoning_type": "Sequential"
+      }
+    },
+    {
+      "id": "data_processor",
+      "path_components": [
+        "data_processor"
+      ],
+      "depth": 0,
+      "parent_id": null,
+      "children_ids": [],
+      "name": "Data Processor",
+      "description": "Evidence-guided synthesis and information processing",
+      "level_info": {
+        "0": {
+          "name": "Data Processor",
+          "level_name": "Cognitive Layer"
+        }
+      },
+      "metadata": {
+        "order": 2,
+        "cdm_function": "Transform raw inputs into clinically meaningful cues",
+        "example_ai_applications": [
+          "Lab result interpretation",
+          "Vital sign trend analysis",
+          "Clinical note summarization",
+          "Risk score calculation"
+        ],
+        "reasoning_type": "Sequential"
+      }
+    },
+    {
+      "id": "hypothesis",
+      "path_components": [
+        "hypothesis"
+      ],
+      "depth": 0,
+      "parent_id": null,
+      "children_ids": [],
+      "name": "Hypothesis",
+      "description": "Differential diagnosis formulation and hypothesis generation",
+      "level_info": {
+        "0": {
+          "name": "Hypothesis",
+          "level_name": "Cognitive Layer"
+        }
+      },
+      "metadata": {
+        "order": 3,
+        "cdm_function": "Generate and refine diagnostic possibilities",
+        "example_ai_applications": [
+          "Differential diagnosis generators",
+          "Diagnostic suggestion systems",
+          "Symptom-to-diagnosis mapping",
+          "Clinical reasoning support"
+        ],
+        "reasoning_type": "Sequential"
+      }
+    },
+    {
+      "id": "system_i",
+      "path_components": [
+        "system_i"
+      ],
+      "depth": 0,
+      "parent_id": null,
+      "children_ids": [],
+      "name": "System I",
+      "description": "Illness script activation and pattern recognition (intuition)",
+      "level_info": {
+        "0": {
+          "name": "System I",
+          "level_name": "Cognitive Layer"
+        }
+      },
+      "metadata": {
+        "order": 4,
+        "cdm_function": "Fast, automatic pattern matching based on clinical experience",
+        "example_ai_applications": [
+          "Image recognition for radiology",
+          "Pattern-based alert systems",
+          "Rapid triage support",
+          "Clinical pattern identification"
+        ],
+        "reasoning_type": "Fast/Intuitive"
+      }
+    },
+    {
+      "id": "system_ii",
+      "path_components": [
+        "system_ii"
+      ],
+      "depth": 0,
+      "parent_id": null,
+      "children_ids": [],
+      "name": "System II",
+      "description": "Hypothetico-deductive analytical reasoning (deliberation)",
+      "level_info": {
+        "0": {
+          "name": "System II",
+          "level_name": "Cognitive Layer"
+        }
+      },
+      "metadata": {
+        "order": 5,
+        "cdm_function": "Slow, deliberate analysis using evidence-based reasoning",
+        "example_ai_applications": [
+          "Evidence-based treatment recommendations",
+          "Guideline compliance checking",
+          "Complex case analysis",
+          "Probabilistic diagnostic reasoning"
+        ],
+        "reasoning_type": "Slow/Analytical"
+      }
+    },
+    {
+      "id": "reflection",
+      "path_components": [
+        "reflection"
+      ],
+      "depth": 0,
+      "parent_id": null,
+      "children_ids": [],
+      "name": "Reflection",
+      "description": "Metacognitive monitoring and bias detection",
+      "level_info": {
+        "0": {
+          "name": "Reflection",
+          "level_name": "Cognitive Layer"
+        }
+      },
+      "metadata": {
+        "order": 6,
+        "cdm_function": "Self-awareness of reasoning quality and potential errors",
+        "example_ai_applications": [
+          "Cognitive bias alerts",
+          "Second opinion systems",
+          "Diagnostic error detection",
+          "Clinical reasoning audit tools"
+        ],
+        "reasoning_type": "Sequential"
+      }
+    },
+    {
+      "id": "action",
+      "path_components": [
+        "action"
+      ],
+      "depth": 0,
+      "parent_id": null,
+      "children_ids": [],
+      "name": "Action",
+      "description": "Care plan execution and decision implementation",
+      "level_info": {
+        "0": {
+          "name": "Action",
+          "level_name": "Cognitive Layer"
+        }
+      },
+      "metadata": {
+        "order": 7,
+        "cdm_function": "Translate decisions into clinical actions",
+        "example_ai_applications": [
+          "Order entry optimization",
+          "Treatment pathway execution",
+          "Medication prescribing support",
+          "Procedure scheduling automation"
+        ],
+        "reasoning_type": "Sequential"
+      }
+    }
+  ],
+  "dimension_metadata": {}
+}

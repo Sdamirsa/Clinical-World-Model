@@ -30,9 +30,9 @@ function initializeApp() {
     initializeCubeExplorer();
 
     // Load default dimension
-    loadDimension('task');
+    loadDimension('care_task');
 
-    console.log('Clinical Skill-Mix Dimensions app initialized');
+    console.log('Clinical World Model (8-dimension) app initialized');
 }
 
 /**
@@ -410,44 +410,83 @@ let selectedScenario = {
 };
 
 async function initializeCubeExplorer() {
-    console.log('Initializing Cube Explorer...');
+    console.log('Initializing Cube Explorer (8-dimension framework: 5C + 3A)...');
 
-    // Load all dimension data
-    const dimensions = ['disease', 'stage', 'location', 'task', 'persona'];
+    // Clinical Competency Space (5C) dimensions
+    const dimensions5C = [
+        { key: 'condition', file: 'conditions' },
+        { key: 'care_phase', file: 'care_phases' },
+        { key: 'care_setting', file: 'care_settings' },
+        { key: 'care_task', file: 'care_task' },
+        { key: 'care_provider_role', file: 'care_provider_role' }
+    ];
 
-    for (const dimension of dimensions) {
+    // AI Cognitive Engagement (3A) dimensions
+    const dimensions3A = [
+        { key: 'agent_facing', file: 'agent_facing' },
+        { key: 'anchoring_layer', file: 'anchoring_layer' },
+        { key: 'assigned_authority', file: 'assigned_authority' }
+    ];
+
+    // Load all dimensions
+    const allDimensions = [...dimensions5C, ...dimensions3A];
+
+    for (const dimension of allDimensions) {
         try {
-            const response = await fetch(`clinical-skill-mix/${dimension}.json`);
+            const response = await fetch(`clinical-skill-mix/${dimension.file}.json`);
             if (response.ok) {
                 const data = await response.json();
-                cubeExplorerData[dimension] = data.items || [];
-                populateDropdown(dimension, data.items);
+                cubeExplorerData[dimension.key] = data.items || [];
+                populateDropdown(dimension.key, data.items);
+            } else {
+                console.error(`Failed to load ${dimension.file}.json: ${response.status}`);
             }
         } catch (error) {
-            console.error(`Error loading ${dimension}:`, error);
+            console.error(`Error loading ${dimension.file}:`, error);
         }
     }
 
     // Add change listeners to all dropdowns
-    dimensions.forEach(dimension => {
-        const select = document.getElementById(`${dimension}-select`);
+    allDimensions.forEach(dimension => {
+        const selectId = dimension.key.replace(/_/g, '-') + '-select';
+        const select = document.getElementById(selectId);
         if (select) {
-            select.addEventListener('change', () => updateScenario(dimension, select.value));
+            select.addEventListener('change', () => updateScenario(dimension.key, select.value));
+        } else {
+            console.warn(`Select element not found: ${selectId}`);
         }
     });
 
-    console.log('Cube Explorer initialized');
+    console.log('Cube Explorer initialized with 8 dimensions');
 }
 
 /**
  * Populate dropdown with dimension items
  */
 function populateDropdown(dimension, items) {
-    const select = document.getElementById(`${dimension}-select`);
-    if (!select) return;
+    const selectId = dimension.replace(/_/g, '-') + '-select';
+    const select = document.getElementById(selectId);
+    if (!select) {
+        console.warn(`Select element not found: ${selectId}`);
+        return;
+    }
+
+    // Dimension label mapping
+    const dimensionLabels = {
+        'condition': 'condition',
+        'care_phase': 'care phase',
+        'care_setting': 'care setting',
+        'care_task': 'care task',
+        'care_provider_role': 'provider role',
+        'agent_facing': 'agent facing',
+        'anchoring_layer': 'anchoring layer',
+        'assigned_authority': 'assigned authority'
+    };
+
+    const label = dimensionLabels[dimension] || dimension;
 
     // Clear existing options except the first one
-    select.innerHTML = '<option value="">Select a ' + dimension + '...</option>';
+    select.innerHTML = `<option value="">Select a ${label}...</option>`;
 
     // Show all items as a flat list
     const displayItems = items;
@@ -463,8 +502,10 @@ function populateDropdown(dimension, items) {
         select.appendChild(option);
     });
 
-    // Set default values after populating
-    setDefaultSelection(dimension, select);
+    // Set default values after populating (use requestAnimationFrame to ensure DOM is updated)
+    requestAnimationFrame(() => {
+        setDefaultSelection(dimension, select);
+    });
 }
 
 /**
@@ -472,21 +513,32 @@ function populateDropdown(dimension, items) {
  */
 function setDefaultSelection(dimension, select) {
     const defaults = {
-        'disease': 'cardiovascular/ischaemic-heart-disease',
-        'stage': 'treatment-planning',
-        'location': 'emergency-room',
-        'task': 'patient-care/patient-counseling',
-        'persona': 'specialist-medical-practitioners/cardiology'
+        // Clinical Competency Space (5C)
+        'condition': 'chapter-i/i25',  // ICD-10-CM I25: Chronic ischemic heart disease
+        'care_phase': 'treatment-planning',
+        'care_setting': 'emergency-room',
+        'care_task': 'patient-care/patient-counseling',
+        'care_provider_role': 'specialist-medical-practitioners/cardiology',
+
+        // AI Cognitive Engagement (3A)
+        'agent_facing': 'provider_facing',
+        'anchoring_layer': 'input',
+        'assigned_authority': 'augmentation'
     };
 
     const defaultValue = defaults[dimension];
     if (defaultValue) {
+        console.log(`Setting default for ${dimension} to ${defaultValue}`);
         // Check if the option exists
         const option = select.querySelector(`option[value="${defaultValue}"]`);
         if (option) {
+            console.log(`Option found for ${dimension}, setting value`);
             select.value = defaultValue;
-            // Trigger the update
+            // Trigger the update immediately
             updateScenario(dimension, defaultValue);
+        } else {
+            console.warn(`Option not found for ${dimension} with value ${defaultValue}`);
+            console.log(`Available options:`, Array.from(select.options).map(o => o.value));
         }
     }
 }
@@ -504,25 +556,38 @@ function updateScenario(dimension, itemId) {
 }
 
 /**
- * Update the scenario text display
+ * Update the scenario text display (Combined 5C × 3A)
  */
 function updateScenarioText() {
-    const scenarioDiv = document.getElementById('scenario-text');
-    if (!scenarioDiv) return;
-
-    // Check if all dimensions are selected
-    const allSelected = Object.values(selectedScenario).every(item => item !== null);
-
-    if (!allSelected) {
-        scenarioDiv.className = 'scenario-text';
-        scenarioDiv.innerHTML = 'Select elements from each dimension above to generate a clinical competency...';
+    const scenarioDiv = document.getElementById('combined-scenario');
+    if (!scenarioDiv) {
+        console.warn('Combined scenario div not found');
         return;
     }
 
-    // Helper function to convert specialty names to person forms (plurals)
+    // Check if all 5C dimensions are selected
+    const all5C = selectedScenario.condition &&
+                  selectedScenario.care_phase &&
+                  selectedScenario.care_setting &&
+                  selectedScenario.care_task &&
+                  selectedScenario.care_provider_role;
+
+    // Check if all 3A dimensions are selected
+    const all3A = selectedScenario.agent_facing &&
+                  selectedScenario.anchoring_layer &&
+                  selectedScenario.assigned_authority;
+
+    // If not all dimensions selected, show prompt
+    if (!all5C || !all3A) {
+        scenarioDiv.className = 'scenario-text';
+        scenarioDiv.innerHTML = 'Select dimensions from both cubes above to generate a complete Clinical Intelligence specification...';
+        return;
+    }
+
+    // Helper function to convert role names to person forms
     function convertToPersonForm(name) {
         const conversions = {
-            // -ology specialties
+            // Medical specialties
             'Cardiology': 'cardiologists',
             'Neurology': 'neurologists',
             'Radiology': 'radiologists',
@@ -535,8 +600,6 @@ function updateScenarioText() {
             'Immunology': 'immunologists',
             'Ophthalmology': 'ophthalmologists',
             'Otolaryngology': 'otolaryngologists',
-
-            // Surgery specialties
             'General Surgery': 'general surgeons',
             'Neurological Surgery': 'neurosurgeons',
             'Paediatric Surgery': 'pediatric surgeons',
@@ -544,20 +607,14 @@ function updateScenarioText() {
             'Thoracic Surgery': 'thoracic surgeons',
             'Vascular Surgery': 'vascular surgeons',
             'Orthopaedics': 'orthopedic surgeons',
-
-            // Medicine specialties
             'Internal Medicine': 'internists',
             'Respiratory Medicine': 'pulmonologists',
             'Forensic Medicine': 'forensic pathologists',
             'Occupational Medicine': 'occupational medicine physicians',
             'Rehabilitative Medicine': 'physiatrists',
             'Accident And Emergency Medicine': 'emergency medicine physicians',
-
-            // Other specialties
             'Infectious Disease': 'infectious disease specialists',
             'Intensive Care': 'intensivists',
-
-            // Already in person form - just lowercase and pluralize if needed
             'Child Psychiatrist': 'child psychiatrists',
             'Psychiatrist': 'psychiatrists',
             'Gerontopsychiatrist': 'gerontopsychiatrists',
@@ -565,38 +622,101 @@ function updateScenarioText() {
             'Gynaecologist': 'gynaecologists',
             'Obstetrician': 'obstetricians',
             'Neonatologist': 'neonatologists',
-            'Paediatrician': 'pediatricians'
+            'Paediatrician': 'pediatricians',
+
+            // General roles
+            'Generalist Medical Practitioners': 'generalist medical practitioners',
+            'Specialist Medical Practitioners': 'specialist medical practitioners',
+            'Nursing Professionals': 'nursing professionals',
+            'Midwifery Professionals': 'midwifery professionals',
+            'Paramedical Practitioners': 'paramedical practitioners'
         };
 
         return conversions[name] || name.toLowerCase();
     }
 
-    // Build the scenario text with unified flow
-    const persona = convertToPersonForm(selectedScenario.persona.name);
-    const task = selectedScenario.task.name.toLowerCase();
-    const disease = selectedScenario.disease.name.toLowerCase();
-    const stage = selectedScenario.stage.name.toLowerCase();
-    const location = selectedScenario.location.name.toLowerCase();
+    // Extract 5C values
+    const providerRole = convertToPersonForm(selectedScenario.care_provider_role.name);
+    const providerRoleSingular = providerRole.replace(/s$/, ''); // Remove trailing 's' for singular
+    const careTask = selectedScenario.care_task.name.toLowerCase();
+    const condition = selectedScenario.condition.name.toLowerCase();
+    const carePhase = selectedScenario.care_phase.name.toLowerCase();
+    const careSetting = selectedScenario.care_setting.name.toLowerCase();
 
-    const scenarioText = `Intelligence system competency to augment <span class="dimension-value dimension-persona">${persona}</span> for <span class="dimension-value dimension-task">${task}</span> task in the care of <span class="dimension-value dimension-disease">${disease}</span> at the <span class="dimension-value dimension-stage">${stage}</span> stage in <span class="dimension-value dimension-location">${location}</span>`;
+    // Extract 3A values
+    const agentFacingId = selectedScenario.agent_facing.id;
+    const agentFacing = selectedScenario.agent_facing.name;
+    const anchoringLayer = selectedScenario.anchoring_layer.name.toLowerCase();
+    const assignedAuthority = selectedScenario.assigned_authority.name.toLowerCase();
+
+    // Determine agent context based on agent-facing selection
+    let agentContext = '';
+    let agentPossessive = '';
+    if (agentFacingId === 'provider_facing') {
+        agentContext = providerRole;  // Just the role (plural: cardiologists)
+        agentPossessive = providerRole + "'";  // cardiologists' (plural possessive)
+    } else if (agentFacingId === 'encounter_facing') {
+        agentContext = `${providerRoleSingular}-patient encounter`;
+        agentPossessive = `${providerRoleSingular}-patient encounter's`;
+    } else if (agentFacingId === 'patient_facing') {
+        agentContext = `patient in ${providerRoleSingular}-patient care`;
+        agentPossessive = `patient's in ${providerRoleSingular}-patient care`;
+    } else {
+        agentContext = providerRole;
+        agentPossessive = providerRole + "'";
+    }
+
+    // Convert authority to verb form
+    let authorityVerb = assignedAuthority;
+    if (assignedAuthority === 'augmentation') {
+        authorityVerb = 'augment';
+    } else if (assignedAuthority === 'monitoring') {
+        authorityVerb = 'monitor';
+    } else if (assignedAuthority === 'automation') {
+        authorityVerb = 'automate';
+    }
+
+    // Build unified single-sentence specification with correct grammar
+    const scenarioHTML = `
+        <div class="unified-specification">
+            <p class="ai-competency-statement">
+                AI Competency to
+                <span class="dim-authority" style="color: var(--color-assigned-authority); font-weight: 700;">${authorityVerb}</span>
+                <span class="dim-agent" style="color: var(--color-care-provider-role); font-weight: 700;">${agentPossessive}</span>
+                <span class="dim-layer" style="color: var(--color-anchoring-layer); font-weight: 700;">${anchoringLayer} layer</span>
+                for <span class="dim-task" style="color: var(--color-care-task); font-weight: 700;">${careTask}</span>
+                in <span class="dim-condition" style="color: var(--color-condition); font-weight: 700;">${condition}</span>
+                during <span class="dim-phase" style="color: var(--color-care-phase); font-weight: 700;">${carePhase}</span>
+                within the <span class="dim-setting" style="color: var(--color-care-setting); font-weight: 700;">${careSetting}</span>.
+            </p>
+        </div>
+    `;
 
     scenarioDiv.className = 'scenario-text populated';
-    scenarioDiv.innerHTML = scenarioText;
+    scenarioDiv.innerHTML = scenarioHTML;
+
+    // Reinitialize Lucide icons for the new content
+    if (typeof lucide !== 'undefined') {
+        lucide.createIcons();
+    }
 }
 
 /**
  * Copy scenario text to clipboard
  */
 function copyScenarioText() {
-    const scenarioDiv = document.getElementById('scenario-text');
-    if (!scenarioDiv) return;
+    const scenarioDiv = document.getElementById('combined-scenario');
+    if (!scenarioDiv) {
+        console.warn('Combined scenario div not found');
+        return;
+    }
 
     // Get text content without HTML
     const text = scenarioDiv.innerText || scenarioDiv.textContent;
 
     // Check if scenario is populated
-    if (text.includes('Select elements')) {
-        alert('Please select all dimensions first to generate a scenario.');
+    if (text.includes('Select dimensions')) {
+        alert('Please select all dimensions from both cubes first to generate a specification.');
         return;
     }
 
@@ -638,3 +758,42 @@ window.Clinical = {
 
 // Make copyScenarioText globally available
 window.copyScenarioText = copyScenarioText;
+
+
+// ═══ BibTeX Copy ═══
+function copyBibtex() {
+    const bibtex = document.getElementById('bibtex-data').content.textContent.trim();
+    const btn = document.querySelector('.bibtex-copy-btn');
+    const label = btn.querySelector('.bibtex-btn-label');
+    const icon = btn.querySelector('[data-lucide]');
+
+    navigator.clipboard.writeText(bibtex).then(() => {
+        label.textContent = 'Copied!';
+        icon.setAttribute('data-lucide', 'check');
+        btn.classList.add('bibtex-copied');
+        if (window.lucide) lucide.createIcons();
+
+        setTimeout(() => {
+            label.textContent = 'Copy BibTeX';
+            icon.setAttribute('data-lucide', 'clipboard-copy');
+            btn.classList.remove('bibtex-copied');
+            if (window.lucide) lucide.createIcons();
+        }, 2000);
+    }).catch(() => {
+        const textarea = document.createElement('textarea');
+        textarea.value = bibtex;
+        textarea.style.position = 'fixed';
+        textarea.style.opacity = '0';
+        document.body.appendChild(textarea);
+        textarea.select();
+        document.execCommand('copy');
+        document.body.removeChild(textarea);
+
+        label.textContent = 'Copied!';
+        btn.classList.add('bibtex-copied');
+        setTimeout(() => {
+            label.textContent = 'Copy BibTeX';
+            btn.classList.remove('bibtex-copied');
+        }, 2000);
+    });
+}

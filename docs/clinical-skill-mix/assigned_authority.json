@@ -1,0 +1,116 @@
+{
+  "dimension": "assigned_authority",
+  "description": "Specifies the degree of AI cognitive takeover in clinical tasks, ranging from passive monitoring through active augmentation to full automation. Defines the balance of authority between human and AI in decision-making and execution.",
+  "reference": {
+    "classification": "Assigned Authority Framework: Three Levels of AI Autonomy",
+    "burden_metric": "Degree of AI autonomy and human oversight requirements",
+    "data_source": "Human-AI collaboration frameworks and automation taxonomies",
+    "last_updated": "2026-02-04",
+    "sources": [
+      "Levels of Automation (Sheridan & Verplank): Information, recommendation, execution",
+      "Human-in-the-loop vs Human-on-the-loop vs Human-out-of-the-loop",
+      "FDA guidance on clinical decision support and AI autonomy",
+      "Clinical AI integration models"
+    ]
+  },
+  "hierarchy": {
+    "structure": "Progressive levels of AI autonomy from monitoring to automation",
+    "levels": [
+      "authority"
+    ],
+    "max_depth": 0
+  },
+  "items": [
+    {
+      "id": "monitoring",
+      "path_components": [
+        "monitoring"
+      ],
+      "depth": 0,
+      "parent_id": null,
+      "children_ids": [],
+      "name": "Monitoring",
+      "description": "AI observes and flags issues for human review without direct action",
+      "level_info": {
+        "0": {
+          "name": "Monitoring",
+          "level_name": "Authority Level"
+        }
+      },
+      "metadata": {
+        "order": 1,
+        "ai_role": "Observer",
+        "human_role": "Primary decision-maker and executor",
+        "control_level": "Human-in-command",
+        "autonomy_level": "Minimal (AI provides information only)",
+        "example_applications": [
+          "Clinical surveillance systems",
+          "Quality monitoring dashboards",
+          "Adverse event detection",
+          "Performance metrics tracking"
+        ]
+      }
+    },
+    {
+      "id": "augmentation",
+      "path_components": [
+        "augmentation"
+      ],
+      "depth": 0,
+      "parent_id": null,
+      "children_ids": [],
+      "name": "Augmentation",
+      "description": "AI provides supportive recommendations while human retains decision authority",
+      "level_info": {
+        "0": {
+          "name": "Augmentation",
+          "level_name": "Authority Level"
+        }
+      },
+      "metadata": {
+        "order": 2,
+        "ai_role": "Supportive contributor",
+        "human_role": "Final decision-maker with AI assistance",
+        "control_level": "Human-on-the-loop",
+        "autonomy_level": "Moderate (AI suggests, human decides)",
+        "example_applications": [
+          "Clinical decision support systems",
+          "Diagnostic assistance tools",
+          "Treatment recommendation engines",
+          "Risk stratification tools"
+        ]
+      }
+    },
+    {
+      "id": "automation",
+      "path_components": [
+        "automation"
+      ],
+      "depth": 0,
+      "parent_id": null,
+      "children_ids": [],
+      "name": "Automation",
+      "description": "AI executes decisions autonomously with human oversight for exceptions",
+      "level_info": {
+        "0": {
+          "name": "Automation",
+          "level_name": "Authority Level"
+        }
+      },
+      "metadata": {
+        "order": 3,
+        "ai_role": "Primary processor",
+        "human_role": "Overseer and exception handler",
+        "control_level": "Human-out-of-the-loop",
+        "autonomy_level": "High (AI executes, human monitors)",
+        "example_applications": [
+          "Automated medication dispensing",
+          "Robotic surgery systems",
+          "Autonomous diagnostic imaging analysis",
+          "Automated appointment scheduling"
+        ]
+      }
+    }
+  ],
+  "dimension_metadata": {}
+}

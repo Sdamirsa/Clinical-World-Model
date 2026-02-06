@@ -3,8 +3,9 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Clinical World Model | Clinical Skill-Mix Cube</title>
-    <meta name="description" content="Clinical World Model framework with Clinical Skill-Mix Cube: Five dimensions for healthcare AI evaluation and deployment">
+    <title>Clinical World Model | 8-Dimension Framework (5C + 3A)</title>
+    <meta name="description" content="Clinical World Model: 8-dimension framework with Clinical Competency (5C) and AI Engagement (3A) cubes for healthcare AI evaluation">
+    <link rel="icon" type="image/png" href="assets/images/favicon.png">
     <link rel="stylesheet" href="assets/css/styles.css">
     <link rel="preconnect" href="https://fonts.googleapis.com">
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
@@ -14,6 +15,23 @@
 
     <!-- Decision Making Styles -->
     <style>
+
+        .framework-quote {
+            margin: 12px 0 0 0;
+            padding: 14px 18px;
+            background: rgba(15, 23, 42, 0.08);
+            border-left: 6px solid white;
+            border-right: 6px solid white;
+            border-radius: 6px;
+            color: #374151;
+            font-style: italic;
+            line-height: 1.5;
+            text-align: left; 
+        }
+        .framework-quote p { margin: 0; }
+        .framework-quote ul { margin: 8px 0 0 18px; padding: 0; list-style: disc; font-style: normal; color: #374151; }
+        .framework-quote li { margin-bottom: 6px; }
+
         /* Decision Making Section Specific Styles */
         .decision-making-section {
             position: relative;
@@ -287,9 +305,9 @@
         @keyframes nodeGlow { 0%, 100% { opacity: 0.9; } 50% { opacity: 0.4; } }
 
         .path-active {
-            stroke: #10b981 !important;
+            stroke: #7c3aed !important;
             stroke-width: 4 !important;
-            filter: drop-shadow(0 0 4px rgba(16, 185, 129, 0.6));
+            filter: drop-shadow(0 0 4px rgba(124, 58, 237, 0.6));
             animation: pathPulse 1.5s ease-in-out infinite;
         }
 
@@ -485,6 +503,109 @@
             .info-panels-philosophy { margin-bottom: var(--spacing-md, 1rem); }
             .visualization-grid { gap: var(--spacing-sm, 0.5rem); }
         }
+
+        .cwm-closing {
+        --cwm-text: #2c2c2c;
+        --cwm-text-secondary: #555;
+        --cwm-accent: #b44a3e;
+        --cwm-accent-light: rgba(180, 74, 62, 0.06);
+        --cwm-border: #e0d6cf;
+        --cwm-bg: #fafaf8;
+        --cwm-quote-bg: #f4f1ed;
+        --cwm-font-body: 'Source Serif 4', 'Georgia', serif;
+        --cwm-font-accent: 'DM Sans', 'Helvetica Neue', sans-serif;
+
+        background: var(--cwm-bg);
+        padding: 5rem 1.5rem;
+        font-family: var(--cwm-font-body);
+        color: var(--cwm-text);
+        line-height: 1.8;
+        border-top: 1px solid var(--cwm-border);
+        }
+
+        .cwm-closing .closing-inner {
+        max-width: 720px;
+        margin: 0 auto;
+        }
+
+        .cwm-closing .section-label {
+        font-family: var(--cwm-font-accent);
+        font-size: 0.75rem;
+        font-weight: 600;
+        letter-spacing: 0.12em;
+        text-transform: uppercase;
+        color: var(--cwm-accent);
+        margin-bottom: 1.5rem;
+        display: flex;
+        align-items: center;
+        gap: 0.75rem;
+        }
+
+        .cwm-closing .section-label::after {
+        content: '';
+        flex: 1;
+        height: 1px;
+        background: var(--cwm-border);
+        }
+
+        .cwm-closing .closing-body {
+        font-size: 1.125rem;
+        color: var(--cwm-text-secondary);
+        margin-bottom: 2.5rem;
+        }
+
+        .cwm-closing .closing-body .lead-sentence {
+        color: var(--cwm-text);
+        font-weight: 500;
+        }
+
+        .cwm-closing .closing-body .framework-ref {
+        font-weight: 600;
+        color: var(--cwm-text);
+        }
+
+        .cwm-closing .closing-body .dim-tag {
+        font-family: var(--cwm-font-accent);
+        font-size: 0.85em;
+        font-weight: 500;
+        color: var(--cwm-accent);
+        letter-spacing: 0.01em;
+        }
+
+        .cwm-closing .pull-quote {
+        background: var(--cwm-quote-bg);
+        border-left: 3px solid var(--cwm-accent);
+        padding: 1.75rem 2rem;
+        margin: 2.5rem 0;
+        border-radius: 0 6px 6px 0;
+        }
+
+        .cwm-closing .pull-quote p {
+        font-size: 1.15rem;
+        font-style: italic;
+        color: var(--cwm-text);
+        line-height: 1.75;
+        margin: 0;
+        }
+
+        .cwm-closing .pull-quote .emphasis {
+        font-style: normal;
+        font-weight: 600;
+        color: var(--cwm-accent);
+        }
+
+        @media (max-width: 640px) {
+        .cwm-closing {
+            padding: 3rem 1.25rem;
+        }
+        .cwm-closing .closing-body {
+            font-size: 1rem;
+        }
+        .cwm-closing .pull-quote {
+            padding: 1.25rem 1.5rem;
+            margin: 2rem -0.25rem;
+        }
+        }
     </style>
 </head>
 <body>
@@ -499,7 +620,7 @@
                 <a href="#framework" class="nav-link active">Framework</a>
                 <a href="#overview" class="nav-link">Skill-Mix Cube</a>
                 <a href="#competency-explorer" class="nav-link">Competency Explorer</a>
-                <a href="#components" class="nav-link">Cube Dimensions</a>
+                <a href="#components" class="nav-link">Dimensions Explorer</a>
                 <a href="#decision-making" class="nav-link">Decision Making</a>
             </div>
         </div>
@@ -512,207 +633,483 @@
                 <div class="framework-header">
                     <h2 class="section-title">The Clinical World Model Framework</h2>
                     <p class="section-subtitle">
-                        Five dimensions operationalize the clinical environment for AI deployment and evaluation
-                    </p>
-                    <p class="framework-intro">
-                        Healthcare delivery involves clinicians and patients interacting within specific clinical contexts.
-                        Evaluating AI systems requires decomposing these contexts into measurable dimensions—disease conditions,
-                        disease stages, care locations, cognitive tasks, and caregiver personas. Each combination forms a distinct
-                        clinical competency cell, enabling precise specification of where AI augmentation is appropriate.
+                        Clinical AI operates within a dynamic triangle of Patient, Provider, and Clinical AI interactions, all occurring within a defined Care Setting.
                     </p>
                 </div>
 
                 <div class="framework-diagram">
-                    <div class="framework-players">
-                        <div class="player-box clinician-box">
-                            <div class="player-icon">
-                                <i data-lucide="user-round"></i>
-                            </div>
-                            <h4>Clinician</h4>
-                            <p>Processes inputs through intuitive and analytical reasoning to generate clinical actions</p>
-                        </div>
+                    <svg class="triangle-diagram" viewBox="0 0 600 550" xmlns="http://www.w3.org/2000/svg">
+                        <!-- Setting Triangle (blue background) -->
+                        <defs>
+                            <!-- Gradients for nodes with depth -->
+                            <radialGradient id="patientGradient" cx="30%" cy="30%">
+                                <stop offset="0%" style="stop-color:#ff6b6b;stop-opacity:1"/>
+                                <stop offset="100%" style="stop-color:#c92a2a;stop-opacity:1"/>
+                            </radialGradient>
 
-                        <div class="interaction-arrows">
-                            <div class="arrow-line">
-                                <span class="arrow-label">Actions</span>
-                                <i data-lucide="arrow-right"></i>
-                            </div>
-                            <div class="arrow-line reverse">
-                                <i data-lucide="arrow-left"></i>
-                                <span class="arrow-label">Preferences</span>
-                            </div>
-                        </div>
+                            <radialGradient id="providerGradient" cx="30%" cy="30%">
+                                <stop offset="0%" style="stop-color:#8ce99a;stop-opacity:1"/>
+                                <stop offset="100%" style="stop-color:#37b24d;stop-opacity:1"/>
+                            </radialGradient>
 
-                        <div class="player-box patient-box">
-                            <div class="player-icon">
-                                <i data-lucide="heart"></i>
-                            </div>
-                            <h4>Patient</h4>
-                            <p>Mirrors cognitive architecture, processing information through personal mediators to form preferences</p>
-                        </div>
-                    </div>
+                            <radialGradient id="aiGradient" cx="30%" cy="30%">
+                                <stop offset="0%" style="stop-color:#ffe066;stop-opacity:1"/>
+                                <stop offset="100%" style="stop-color:#fab005;stop-opacity:1"/>
+                            </radialGradient>
 
-                    <div class="context-box">
-                        <div class="context-header">
-                            <i data-lucide="layers"></i>
-                            <h4>Clinical Context</h4>
+                            <!-- Glow filters for nodes -->
+                            <filter id="patientGlow" x="-50%" y="-50%" width="200%" height="200%">
+                                <feGaussianBlur stdDeviation="4" result="coloredBlur"/>
+                                <feMerge>
+                                    <feMergeNode in="coloredBlur"/>
+                                    <feMergeNode in="SourceGraphic"/>
+                                </feMerge>
+                            </filter>
+
+                            <filter id="providerGlow" x="-50%" y="-50%" width="200%" height="200%">
+                                <feGaussianBlur stdDeviation="4" result="coloredBlur"/>
+                                <feMerge>
+                                    <feMergeNode in="coloredBlur"/>
+                                    <feMergeNode in="SourceGraphic"/>
+                                </feMerge>
+                            </filter>
+
+                            <filter id="aiGlow" x="-50%" y="-50%" width="200%" height="200%">
+                                <feGaussianBlur stdDeviation="5" result="coloredBlur"/>
+                                <feMerge>
+                                    <feMergeNode in="coloredBlur"/>
+                                    <feMergeNode in="SourceGraphic"/>
+                                </feMerge>
+                            </filter>
+
+                            <!-- Drop shadow for nodes -->
+                            <filter id="dropShadow" x="-50%" y="-50%" width="200%" height="200%">
+                                <feGaussianBlur in="SourceAlpha" stdDeviation="3"/>
+                                <feOffset dx="0" dy="3" result="offsetblur"/>
+                                <feComponentTransfer>
+                                    <feFuncA type="linear" slope="0.3"/>
+                                </feComponentTransfer>
+                                <feMerge>
+                                    <feMergeNode/>
+                                    <feMergeNode in="SourceGraphic"/>
+                                </feMerge>
+                            </filter>
+
+                            <!-- Animated gradient for connection flows -->
+                            <linearGradient id="flowGradient1">
+                                <stop offset="0%" style="stop-color:#ffffff;stop-opacity:0">
+                                    <animate attributeName="offset" values="-0.5;1.5" dur="2.5s" repeatCount="indefinite"/>
+                                </stop>
+                                <stop offset="25%" style="stop-color:#ffffff;stop-opacity:1">
+                                    <animate attributeName="offset" values="-0.25;1.75" dur="2.5s" repeatCount="indefinite"/>
+                                </stop>
+                                <stop offset="50%" style="stop-color:#ffffff;stop-opacity:0">
+                                    <animate attributeName="offset" values="0;2" dur="2.5s" repeatCount="indefinite"/>
+                                </stop>
+                            </linearGradient>
+
+                            <linearGradient id="flowGradient2">
+                                <stop offset="0%" style="stop-color:#ffffff;stop-opacity:0">
+                                    <animate attributeName="offset" values="-0.5;1.5" dur="3s" repeatCount="indefinite"/>
+                                </stop>
+                                <stop offset="25%" style="stop-color:#ffffff;stop-opacity:1">
+                                    <animate attributeName="offset" values="-0.25;1.75" dur="3s" repeatCount="indefinite"/>
+                                </stop>
+                                <stop offset="50%" style="stop-color:#ffffff;stop-opacity:0">
+                                    <animate attributeName="offset" values="0;2" dur="3s" repeatCount="indefinite"/>
+                                </stop>
+                            </linearGradient>
+
+                            <linearGradient id="flowGradient3">
+                                <stop offset="0%" style="stop-color:#ffffff;stop-opacity:0">
+                                    <animate attributeName="offset" values="-0.5;1.5" dur="2.8s" repeatCount="indefinite"/>
+                                </stop>
+                                <stop offset="25%" style="stop-color:#ffffff;stop-opacity:1">
+                                    <animate attributeName="offset" values="-0.25;1.75" dur="2.8s" repeatCount="indefinite"/>
+                                </stop>
+                                <stop offset="50%" style="stop-color:#ffffff;stop-opacity:0">
+                                    <animate attributeName="offset" values="0;2" dur="2.8s" repeatCount="indefinite"/>
+                                </stop>
+                            </linearGradient>
+                        </defs>
+
+                        <!-- Blue Triangle (Setting) - Updated for inverted triangle -->
+                        // WITH THIS:
+                        <path d="M 30 30 L 570 30 L 300 600 Z"
+                            fill="rgba(131, 229, 255, 0.12)"
+                            stroke="none"
+                            opacity="0.8">
+                        </path>
+
+                        <!-- Setting Label -->
+                        <text x="300" y="250" text-anchor="middle" fill="#4dabf7" font-size="20" font-weight="600" opacity="0.6" letter-spacing="2">
+                            Care Setting
+                        </text>
+
+                        <!-- Connection lines with gradient flow animations -->
+
+                        <!-- Patient <-> Provider (Top horizontal) -->
+                        <path d="M 180 100 L 420 100"
+                              stroke="rgba(131, 229, 255, 0.4)"
+                              stroke-width="3"
+                              fill="none"
+                              stroke-linecap="round"/>
+                        <path d="M 180 100 L 420 100"
+                              stroke="url(#flowGradient1)"
+                              stroke-width="3"
+                              fill="none"
+                              stroke-linecap="round"/>
+
+                        <!-- Patient <-> Clinical AI (Left diagonal) -->
+                        <path d="M 175 130 L 275 440"
+                              stroke="rgba(255, 235, 102, 0.4)"
+                              stroke-width="3"
+                              fill="none"
+                              stroke-linecap="round"/>
+                        <path d="M 175 130 L 275 440"
+                              stroke="url(#flowGradient2)"
+                              stroke-width="3"
+                              fill="none"
+                              stroke-linecap="round"/>
+
+                        <!-- Provider <-> Clinical AI (Right diagonal) -->
+                        <path d="M 425 130 L 325 440"
+                              stroke="rgba(114, 213, 154, 0.4)"
+                              stroke-width="3"
+                              fill="none"
+                              stroke-linecap="round"/>
+                        <path d="M 425 130 L 325 440"
+                              stroke="url(#flowGradient3)"
+                              stroke-width="3"
+                              fill="none"
+                              stroke-linecap="round"/>
+
+                        <!-- Patient Node (Red - Top Left) -->
+                        <g filter="url(#dropShadow)">
+                            <circle cx="150" cy="100" r="50" fill="url(#patientGradient)" filter="url(#patientGlow)" stroke="#fff" stroke-width="4" opacity="0.95">
+                                <animate attributeName="r" values="50;53;50" dur="4s" repeatCount="indefinite"/>
+                            </circle>
+                            <circle cx="150" cy="100" r="42" fill="none" stroke="rgba(255,255,255,0.3)" stroke-width="1.5"/>
+                            <text x="150" y="108" text-anchor="middle" fill="#fff" font-size="18" font-weight="700" letter-spacing="0.5">Patient</text>
+                        </g>
+
+                        <!-- Provider Node (Green - Top Right) -->
+                        <g filter="url(#dropShadow)">
+                            <circle cx="450" cy="100" r="50" fill="url(#providerGradient)" filter="url(#providerGlow)" stroke="#fff" stroke-width="4" opacity="0.95">
+                                <animate attributeName="r" values="50;53;50" dur="4s" begin="1.3s" repeatCount="indefinite"/>
+                            </circle>
+                            <circle cx="450" cy="100" r="42" fill="none" stroke="rgba(255,255,255,0.3)" stroke-width="1.5"/>
+                            <text x="450" y="108" text-anchor="middle" fill="#fff" font-size="18" font-weight="700" letter-spacing="0.5">Provider</text>
+                        </g>
+
+                        <!-- Clinical AI Node (Yellow - Bottom Center) -->
+                        <g filter="url(#dropShadow)">
+                            <circle cx="300" cy="470" r="55" fill="url(#aiGradient)" filter="url(#aiGlow)" stroke="#fff" stroke-width="4" opacity="0.95">
+                                <animate attributeName="r" values="55;59;55" dur="4s" begin="2.6s" repeatCount="indefinite"/>
+                            </circle>
+                            <circle cx="300" cy="470" r="47" fill="none" stroke="rgba(255,255,255,0.4)" stroke-width="1.5"/>
+
+                            <!-- AI Icon/Symbol -->
+                            <circle cx="300" cy="460" r="3" fill="#333" opacity="0.7"/>
+                            <circle cx="308" cy="464" r="2.5" fill="#333" opacity="0.7"/>
+                            <circle cx="292" cy="464" r="2.5" fill="#333" opacity="0.7"/>
+                            <path d="M 292 473 Q 300 478 308 473" stroke="#333" stroke-width="2" fill="none" opacity="0.7" stroke-linecap="round"/>
+
+                            <text x="300" y="493" text-anchor="middle" fill="#333" font-size="17" font-weight="700" letter-spacing="0.5">Clinical AI</text>
+                        </g>
+
+                        <!-- Animated signal dots on connections -->
+
+                        <!-- Patient -> Provider signal -->
+                        <circle r="5" fill="#e34f53" opacity="0.9">
+                            <animateMotion dur="3s" repeatCount="indefinite">
+                                <mpath href="#path1"/>
+                            </animateMotion>
+                            <animate attributeName="opacity" values="0.3;1;0.3" dur="3s" repeatCount="indefinite"/>
+                        </circle>
+                        <path id="path1" d="M 180 100 L 420 100" fill="none"/>
+
+                        <!-- Patient -> AI signal -->
+                        <circle r="5" fill="#ff6b6b" opacity="0.9">
+                            <animateMotion dur="3.5s" repeatCount="indefinite">
+                                <mpath href="#path2"/>
+                            </animateMotion>
+                            <animate attributeName="opacity" values="0.3;1;0.3" dur="3.5s" repeatCount="indefinite"/>
+                        </circle>
+                        <path id="path2" d="M 175 130 L 275 440" fill="none"/>
+
+                        <!-- Provider -> AI signal -->
+                        <circle r="5" fill="#72d59a" opacity="0.9">
+                            <animateMotion dur="3.2s" repeatCount="indefinite">
+                                <mpath href="#path3"/>
+                            </animateMotion>
+                            <animate attributeName="opacity" values="0.3;1;0.3" dur="3.2s" repeatCount="indefinite"/>
+                        </circle>
+                        <path id="path3" d="M 425 130 L 325 440" fill="none"/>
+
+                        <!-- AI -> Patient signal (reverse flow) -->
+                        <circle r="5" fill="#ffe066" opacity="0.8">
+                            <animateMotion dur="3.5s" begin="1.75s" repeatCount="indefinite">
+                                <mpath href="#path4"/>
+                            </animateMotion>
+                            <animate attributeName="opacity" values="0.3;1;0.3" dur="3.5s" begin="1.75s" repeatCount="indefinite"/>
+                        </circle>
+                        <path id="path4" d="M 275 440 L 175 130" fill="none"/>
+
+                        <!-- AI -> Provider signal (reverse flow) -->
+                        <circle r="5" fill="#ffe066" opacity="0.8">
+                            <animateMotion dur="3.2s" begin="1.6s" repeatCount="indefinite">
+                                <mpath href="#path5"/>
+                            </animateMotion>
+                            <animate attributeName="opacity" values="0.3;1;0.3" dur="3.2s" begin="1.6s" repeatCount="indefinite"/>
+                        </circle>
+                        <path id="path5" d="M 325 440 L 425 130" fill="none"/>
+
+                    </svg>
+
+                    <div class="triangle-legend">
+                        <div class="legend-item">
+                            <div class="legend-color" style="background: linear-gradient(135deg, #ff6b6b, #c92a2a);"></div>
+                            <span><strong>Patient:</strong> Healthcare recipient with unique needs, preferences, and clinical context</span>
                         </div>
-                        <p class="context-description">
-                            The clinical context represents the healthcare environment where patient-clinician interactions occur. This multidimensional space encompasses the conditions being treated, the progression of illness, the care setting, the medical tasks performed, and the healthcare professionals involved. It is within this context that both clinicians and patients engage in parallel cognitive processes to make informed decisions.
-                        </p>
+                        <div class="legend-item">
+                            <div class="legend-color" style="background: linear-gradient(135deg, #8ce99a, #37b24d);"></div>
+                            <span><strong>Provider:</strong> Healthcare professional delivering care</span>
+                        </div>
+                        <div class="legend-item">
+                            <div class="legend-color" style="background: linear-gradient(135deg, #ffe066, #fab005);"></div>
+                            <span><strong>Clinical AI:</strong> Intelligent system augmenting and/or automating decision making</span>
+                        </div>
+                        <div class="legend-item">
+                            <div class="legend-color" style="background: rgba(131, 229, 255, 0.4); border: 2px dashed #4dabf7;"></div>
+                            <span><strong>Care Setting:</strong> Healthcare environment providing context for all interactions</span>
+                        </div>
                     </div>
                 </div>
             </div>
         </div>
     </section>
 
-    <!-- Clinical Skill-Mix Cube Section -->
+    <!-- Clinical World Model Section -->
     <section id="overview" class="hero">
         <div class="hero-container">
             <div class="hero-content">
-                <h1 class="hero-title">Clinical World Model<br><span class="hero-subtitle-inline">Clinical Skill-Mix Cube</span></h1>
+                <h1 class="hero-title">Clinical Skill-Mix<br><span class="hero-subtitle-inline">8-Dimensions (5C + 3A) to Bound Competency Cell</span></h1>
                 <p class="hero-subtitle">
-                    Five dimensions decompose the clinical environment for AI deployment and evaluation: Disease, Stage, Location, Task, Persona
+                    Two interconnected spaces clash to define the Clinical AI Skill-Mix: What is the Clinical Competency (5C) and how AI Engagement (3A) happens within it?
                 </p>
-                <div class="hero-stats">
-                    <div class="stat-item stat-disease">
-                        <span class="stat-number">98</span>
-                        <span class="stat-label">Disease</span>
+                <div class="hero-stats-grid">
+                    <div class="stats-group">
+                        <h3 class="stats-group-title">Clinical Competency (5C)</h3>
+                        <div class="stat-item stat-condition">
+                            <span class="stat-number">1,918</span>
+                            <span class="stat-label">Condition</span>
+                        </div>
+                        <div class="stat-item stat-care-phase">
+                            <span class="stat-number">7</span>
+                            <span class="stat-label">Care Phase</span>
+                        </div>
+                        <div class="stat-item stat-care-setting">
+                            <span class="stat-number">12</span>
+                            <span class="stat-label">Care Setting</span>
+                        </div>
+                        <div class="stat-item stat-care-task">
+                            <span class="stat-number">58</span>
+                            <span class="stat-label">Care Task</span>
+                        </div>
+                        <div class="stat-item stat-care-provider">
+                            <span class="stat-number">86</span>
+                            <span class="stat-label">Provider Role<br>(36 Physician)</span>
+                        </div>
                     </div>
-                    <div class="stat-item stat-stage">
-                        <span class="stat-number">7</span>
-                        <span class="stat-label">Stage</span>
-                    </div>
-                    <div class="stat-item stat-location">
-                        <span class="stat-number">12</span>
-                        <span class="stat-label">Location</span>
-                    </div>
-                    <div class="stat-item stat-task">
-                        <span class="stat-number">58</span>
-                        <span class="stat-label">Task</span>
-                    </div>
-                    <div class="stat-item stat-persona">
-                        <span class="stat-number">86</span>
-                        <span class="stat-label">Persona</span>
-                        <span class="stat-breakdown">37 Clinicians / 49 HCW</span>
+                    <div class="stats-group">
+                        <h3 class="stats-group-title">AI Engagement (3A)</h3>
+                        <div class="stat-item stat-agent-facing">
+                            <span class="stat-number">3</span>
+                            <span class="stat-label">Agent Facing</span>
+                        </div>
+                        <div class="stat-item stat-anchoring-layer">
+                            <span class="stat-number">7</span>
+                            <span class="stat-label">Anchoring Layer</span>
+                        </div>
+                        <div class="stat-item stat-assigned-authority">
+                            <span class="stat-number">3</span>
+                            <span class="stat-label">Assigned Authority</span>
+                        </div>
                     </div>
                 </div>
                 <div class="hero-total">
-                    <p class="total-label">Total Clinical Skill-Mix Cells:</p>
-                    <p class="total-number">41,061,216</p>
-                    <p class="total-breakdown">17.7M Clinicians / 23.4M HCW</p>
+                    <p class="total-label">Total Cells (5C × 3A) within Skill-Mix Cube:</p>
+                    <p class="total-number">50,628,479,328</p>
+                    <p class="total-breakdown">9.3M clinical scenarios per provider × 63 AI engagement patterns</p>
+                    <p class="total-breakdown">= 588.7M clinical AI scenarios per provider</p>
                 </div>
                 <div class="hero-actions">
                     <button class="btn btn-primary" onclick="scrollToSection('competency-explorer')">
                         <i data-lucide="box"></i>
-                        Explore Competency Cells
+                        Explore Intelligence Cells
                     </button>
                     <button class="btn btn-secondary" onclick="scrollToSection('components')">
                         <i data-lucide="layers"></i>
-                        View Clinical Dimensions
+                        View All Dimensions
                     </button>
                 </div>
             </div>
             <div class="hero-visual">
-                <div class="dimension-cube">
-                    <div class="cube-face front">Task</div>
-                    <div class="cube-face back">Location</div>
-                    <div class="cube-face right">Persona</div>
-                    <div class="cube-face left">Stage</div>
-                    <div class="cube-face top">Disease</div>
-                    <div class="cube-face bottom">Cube</div>
+                <div class="dual-cubes">
+                    <div class="cube-wrapper">
+                        <div class="cube-label">5C</div>
+                        <div class="dimension-cube cube-5c">
+                            <div class="cube-face front" style="background: var(--color-care-task);">Care Task</div>
+                            <div class="cube-face back" style="background: var(--color-care-setting);">Care Setting</div>
+                            <div class="cube-face right" style="background: var(--color-care-provider-role);">Provider</div>
+                            <div class="cube-face left" style="background: var(--color-care-phase);">Phase</div>
+                            <div class="cube-face top" style="background: var(--color-condition);">Condition</div>
+                            <div class="cube-face bottom" style="background: var(--gray-300);">5C</div>
+                        </div>
+                    </div>
+                    <div class="cube-wrapper">
+                        <div class="cube-label">3A</div>
+                        <div class="dimension-cube cube-3a">
+                            <div class="cube-face front" style="background: var(--color-agent-facing); color: #333;">Agent Facing</div>
+                            <div class="cube-face back" style="background: var(--color-agent-facing); color: #333;">Agent Facing</div>
+                            <div class="cube-face right" style="background: var(--color-assigned-authority); color: #333;">Assigned Authority</div>
+                            <div class="cube-face left" style="background: var(--color-assigned-authority); color: #333;">Assigned Authority</div>
+                            <div class="cube-face top" style="background: var(--color-anchoring-layer); color: #333;">Anchoring Layer</div>
+                            <div class="cube-face bottom" style="background: var(--color-anchoring-layer); color: #333;">Anchoring Layer</div>
+                        </div>
+                    </div>
                 </div>
             </div>
         </div>
     </section>
 
-    <!-- Competency Explorer -->
+    <!-- Clinical Competency Explorer -->
     <section id="competency-explorer" class="competency-explorer-section">
         <div class="section-container">
             <div class="section-header">
-                <h2 class="section-title">Clinical Skill Mix Cell (i.e. Competency)</h2>
-                <p class="section-subtitle">
-                    Select one element from each dimension to explore a specific clinical competency from the Cube
-                </p>
-            </div>
-
-            <div class="cube-selector-grid">
-                <div class="dimension-selector-item" data-dimension="disease">
-                    <label class="selector-label">
-                        <span class="label-icon">🏥</span>
-                        <span class="label-text">Disease</span>
-                    </label>
-                    <select id="disease-select" class="dimension-select">
-                        <option value="">Select a disease...</option>
-                    </select>
-                </div>
-
-                <div class="dimension-selector-item" data-dimension="stage">
-                    <label class="selector-label">
-                        <span class="label-icon">⏱️</span>
-                        <span class="label-text">Stage</span>
-                    </label>
-                    <select id="stage-select" class="dimension-select">
-                        <option value="">Select a stage...</option>
-                    </select>
-                </div>
-
-                <div class="dimension-selector-item" data-dimension="location">
-                    <label class="selector-label">
-                        <span class="label-icon">📍</span>
-                        <span class="label-text">Location</span>
-                    </label>
-                    <select id="location-select" class="dimension-select">
-                        <option value="">Select a location...</option>
-                    </select>
-                </div>
-
-                <div class="dimension-selector-item" data-dimension="task">
-                    <label class="selector-label">
-                        <span class="label-icon">🎯</span>
-                        <span class="label-text">Task</span>
-                    </label>
-                    <select id="task-select" class="dimension-select">
-                        <option value="">Select a task...</option>
-                    </select>
-                </div>
-
-                <div class="dimension-selector-item" data-dimension="persona">
-                    <label class="selector-label">
-                        <span class="label-icon">👤</span>
-                        <span class="label-text">Persona</span>
-                    </label>
-                    <select id="persona-select" class="dimension-select">
-                        <option value="">Select a persona...</option>
-                    </select>
+                <!-- Combined Clinical Intelligence Output -->
+                <div class="clinical-intelligence-output">
+                    <h2 class="section-title">Explore a Cell — Clinical AI Competency</h2>
+                    <div id="combined-scenario" class="scenario-text">
+                        Select dimensions from both cubes below to generate a complete Clinical Intelligence specification...
+                    </div>
+                    
+                    <div>
+                        <blockquote class="framework-quote">
+                            <p>Each Clinical Intelligence Cell (5C × 3A) represents a unique capability requiring distinct evaluation approaches, defined by:</p>
+                            <ul>
+                                <li><strong>Clinical Competency Scenario</strong> — condition, care phase, setting, task, provider role</li>
+                                <li><strong>AI Engagement</strong> — agent facing, anchoring layer, assigned authority</li>
+                                <li><strong>Performance Metrics</strong> — accuracy, clinical safety, reliability, clinical utility, and skill preservation safety</li>
+                            </ul>
+                        </blockquote>
+                    </div>
                 </div>
             </div>
 
-            <div class="scenario-box">
-                <div class="scenario-header">
-                    <h3>Selected Competency Cell</h3>
-                    <button class="btn btn-sm" onclick="copyScenarioText()" title="Copy to clipboard">
-                        <i data-lucide="copy"></i>
-                        Copy
-                    </button>
-                </div>
-                <div id="scenario-text" class="scenario-text">
-                    Select elements from each dimension above to generate a clinical competency...
+
+
+
+            <!-- Two-column grid for cube selectors -->
+            <div class="cubes-grid">
+                <!-- Clinical Competency Cube (5C) -->
+                <div class="cube-container" id="clinical-competency-cube">
+                <h3 class="cube-title">Clinical Competency (5C)</h3>
+                <p class="cube-description">Five dimensions defining WHAT clinical scenario</p>
+
+                <div class="cube-selector-grid">
+                    <div class="dimension-selector-item" data-dimension="condition">
+                        <label class="selector-label">
+                            <span class="label-icon">🏥</span>
+                            <span class="label-text">Condition</span>
+                        </label>
+                        <select id="condition-select" class="dimension-select">
+                            <option value="">Select a condition...</option>
+                        </select>
+                    </div>
+
+                    <div class="dimension-selector-item" data-dimension="care-phase">
+                        <label class="selector-label">
+                            <span class="label-icon">⏱️</span>
+                            <span class="label-text">Care Phase</span>
+                        </label>
+                        <select id="care-phase-select" class="dimension-select">
+                            <option value="">Select a care phase...</option>
+                        </select>
+                    </div>
+
+                    <div class="dimension-selector-item" data-dimension="care-setting">
+                        <label class="selector-label">
+                            <span class="label-icon">📍</span>
+                            <span class="label-text">Care Setting</span>
+                        </label>
+                        <select id="care-setting-select" class="dimension-select">
+                            <option value="">Select a care setting...</option>
+                        </select>
+                    </div>
+
+                    <div class="dimension-selector-item" data-dimension="care-task">
+                        <label class="selector-label">
+                            <span class="label-icon">🎯</span>
+                            <span class="label-text">Care Task</span>
+                        </label>
+                        <select id="care-task-select" class="dimension-select">
+                            <option value="">Select a care task...</option>
+                        </select>
+                    </div>
+
+                    <div class="dimension-selector-item" data-dimension="care-provider-role">
+                        <label class="selector-label">
+                            <span class="label-icon">👤</span>
+                            <span class="label-text">Care Provider Role</span>
+                        </label>
+                        <select id="care-provider-role-select" class="dimension-select">
+                            <option value="">Select a provider role...</option>
+                        </select>
+                    </div>
                 </div>
             </div>
 
-            <div class="competency-callout">
-                <i data-lucide="layers"></i>
-                <div>
-                    <strong>Clinical Competency Levels</strong>
-                    <p>
-                        Each Selected Competency Cell can be evaluated at different Clinical Competency Levels, defined by:
-                        <strong>Accuracy</strong> (lower, similar, or higher than standard/human performance),
-                        <strong>Safety</strong> (interpretability of output and bias within input), and
-                        <strong>Competency Coverage</strong> (number of tasks covered across one or multiple diseases).
-                    </p>
+            <!-- AI Engagement Cube (3A) -->
+            <div class="cube-container" id="ai-cognitive-cube">
+                <h3 class="cube-title">AI Engagement (3A)</h3>
+                <p class="cube-description">Three dimensions defining HOW AI engages</p>
+
+                <div class="cube-selector-grid">
+                    <div class="dimension-selector-item" data-dimension="agent-facing">
+                        <label class="selector-label">
+                            <span class="label-icon">👥</span>
+                            <span class="label-text">Agent Facing</span>
+                        </label>
+                        <select id="agent-facing-select" class="dimension-select">
+                            <option value="">Select agent facing...</option>
+                        </select>
+                    </div>
+
+                    <div class="dimension-selector-item" data-dimension="anchoring-layer">
+                        <label class="selector-label">
+                            <span class="label-icon">🧠</span>
+                            <span class="label-text">Anchoring Layer</span>
+                        </label>
+                        <select id="anchoring-layer-select" class="dimension-select">
+                            <option value="">Select anchoring layer...</option>
+                        </select>
+                    </div>
+
+                    <div class="dimension-selector-item" data-dimension="assigned-authority">
+                        <label class="selector-label">
+                            <span class="label-icon">⚡</span>
+                            <span class="label-text">Assigned Authority</span>
+                        </label>
+                        <select id="assigned-authority-select" class="dimension-select">
+                            <option value="">Select assigned authority...</option>
+                        </select>
+                    </div>
                 </div>
             </div>
+            </div><!-- End cubes-grid -->
+
         </div>
     </section>
 
@@ -720,9 +1117,9 @@
     <section id="components" class="explorer-section">
         <div class="section-container">
             <div class="section-header">
-                <h2 class="section-title">Cube Dimensions</h2>
+                <h2 class="section-title">8 Dimensions Explorer</h2>
                 <p class="section-subtitle">
-                    Each dimension represents a constituent element of the Clinical Skill-Mix Cube. Together they form a multidimensional space where each cell represents a specific clinical competency (N_D × N_S × N_L × N_T × N_P = N_Total)
+                    Each dimension represents a constituent element defining bounderies of clinical scenarios and AI engagement patterns.
                 </p>
             </div>
 
@@ -732,25 +1129,37 @@
                     <div class="dimension-selector">
                         <h3>Select Dimension</h3>
                         <div class="selector-buttons">
-                            <button class="selector-btn active" data-dimension="task">
+                            <button class="selector-btn active" data-dimension="care_task">
                                 <i data-lucide="stethoscope"></i>
-                                <span>Task Skills</span>
+                                <span>Care Tasks</span>
                             </button>
-                            <button class="selector-btn" data-dimension="persona">
+                            <button class="selector-btn" data-dimension="care_provider_role">
                                 <i data-lucide="users"></i>
-                                <span>Personas</span>
+                                <span>Provider Roles</span>
                             </button>
-                            <button class="selector-btn" data-dimension="disease">
+                            <button class="selector-btn" data-dimension="condition">
                                 <i data-lucide="activity"></i>
-                                <span>Diseases</span>
+                                <span>Conditions</span>
                             </button>
-                            <button class="selector-btn" data-dimension="stage">
+                            <button class="selector-btn" data-dimension="care_phase">
                                 <i data-lucide="git-branch"></i>
-                                <span>Timeline</span>
+                                <span>Care Phases</span>
                             </button>
-                            <button class="selector-btn" data-dimension="location">
+                            <button class="selector-btn" data-dimension="care_setting">
                                 <i data-lucide="map-pin"></i>
-                                <span>Locations</span>
+                                <span>Care Settings</span>
+                            </button>
+                            <button class="selector-btn" data-dimension="agent_facing">
+                                <i data-lucide="user-check"></i>
+                                <span>Agent Facing</span>
+                            </button>
+                            <button class="selector-btn" data-dimension="anchoring_layer">
+                                <i data-lucide="layers"></i>
+                                <span>Anchoring Layer</span>
+                            </button>
+                            <button class="selector-btn" data-dimension="assigned_authority">
+                                <i data-lucide="shield"></i>
+                                <span>Assigned Authority</span>
                             </button>
                         </div>
                     </div>
@@ -780,7 +1189,7 @@
                 <!-- Main Visualization Area -->
                 <div class="explorer-main">
                     <div class="explorer-header">
-                        <h3 id="current-dimension-title">Task Skills</h3>
+                        <h3 id="current-dimension-title">Care Tasks</h3>
                         <div class="explorer-actions">
                             <button class="btn btn-sm" onclick="exportDimension()">
                                 <i data-lucide="download"></i>
@@ -980,15 +1389,32 @@
     </div>
 
     <!-- Footer -->
-    <footer class="footer">
+<footer class="footer">
         <div class="footer-container">
             <!-- About and Resources Section -->
             <div class="footer-about-resources">
                 <div class="footer-about">
                     <h4>About the Clinical World Model</h4>
                     <p>
-                        The Clinical World Model framework provides an evidence-based approach to evaluating healthcare AI systems through the Clinical Skill-Mix Cube, which decomposes clinical environments across five critical dimensions: Disease, Stage, Location, Task, and Persona. This multidimensional structure creates over 41 million unique clinical scenario cells, enabling comprehensive AI deployment tracking and evaluation. Built on established clinical frameworks including WHO classifications, ICD-11, and physician competency standards, the model ensures standardized assessment across diverse healthcare contexts. The framework supports both clinical decision-making analysis and patient-centered care evaluation, making it applicable to the full spectrum of healthcare AI applications.
+                        <strong class="about-lead">We began with an observation that has become difficult to ignore:</strong>
+                        clinical AI systems that excel on benchmarks routinely falter at the bedside, and existing frameworks, while each contributing essential foundations, lack the cognitive grounding to explain why. Rather than proposing yet another evaluation checklist, we chose to look backward, drawing on decades of empirically validated work in clinical reasoning, dual-process cognition, and medical education to build forward.
                     </p>
+                    <p>
+                        The <strong>Clinical World Model</strong> formalizes clinical care as it actually unfolds, through iterative interactions among Patient, Provider, and Ecosystem, with parallel decision-making architectures rooted in how clinicians and patients genuinely think.
+                        The <strong>Clinical AI Skill-Mix</strong> then operationalizes this architecture through an eight-dimensional structure
+                        (<span class="dim-highlight">5C+3A</span>), where five Clinical Competency dimensions
+                        (<span class="dim-highlight">Condition</span>, <span class="dim-highlight">Care Phase</span>, <span class="dim-highlight">Care Setting</span>, <span class="dim-highlight">Care Task</span>, <span class="dim-highlight">Care Provider Role</span>)
+                        intersect with three AI Cognitive Engagement dimensions
+                        (<span class="dim-highlight">Agent Facing</span>, <span class="dim-highlight">Anchoring Layer</span>, <span class="dim-highlight">Assigned Authority</span>)
+                        to yield a combinatorial competency space exceeding 50 billion unique cells, each representing a distinct configuration where validation in one provides minimal evidence for another.
+                    </p>
+                    <p>
+                        We do not claim theoretical completeness, and empirical validation through prospective application remains necessary.
+                    </p>
+                    <blockquote class="about-pullquote">
+                        The field has long asked whether clinical AI works. We believe the more constructive question is
+                        <em class="pullquote-emphasis">in which competency coordinates</em> a system has demonstrated reliability, and <em class="pullquote-emphasis">for whom</em>.
+                    </blockquote>
                 </div>
                 <div class="footer-resources">
                     <h4>Resources</h4>
@@ -1006,16 +1432,19 @@
             </div>
 
             <div class="footer-citation">
-                <h4>Cite this Paper</h4>
+                <div class="footer-citation-header">
+                    <h4>Cite this Paper</h4>
+                    <button class="bibtex-copy-btn" onclick="copyBibtex()" title="Copy BibTeX to clipboard">
+                        <i data-lucide="clipboard-copy"></i>
+                        <span class="bibtex-btn-label">Copy BibTeX</span>
+                    </button>
+                </div>
                 <div class="footer-citation-content">
                     <p class="citation-title">
-                        <strong>Beyond Pattern Recognition: The Clinical World Model Framework for Cognition-Informed Medical AI</strong>
+                        <strong>Grounding Clinical AI Competency in Human Cognition Through the Clinical World Model and Skill-Mix Framework</strong>
                     </p>
                     <p class="citation-authors">
-                        Seyed Amir Ahmad Safavi-Naini, Elahe Meftah, Josh Mohess,
-                        Pooya Mohammadi Kazaj, Georgios Siontis, Zahra Atf,
-                        Akhil Vaid, Peter R. Lewis, Girish Nadkarni,
-                        Stephan Windecker, Christoph Gräni, Ali Soroush, Isaac Shiri
+                        Seyed Amir Ahmad Safavi-Naini, Elahe Meftah, Josh Mohess, Pooya Mohammadi Kazaj, Georgios Siontis, Zahra Atf, Peter R. Lewis, Girish Nadkarni, Stephan Windecker, Christoph Gräni, Ali Soroush, Isaac Shiri
                     </p>
                     <p class="citation-correspondence">
                         Correspondence: Seyed Amir Ahmad Safavi-Naini (<a href="mailto:sdamirsa@ymail.com">sdamirsa@ymail.com</a>)
@@ -1043,6 +1472,16 @@
             </div>
         </div>
     </footer>
+
+    <!-- BibTeX hidden element and copy script -->
+<template id="bibtex-data">
+@unpublished{safavi-naini2025clinicalworldmodel,
+  title     = {Grounding Clinical AI Competency in Human Cognition Through the Clinical World Model and Skill-Mix Framework},
+  author    = {Safavi-Naini, Seyed Amir Ahmad and Meftah, Elahe and Mohess, Josh and Mohammadi Kazaj, Pooya and Siontis, Georgios and Atf, Zahra and Lewis, Peter R. and Nadkarni, Girish and Windecker, Stephan and Gr{\"a}ni, Christoph and Soroush, Ali and Shiri, Isaac},
+  year      = {2025},
+  note      = {Manuscript submitted for publication}
+}
+</template>
 
     <!-- Scripts -->
     <script src="https://cdn.jsdelivr.net/npm/lucide@0.263.1/dist/umd/lucide.js"></script>
@@ -1073,27 +1512,25 @@
                 collection: "#3b82f6"
             },
             inputs: {
-                main: { id: "input", label: "Input", color: "#db2777" },
+                main: { id: "input", label: "Input", color: "#db2777", description: ["Clinical data from multiple sources", "Encounter context", "Patient information", "Medical records"] },
                 categories: [
                     {
-                        id: "clinic_data",
-                        label: "Clinic data",
+                        id: "encounter",
+                        label: "Encounter",
                         color: "#f9a8d4",
                         items: [
-                            "Verbal communication",
-                            "Clinician sense/flow",
                             "Physical interaction",
-                            "Clinical Documentations"
+                            "Clinician sense/flow",
+                            "Verbal communication"
                         ]
                     },
                     {
-                        id: "clinic_context",
-                        label: "Clinic context",
+                        id: "encounter_context",
+                        label: "Encounter context",
                         color: "#f9a8d4",
                         items: [
-                            "Resources (team dynamics, equipment, time)",
-                            "Routines (legal authority, national guidelines)",
-                            "Preferance"
+                            "Resources (dynamics, equipment, time)",
+                            "Routines (legal authority & guidelines)"
                         ]
                     },
                     {
@@ -1101,17 +1538,21 @@
                         label: "Patient context",
                         color: "#f9a8d4",
                         items: [
-                            "Socio-economic"
+                            "Preference",
+                            "Support and constrain"
                         ]
                     },
                     {
-                        id: "paraclinic_data",
-                        label: "Para-clinic data",
+                        id: "records",
+                        label: "Records",
+                        sublabel: "(Ecosystem)",
                         color: "#f9a8d4",
                         items: [
-                            "Labs",
-                            "Images",
-                            "Diagnostic procedures"
+                            "Notes",
+                            "Imaging",
+                            "Therapeutics",
+                            "Pathology & Labs",
+                            "Procedures"
                         ]
                     }
                 ]
@@ -1120,18 +1561,14 @@
                 id: "data_processor",
                 label: "Data processor",
                 color: "#7c3aed",
-                knowledge: [
-                    { id: "official", label: "Official knowledge", sub: "(e.g. book)" },
-                    { id: "unofficial", label: "Unofficial knowledge", sub: "(e.g peers)" },
-                    { id: "experience", label: "Clinical experience", sub: "& encounters" },
-                    { id: "personal", label: "Clinician personal", sub: "context" }
-                ]
+                description: ["Evidence-guided synthesis", "Transforms raw inputs into clinically meaningful cues"]
             },
             hypothesis: {
                 id: "hypothesis",
                 label: "Hypothesis",
                 color: "#d1d5db",
-                textColor: "#1f2937"
+                textColor: "#1f2937",
+                description: ["Central organizing concept", "Mediates between data processing and reasoning", "Refined through dual-system cycles", "Evaluated via reflection"]
             },
             systems: {
                 system2: {
@@ -1140,9 +1577,10 @@
                     sub: "Analytical",
                     color: "#6366f1",
                     position: "left",
+                    description: ["Slow, deliberate analytical reasoning", "Hypothetico-deductive analysis", "Evidence-based evaluation", "Conscious, effortful processing"],
                     hexagons: [
-                        { id: "hyp_impact", label: "Hypothesis", sub: "impact" },
-                        { id: "dec_breakdown", label: "Decision", sub: "breakdown" }
+                        { id: "hyp_impact", label: "Hypothesis", sub: "impact", description: ["Analyzing hypothesis implications", "Evaluating clinical significance"] },
+                        { id: "dec_breakdown", label: "Decision", sub: "breakdown", description: ["Deconstructing decision components", "Systematic analysis"] }
                     ]
                 },
                 system1: {
@@ -1150,27 +1588,41 @@
                     label: "System I:",
                     sub: "Clinical Intuition",
                     color: "#3b82f6",
-                    position: "right"
+                    position: "right",
+                    description: ["Fast, automatic pattern recognition", "Illness script activation", "Intuitive judgment", "Subconscious processing"]
                 },
                 reflection: {
                     id: "reflection",
                     label: "Reflection",
-                    color: "#9ca3af"
+                    color: "#9ca3af",
+                    description: ["Metacognitive monitoring", "Self-awareness of reasoning quality", "Bias detection", "Error identification"]
                 }
+            },
+            priors: {
+                label: "Priors",
+                sublabel: "Bias",
+                items: [
+                    { id: "official", label: "Official knowledge", sub: "(e.g. book)", description: ["Textbooks", "Medical guidelines", "Evidence-based protocols", "Formal medical education"] },
+                    { id: "unofficial", label: "Unofficial knowledge", sub: "(e.g. peer)", description: ["Peer consultation", "Clinical pearls", "Experiential wisdom from colleagues"] },
+                    { id: "experience", label: "Clinical &", sub: "encounters experience", description: ["Personal clinical cases", "Patient interactions", "Accumulated practice wisdom"] },
+                    { id: "personal", label: "Provider context", sub: "(personality & state)", description: ["Provider's current state", "Personality factors", "Cognitive biases", "Contextual influences"] }
+                ],
             },
             outputs: {
                 planning: {
                     id: "planning",
-                    label: "Planning",
-                    color: "#3b82f6",
+                    label: "Finalize planning",
+                    color: "#111827",
                     items: ["Diagnosis", "Treatment", "Monitor", "Referral", "Assurance"]
                 },
                 collection: {
                     id: "collection",
-                    label: "Collection",
-                    color: "#3b82f6",
+                    label: "Share or request",
+                    sublabel: "information",
+                    color: "#111827",
                     items: [
                         "Ask and interact with patient",
+                        "Share options with patient",
                         "Check system (EHR) and history",
                         "Request an investigation and test",
                         "Ask staff or consult a provider",
@@ -1178,7 +1630,11 @@
                     ]
                 }
             },
-            refinement: ["Refinement", "Evaluation", "Action Generation"]
+            action: {
+                label: "Action",
+                feedback: "New input",
+                log: "Log of input, processors, action"
+            }
         };
 
         const PDM_DATA = {
@@ -1198,35 +1654,55 @@
                 seeking: "#111827"
             },
             inputs: {
-                main: { id: "input", label: "Input", color: "#db2777" },
+                main: { id: "input", label: "Input", color: "#db2777", description: ["Information from providers", "Life context", "External sources", "Personal experience"] },
                 categories: [
                     {
-                        id: "clinician_patient_relationship",
-                        label: "Clinician-patient relationship factors",
+                        id: "encounter",
+                        label: "Encounter",
                         color: "#f9a8d4",
                         items: [
                             "Trust & rapport",
-                            "Communication skills & barriers"
-                        ]
-                    },
-                    {
-                        id: "other_information_sources",
-                        label: "Other information sources",
-                        color: "#f9a8d4",
-                        items: [
-                            "Digital sources (e.g., social media & internet)",
-                            "Social networks and community resources",
-                            "verified / official / institutional sources"
-                        ]
-                    },
-                    {
-                        id: "clinical_information",
-                        label: "Clinical information",
-                        color: "#f9a8d4",
-                        items: [
-                            "diagnosis and disease course",
+                            "Communication skills & barriers",
+                            "Diagnosis and disease course",
                             "Debilitation and prognosis",
-                            "available options for a decision"
+                            "Available options"
+                        ]
+                    },
+                    {
+                        id: "encounter_context",
+                        label: "Encounter context",
+                        color: "#f9a8d4",
+                        items: []
+                    },
+                    {
+                        id: "external_ecosystem",
+                        label: "External Ecosystem",
+                        color: "#f9a8d4",
+                        items: [
+                            "Digital sources (e.g. social media)",
+                            "Verified / official sources",
+                            "Community & peer sources",
+                            "Support system",
+                            "Resources"
+                        ]
+                    },
+                    {
+                        id: "situated_self",
+                        label: "Situated self",
+                        color: "#f9a8d4",
+                        items: [
+                            "Constraints & roles", "Support system",
+                            "Financial resources",
+                        ]
+                    },
+                    {
+                        id: "lived_self",
+                        label: "Lived self",
+                        color: "#f9a8d4",
+                        items: [
+                            "Bodily experience",
+                            "Emotional state",
+                            "Goals & concerns"
                         ]
                     }
                 ]
@@ -1235,20 +1711,14 @@
                 id: "data_processor",
                 label: "Data processor",
                 color: "#7c3aed",
-                knowledge: [
-                    { id: "competence", label: "Decision competence", sub: "& autonomy" },
-                    { id: "affect", label: "Affect and", sub: "bodily states" },
-                    { id: "values", label: "Values, Social identity", sub: "& norms" },
-                    { id: "experience", label: "Previous healthcare", sub: "and disease experience" },
-                    { id: "support", label: "Social & economic", sub: "support" },
-                    { id: "literacy", label: "Health literacy", sub: "" }
-                ]
+                description: ["Processes information through values and lived experience", "Integrates personal context with clinical information"]
             },
             hypothesis: {
                 id: "hypothesis",
                 label: "Hypothesis",
                 color: "#d1d5db",
-                textColor: "#1f2937"
+                textColor: "#1f2937",
+                description: ["Central decision concept", "Preference formation", "Refined through dual-system processing", "Evaluated via reflection"]
             },
             systems: {
                 system2: {
@@ -1257,9 +1727,10 @@
                     sub: "Analytical",
                     color: "#6366f1",
                     position: "left",
+                    description: ["Deliberate preference analysis", "Weighing options systematically", "Evidence-based evaluation", "Conscious decision-making"],
                     hexagons: [
-                        { id: "hyp_impact", label: "Hypothesis", sub: "impact" },
-                        { id: "dec_breakdown", label: "Decision", sub: "breakdown" }
+                        { id: "hyp_impact", label: "Hypothesis", sub: "impact", description: ["Analyzing decision implications", "Evaluating personal impact"] },
+                        { id: "dec_breakdown", label: "Decision", sub: "breakdown", description: ["Deconstructing choice components", "Systematic comparison"] }
                     ]
                 },
                 system1: {
@@ -1267,30 +1738,50 @@
                     label: "System I:",
                     sub: "Clinical Intuition",
                     color: "#3b82f6",
-                    position: "right"
+                    position: "right",
+                    description: ["Intuitive preference", "Gut feeling about choices", "Fast, automatic processing", "Emotional resonance"]
                 },
                 reflection: {
                     id: "reflection",
                     label: "Reflection",
-                    color: "#9ca3af"
+                    color: "#9ca3af",
+                    description: ["Self-awareness of preference quality", "Bias recognition", "Value alignment check", "Confidence assessment"]
                 }
+            },
+            priors: {
+                label: "Priors",
+                sublabel: "Bias",
+                items: [
+                    { id: "embodied", label: "Embodied", sub: "identity", description: ["Personal identity", "Body awareness", "Lived experience"] },
+                    { id: "competence", label: "Decision competence", sub: "& autonomy", description: ["Capacity to make healthcare decisions", "Self-determination", "Autonomy in choice"] },
+                    { id: "experience", label: "Previous encounter", sub: "experience", description: ["Past medical encounters", "Disease history", "Treatment experiences", "Healthcare interactions"] },
+                    { id: "literacy", label: "Health literacy", sub: "", description: ["Understanding medical information", "Navigating healthcare system", "Health knowledge"] }
+                ],
+
             },
             outputs: {
                 finalized: {
                     id: "finalized_preference",
-                    label: "Finalized Preference",
+                    label: "Communicate",
+                    sublabel: "preference",
                     color: "#111827",
+                    description: ["Communicating decision to provider", "Expressing preference", "Shared decision-making"],
                     items: []
                 },
                 seeking: {
                     id: "information_seeking",
-                    label: "Information seeking",
+                    label: "Share or collect",
+                    sublabel: "information",
                     color: "#111827",
+                    description: ["Requesting additional information", "Seeking clarification", "Gathering more data"],
                     items: []
                 }
             },
-            communication: "Communicating the decision with the care provider",
-            refinement: ["Refinement", "Evaluation", "Action Generation"]
+            action: {
+                label: "Action",
+                feedback: "Change in input state",
+                log: "Log: IPA state"
+            }
         };
 
         const LEGEND_DATA = [
@@ -1302,7 +1793,7 @@
             { color: "#d1d5db", label: "Hypothesis (Central)" },
             { color: "#3b82f6", label: "System I (Intuition)" },
             { color: "#6366f1", label: "System II (Analytical)" },
-            { color: "#9ca3af", label: "Reflection" },
+            { color: "#7c3aed", label: "Reflection" },
             { color: "#3b82f6", label: "Planning (CDM)" },
             { color: "#111827", label: "Preference (PDM)" },
             { color: "#e71a20", label: "Loop Back Path" }
@@ -1323,13 +1814,15 @@
             render() {
                 this.svg.innerHTML = '';
                 this.createDefs();
+                this.drawIPALabel();
                 this.drawConnections();
                 this.drawRefinementLoop();
                 this.drawInputLayer();
                 this.drawProcessor();
-                this.drawHypothesis();
+                // this.drawHypothesis(); // Removed - now part of processing sphere
                 this.drawSystems();
                 this.drawOutputs();
+                this.drawPriors();
             }
 
             createDefs() {
@@ -1358,6 +1851,15 @@
                     `;
                 });
 
+                // Radial gradient for processing sphere (white center to light purple outer)
+                defs.innerHTML += `
+                    <radialGradient id="${this.type}SphereGradient" cx="50%" cy="50%">
+                        <stop offset="0%" style="stop-color:#ffffff"/>
+                        <stop offset="50%" style="stop-color:#f3e8ff"/>
+                        <stop offset="100%" style="stop-color:#e9d5ff"/>
+                    </radialGradient>
+                `;
+
                 defs.innerHTML += `
                     <marker id="${this.type}Arrow" markerWidth="10" markerHeight="7" refX="9" refY="3.5" orient="auto">
                         <polygon points="0 0, 10 3.5, 0 7" fill="#9ca3af"/>
@@ -1373,32 +1875,48 @@
                 this.svg.appendChild(defs);
             }
 
+            drawIPALabel() {
+                const g = this.createGroup('ipa-label');
+
+                // Add "IPA iteration" label at the top left
+                const text = this.text(10, 20, 'IPA iteration', 11, '#6b7280', '600', '', 'italic');
+                text.style.fontFamily = 'system-ui, -apple-system, sans-serif';
+                g.appendChild(text);
+
+                this.svg.appendChild(g);
+            }
+
             drawConnections() {
                 const g = this.createGroup('connections-layer');
 
-                // Main flow paths
+                // Unidirectional arrow from Input to sphere (Data processor top)
                 const paths = [
-                    { d: 'M260 145 L260 210', stroke: '#d1d5db', width: 2, id: 'path-input-processor' },
-                    { d: 'M260 310 L260 370', stroke: '#d1d5db', width: 2, id: 'path-processor-hypothesis' },
-                    // Connect from side of hypothesis triangle (bottom corners) to top of systems (now at 455 with radius 60)
-                    { d: 'M195 435 L150 455', stroke: '#d1d5db', width: 2, id: 'path-hypothesis-sys2' },
-                    { d: 'M325 435 L370 455', stroke: '#d1d5db', width: 2, id: 'path-hypothesis-sys1' },
-                    // Elbowed paths from reflection to outputs (with space before boxes)
-                    { d: 'M260 670 L260 680 L137 680 L137 705', stroke: '#d1d5db', width: 2, id: 'path-reflection-planning' },
-                    { d: 'M260 670 L260 680 L382 680 L382 705', stroke: '#d1d5db', width: 2, id: 'path-reflection-collection' }
+                    { d: 'M260 148 L260 220', stroke: '#d1d5db', width: 2, id: 'path-input-sphere', marker: `url(#${this.type}Arrow)` },
+                    // Elbowed paths from reflection to outputs
+                    { d: 'M260 560 L260 680 L137 680 L137 705', stroke: '#d1d5db', width: 2, id: 'path-sphere-planning', marker: `url(#${this.type}Arrow)` },
+                    { d: 'M260 560 L260 680 L382 680 L382 705', stroke: '#d1d5db', width: 2, id: 'path-sphere-collection', marker: `url(#${this.type}Arrow)` }
                 ];
 
                 paths.forEach(p => {
-                    const path = this.createPath(p.d, p.stroke, p.width, `url(#${this.type}Arrow)`);
+                    const path = this.createPath(p.d, p.stroke, p.width, p.marker);
                     if (p.id) path.setAttribute('id', p.id);
                     g.appendChild(path);
                 });
 
-                // Bidirectional arrow from triangle to reflection circle
-                g.appendChild(this.createBidirectionalArrow(260, 545, 260, 635, '#10b981'));
+                // Bidirectional arrows between the four processors (dark purple)
+                // Data (260, 280) ↔ System I (380, 390)
+                g.appendChild(this.createBidirectionalArrow(260, 340, 320, 390, '#7c3aed'));
+
+                // Data (260, 280) ↔ System II (140, 390)
+                g.appendChild(this.createBidirectionalArrow(260, 340, 200, 390, '#7c3aed'));
+
+                // System I (380, 390) ↔ Reflection (260, 500)
+                g.appendChild(this.createBidirectionalArrow(320, 390, 260, 440, '#7c3aed'));
+
+                // System II (140, 390) ↔ Reflection (260, 500)
+                g.appendChild(this.createBidirectionalArrow(200, 390, 260, 440, '#7c3aed'));
 
                 // Collection loop back path - different for CDM and PDM
-                // Input circle is at (260, 110) with radius 38, so just below is around (260, 150)
                 if (this.type === 'cdm') {
                     // CDM: Go down first, then left, then up to just below Input
                     g.appendChild(this.createPath('M382 795 L382 820 Q382 840 362 840 L30 840 Q10 840 10 820 L10 160 Q10 150 20 150 L260 150', '#e71a20', 2, `url(#${this.type}ArrowRed)`, true, 'flow-path animated', '4,4', 0.5));
@@ -1409,38 +1927,49 @@
                     g.appendChild(this.text(15, 475, 'Loop Back', 8, '#e71a20', '500', 'rotate(-90 15 475)'));
                 }
 
-                // Draw the triangular processing region
-                this.drawProcessingTriangle(g);
+                // Draw the spherical processing region
+                this.drawProcessingSphere(g);
 
                 this.svg.appendChild(g);
             }
 
-            drawProcessingTriangle(g) {
-                // Calculate outer lower vertices of hexagons
-                // System II (150, 515, r=60): bottom-left vertex at angle 5π/6
-                const sys2VertexX = 150 + 60 * Math.cos(Math.PI * 5 / 6);  // 150 - 51.96 ≈ 98
-                const sys2VertexY = 515 + 60 * Math.sin(Math.PI * 5 / 6);  // 515 + 30 = 545
+            drawProcessingSphere(g) {
+                // Draw large gradient sphere centered among all processors
+                // Center point: midway between Data Processor (260, 260) and Systems (around 515)
+                const sphereCenterX = 260;
+                const sphereCenterY = 390;  // Centered vertically among processors
+                const sphereRadius = 190;   // Large enough to visually cover all processors
 
-                // System I (370, 515, r=60): bottom-right vertex at angle π/6
-                const sys1VertexX = 370 + 60 * Math.cos(Math.PI / 6);      // 370 + 51.96 ≈ 422
-                const sys1VertexY = 515 + 60 * Math.sin(Math.PI / 6);      // 515 + 30 = 545
+                // Draw outer sphere with radial gradient
+                const outerSphere = document.createElementNS('http://www.w3.org/2000/svg', 'circle');
+                outerSphere.setAttribute('cx', sphereCenterX);
+                outerSphere.setAttribute('cy', sphereCenterY);
+                outerSphere.setAttribute('r', sphereRadius);
+                outerSphere.setAttribute('fill', `url(#${this.type}SphereGradient)`);
+                outerSphere.setAttribute('stroke', '#c084fc');
+                outerSphere.setAttribute('stroke-width', '2');
+                outerSphere.setAttribute('stroke-dasharray', '8,5');
+                outerSphere.setAttribute('opacity', '0.4');
+                g.appendChild(outerSphere);
 
-                // Draw triangle connecting Data Processor center to hexagon vertices
-                const trianglePath = `M260 260 L${sys2VertexX.toFixed(1)} ${sys2VertexY.toFixed(1)} L${sys1VertexX.toFixed(1)} ${sys1VertexY.toFixed(1)} Z`;
-                const triangle = document.createElementNS('http://www.w3.org/2000/svg', 'path');
-                triangle.setAttribute('d', trianglePath);
-                triangle.setAttribute('fill', 'rgba(251, 191, 36, 0.05)');
-                triangle.setAttribute('stroke', '#fbbf24');
-                triangle.setAttribute('stroke-width', '2');
-                triangle.setAttribute('stroke-dasharray', '6,4');
-                g.appendChild(triangle);
+                // Draw inner sphere at center
+                const innerSphereRadius = 45;
+                const innerSphere = document.createElementNS('http://www.w3.org/2000/svg', 'circle');
+                innerSphere.setAttribute('cx', sphereCenterX);
+                innerSphere.setAttribute('cy', sphereCenterY);
+                innerSphere.setAttribute('r', innerSphereRadius);
+                innerSphere.setAttribute('fill', '#ffffff');
+                innerSphere.setAttribute('stroke', '#c084fc');
+                innerSphere.setAttribute('stroke-width', '2');
+                g.appendChild(innerSphere);
 
-                // Add bidirectional arrows on edges (only top two edges)
-                // Edge 1: Data Processor to System II outer vertex
-                g.appendChild(this.createBidirectionalArrow(260, 260, sys2VertexX, sys2VertexY, '#fbbf24'));
+                // Add labels inside inner sphere: "Cues", "Hypothesis", "Plan" vertically stacked
+                const labelSpacing = 14;
+                const labelY = sphereCenterY - labelSpacing;  // Start above center
 
-                // Edge 2: Data Processor to System I outer vertex
-                g.appendChild(this.createBidirectionalArrow(260, 260, sys1VertexX, sys1VertexY, '#fbbf24'));
+                g.appendChild(this.text(sphereCenterX, labelY, 'Cues', 10, '#7c3aed', '600'));
+                g.appendChild(this.text(sphereCenterX, labelY + labelSpacing, 'Hypothesis', 10, '#7c3aed', '600'));
+                g.appendChild(this.text(sphereCenterX, labelY + labelSpacing * 2, 'Plan', 10, '#7c3aed', '600'));
             }
 
             createBidirectionalArrow(x1, y1, x2, y2, color) {
@@ -1504,7 +2033,7 @@
                 // Categories - Draw lines FIRST (background)
                 const catPositions = this.type === 'cdm'
                     ? [{ x: 95, y: 95 }, { x: 165, y: 50 }, { x: 355, y: 50 }, { x: 425, y: 95 }]
-                    : [{ x: 260, y: 42 }, { x: 110, y: 100 }, { x: 410, y: 100 }];
+                    : [{ x: 260, y: 42 }, { x: 110, y: 85 }, { x: 410, y: 85 }, { x: 150, y: 150 }, { x: 370, y: 150 }];
 
                 this.data.inputs.categories.forEach((cat, i) => {
                     if (i >= catPositions.length) return;
@@ -1527,7 +2056,7 @@
                 });
 
                 // Main input LAST (foreground)
-                g.appendChild(this.circleNode(inputX, inputY, inputRadius, `url(#${this.type}Input)`, 'input', 'Input', null, true));
+                g.appendChild(this.circleNode(inputX, inputY, inputRadius, `url(#${this.type}Input)`, 'input', 'Input', this.data.inputs.main.description, true));
 
                 this.svg.appendChild(g);
             }
@@ -1535,71 +2064,34 @@
             drawProcessor() {
                 const g = this.createGroup('processor-layer');
 
-                // Increased size: 58 -> 70
-                const procHex = this.hexPoints(260, 260, 70);
-                g.appendChild(this.polygonNode(procHex, `url(#${this.type}Proc)`, 'processor', 'Data', 'processor'));
-
-                // Honeycomb arrangement on the left side
-                const kPositions = this.type === 'cdm'
-                    ? [
-                        { x: 85, y: 215 },   // Top-left
-                        { x: 85, y: 280 },   // Bottom-left
-                        { x: 145, y: 248 },  // Middle-right (offset)
-                        { x: 145, y: 313 }   // Bottom-right (offset)
-                    ]
-                    : [
-                        { x: 70, y: 200 },   // Top-left
-                        { x: 70, y: 258 },   // Middle-left
-                        { x: 70, y: 316 },   // Bottom-left
-                        { x: 130, y: 229 },  // Top-right (offset)
-                        { x: 130, y: 287 },  // Middle-right (offset)
-                        { x: 130, y: 345 }   // Bottom-right (offset)
-                    ];
-
-                this.data.processor.knowledge.forEach((k, i) => {
-                    if (i >= kPositions.length) return;
-                    const pos = kPositions[i];
-                    const kHex = this.hexPoints(pos.x, pos.y, 32);
-                    g.appendChild(this.polygonNode(kHex, '#ede9fe', k.id, k.label.split(' ').slice(0, 2).join(' '), k.sub || '', '#c4b5fd', '#6d28d9'));
-                });
+                // Data processor repositioned to top of center sphere
+                const procHex = this.hexPoints(260, 280, 60);
+                g.appendChild(this.polygonNode(procHex, `url(#${this.type}Proc)`, 'processor', 'Data', 'processor', null, 'white', this.data.processor.description));
 
                 this.svg.appendChild(g);
             }
 
             drawHypothesis() {
                 const g = this.createGroup('hypothesis-layer');
-                const trianglePoints = '260,370 325,435 195,435';
-                g.appendChild(this.polygonNode(trianglePoints, '#d1d5db', 'hypothesis', 'Hypothesis', '', '#9ca3af', '#1f2937'));
+                // Changed from triangle to circle/sphere
+                g.appendChild(this.circleNode(260, 403, 35, '#d1d5db', 'hypothesis', 'Hypothesis', this.data.hypothesis.description, false, '#1f2937'));
                 this.svg.appendChild(g);
             }
 
             drawSystems() {
                 const g = this.createGroup('systems-layer');
 
-                // System II (Left) - increased size from 48 to 60
-                const sys2Hex = this.hexPoints(150, 515, 60);
-                g.appendChild(this.polygonNode(sys2Hex, `url(#${this.type}Sys2)`, 'system2', this.data.systems.system2.label, this.data.systems.system2.sub));
+                // System II (Left of center sphere)
+                const sys2Hex = this.hexPoints(140, 390, 60);
+                g.appendChild(this.polygonNode(sys2Hex, `url(#${this.type}Sys2)`, 'system2', this.data.systems.system2.label, this.data.systems.system2.sub, null, 'white', this.data.systems.system2.description));
 
-                // System II hexagons in honeycomb pattern (left side of System II)
-                if (this.data.systems.system2.hexagons) {
-                    const hexPositions = [
-                        { x: 80, y: 485 },  // Upper left
-                        { x: 80, y: 545 }   // Lower left
-                    ];
-                    this.data.systems.system2.hexagons.forEach((hex, i) => {
-                        if (i >= hexPositions.length) return;
-                        const pos = hexPositions[i];
-                        const hexPts = this.hexPoints(pos.x, pos.y, 32);
-                        g.appendChild(this.polygonNode(hexPts, '#ede9fe', hex.id, hex.label, hex.sub, '#c4b5fd', '#6d28d9'));
-                    });
-                }
+                // System I (Right of center sphere)
+                const sys1Hex = this.hexPoints(380, 390, 60);
+                g.appendChild(this.polygonNode(sys1Hex, `url(#${this.type}Sys1)`, 'system1', this.data.systems.system1.label, this.data.systems.system1.sub, null, 'white', this.data.systems.system1.description));
 
-                // System I (Right) - increased size from 48 to 60
-                const sys1Hex = this.hexPoints(370, 515, 60);
-                g.appendChild(this.polygonNode(sys1Hex, `url(#${this.type}Sys1)`, 'system1', this.data.systems.system1.label, this.data.systems.system1.sub));
-
-                // Reflection node
-                g.appendChild(this.circleNode(260, 635, 35, '#10b981', 'reflection', 'Reflect', null, true));
+                // Reflection node (Below center sphere) - hexagon, dark purple
+                const reflectHex = this.hexPoints(260, 500, 60);
+                g.appendChild(this.polygonNode(reflectHex, '#7c3aed', 'reflection', 'Reflection', '', '#6d28d9', 'white', this.data.systems.reflection.description));
 
                 this.svg.appendChild(g);
             }
@@ -1624,6 +2116,7 @@
                     planRect.setAttribute('rx', 10);
                     planRect.setAttribute('fill', `url(#${this.type}Plan)`);
                     planRect.setAttribute('data-id', `${this.type}_planning`);
+                    planRect.setAttribute('data-items', JSON.stringify(planItems));
                     planRect.classList.add('node-group');
                     g.appendChild(planRect);
 
@@ -1646,6 +2139,7 @@
                     collRect.setAttribute('rx', 10);
                     collRect.setAttribute('fill', `url(#${this.type}Coll)`);
                     collRect.setAttribute('data-id', `${this.type}_collection`);
+                    collRect.setAttribute('data-items', JSON.stringify(collItems));
                     collRect.classList.add('node-group');
                     g.appendChild(collRect);
 
@@ -1660,10 +2154,51 @@
                         g.appendChild(txt);
                     });
                 } else {
-                    g.appendChild(this.rectNode(75, 705, 125, 55, 10, `url(#${this.type}Black)`, 'finalized', 'Finalized', [], 'Preference'));
-                    g.appendChild(this.rectNode(320, 705, 125, 55, 10, `url(#${this.type}Black)`, 'seeking', 'Information', [], 'seeking'));
+                    g.appendChild(this.rectNode(75, 705, 125, 55, 10, `url(#${this.type}Black)`, 'finalized', 'Finalized', this.data.outputs.finalized.description, 'Preference'));
+                    g.appendChild(this.rectNode(320, 705, 125, 55, 10, `url(#${this.type}Black)`, 'seeking', 'Information', this.data.outputs.seeking.description, 'seeking'));
                     g.appendChild(this.text(260, 785, this.data.communication, 10, '#6b7280', '500'));
                 }
+
+                this.svg.appendChild(g);
+            }
+
+            drawPriors() {
+                if (!this.data.priors) return;
+
+                const g = this.createGroup('priors-layer');
+
+                // Priors section on the RIGHT side, ABOVE Experience container
+                const priorsBaseX = 475;  // Right side, aligned with Experience container
+                const priorsBaseY = 160;  // Start higher, above Experience container
+                const hexSize = 26;
+                const hexSpacingX = 60;   // Horizontal spacing between hexagons
+                const hexSpacingY = 52;   // Vertical spacing for honeycomb
+
+                // "Priors" title - centered above hexagons
+                g.appendChild(this.text(priorsBaseX, priorsBaseY - 25, this.data.priors.label, 12, '#6b7280', '700'));
+
+                // "Bias" subtitle
+                if (this.data.priors.sublabel) {
+                    g.appendChild(this.text(priorsBaseX, priorsBaseY - 10, this.data.priors.sublabel, 9, '#9ca3af', '500', '', 'italic'));
+                }
+
+                // Draw prior knowledge hexagons in HONEYCOMB pattern on RIGHT
+                // Honeycomb arrangement for 4 items:
+                //     hex0    hex1
+                //   hex2    hex3
+                const honeycombPositions = [
+                    { x: priorsBaseX - hexSpacingX/2, y: priorsBaseY },           // Top left
+                    { x: priorsBaseX + hexSpacingX/2, y: priorsBaseY },           // Top right
+                    { x: priorsBaseX - hexSpacingX/2, y: priorsBaseY + hexSpacingY },  // Bottom left
+                    { x: priorsBaseX + hexSpacingX/2, y: priorsBaseY + hexSpacingY }   // Bottom right
+                ];
+
+                this.data.priors.items.forEach((prior, i) => {
+                    if (i >= honeycombPositions.length) return;
+                    const pos = honeycombPositions[i];
+                    const hexPts = this.hexPoints(pos.x, pos.y, hexSize);
+                    g.appendChild(this.polygonNode(hexPts, '#f3f4f6', prior.id, prior.label, prior.sub || '', '#e5e7eb', '#6b7280', prior.description, 7));
+                });
 
                 this.svg.appendChild(g);
             }
@@ -1671,9 +2206,9 @@
             drawRefinementLoop() {
                 const g = this.createGroup('experience-storage-layer');
 
-                // Storage container position
+                // Storage container position (lowered from 300 to 400)
                 const containerX = 440;
-                const containerY = 300;
+                const containerY = 400;
                 const containerWidth = 70;
                 const containerHeight = 220;
 
@@ -1718,7 +2253,7 @@
                 g.appendChild(title2);
 
                 // Storage items
-                const items = ['Action', 'Evaluation', 'Refinement'];
+                const items = ['Retrieval', 'Analysis', 'Calibrate'];
                 const itemY = containerY + 85;
                 const itemSpacing = 35;
 
@@ -1839,9 +2374,10 @@
                 return g;
             }
 
-            polygonNode(points, fill, id, label, sublabel = '', stroke = null, textColor = 'white') {
+            polygonNode(points, fill, id, label, sublabel = '', stroke = null, textColor = 'white', items = null, fontSize = null) {
                 const g = this.createGroup('node-group');
                 g.setAttribute('data-id', `${this.type}_${id}`);
+                if (items && items.length) g.setAttribute('data-items', JSON.stringify(items));
 
                 const polygon = document.createElementNS('http://www.w3.org/2000/svg', 'polygon');
                 polygon.setAttribute('points', points);
@@ -1856,7 +2392,7 @@
                 const cx = pts.reduce((s, p) => s + p[0], 0) / pts.length;
                 const cy = pts.reduce((s, p) => s + p[1], 0) / pts.length;
 
-                const labelSize = label.length > 14 ? 8 : 10;
+                const labelSize = fontSize || (label.length > 14 ? 8 : 10);
                 g.appendChild(this.text(cx, sublabel ? cy - 7 : cy, label, labelSize, textColor, '600'));
                 if (sublabel) {
                     g.appendChild(this.text(cx, cy + 8, sublabel, labelSize, textColor === 'white' ? 'rgba(255,255,255,0.8)' : '#78716c', '600'));
