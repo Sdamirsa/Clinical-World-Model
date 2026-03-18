@@ -37,7 +37,7 @@ class DimensionType(str, Enum):
     CARE_PROVIDER_ROLE = "care_provider_role"  # Healthcare professional role and expertise level
 
     # AI Cognitive Engagement (3A)
-    AGENT_FACING = "agent_facing"  # Whose cognition AI engages (provider/patient/encounter)
+    AGENT_FACING = "agent_facing"  # Whose cognition AI engages (provider/patient/encounter/ecosystem)
     ANCHORING_LAYER = "anchoring_layer"  # Point in cognitive architecture (input/hypothesis/system-i/etc)
     ASSIGNED_AUTHORITY = "assigned_authority"  # Degree of AI takeover (monitoring/augmentation/automation)
 

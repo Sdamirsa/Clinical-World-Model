@@ -661,6 +661,9 @@ function updateScenarioText() {
     } else if (agentFacingId === 'patient_facing') {
         agentContext = `patient in ${providerRoleSingular}-patient care`;
         agentPossessive = `patient's in ${providerRoleSingular}-patient care`;
+    } else if (agentFacingId === 'ecosystem_facing') {
+        agentContext = `healthcare ecosystem surrounding ${providerRoleSingular} care`;
+        agentPossessive = `healthcare ecosystem's`;
     } else {
         agentContext = providerRole;
         agentPossessive = providerRole + "'";

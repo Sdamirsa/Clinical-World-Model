@@ -1,8 +1,8 @@
 {
   "dimension": "agent_facing",
-  "description": "Defines whose cognition AI engages: provider (CDM), patient (PDM), or encounter (system-level integration). This dimension specifies the primary cognitive agent interacting with AI in the clinical workflow.",
+  "description": "Defines whose cognition AI engages: provider (CDM), patient (PDM), encounter (system-level integration), or ecosystem (population and organizational systems). This dimension specifies the primary cognitive agent interacting with AI in the clinical workflow.",
   "reference": {
-    "classification": "Agent Facing Framework: Three Cognitive Engagement Types",
+    "classification": "Agent Facing Framework: Four Cognitive Engagement Types",
     "burden_metric": "User perspective and cognitive model integration",
     "data_source": "Clinical decision-making models (CDM/PDM framework)",
     "last_updated": "2026-02-04",
@@ -10,11 +10,12 @@
       "Clinician Decision Making (CDM) model",
       "Patient Decision Making (PDM) model",
       "Clinical encounter workflow frameworks",
-      "Human-AI interaction patterns in healthcare"
+      "Human-AI interaction patterns in healthcare",
+      "Healthcare ecosystem and population health frameworks"
     ]
   },
   "hierarchy": {
-    "structure": "Flat list of three agent types",
+    "structure": "Flat list of four agent types",
     "levels": [
       "agent"
     ],
@@ -99,6 +100,33 @@
           "Communication facilitation tools",
           "Coordination platforms",
           "Integrated care pathway systems"
+        ]
+      }
+    },
+    {
+      "id": "ecosystem_facing",
+      "path_components": [
+        "ecosystem_facing"
+      ],
+      "depth": 0,
+      "parent_id": null,
+      "children_ids": [],
+      "name": "Ecosystem-Facing",
+      "description": "AI engages with broader healthcare ecosystem including population health, organizational systems, and cross-institutional coordination",
+      "level_info": {
+        "0": {
+          "name": "Ecosystem-Facing",
+          "level_name": "Agent Type"
+        }
+      },
+      "metadata": {
+        "cognitive_model": "Ecosystem Decision Making (EDM)",
+        "primary_user": "Health systems, public health agencies, and policy makers",
+        "example_applications": [
+          "Population health management platforms",
+          "Healthcare resource allocation systems",
+          "Epidemiological surveillance and forecasting",
+          "Cross-institutional care coordination"
         ]
       }
     }

@@ -9,7 +9,7 @@ An evidence-based framework for modeling clinical environments through Clinical 
 
 - **Clinical Competency Cube (5C)**: Multidimensional space with 803,626,656 unique clinical scenario cells (1,918 conditions × 7 care phases × 12 care settings × 58 care tasks × 86 care provider roles)
 - **AI Cognitive Engagement Cube (3A)**: 3-dimension framework capturing how AI engages with clinical workflows (Agent Facing × Anchoring Layer × Assigned Authority)
-- **Clinical Intelligence Space**: 5C × 3A = 8-dimensional space (803.6M clinical scenarios × 63 AI engagement patterns = 50.6B unique cells)
+- **Clinical Intelligence Space**: 5C × 3A = 8-dimensional space (803.6M clinical scenarios × 84 AI engagement patterns = 67.5B unique cells)
 - **Interactive Web Interface**: Explore both cubes through our [GitHub Pages website](https://sdamirsa.github.io/Clinical-World-Model)
 - **Standardized Condition Classification**: ICD-10-CM major category codes (3-character) for comprehensive disease coverage
 - **Standardized Data Models**: Pydantic-based JSON format for all components
@@ -71,11 +71,12 @@ Healthcare professional role capturing expertise level:
 
 ## 🧠 AI Cognitive Engagement Dimensions (3A)
 
-### 1. **Agent Facing** (3 options)
+### 1. **Agent Facing** (4 options)
 Defines whose cognition AI engages:
 - **Provider-Facing**: Healthcare provider perspective (CDM model)
 - **Patient-Facing**: Patient perspective (PDM model)
 - **Encounter-Facing**: System-level interaction perspective (CDM + PDM)
+- **Ecosystem-Facing**: Population and organizational systems perspective (EDM)
 
 ### 2. **Anchoring Layer** (7 layers)
 Specifies the point in cognitive architecture where AI intervenes:
@@ -189,7 +190,7 @@ cognitive_engagement = {
     "integration_mode": "augment",
     "temporality": "concurrent"
 }
-# Cognitive Engagement Cube: 3 × 7 × 3 × 3 = 189 engagement scenarios
+# Cognitive Engagement Cube: 4 × 7 × 3 = 84 engagement scenarios
 
 # Clinical Intelligence = Clinical Competency × Cognitive Engagement
 # Total distinct capability claims requiring evaluation
@@ -217,7 +218,7 @@ The Clinical World Model is grounded in established clinical standards:
 - **Provider Role**: WHO International Classification of Health Workers (five broad groupings)
 
 **Cognitive Engagement Aspects**:
-- **Agent**: Clinician, Patient, and Encounter perspectives
+- **Agent**: Clinician, Patient, Encounter, and Ecosystem perspectives
 - **Reasoning Layer**: Seven cognitive architecture layers from dual-process theory
 - **Integration Mode**: Three modes of AI-workflow integration
 - **Temporality**: Three timeframes for AI intervention

@@ -1,7 +1,7 @@
 #!/usr/bin/env python3
 """
 Generate agent_facing.json for the AI Cognitive Engagement Cube (3A)
-Agent Facing defines whose cognition AI engages (provider/patient/encounter)
+Agent Facing defines whose cognition AI engages (provider/patient/encounter/ecosystem)
 """
 
 import json
@@ -61,6 +61,19 @@ def create_agent_facing_items():
                 "Coordination platforms",
                 "Integrated care pathway systems"
             ]
+        },
+        {
+            "id": "ecosystem_facing",
+            "name": "Ecosystem-Facing",
+            "description": "AI engages with broader healthcare ecosystem including population health, organizational systems, and cross-institutional coordination",
+            "cognitive_model": "Ecosystem Decision Making (EDM)",
+            "primary_user": "Health systems, public health agencies, and policy makers",
+            "example_applications": [
+                "Population health management platforms",
+                "Healthcare resource allocation systems",
+                "Epidemiological surveillance and forecasting",
+                "Cross-institutional care coordination"
+            ]
         }
     ]
 
@@ -97,9 +110,9 @@ def generate_agent_facing_dimension():
 
     dimension = SkillMixDimension(
         dimension=DimensionType.AGENT_FACING,
-        description="Defines whose cognition AI engages: provider (CDM), patient (PDM), or encounter (system-level integration). This dimension specifies the primary cognitive agent interacting with AI in the clinical workflow.",
+        description="Defines whose cognition AI engages: provider (CDM), patient (PDM), encounter (system-level integration), or ecosystem (population and organizational systems). This dimension specifies the primary cognitive agent interacting with AI in the clinical workflow.",
         reference=ReferenceInfo(
-            classification="Agent Facing Framework: Three Cognitive Engagement Types",
+            classification="Agent Facing Framework: Four Cognitive Engagement Types",
             burden_metric="User perspective and cognitive model integration",
             data_source="Clinical decision-making models (CDM/PDM framework)",
             last_updated="2026-02-04",
@@ -107,11 +120,12 @@ def generate_agent_facing_dimension():
                 "Clinician Decision Making (CDM) model",
                 "Patient Decision Making (PDM) model",
                 "Clinical encounter workflow frameworks",
-                "Human-AI interaction patterns in healthcare"
+                "Human-AI interaction patterns in healthcare",
+                "Healthcare ecosystem and population health frameworks"
             ]
         ),
         hierarchy=HierarchyInfo(
-            structure="Flat list of three agent types",
+            structure="Flat list of four agent types",
             levels=["agent"],
             max_depth=0
         ),

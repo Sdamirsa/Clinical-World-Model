@@ -22,7 +22,7 @@ Clinical World Model framework upgraded from 5-dimension single cube to **8-dime
 
 | Dimension | Options | Description |
 |-----------|---------|-------------|
-| **Agent Facing** | 3 | Provider/Patient/Encounter perspective |
+| **Agent Facing** | 4 | Provider/Patient/Encounter/Ecosystem perspective |
 | **Anchoring Layer** | 7 | Cognitive architecture intervention point |
 | **Assigned Authority** | 3 | Monitoring/Augmentation/Automation |
 
